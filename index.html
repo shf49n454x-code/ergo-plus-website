@@ -1168,13 +1168,82 @@
     .social:hover { background: rgba(255,255,255,.18); color: white; }
 
     /* ══════════════════════════════════════════════════
-       SCROLL FADE
+       SCROLL ANIMATIONS — varied directions
     ══════════════════════════════════════════════════ */
     .reveal {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity .6s var(--ease), transform .6s var(--ease);
+      opacity: 0; transform: translateY(32px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
     }
-    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal.in { opacity: 1; transform: translate(0) scale(1); }
+
+    .reveal-left {
+      opacity: 0; transform: translateX(-40px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal-left.in { opacity: 1; transform: translateX(0); }
+
+    .reveal-right {
+      opacity: 0; transform: translateX(40px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal-right.in { opacity: 1; transform: translateX(0); }
+
+    .reveal-scale {
+      opacity: 0; transform: scale(.92);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal-scale.in { opacity: 1; transform: scale(1); }
+
+    .reveal-fade {
+      opacity: 0;
+      transition: opacity .8s var(--ease);
+    }
+    .reveal-fade.in { opacity: 1; }
+
+    /* ── Hero entrance choreography ── */
+    @keyframes heroSlideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroSlideIn {
+      from { opacity: 0; transform: translateX(50px) scale(.96); }
+      to   { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    @keyframes heroBlobPulse {
+      0%, 100% { transform: scale(1); opacity: .7; }
+      50%      { transform: scale(1.08); opacity: 1; }
+    }
+    .hero-eyebrow  { opacity: 0; animation: heroSlideUp .8s var(--ease) .1s forwards; }
+    .hero-h1       { opacity: 0; animation: heroSlideUp .8s var(--ease) .25s forwards; }
+    .hero-p        { opacity: 0; animation: heroSlideUp .8s var(--ease) .4s forwards; }
+    .hero-btns     { opacity: 0; animation: heroSlideUp .8s var(--ease) .55s forwards; }
+    .hero-stats    { opacity: 0; animation: heroSlideUp .7s var(--ease) .7s forwards; }
+    .hero-visual   { opacity: 0; animation: heroSlideIn .9s var(--ease) .35s forwards; }
+    .hero-blob     { animation: heroBlobPulse 8s ease-in-out infinite; }
+    .hero-blob-2   { animation-delay: 4s; }
+
+    /* ── Floating badge bob ── */
+    @keyframes floatBob {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    .hero-float { animation: floatBob 4s ease-in-out infinite; }
+    .hero-float-bl { animation-delay: 2s; }
+
+    /* ── Counter roll-up ── */
+    .stat-box strong, .hero-stat strong {
+      display: inline-block;
+    }
+    @keyframes countPop {
+      from { opacity: 0; transform: translateY(12px) scale(.9); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ── Smooth section flow lines ── */
+    @keyframes drawLine {
+      from { transform: scaleY(0); }
+      to   { transform: scaleY(1); }
+    }
 
     /* ══════════════════════════════════════════════════
        RESPONSIVE
@@ -1340,23 +1409,23 @@
 <!-- ═══════════════════  USPs  ═══════════════════ -->
 <section id="usps" aria-labelledby="usps-heading">
   <div class="inner">
-    <div class="center reveal">
+    <div class="center reveal-fade">
       <span class="eyebrow-label">Unsere Stärken</span>
       <h2 class="section-h2" id="usps-heading">Warum ERGO-PLUS?</h2>
       <p class="section-sub">Innovative Produkte, individuelle Beratung und vollständige Begleitung – von der Analyse bis zur Übergabe.</p>
     </div>
     <div class="usp-grid">
-      <div class="usp-card reveal">
+      <div class="usp-card reveal-scale">
         <div class="usp-icon teal"><i data-lucide="award" aria-hidden="true"></i></div>
         <h3>Kein Sanitätshaus – Spezialisten</h3>
         <p>Wo das Sanitätshaus aufhört, fangen wir an. Wir sind spezialisiert auf komplexe Sitzversorgungen bei MS, ALS, Skoliose, Kleinwuchs, Amputation und Schwergewicht bis 250 kg.</p>
       </div>
-      <div class="usp-card reveal">
+      <div class="usp-card reveal-scale">
         <div class="usp-icon green"><i data-lucide="users" aria-hidden="true"></i></div>
         <h3>Individuelle Beratung</h3>
         <p>Mit dem POSE-Assessmenttool und über 25 Jahren therapeutischer Expertise finden wir Ihre persönliche Lösung – kein Schema F.</p>
       </div>
-      <div class="usp-card reveal">
+      <div class="usp-card reveal-scale">
         <div class="usp-icon amber"><i data-lucide="clipboard-check" aria-hidden="true"></i></div>
         <h3>Alle Kostenträger – wir regeln das</h3>
         <p>Krankenkasse, DRV, Integrationsamt, Versorgungsamt, Arbeitsamt oder BG – wir kennen jeden Kostenträger und begleiten Sie durch den gesamten Antragsprozess über unsere Reha-Partner.</p>
@@ -1368,13 +1437,13 @@
 <!-- ═══════════════════  TECH DETAILS  ═══════════════════ -->
 <section id="tech" aria-labelledby="tech-heading">
   <div class="inner">
-    <div class="center reveal">
+    <div class="center reveal-fade">
       <span class="eyebrow-label">Technologie & Medizin</span>
       <h2 class="section-h2" id="tech-heading">Die Details machen den Unterschied</h2>
       <p class="section-sub">Unsere Sitzlösungen basieren auf tiefem Verständnis von Anatomie, Biomechanik und modernster Materialtechnologie.</p>
     </div>
 
-    <div class="tech-hero reveal">
+    <div class="tech-hero reveal-scale">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132503_b0258300-fc7d-496d-b3a8-06227542cbc8.png"
            alt="Wirbelsäulenmodell: gesunde Haltung vs. Fehlbelastung beim Sitzen" loading="lazy" />
       <div class="tech-hero-overlay">
@@ -1384,7 +1453,7 @@
     </div>
 
     <div class="tech-grid">
-      <div class="tech-card reveal">
+      <div class="tech-card reveal-left">
         <div class="tech-card-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132506_12bd0b2b-ca9a-45fe-a590-a56757c5ded8.png"
                alt="Wirbelsäulenmodell in teal-farbener ergonomischer Lordosenstütze" loading="lazy" />
@@ -1408,7 +1477,7 @@
         </div>
       </div>
 
-      <div class="tech-card reveal">
+      <div class="tech-card reveal-right">
         <div class="tech-card-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132458_c569e8e8-ac42-46d2-9a51-964091a07afc.png"
                alt="Präzisions-Bremsrolle mit Doppelrad und zentralem Bremshebel" loading="lazy" />
@@ -1427,11 +1496,11 @@
 <section id="products" aria-labelledby="products-heading">
   <div class="inner">
     <div class="products-head">
-      <div class="reveal">
+      <div class="reveal-left">
         <span class="eyebrow-label">Produktpalette</span>
         <h2 class="section-h2" id="products-heading">Unsere Sitzlösungen</h2>
       </div>
-      <p class="section-sub reveal" style="max-width:340px">Von der Standardversorgung bis zur Speziallösung – für jeden Bedarf das richtige Produkt.</p>
+      <p class="section-sub reveal-right" style="max-width:340px">Von der Standardversorgung bis zur Speziallösung – für jeden Bedarf das richtige Produkt.</p>
     </div>
 
     <div class="product-grid">
@@ -1531,14 +1600,14 @@
 <!-- ═══════════════════  SO GEHT'S  ═══════════════════ -->
 <section id="steps" aria-labelledby="steps-heading">
   <div class="inner">
-    <div class="center reveal">
+    <div class="center reveal-fade">
       <span class="eyebrow-label">Der Weg zu Ihrer Lösung</span>
       <h2 class="section-h2" id="steps-heading">So geht's – in 4 Schritten</h2>
       <p class="section-sub">Von der ersten Kontaktaufnahme bis zur fertigen Versorgung begleiten wir Sie vollständig – persönlich, kompetent und ohne Umwege.</p>
     </div>
 
     <!-- Step 1 -->
-    <div class="step-card-full reveal">
+    <div class="step-card-full reveal-left">
       <div class="step-visual" style="padding:0">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132500_61336418-b910-4de5-a30d-b7906e41bc72.png"
              alt="Skoliose-Diagramm: Wirbelsäulenanalyse gesund vs. fehlbelastet"
@@ -1570,7 +1639,7 @@
     </div>
 
     <!-- Step 2 -->
-    <div class="step-card-full reveal">
+    <div class="step-card-full reveal-right">
       <div class="step-visual" style="padding:0">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132458_878164aa-dcdc-4147-8dcb-79ea64d5a832.png"
              alt="Elektrische Höhenverstellungs-Mechanik – Präzisionsmotor für individuelle Anpassung"
@@ -1602,7 +1671,7 @@
     </div>
 
     <!-- Step 3 -->
-    <div class="step-card-full reveal">
+    <div class="step-card-full reveal-left">
       <div class="step-visual">
         <div class="step-visual-inner">
           <div class="step-icon-lg"><i data-lucide="file-check" aria-hidden="true"></i></div>
@@ -1635,7 +1704,7 @@
     </div>
 
     <!-- Step 4 -->
-    <div class="step-card-full reveal">
+    <div class="step-card-full reveal-right">
       <div class="step-visual">
         <div class="step-visual-inner">
           <div class="step-icon-lg"><i data-lucide="circle-check-big" aria-hidden="true"></i></div>
@@ -1668,7 +1737,7 @@
     </div>
 
     <!-- Mini summary bar -->
-    <div class="steps-mini reveal">
+    <div class="steps-mini reveal-fade">
       <div class="steps-mini-item">
         <strong>Analyse</strong><span>POSE-Assessment</span>
       </div>
@@ -1689,7 +1758,7 @@
 <section id="about" aria-labelledby="about-heading">
   <div class="inner">
     <div class="about-grid">
-      <div class="reveal">
+      <div class="reveal-left">
         <span class="eyebrow-label">Über uns</span>
         <h2 class="section-h2" id="about-heading">Ihr Partner für mehr Lebensqualität</h2>
         <p class="section-sub">
@@ -1728,7 +1797,7 @@
           </li>
         </ul>
       </div>
-      <div class="stat-grid reveal">
+      <div class="stat-grid reveal-scale">
         <div class="stat-box">
           <strong>25+</strong>
           <span>Jahre Erfahrung</span>
@@ -1753,13 +1822,13 @@
 <!-- ═══════════════════  ANWENDER  ═══════════════════ -->
 <section id="anwender" aria-labelledby="anwender-heading">
   <div class="inner">
-    <div class="center reveal">
+    <div class="center reveal-fade">
       <span class="eyebrow-label">Mehr Lebensqualität</span>
       <h2 class="section-h2" id="anwender-heading">Unsere Lösungen im Alltag</h2>
       <p class="section-sub">Menschen, die dank individueller Sitzlösungen ihren Alltag wieder selbstbestimmt und aktiv gestalten.</p>
     </div>
     <div class="anwender-grid">
-      <div class="anwender-card reveal">
+      <div class="anwender-card reveal-scale">
         <img src="https://ergo-plus-seating.de/wp-content/uploads/slider24/iStock-985118730.jpeg"
              alt="Frau im Rollstuhl arbeitet am Schreibtisch mit Laptop" loading="lazy" />
         <div class="anwender-overlay">
@@ -1767,7 +1836,7 @@
           <span>Homeoffice mit individueller Sitzlösung</span>
         </div>
       </div>
-      <div class="anwender-card reveal">
+      <div class="anwender-card reveal-scale">
         <img src="https://ergo-plus-seating.de/wp-content/uploads/slider24/iStock-1203933819.jpeg"
              alt="Beratungsgespräch im Büro mit Rollstuhlnutzerin" loading="lazy" />
         <div class="anwender-overlay">
@@ -1775,7 +1844,7 @@
           <span>Professionelle Meetings auf Augenhöhe</span>
         </div>
       </div>
-      <div class="anwender-card reveal">
+      <div class="anwender-card reveal-scale">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_130752_d9a634bf-f965-4da5-9aec-f0f9c347358e.png"
              alt="Kollegin übergibt Dokumente an Rollstuhlnutzerin im Büro" loading="lazy" />
         <div class="anwender-overlay">
@@ -1783,7 +1852,7 @@
           <span>Inklusion am Arbeitsplatz</span>
         </div>
       </div>
-      <div class="anwender-card reveal">
+      <div class="anwender-card reveal-scale">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_130750_42931348-ac71-483c-a62a-642bb19d7496.png"
              alt="Frau im Rollstuhl telefoniert und arbeitet am Laptop" loading="lazy" />
         <div class="anwender-overlay">
@@ -1793,7 +1862,7 @@
       </div>
     </div>
 
-    <div class="anwender-quote reveal">
+    <div class="anwender-quote reveal-fade">
       <div class="anwender-quote-icon">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4v10H0z"/></svg>
       </div>
@@ -1810,14 +1879,14 @@
 <!-- ═══════════════════  TEAM  ═══════════════════ -->
 <section id="team" aria-labelledby="team-heading">
   <div class="inner">
-    <div class="center reveal">
+    <div class="center reveal-fade">
       <span class="eyebrow-label">Unser Team</span>
       <h2 class="section-h2" id="team-heading">Menschen, die wirklich helfen</h2>
       <p class="section-sub">Hinter ERGO-PLUS stehen erfahrene Therapeuten, Berater und Spezialisten – vereint durch die Leidenschaft, Lebensqualität zu verbessern.</p>
     </div>
     <div class="team-grid">
 
-      <div class="team-card reveal">
+      <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_36NgljaVLmqJvglPsGpnneZZyNh/hf_20260527_214509_6dc19116-34bf-415b-a1e6-f95161938a2b.png"
                alt="Joachim Stolz – Geschäftsführer ERGO-PLUS" loading="lazy" />
@@ -1834,7 +1903,7 @@
         </div>
       </div>
 
-      <div class="team-card reveal">
+      <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_36NgljaVLmqJvglPsGpnneZZyNh/hf_20260527_214300_a8653587-7362-4a6a-a7f9-5d96c5ba82e1.png"
                alt="Philipp Klein – Technik ERGO-PLUS" loading="lazy" />
@@ -1851,7 +1920,7 @@
         </div>
       </div>
 
-      <div class="team-card reveal">
+      <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_36NgljaVLmqJvglPsGpnneZZyNh/hf_20260527_214513_775217c8-c6b2-450f-8628-a25f67cb6056.png"
                alt="Reinhard Reuhl – Finanzen ERGO-PLUS" loading="lazy" />
@@ -1876,11 +1945,11 @@
 <section id="blog" aria-labelledby="blog-heading">
   <div class="inner">
     <div class="blog-head">
-      <div class="reveal">
+      <div class="reveal-left">
         <span class="eyebrow-label">Aktuelles & Wissen</span>
         <h2 class="section-h2" id="blog-heading">News & Ratgeber</h2>
       </div>
-      <a href="#blog" class="btn-outline reveal" style="white-space:nowrap">
+      <a href="#blog" class="btn-outline reveal-right" style="white-space:nowrap">
         Alle Beiträge
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -1954,57 +2023,57 @@
 <!-- ═══════════════════  CONDITIONS  ═══════════════════ -->
 <section id="conditions" aria-labelledby="cond-heading">
   <div class="inner">
-    <div class="center reveal">
+    <div class="center reveal-fade">
       <span class="eyebrow-label">Anwendungsbereiche</span>
       <h2 class="section-h2" id="cond-heading">Für wen sind unsere Lösungen?</h2>
       <p class="section-sub">Wir helfen bei einer Vielzahl von Erkrankungen und Beeinträchtigungen – mit der richtigen Sitzlösung für jeden Bedarf.</p>
     </div>
     <div class="conditions-grid">
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="brain" aria-hidden="true"></i></div>
         <span>Multiple Sklerose (MS)</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="activity" aria-hidden="true"></i></div>
         <span>ALS (Amyotrophe Lateralsklerose)</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="trending-down" aria-hidden="true"></i></div>
         <span>Muskelschwund & Muskeldystrophie</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="spline" aria-hidden="true"></i></div>
         <span>Skoliose & Wirbelsäulenerkrankungen</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="disc-3" aria-hidden="true"></i></div>
         <span>Bandscheibenvorfall & HWS-Syndrom</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="move-vertical" aria-hidden="true"></i></div>
         <span>Kleinwuchs</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="weight" aria-hidden="true"></i></div>
         <span>Schwergewicht (bis 250 kg)</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="accessibility" aria-hidden="true"></i></div>
         <span>Amputationen & Prothesenträger</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="lock" aria-hidden="true"></i></div>
         <span>Arthrodese (versteiftes Gelenk)</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="heart-pulse" aria-hidden="true"></i></div>
         <span>Chronische Schmerzerkrankungen</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="stethoscope" aria-hidden="true"></i></div>
         <span>Post-operative Versorgung</span>
       </div>
-      <div class="cond-card reveal">
+      <div class="cond-card reveal-scale">
         <div class="cond-icon"><i data-lucide="hand" aria-hidden="true"></i></div>
         <span>Muskelschwäche & Lähmungen</span>
       </div>
@@ -2015,14 +2084,14 @@
 <!-- ═══════════════════  CONTACT  ═══════════════════ -->
 <section id="contact" aria-labelledby="contact-heading">
   <div class="inner">
-    <div class="center reveal">
+    <div class="center reveal-fade">
       <span class="eyebrow-label">Kontakt</span>
       <h2 class="section-h2" id="contact-heading">Sprechen Sie mit uns</h2>
       <p class="section-sub">Wir beraten Sie kostenlos und unverbindlich. Schildern Sie uns Ihre Situation – gemeinsam finden wir die passende Lösung.</p>
     </div>
     <div class="contact-grid">
 
-      <div class="reveal">
+      <div class="reveal-left">
         <h3 class="contact-info-h3" style="font-family:'Figtree',sans-serif;font-size:20px;font-weight:700;color:var(--c-text);margin-bottom:24px">So erreichen Sie uns</h3>
         <div class="contact-row">
           <div class="ci-icon">
@@ -2062,7 +2131,7 @@
         </div>
       </div>
 
-      <div class="contact-form reveal">
+      <div class="contact-form reveal-right">
         <h3>Beratungsanfrage senden</h3>
         <form onsubmit="return false" novalidate>
           <div class="form-row">
@@ -2176,18 +2245,61 @@
     nav.classList.toggle('scrolled', scrollY > 20);
   }, { passive: true });
 
-  // Scroll reveal with stagger
-  const reveals = document.querySelectorAll('.reveal');
+  // Scroll reveal with stagger — supports .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade
+  const revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade';
+  const allReveals = document.querySelectorAll(revealSelectors);
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const siblings = [...(entry.target.parentElement?.querySelectorAll('.reveal') ?? [])];
+      const parent = entry.target.parentElement;
+      const siblings = [...(parent?.querySelectorAll(revealSelectors) ?? [])];
       const idx = siblings.indexOf(entry.target);
-      setTimeout(() => entry.target.classList.add('in'), idx * 90);
+      setTimeout(() => entry.target.classList.add('in'), idx * 100);
       revealObs.unobserve(entry.target);
     });
-  }, { threshold: 0.10 });
-  reveals.forEach(el => revealObs.observe(el));
+  }, { threshold: 0.08 });
+  allReveals.forEach(el => revealObs.observe(el));
+
+  // Counter animation — animates numbers when stat boxes enter viewport
+  function animateCounter(el) {
+    const text = el.textContent.trim();
+    const match = text.match(/^(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1], 10);
+    const suffix = text.replace(/^\d+/, '');
+    const duration = 1600;
+    const start = performance.now();
+    el.style.animation = 'countPop .5s var(--ease) forwards';
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statEls = document.querySelectorAll('.stat-box strong');
+  if (statEls.length) {
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target);
+        statObs.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+    statEls.forEach(el => statObs.observe(el));
+  }
+
+  // Subtle parallax on hero blobs on scroll
+  const blobs = document.querySelectorAll('.hero-blob');
+  if (blobs.length) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > window.innerHeight) return;
+      blobs[0].style.transform = `translate(0, ${y * 0.08}px) scale(${1 + y * 0.00008})`;
+      if (blobs[1]) blobs[1].style.transform = `translate(0, ${y * -0.05}px) scale(${1 + y * 0.00005})`;
+    }, { passive: true });
+  }
 
   // Mobile nav burger
   const burger = document.getElementById('burger');
