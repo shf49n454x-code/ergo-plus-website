@@ -108,6 +108,43 @@
       --dur: 200ms;
     }
 
+    /* ── Unified photo style: premium tint + desaturation ── */
+    .product-img img,
+    .tech-card-img img,
+    .tech-hero img,
+    .anwender-card img,
+    .step-visual > img {
+      filter: saturate(.85) contrast(1.04) brightness(1.02);
+      transition: transform .45s var(--ease), filter .45s var(--ease);
+    }
+    .product-card:hover .product-img img,
+    .tech-card:hover .tech-card-img img,
+    .anwender-card:hover img,
+    .step-visual:hover > img {
+      filter: saturate(1) contrast(1.02) brightness(1);
+    }
+
+    /* Subtle brand-tint overlay on all image containers */
+    .product-img::after,
+    .tech-card-img::after,
+    .anwender-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26,82,118,.06) 0%, rgba(20,143,119,.04) 100%);
+      pointer-events: none;
+      transition: opacity .4s var(--ease);
+      z-index: 1;
+    }
+    .product-card:hover .product-img::after,
+    .tech-card:hover .tech-card-img::after,
+    .anwender-card:hover::after {
+      opacity: 0;
+    }
+
+    /* Ensure position:relative on containers that need ::after */
+    .product-img,
+    .tech-card-img { position: relative; }
+
     html { scroll-behavior: smooth; }
 
     body {
