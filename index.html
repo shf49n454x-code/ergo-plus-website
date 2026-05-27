@@ -1361,6 +1361,61 @@
       .steps-mini-item { flex: 1 1 100%; }
       .blog-head       { flex-direction: column; align-items: flex-start; }
     }
+
+    /* ── Cookie Banner ─────────────────────────────── */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: var(--c-text); color: rgba(255,255,255,.88);
+      padding: 20px clamp(20px,5%,80px);
+      box-shadow: 0 -4px 24px rgba(0,0,0,.18);
+      transform: translateY(100%);
+      transition: transform .45s var(--ease);
+      font-size: 14px; line-height: 1.6;
+    }
+    .cookie-banner.visible { transform: translateY(0); }
+    .cookie-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; gap: 24px;
+      flex-wrap: wrap;
+    }
+    .cookie-text { flex: 1; min-width: 280px; }
+    .cookie-text a { color: rgba(255,255,255,.7); text-decoration: underline; }
+    .cookie-text a:hover { color: white; }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+    .cookie-btn {
+      padding: 10px 22px; border-radius: 50px; font-size: 13px;
+      font-weight: 600; cursor: pointer; border: none;
+      transition: background .2s var(--ease), color .2s var(--ease);
+    }
+    .cookie-btn-accept { background: var(--c-cta); color: white; }
+    .cookie-btn-accept:hover { background: #117a65; }
+    .cookie-btn-essential {
+      background: transparent; color: rgba(255,255,255,.7);
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    .cookie-btn-essential:hover { background: rgba(255,255,255,.08); color: white; }
+    @media (max-width: 600px) {
+      .cookie-inner { flex-direction: column; text-align: center; }
+      .cookie-btns { width: 100%; justify-content: center; }
+    }
+
+    /* ── Form Success State ────────────────────────── */
+    .form-success {
+      display: none; text-align: center; padding: 48px 24px;
+    }
+    .form-success.show { display: block; }
+    .form-success-icon {
+      width: 64px; height: 64px; margin: 0 auto 16px;
+      background: var(--c-cta-lt); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--c-cta);
+    }
+    .form-success h3 {
+      font-family: 'Figtree', sans-serif;
+      font-size: 22px; font-weight: 700; color: var(--c-text);
+      margin-bottom: 8px;
+    }
+    .form-success p { color: var(--c-text-soft); font-size: 15px; }
   </style>
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
 </head>
@@ -2201,15 +2256,15 @@
 
       <div class="contact-form reveal-right">
         <h3>Beratungsanfrage senden</h3>
-        <form onsubmit="return false" novalidate>
+        <form id="contact-form" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label for="f-first">Vorname</label>
-              <input type="text" id="f-first" name="first" placeholder="Max" autocomplete="given-name" />
+              <label for="f-first">Vorname <span style="color:#e74c3c">*</span></label>
+              <input type="text" id="f-first" name="first" placeholder="Max" autocomplete="given-name" required />
             </div>
             <div class="form-group">
-              <label for="f-last">Nachname</label>
-              <input type="text" id="f-last" name="last" placeholder="Mustermann" autocomplete="family-name" />
+              <label for="f-last">Nachname <span style="color:#e74c3c">*</span></label>
+              <input type="text" id="f-last" name="last" placeholder="Mustermann" autocomplete="family-name" required />
             </div>
           </div>
           <div class="form-row">
@@ -2218,8 +2273,8 @@
               <input type="tel" id="f-phone" name="phone" placeholder="+49 …" autocomplete="tel" />
             </div>
             <div class="form-group">
-              <label for="f-email">E-Mail</label>
-              <input type="email" id="f-email" name="email" placeholder="max@beispiel.de" autocomplete="email" />
+              <label for="f-email">E-Mail <span style="color:#e74c3c">*</span></label>
+              <input type="email" id="f-email" name="email" placeholder="max@beispiel.de" autocomplete="email" required />
             </div>
           </div>
           <div class="form-group">
@@ -2239,11 +2294,21 @@
             <label for="f-msg">Ihre Nachricht</label>
             <textarea id="f-msg" name="message" placeholder="Schildern Sie kurz Ihre Situation …"></textarea>
           </div>
-          <button type="submit" class="btn-submit">
+          <div class="form-group" style="font-size:12px;color:var(--c-text-soft)">
+            Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer <a href="/datenschutz.html">Datenschutzerklärung</a> zu.
+          </div>
+          <button type="submit" class="btn-submit" id="btn-submit">
             Anfrage absenden
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </form>
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h3>Vielen Dank!</h3>
+          <p>Ihre Anfrage ist bei uns eingegangen. Wir melden uns in der Regel innerhalb von 1–2 Werktagen bei Ihnen.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -2285,7 +2350,7 @@
           <li><a href="/impressum.html">Impressum</a></li>
           <li><a href="/datenschutz.html">Datenschutz</a></li>
           <li><a href="#">Widerrufsbelehrung</a></li>
-          <li><a href="#">Cookie-Einstellungen</a></li>
+          <li><a href="#" id="cookie-settings-link">Cookie-Einstellungen</a></li>
         </ul>
       </div>
     </div>
@@ -2305,6 +2370,19 @@
     </div>
   </div>
 </footer>
+
+<!-- ═══════════════════  COOKIE BANNER  ═══════════════════ -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      Wir verwenden nur technisch notwendige Cookies, um diese Website bereitzustellen. Weitere Informationen finden Sie in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.
+    </div>
+    <div class="cookie-btns">
+      <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Verstanden</button>
+      <button class="cookie-btn cookie-btn-essential" id="cookie-essential">Nur essenzielle</button>
+    </div>
+  </div>
+</div>
 
 <script>
   // Navbar scroll shadow
@@ -2396,6 +2474,69 @@
     });
   });
 
+
+  // ── Cookie Banner ──────────────────────────────
+  (function() {
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    if (!localStorage.getItem('ep-cookies')) {
+      setTimeout(() => banner.classList.add('visible'), 800);
+    }
+    function closeBanner(val) {
+      localStorage.setItem('ep-cookies', val);
+      banner.classList.remove('visible');
+    }
+    document.getElementById('cookie-accept')?.addEventListener('click', () => closeBanner('all'));
+    document.getElementById('cookie-essential')?.addEventListener('click', () => closeBanner('essential'));
+    document.getElementById('cookie-settings-link')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('ep-cookies');
+      banner.classList.add('visible');
+      banner.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    });
+  })();
+
+  // ── Contact Form Handler ──────────────────────
+  (function() {
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    const btn = document.getElementById('btn-submit');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Basic validation
+      const first = form.querySelector('#f-first');
+      const last = form.querySelector('#f-last');
+      const email = form.querySelector('#f-email');
+      let valid = true;
+      [first, last, email].forEach(el => {
+        if (!el.value.trim()) { el.style.borderColor = '#e74c3c'; valid = false; }
+        else { el.style.borderColor = ''; }
+      });
+      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.style.borderColor = '#e74c3c'; valid = false;
+      }
+      if (!valid) return;
+
+      // Build mailto
+      const data = new FormData(form);
+      const subject = encodeURIComponent('Beratungsanfrage über ergo-plus.de');
+      const body = encodeURIComponent(
+        'Vorname: ' + (data.get('first') || '') + '\n' +
+        'Nachname: ' + (data.get('last') || '') + '\n' +
+        'Telefon: ' + (data.get('phone') || '') + '\n' +
+        'E-Mail: ' + (data.get('email') || '') + '\n' +
+        'Produkt: ' + (data.get('product') || '') + '\n\n' +
+        'Nachricht:\n' + (data.get('message') || '')
+      );
+      window.location.href = 'mailto:info@ergo-plus.de?subject=' + subject + '&body=' + body;
+
+      // Show success state
+      form.style.display = 'none';
+      success.classList.add('show');
+    });
+  })();
 
   /* Lucide icons init */
   if (typeof lucide !== 'undefined') lucide.createIcons();
