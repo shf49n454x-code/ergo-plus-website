@@ -1096,10 +1096,12 @@
     .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
 
     .blog-img {
-      height: 180px; overflow: hidden; position: relative;
+      height: 200px; overflow: hidden; position: relative;
+      background: linear-gradient(135deg, #e8f0f8, #e4f3ee);
     }
     .blog-img img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: 100%; object-fit: contain;
+      padding: 16px;
       transition: transform .4s var(--ease);
     }
     .blog-card:hover .blog-img img { transform: scale(1.04); }
@@ -1457,11 +1459,6 @@
     }
     .form-success p { color: var(--c-text-soft); font-size: 15px; }
 
-    /* Ladezeit: off-screen sections erst bei Annäherung rendern */
-    #tech, #products, #steps, #anwender, #team, #blog, #contact {
-      content-visibility: auto;
-      contain-intrinsic-size: auto 800px;
-    }
   </style>
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
 </head>
@@ -1841,11 +1838,10 @@
 
     <!-- Step 3 -->
     <div class="step-card-full reveal-left">
-      <div class="step-visual">
-        <div class="step-visual-inner">
-          <div class="step-icon-lg"><i data-lucide="file-check" aria-hidden="true"></i></div>
-          <p style="font-size:14px;color:var(--c-primary-dk);font-weight:600;text-align:center;margin-top:8px">Kostenübernahme</p>
-        </div>
+      <div class="step-visual" style="padding:0">
+        <img src="https://ergo-plus-seating.de/wp-content/uploads/slider24/iStock-1203933819.jpeg"
+             alt="Beratungsgespräch zur Kostenübernahme – Fachberaterin erklärt Optionen"
+             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" />
         <span class="step-visual-num" aria-hidden="true">03</span>
       </div>
       <div class="step-content">
@@ -1874,11 +1870,10 @@
 
     <!-- Step 4 -->
     <div class="step-card-full reveal-right">
-      <div class="step-visual">
-        <div class="step-visual-inner">
-          <div class="step-icon-lg"><i data-lucide="circle-check-big" aria-hidden="true"></i></div>
-          <p style="font-size:14px;color:var(--c-primary-dk);font-weight:600;text-align:center;margin-top:8px">Übergabe & Support</p>
-        </div>
+      <div class="step-visual" style="padding:0">
+        <img src="https://ergo-plus-seating.de/wp-content/uploads/slider24/iStock-985118730.jpeg"
+             alt="Anwenderin arbeitet selbstständig am Schreibtisch – nach persönlicher Übergabe und Einweisung"
+             style="width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" />
         <span class="step-visual-num" aria-hidden="true">04</span>
       </div>
       <div class="step-content">
@@ -2127,7 +2122,8 @@
 
       <article class="blog-card reveal" tabindex="0">
         <div class="blog-img">
-          <div class="blog-img-placeholder p1"><i data-lucide="armchair" aria-hidden="true" style="width:48px;height:48px"></i></div>
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111434_d30f0e5c-1221-4f54-8ff8-b04c3f2aab58.png"
+               alt="MFS-Stuhlsystem – modularer Rehabilitationsstuhl" loading="lazy" decoding="async" />
           <span class="blog-cat">Speziallösung</span>
         </div>
         <div class="blog-body">
@@ -2147,7 +2143,8 @@
 
       <article class="blog-card reveal" tabindex="0">
         <div class="blog-img">
-          <div class="blog-img-placeholder p2"><i data-lucide="user" aria-hidden="true" style="width:48px;height:48px"></i></div>
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111353_398236ee-3d1f-464a-9168-d2d5ef8b2c6a.png"
+               alt="ELIFT 400 Aufstehstuhl – ergonomische Sitzlösung bei Kleinwuchs" loading="lazy" decoding="async" />
           <span class="blog-cat green">Diagnose</span>
         </div>
         <div class="blog-body">
@@ -2167,7 +2164,8 @@
 
       <article class="blog-card reveal" tabindex="0">
         <div class="blog-img">
-          <div class="blog-img-placeholder p3"><i data-lucide="file-text" aria-hidden="true" style="width:48px;height:48px"></i></div>
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_130750_42931348-ac71-483c-a62a-642bb19d7496.png"
+               alt="Frau am Arbeitsplatz – Kostenübernahme durch Krankenkasse oder Integrationsamt" loading="lazy" decoding="async" />
           <span class="blog-cat amber">Kostenübernahme</span>
         </div>
         <div class="blog-body">
