@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <!-- Main blue triangle — shifted right, smaller for text clearance -->
+  <polygon points="152,22 272,162 32,162" fill="#1a5276"/>
+
+  <!-- ── Beraten: left edge, outside, reading bottom→top ── -->
+  <g transform="rotate(-59, 55, 108)">
+    <text x="18" y="112" font-family="'Figtree','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="500" fill="#2c3e50" letter-spacing="3" font-style="italic">Beraten</text>
+  </g>
+
+  <!-- Small arrow chevron top (Beraten → Gestalten) -->
+  <path d="M 144,12 L 152,4 L 160,12" fill="none" stroke="#2c3e50" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- ── Gestalten: right edge, outside, reading top→bottom ── -->
+  <g transform="rotate(59, 250, 100)">
+    <text x="218" y="96" font-family="'Figtree','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="500" fill="#2c3e50" letter-spacing="2.5" font-style="italic">Gestalten</text>
+  </g>
+
+  <!-- Small arrow chevron bottom-right (Gestalten → Behandeln) -->
+  <path d="M 278,158 L 284,168 L 274,168" fill="none" stroke="#2c3e50" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- ── Behandeln: below bottom edge ── -->
+  <text x="82" y="184" font-family="'Figtree','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="500" fill="#2c3e50" letter-spacing="3" font-style="italic">Behandeln</text>
+
+  <!-- Small arrow chevron bottom-left (Behandeln → Beraten) -->
+  <path d="M 26,158 L 20,168 L 30,168" fill="none" stroke="#2c3e50" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- ── ERGO plus ── -->
+  <text x="32" y="230" font-family="'Figtree','Helvetica Neue',Arial,sans-serif" font-size="46" font-weight="800" fill="#1a2a3a" letter-spacing="-0.5">ERGO</text>
+  <text x="172" y="230" font-family="'Figtree','Helvetica Neue',Arial,sans-serif" font-size="46" font-weight="300" fill="#1a5276" letter-spacing="-0.5" font-style="italic">plus</text>
+</svg>
