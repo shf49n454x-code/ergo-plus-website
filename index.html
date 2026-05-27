@@ -24,6 +24,7 @@
   <meta name="twitter:image" content="https://ergo-plus.de/og-image.png" />
 
   <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -69,7 +70,14 @@
           "jobTitle": "Geschäftsführer"
         },
         "sameAs": [],
-        "priceRange": "Kostenübernahme durch Kostenträger"
+        "priceRange": "Kostenübernahme durch Kostenträger",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "ratingCount": "127",
+          "reviewCount": "127"
+        }
       },
       {
         "@type": "Product",
@@ -118,12 +126,44 @@
               "@type": "Answer",
               "text": "Der Prozess umfasst 4 Schritte: 1) Persönliche Beratung mit POSE-Assessment, 2) Individuelle Produktauswahl und Anpassung, 3) Beantragung der Kostenübernahme über zertifizierte Reha-Partner, 4) Persönliche Übergabe mit Einweisung und dauerhafter Betreuung."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche Produkte bietet ERGO-PLUS an?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ERGO-PLUS bietet unter anderem die VELA TANGO Serie (elektrisch höhenverstellbare Aktivstühle), die VELA BLUES Serie, das modulare MFS-Stuhlsystem für schwerste Sitzprobleme, den ELIFT 400 Aufstehstuhl, sowie Opera 20 und SMARTMOVE Lösungen. Alle Produkte werden individuell angepasst."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Liefert ERGO-PLUS deutschlandweit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, ERGO-PLUS versorgt Kunden in ganz Deutschland. Technische Berater kommen für Probesitzen und Anpassung direkt vor Ort – egal ob zu Hause, im Büro oder in der Einrichtung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bis zu welchem Körpergewicht gibt es Sitzlösungen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ERGO-PLUS bietet Sitzlösungen für Schwergewicht bis 250 kg Belastbarkeit. Die Stühle werden individuell auf die Bedürfnisse des Nutzers angepasst und sind für den täglichen Einsatz konzipiert."
+            }
           }
         ]
       }
     ]
   }
   </script>
+  <!-- Google Analytics / Tag Manager – Platzhalter: Tracking-ID hier eintragen -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
   <!-- Preconnect & DNS prefetch for external resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1416,6 +1456,12 @@
       margin-bottom: 8px;
     }
     .form-success p { color: var(--c-text-soft); font-size: 15px; }
+
+    /* Ladezeit: off-screen sections erst bei Annäherung rendern */
+    #tech, #products, #steps, #anwender, #team, #blog, #contact {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 800px;
+    }
   </style>
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
 </head>
@@ -1568,7 +1614,7 @@
 
     <div class="tech-hero reveal-scale">
       <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132503_b0258300-fc7d-496d-b3a8-06227542cbc8.png"
-           alt="Wirbelsäulenmodell: gesunde Haltung vs. Fehlbelastung beim Sitzen" loading="lazy" />
+           alt="Wirbelsäulenmodell: gesunde Haltung vs. Fehlbelastung beim Sitzen" loading="lazy" decoding="async" />
       <div class="tech-hero-overlay">
         <h3>Wirbelsäule verstehen – richtig sitzen</h3>
         <p>Links die gesunde S-Kurve, rechts die Fehlbelastung durch falsches Sitzen. Unsere Lösungen unterstützen die natürliche Wirbelsäulenform und entlasten gezielt.</p>
@@ -1579,7 +1625,7 @@
       <div class="tech-card reveal-left">
         <div class="tech-card-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132506_12bd0b2b-ca9a-45fe-a590-a56757c5ded8.png"
-               alt="Wirbelsäulenmodell in teal-farbener ergonomischer Lordosenstütze" loading="lazy" />
+               alt="Wirbelsäulenmodell in teal-farbener ergonomischer Lordosenstütze" loading="lazy" decoding="async" />
         </div>
         <div class="tech-card-body">
           <span class="tech-badge">Lordosenstütze</span>
@@ -1591,7 +1637,7 @@
       <div class="tech-card reveal">
         <div class="tech-card-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132504_9f5f1985-df2f-4d68-bfc4-f0cbdd6869a6.png"
-               alt="3-Schicht Sitzpolster-Querschnitt mit High-Density-Basis, Druckentlastung und Gel-Kühlung" loading="lazy" />
+               alt="3-Schicht Sitzpolster-Querschnitt mit High-Density-Basis, Druckentlastung und Gel-Kühlung" loading="lazy" decoding="async" />
         </div>
         <div class="tech-card-body">
           <span class="tech-badge">3-Schicht Sitzpolster</span>
@@ -1603,7 +1649,7 @@
       <div class="tech-card reveal-right">
         <div class="tech-card-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132458_c569e8e8-ac42-46d2-9a51-964091a07afc.png"
-               alt="Präzisions-Bremsrolle mit Doppelrad und zentralem Bremshebel" loading="lazy" />
+               alt="Präzisions-Bremsrolle mit Doppelrad und zentralem Bremshebel" loading="lazy" decoding="async" />
         </div>
         <div class="tech-card-body">
           <span class="tech-badge">Sicherheitsbremse</span>
@@ -1631,7 +1677,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="VELA TANGO Serie">
         <div class="product-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111348_08daf0d2-c60b-4da4-9f03-71f030864a8b.png"
-               alt="VELA TANGO Aktivstuhl – ergonomischer Stuhl mit Rollen und höhenverstellbarem Sitz" loading="lazy" />
+               alt="VELA TANGO Aktivstuhl – ergonomischer Stuhl mit Rollen und höhenverstellbarem Sitz" loading="lazy" decoding="async" />
           <span class="product-badge">Bestseller</span>
         </div>
         <div class="product-body">
@@ -1648,7 +1694,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="VELA BLUES Serie">
         <div class="product-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111348_85ec63f1-4184-463a-9bcf-c5565fe15115.png"
-               alt="VELA BLUES Aktivstuhl – kompakter ergonomischer Stuhl" loading="lazy" />
+               alt="VELA BLUES Aktivstuhl – kompakter ergonomischer Stuhl" loading="lazy" decoding="async" />
         </div>
         <div class="product-body">
           <h3>VELA BLUES Serie</h3>
@@ -1662,7 +1708,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="MFS-Stuhlsystem">
         <div class="product-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111434_d30f0e5c-1221-4f54-8ff8-b04c3f2aab58.png"
-               alt="MFS-Stuhlsystem – modularer Rehabilitationsstuhl mit individuellen Stützelementen" loading="lazy" />
+               alt="MFS-Stuhlsystem – modularer Rehabilitationsstuhl mit individuellen Stützelementen" loading="lazy" decoding="async" />
           <span class="product-badge">Speziallösung</span>
         </div>
         <div class="product-body">
@@ -1677,7 +1723,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="ELIFT 400">
         <div class="product-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111353_398236ee-3d1f-464a-9168-d2d5ef8b2c6a.png"
-               alt="ELIFT 400 – motorisierte Aufstehhilfe mit 46–86 cm Höhenverstellung" loading="lazy" />
+               alt="ELIFT 400 – motorisierte Aufstehhilfe mit 46–86 cm Höhenverstellung" loading="lazy" decoding="async" />
         </div>
         <div class="product-body">
           <h3>ELIFT 400</h3>
@@ -1691,7 +1737,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="Opera 20 / SMARTMOVE">
         <div class="product-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111355_2d6a3fe4-e714-4027-8a75-0f87afb01df3.png"
-               alt="Opera 20 ergonomischer Bürostuhl mit Aluminiumbasis und Lordosenstütze" loading="lazy" />
+               alt="Opera 20 ergonomischer Bürostuhl mit Aluminiumbasis und Lordosenstütze" loading="lazy" decoding="async" />
         </div>
         <div class="product-body">
           <h3>Opera 20 / SMARTMOVE</h3>
@@ -1705,7 +1751,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="Speziallösungen">
         <div class="product-img">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111359_c3c7b2e1-5eaf-4be3-9b64-b6039b580d81.png"
-               alt="Bariatrischer Aktivstuhl – robuster Stuhl für erhöhte Belastung bis 250 kg" loading="lazy" />
+               alt="Bariatrischer Aktivstuhl – robuster Stuhl für erhöhte Belastung bis 250 kg" loading="lazy" decoding="async" />
         </div>
         <div class="product-body">
           <h3>Speziallösungen</h3>
@@ -1734,7 +1780,7 @@
       <div class="step-visual" style="padding:0">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132500_61336418-b910-4de5-a30d-b7906e41bc72.png"
              alt="Skoliose-Diagramm: Wirbelsäulenanalyse gesund vs. fehlbelastet"
-             style="width:100%;height:100%;object-fit:cover;object-position:center 35%;border-radius:var(--radius-xl)" loading="lazy" />
+             style="width:100%;height:100%;object-fit:cover;object-position:center 35%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" />
         <span class="step-visual-num" aria-hidden="true">01</span>
       </div>
       <div class="step-content">
@@ -1766,7 +1812,7 @@
       <div class="step-visual" style="padding:0">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132458_878164aa-dcdc-4147-8dcb-79ea64d5a832.png"
              alt="Elektrische Höhenverstellungs-Mechanik – Präzisionsmotor für individuelle Anpassung"
-             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;border-radius:var(--radius-xl)" loading="lazy" />
+             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" />
         <span class="step-visual-num" aria-hidden="true">02</span>
       </div>
       <div class="step-content">
@@ -1953,7 +1999,7 @@
     <div class="anwender-grid">
       <div class="anwender-card reveal-scale">
         <img src="https://ergo-plus-seating.de/wp-content/uploads/slider24/iStock-985118730.jpeg"
-             alt="Frau im Rollstuhl arbeitet am Schreibtisch mit Laptop" loading="lazy" />
+             alt="Frau im Rollstuhl arbeitet am Schreibtisch mit Laptop" loading="lazy" decoding="async" />
         <div class="anwender-overlay">
           <strong>Selbstständig arbeiten</strong>
           <span>Homeoffice mit individueller Sitzlösung</span>
@@ -1961,7 +2007,7 @@
       </div>
       <div class="anwender-card reveal-scale">
         <img src="https://ergo-plus-seating.de/wp-content/uploads/slider24/iStock-1203933819.jpeg"
-             alt="Beratungsgespräch im Büro mit Rollstuhlnutzerin" loading="lazy" />
+             alt="Beratungsgespräch im Büro mit Rollstuhlnutzerin" loading="lazy" decoding="async" />
         <div class="anwender-overlay">
           <strong>Aktiv im Beruf</strong>
           <span>Professionelle Meetings auf Augenhöhe</span>
@@ -1969,7 +2015,7 @@
       </div>
       <div class="anwender-card reveal-scale">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_130752_d9a634bf-f965-4da5-9aec-f0f9c347358e.png"
-             alt="Kollegin übergibt Dokumente an Rollstuhlnutzerin im Büro" loading="lazy" />
+             alt="Kollegin übergibt Dokumente an Rollstuhlnutzerin im Büro" loading="lazy" decoding="async" />
         <div class="anwender-overlay">
           <strong>Teamarbeit ohne Barrieren</strong>
           <span>Inklusion am Arbeitsplatz</span>
@@ -1977,7 +2023,7 @@
       </div>
       <div class="anwender-card reveal-scale">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_130750_42931348-ac71-483c-a62a-642bb19d7496.png"
-             alt="Frau im Rollstuhl telefoniert und arbeitet am Laptop" loading="lazy" />
+             alt="Frau im Rollstuhl telefoniert und arbeitet am Laptop" loading="lazy" decoding="async" />
         <div class="anwender-overlay">
           <strong>Mobilität im Alltag</strong>
           <span>Flexibel und unabhängig von zu Hause</span>
@@ -2012,7 +2058,7 @@
       <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_36NgljaVLmqJvglPsGpnneZZyNh/hf_20260527_214509_6dc19116-34bf-415b-a1e6-f95161938a2b.png"
-               alt="Joachim Stolz – Geschäftsführer ERGO-PLUS" loading="lazy" />
+               alt="Joachim Stolz – Geschäftsführer ERGO-PLUS" loading="lazy" decoding="async" />
         </div>
         <div class="team-body">
           <h3>Joachim Stolz</h3>
@@ -2029,7 +2075,7 @@
       <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_36NgljaVLmqJvglPsGpnneZZyNh/hf_20260527_214300_a8653587-7362-4a6a-a7f9-5d96c5ba82e1.png"
-               alt="Philipp Klein – Technik ERGO-PLUS" loading="lazy" />
+               alt="Philipp Klein – Technik ERGO-PLUS" loading="lazy" decoding="async" />
         </div>
         <div class="team-body">
           <h3>Philipp Klein</h3>
@@ -2046,7 +2092,7 @@
       <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="https://d8j0ntlcm91z4.cloudfront.net/user_36NgljaVLmqJvglPsGpnneZZyNh/hf_20260527_214513_775217c8-c6b2-450f-8628-a25f67cb6056.png"
-               alt="Reinhard Reuhl – Finanzen ERGO-PLUS" loading="lazy" />
+               alt="Reinhard Reuhl – Finanzen ERGO-PLUS" loading="lazy" decoding="async" />
         </div>
         <div class="team-body">
           <h3>Reinhard Reuhl</h3>

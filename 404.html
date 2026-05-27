@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seite nicht gefunden – ERGO-PLUS</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1a5276" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;700;800&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --c-primary: #1a5276;
+      --c-primary-dk: #143d5a;
+      --c-teal: #148f77;
+      --c-text: #1a2a3a;
+      --c-text-soft: #5a6a7a;
+      --c-bg: #f5f7fa;
+      --c-border-lt: #e8ecf1;
+      --ease: cubic-bezier(.22,1,.36,1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 16px; line-height: 1.75;
+      color: var(--c-text); background: var(--c-bg);
+      min-height: 100vh; display: flex; flex-direction: column;
+    }
+    a { color: var(--c-primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--c-border-lt);
+      padding: 0 clamp(20px,5%,80px);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo-img { height: 48px; }
+    .btn-nav {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 50px;
+      background: var(--c-primary); color: white;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: background .2s var(--ease);
+    }
+    .btn-nav:hover { background: var(--c-primary-dk); text-decoration: none; }
+
+    .error-page {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      padding: 60px clamp(20px,5%,80px);
+      text-align: center;
+    }
+    .error-content { max-width: 520px; }
+    .error-code {
+      font-family: 'Figtree', sans-serif;
+      font-size: clamp(80px, 15vw, 140px);
+      font-weight: 800; line-height: 1;
+      background: linear-gradient(135deg, var(--c-primary), var(--c-teal));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; color: transparent;
+      margin-bottom: 12px;
+    }
+    .error-title {
+      font-family: 'Figtree', sans-serif;
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 700; color: var(--c-text);
+      margin-bottom: 12px;
+    }
+    .error-text {
+      font-size: 16px; color: var(--c-text-soft);
+      margin-bottom: 32px;
+    }
+    .error-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-home {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 50px;
+      background: var(--c-primary); color: white;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      transition: background .2s var(--ease), transform .2s var(--ease);
+    }
+    .btn-home:hover { background: var(--c-primary-dk); transform: translateY(-1px); text-decoration: none; }
+    .btn-contact {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 50px;
+      background: transparent; color: var(--c-primary);
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      border: 2px solid var(--c-border-lt);
+      transition: border-color .2s var(--ease), transform .2s var(--ease);
+    }
+    .btn-contact:hover { border-color: var(--c-primary); transform: translateY(-1px); text-decoration: none; }
+
+    footer {
+      background: var(--c-text); color: rgba(255,255,255,.55);
+      padding: 40px clamp(20px,5%,80px);
+      text-align: center; font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,.7); }
+    footer a:hover { color: white; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" aria-label="ERGO-PLUS Startseite">
+      <img src="logo-ergoplus.png" alt="ERGO plus" class="logo-img" />
+    </a>
+    <a href="/#contact" class="btn-nav">Beratung anfragen</a>
+  </div>
+</nav>
+
+<main class="error-page">
+  <div class="error-content">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Diese Seite gibt es leider nicht</h1>
+    <p class="error-text">Die angeforderte Seite wurde verschoben oder existiert nicht mehr. Kein Problem – wir helfen Ihnen gerne weiter.</p>
+    <div class="error-actions">
+      <a href="/" class="btn-home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg>
+        Zur Startseite
+      </a>
+      <a href="/#contact" class="btn-contact">Kontakt aufnehmen</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 ERGO-PLUS Seating Concepts GmbH &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a></p>
+</footer>
+
+</body>
+</html>
