@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /details/
+Disallow: /originals/
+Disallow: /team-originals/
+
+Sitemap: https://ergo-plus.de/sitemap.xml
