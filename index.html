@@ -124,8 +124,7 @@
       filter: saturate(1) contrast(1.02) brightness(1);
     }
 
-    /* Subtle brand-tint overlay on all image containers */
-    .product-img::after,
+    /* Subtle brand-tint overlay on lifestyle image containers */
     .tech-card-img::after,
     .anwender-card::after {
       content: '';
@@ -135,14 +134,12 @@
       transition: opacity .4s var(--ease);
       z-index: 1;
     }
-    .product-card:hover .product-img::after,
     .tech-card:hover .tech-card-img::after,
     .anwender-card:hover::after {
       opacity: 0;
     }
 
     /* Ensure position:relative on containers that need ::after */
-    .product-img,
     .tech-card-img { position: relative; }
 
     html { scroll-behavior: smooth; }
@@ -525,14 +522,17 @@
     .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card-hover); }
 
     .product-img {
-      height: 210px; overflow: hidden; position: relative;
+      height: 240px; overflow: hidden; position: relative;
       background: var(--c-bg);
+      display: flex; align-items: center; justify-content: center;
     }
     .product-img img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: 100%; object-fit: contain;
+      object-position: center center;
+      padding: 12px 8px;
       transition: transform .45s var(--ease);
     }
-    .product-card:hover .product-img img { transform: scale(1.05); }
+    .product-card:hover .product-img img { transform: scale(1.06); }
 
     .product-badge {
       position: absolute; top: 12px; left: 12px;
@@ -697,7 +697,7 @@
     .anwender-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
 
     .anwender-card img {
-      width: 100%; height: 260px; object-fit: cover;
+      width: 100%; height: 280px; object-fit: cover; object-position: center 25%;
       display: block;
       transition: transform .5s var(--ease);
     }
@@ -756,7 +756,7 @@
       position: relative;
     }
     .tech-hero img {
-      width: 100%; height: 340px; object-fit: cover; display: block;
+      width: 100%; height: 380px; object-fit: cover; object-position: center 40%; display: block;
     }
     .tech-hero-overlay {
       position: absolute; bottom: 0; left: 0; right: 0;
@@ -786,10 +786,10 @@
     .tech-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
 
     .tech-card-img {
-      height: 200px; overflow: hidden;
+      height: 220px; overflow: hidden;
     }
     .tech-card-img img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
       transition: transform .4s var(--ease);
     }
     .tech-card:hover .tech-card-img img { transform: scale(1.04); }
@@ -925,10 +925,10 @@
     .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
 
     .team-photo {
-      height: 240px; overflow: hidden; position: relative;
+      height: 280px; overflow: hidden; position: relative;
     }
     .team-photo img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
       filter: grayscale(100%);
       transition: transform .4s var(--ease), filter .4s var(--ease);
     }
@@ -1201,8 +1201,11 @@
       .blog-grid       { grid-template-columns: 1fr; }
       .anwender-grid   { grid-template-columns: 1fr; }
       .tech-grid       { grid-template-columns: 1fr; }
-      .tech-hero img   { height: 220px; }
-      .anwender-card img { height: 200px; }
+      .tech-hero img   { height: 240px; }
+      .anwender-card img { height: 220px; }
+      .team-photo      { height: 240px; }
+      .product-img     { height: 200px; }
+      .product-img img { padding: 8px 4px; }
       .anwender-quote  { flex-direction: column; gap: 16px; padding: 24px; }
       .step-card-full  { grid-template-columns: 1fr; gap: 28px; }
       .step-card-full:nth-child(even) { direction: ltr; }
@@ -1535,7 +1538,7 @@
       <div class="step-visual" style="padding:0">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132500_61336418-b910-4de5-a30d-b7906e41bc72.png"
              alt="Skoliose-Diagramm: Wirbelsäulenanalyse gesund vs. fehlbelastet"
-             style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-xl)" loading="lazy" />
+             style="width:100%;height:100%;object-fit:cover;object-position:center 35%;border-radius:var(--radius-xl)" loading="lazy" />
         <span class="step-visual-num" aria-hidden="true">01</span>
       </div>
       <div class="step-content">
@@ -1567,7 +1570,7 @@
       <div class="step-visual" style="padding:0">
         <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_132458_878164aa-dcdc-4147-8dcb-79ea64d5a832.png"
              alt="Elektrische Höhenverstellungs-Mechanik – Präzisionsmotor für individuelle Anpassung"
-             style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-xl)" loading="lazy" />
+             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;border-radius:var(--radius-xl)" loading="lazy" />
         <span class="step-visual-num" aria-hidden="true">02</span>
       </div>
       <div class="step-content">
