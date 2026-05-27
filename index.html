@@ -167,11 +167,12 @@
       text-decoration: none;
       cursor: pointer;
     }
-    .logo-svg {
+    .logo-img {
+      height: 48px; width: auto;
       flex-shrink: 0;
       transition: opacity var(--dur) var(--ease);
     }
-    .logo:hover .logo-svg { opacity: .85; }
+    .logo:hover .logo-img { opacity: .85; }
 
     .nav-links {
       display: flex; align-items: center; gap: 32px;
@@ -870,7 +871,7 @@
     /* ══════════════════════════════════════════════════
        TEAM
     ══════════════════════════════════════════════════ */
-    #team { background: var(--c-bg3); }
+    #team { background: linear-gradient(170deg, #e8f6f3 0%, #d4efdf 40%, #eaf2f8 100%); }
 
     .team-grid {
       display: grid; grid-template-columns: repeat(3,1fr);
@@ -890,9 +891,10 @@
     }
     .team-photo img {
       width: 100%; height: 100%; object-fit: cover;
-      transition: transform .4s var(--ease);
+      filter: grayscale(100%);
+      transition: transform .4s var(--ease), filter .4s var(--ease);
     }
-    .team-card:hover .team-photo img { transform: scale(1.04); }
+    .team-card:hover .team-photo img { transform: scale(1.04); filter: grayscale(40%); }
 
     .team-avatar-placeholder {
       width: 100%; height: 100%;
@@ -1184,26 +1186,7 @@
 <!-- ═══════════════════  NAVBAR  ═══════════════════ -->
 <nav id="nav">
   <a href="#" class="logo" aria-label="ERGO-PLUS Startseite">
-    <svg class="logo-svg" viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="height:42px;width:auto">
-      <!-- Modern triangle mark -->
-      <polygon points="22,4 42,44 2,44" fill="url(#logo-grad)" />
-      <defs>
-        <linearGradient id="logo-grad" x1="22" y1="4" x2="22" y2="44" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#1a5276"/>
-          <stop offset="100%" stop-color="#148f77"/>
-        </linearGradient>
-      </defs>
-      <!-- Subtle inner triangle lines -->
-      <path d="M22 16 L14 36 M22 16 L30 36 M14 36 L30 36" stroke="rgba(255,255,255,.25)" stroke-width=".7" fill="none"/>
-      <!-- Mini text inside triangle -->
-      <text x="22" y="34" text-anchor="middle" fill="white" font-family="'Figtree',sans-serif" font-size="5.5" font-weight="600" letter-spacing=".3">B · G · B</text>
-      <!-- ERGO text -->
-      <text x="54" y="34" fill="var(--c-text, #1a2a3a)" font-family="'Figtree',sans-serif" font-size="26" font-weight="800" letter-spacing="-1">ERGO</text>
-      <!-- plus text -->
-      <text x="135" y="34" fill="var(--c-primary, #1a5276)" font-family="'Figtree',sans-serif" font-size="26" font-weight="300" letter-spacing="-1">plus</text>
-      <!-- Tagline -->
-      <text x="54" y="46" fill="var(--c-text-soft, #5d6d7e)" font-family="'Noto Sans',sans-serif" font-size="7" font-weight="500" letter-spacing="1.8" text-transform="uppercase">BERATEN · GESTALTEN · BEHANDELN</text>
-    </svg>
+    <img src="logo-ergoplus.png" alt="ERGO plus – Beraten · Gestalten · Behandeln" class="logo-img" />
   </a>
 
   <ul class="nav-links" id="nav-links" role="list">
@@ -2143,20 +2126,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo" aria-label="ERGO-PLUS Startseite">
-          <svg class="logo-svg" viewBox="0 0 220 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="height:42px;width:auto">
-            <polygon points="22,4 42,44 2,44" fill="url(#logo-grad-f)" />
-            <defs>
-              <linearGradient id="logo-grad-f" x1="22" y1="4" x2="22" y2="44" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#5dade2"/>
-                <stop offset="100%" stop-color="#48c9b0"/>
-              </linearGradient>
-            </defs>
-            <path d="M22 16 L14 36 M22 16 L30 36 M14 36 L30 36" stroke="rgba(255,255,255,.25)" stroke-width=".7" fill="none"/>
-            <text x="22" y="34" text-anchor="middle" fill="white" font-family="'Figtree',sans-serif" font-size="5.5" font-weight="600" letter-spacing=".3">B · G · B</text>
-            <text x="54" y="34" fill="white" font-family="'Figtree',sans-serif" font-size="26" font-weight="800" letter-spacing="-1">ERGO</text>
-            <text x="135" y="34" fill="#48c9b0" font-family="'Figtree',sans-serif" font-size="26" font-weight="300" letter-spacing="-1">plus</text>
-            <text x="54" y="46" fill="rgba(255,255,255,.5)" font-family="'Noto Sans',sans-serif" font-size="7" font-weight="500" letter-spacing="1.8">BERATEN · GESTALTEN · BEHANDELN</text>
-          </svg>
+          <img src="logo-ergoplus.png" alt="ERGO plus – Beraten · Gestalten · Behandeln" class="logo-img" style="height: 56px; background: white; border-radius: 8px; padding: 5px 8px;" />
         </a>
         <p>ERGO-PLUS Seating Concepts GmbH – Individuelle Sitzlösungen mit über 25 Jahren therapeutischer Erfahrung. Wir lassen Sie nicht nur sitzen.</p>
       </div>
