@@ -293,6 +293,74 @@
       border-radius: 4px;
     }
 
+    /* ══════════════════════════════════════════════════
+       TRUST BAR (from Variant B)
+    ══════════════════════════════════════════════════ */
+    .trust-bar {
+      background: var(--c-primary);
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 101;
+    }
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      padding: 0 24px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      opacity: .92;
+    }
+    .trust-item .check {
+      color: var(--c-teal-lt);
+      font-weight: 700;
+    }
+
+    /* ── Kostenträger mini-bar (from Variant B, inside hero card) ── */
+    .kt-bar {
+      display: flex;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--c-border-lt);
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .kt-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .kt-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--c-bg);
+      border: 1px solid var(--c-border-lt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .kt-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--c-text-soft);
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
     /* ── Subtle section gradients ────────────────────── */
     #hero {
       background: linear-gradient(160deg, #f0f5fa 0%, #e4f3ee 35%, #f0f5fa 70%, #e8f0f8 100%) !important;
@@ -313,7 +381,7 @@
        NAVBAR
     ══════════════════════════════════════════════════ */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed; top: 40px; left: 0; right: 0; z-index: 100;
       height: 72px;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 clamp(24px, 5%, 80px);
@@ -393,7 +461,7 @@
     ══════════════════════════════════════════════════ */
     #hero {
       min-height: 100vh;
-      padding-top: 72px;
+      padding-top: 112px;
       display: flex; align-items: center;
       background: linear-gradient(145deg, #f0f5fa 0%, #e4f3ee 40%, #f0f5fa 100%);
       position: relative; overflow: hidden;
@@ -549,7 +617,7 @@
       border: 1px solid var(--c-border-lt);
     }
     .hero-float-tl { top: -18px; right: -18px; }
-    .hero-float-bl { bottom: -18px; left: -18px; }
+    .hero-float-bl { bottom: -24px; left: -18px; z-index: 2; }
     .float-icon {
       width: 36px; height: 36px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
@@ -1438,6 +1506,9 @@
       .tech-grid       { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 768px) {
+      .trust-bar-inner { gap: 12px; }
+      .trust-item      { font-size: 11px; }
+      nav              { top: 36px; }
       .hero-inner      { grid-template-columns: 1fr; gap: 40px; }
       .hero-visual     { display: none; }
       .about-grid      { grid-template-columns: 1fr; gap: 40px; }
@@ -1464,11 +1535,16 @@
       .steps-mini-item { flex: 1 1 calc(50% - 1px); border-bottom: 1px solid var(--c-border-lt); }
     }
     @media (max-width: 480px) {
+      .trust-bar-inner { flex-direction: column; gap: 4px; }
+      .trust-bar       { padding: 8px 0; }
+      nav              { top: 80px; }
+      #hero            { padding-top: 152px; }
       .hero-stats      { flex-direction: column; gap: 16px; }
       .conditions-grid { grid-template-columns: 1fr; }
       .stat-grid       { grid-template-columns: 1fr 1fr; }
       .steps-mini-item { flex: 1 1 100%; }
       .blog-head       { flex-direction: column; align-items: flex-start; }
+      .kt-bar          { flex-wrap: wrap; gap: 12px; }
     }
 
     /* ── Cookie Banner ─────────────────────────────── */
@@ -1530,6 +1606,16 @@
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
+
+<!-- ═══════════════════  TRUST BAR (from B)  ═══════════════════ -->
+<div class="trust-bar" aria-label="Vertrauensindikatoren">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="check" aria-hidden="true">&#10003;</span> Zertifizierter Hilfsmittellieferant</div>
+    <div class="trust-item"><span class="check" aria-hidden="true">&#10003;</span> Seit 30+ Jahren Spezialist</div>
+    <div class="trust-item"><span class="check" aria-hidden="true">&#10003;</span> Deutschlandweite Versorgung</div>
+    <div class="trust-item"><span class="check" aria-hidden="true">&#10003;</span> Kostenübernahme möglich</div>
+  </div>
+</div>
 
 <!-- ═══════════════════  NAVBAR  ═══════════════════ -->
 <nav id="nav">
@@ -1604,35 +1690,42 @@
         <div class="hero-card-head">
           <div class="hero-card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+              <circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 3"/>
             </svg>
           </div>
-          <h3>Ihre persönliche Sitzlösung</h3>
+          <h3>Ihre Diagnose, unsere Lösung</h3>
         </div>
         <p style="font-size:14px;color:var(--c-text-soft);line-height:1.65">
-          Mit unserem POSE-Assessmenttool analysieren wir Ihren individuellen Bedarf – präzise und einfühlsam. So finden wir gemeinsam die optimale Lösung.
+          Wir versorgen Menschen mit komplexen körperlichen Einschränkungen:
         </p>
         <div class="hero-card-chips">
-          <span class="chip blue">Therapeutisch fundiert</span>
-          <span class="chip green">Kassenfähig</span>
-          <span class="chip">Individuell angepasst</span>
+          <span class="chip blue">Multiple Sklerose</span>
+          <span class="chip green">Skoliose</span>
+          <span class="chip">Kleinwuchs</span>
+          <span class="chip blue">ALS</span>
+          <span class="chip green">Amputation</span>
+          <span class="chip">Schwergewicht</span>
+          <span class="chip blue">Arthrodese</span>
+          <span class="chip green">Querschnittlähmung</span>
+        </div>
+
+        <!-- Kostenträger mini-bar (from Variant B) -->
+        <div class="kt-bar">
+          <div class="kt-item"><div class="kt-icon">&#127973;</div><div class="kt-label">Krankenkasse</div></div>
+          <div class="kt-item"><div class="kt-icon">&#127970;</div><div class="kt-label">DRV</div></div>
+          <div class="kt-item"><div class="kt-icon">&#128188;</div><div class="kt-label">Integrationsamt</div></div>
+          <div class="kt-item"><div class="kt-icon">&#9874;</div><div class="kt-label">BG</div></div>
         </div>
 
         <div class="hero-float hero-float-tl">
           <div class="float-icon teal"><i data-lucide="shield-check"></i></div>
           <div class="float-txt">
-            <strong>Qualitätsgarantie</strong>
-            <span>Hochwertige Materialien</span>
+            <strong>Deutschlandweit</strong>
+            <span>Beratung vor Ort</span>
           </div>
         </div>
 
-        <div class="hero-float hero-float-bl">
-          <div class="float-icon green"><i data-lucide="shield-plus"></i></div>
-          <div class="float-txt">
-            <strong>Krankenkasse</strong>
-            <span>Kostenübernahme beantragen</span>
-          </div>
-        </div>
+        <!-- Bottom-left float removed: KT bar now provides trust signals inline -->
       </div>
     </div>
 
@@ -2554,10 +2647,23 @@
 </div>
 
 <script>
-  // Navbar scroll shadow
+  // Navbar scroll shadow + trust bar hide
   const nav = document.getElementById('nav');
+  const trustBar = document.querySelector('.trust-bar');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', scrollY > 20);
+    const scrolled = scrollY > 20;
+    nav.classList.toggle('scrolled', scrolled);
+    if (trustBar) {
+      if (scrollY > 60) {
+        trustBar.style.transform = 'translateY(-100%)';
+        trustBar.style.transition = 'transform .3s ease';
+        nav.style.top = '0';
+        nav.style.transition = 'top .3s ease, box-shadow .3s var(--ease), border-color .3s var(--ease)';
+      } else {
+        trustBar.style.transform = '';
+        nav.style.top = '';
+      }
+    }
   }, { passive: true });
 
   // Scroll reveal with stagger — supports .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade
@@ -2625,7 +2731,7 @@
     if (!open) {
       navLinks.style.cssText = `
         display: flex; flex-direction: column; position: fixed;
-        top: 72px; left: 0; right: 0;
+        top: 112px; left: 0; right: 0;
         background: white; padding: 24px clamp(24px,5%,80px);
         gap: 18px; box-shadow: var(--shadow-lg); z-index: 99;
         border-top: 1px solid var(--c-border-lt);
