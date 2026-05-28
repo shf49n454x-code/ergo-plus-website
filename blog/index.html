@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Ratgeber – Fachwissen zu Sitzversorgung | ERGO-PLUS</title>
+  <meta name="description" content="Fachartikel zu individueller Sitzversorgung bei Skoliose, Kleinwuchs, MS und mehr. Tipps zu Kostenübernahme und Hilfsmittelversorgung." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ergo-plus.de/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ergo-plus.de/blog/" />
+  <meta property="og:title" content="News &amp; Ratgeber – Fachwissen zu Sitzversorgung | ERGO-PLUS" />
+  <meta property="og:description" content="Fachartikel zu individueller Sitzversorgung bei Skoliose, Kleinwuchs, MS und mehr. Tipps zu Kostenübernahme und Hilfsmittelversorgung." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="ERGO-PLUS Seating Concepts" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <meta name="theme-color" content="#1a5276" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Variables ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-primary: #1a5276;
+      --c-primary-dk: #143d5a;
+      --c-teal: #148f77;
+      --c-text: #1a2a3a;
+      --c-text-soft: #5a6a7a;
+      --c-bg: #ffffff;
+      --c-bg2: #f5f7fa;
+      --c-border-lt: #e8ecf1;
+      --c-amber: #d68910;
+      --font-heading: 'Figtree', sans-serif;
+      --font-body: 'Noto Sans', sans-serif;
+      --max-w: 1200px;
+      --nav-h: 72px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--c-text);
+      background: var(--c-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--c-bg);
+      border-bottom: 1px solid var(--c-border-lt);
+      height: var(--nav-h);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--c-text);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--c-primary);
+    }
+    .nav-links a.active {
+      color: var(--c-primary);
+      font-weight: 600;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--c-primary);
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover {
+      background: var(--c-primary-dk);
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--c-text);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--c-bg2);
+      padding: 56px 24px 48px;
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--c-primary);
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: gap 0.2s;
+    }
+    .back-link:hover {
+      gap: 10px;
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--c-text-soft);
+      max-width: 640px;
+    }
+
+    /* ── Blog Grid ── */
+    .blog-section {
+      padding: 48px 24px 80px;
+    }
+    .blog-grid {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    /* ── Card ── */
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--c-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .card-img {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 16px;
+    }
+    .card-img--blue  { background: linear-gradient(135deg, #e8f0f8, #d5e4f2); }
+    .card-img--teal  { background: linear-gradient(135deg, #e0f5f0, #c8ece3); }
+    .card-img--amber { background: linear-gradient(135deg, #fdf2e0, #f8e4c0); }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
+    .badge--blue  { background: var(--c-primary); }
+    .badge--teal  { background: var(--c-teal); }
+    .badge--amber { background: var(--c-amber); }
+
+    .card-body {
+      padding: 20px 24px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--c-text-soft);
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      color: var(--c-text);
+    }
+    .card-excerpt {
+      font-size: 0.925rem;
+      color: var(--c-text-soft);
+      line-height: 1.55;
+      flex: 1;
+    }
+    .card-read {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--c-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+    .card:hover .card-read {
+      gap: 8px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--c-text);
+      color: rgba(255,255,255,0.7);
+      padding: 32px 24px;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.875rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--c-bg);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--c-border-lt);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero {
+        padding: 40px 16px 36px;
+      }
+      .blog-section {
+        padding: 36px 16px 64px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="../logo-ergoplus.png" alt="ERGO-PLUS Logo" />
+      </a>
+      <button class="nav-toggle" aria-label="Menü öffnen" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/#products">Produkte</a></li>
+        <li><a href="/#steps">So geht's</a></li>
+        <li><a href="/#team">Team</a></li>
+        <li><a href="/blog/" class="active">News</a></li>
+        <li><a href="/#contact">Kontakt</a></li>
+        <li><a href="/#contact" class="nav-cta">Beratung anfragen</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <a href="/" class="back-link">&larr; Zurück zur Startseite</a>
+      <h1>News &amp; Ratgeber</h1>
+      <p>Fachwissen rund um individuelle Sitzversorgung, Diagnosen und Kostenübernahme</p>
+    </div>
+  </section>
+
+  <!-- ── Blog Grid ── -->
+  <section class="blog-section">
+    <div class="blog-grid">
+
+      <!-- Card 1 – MFS-Stuhlsystem -->
+      <a href="mfs-stuhlsystem-skoliose-sitzloesung.html" class="card">
+        <div class="card-img card-img--blue">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111434_d30f0e5c-1221-4f54-8ff8-b04c3f2aab58.png" alt="MFS-Stuhlsystem – modulare Sitzlösung" />
+          <span class="badge badge--blue">Speziallösung</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">15. Mai 2026 &middot; 8 Min. Lesen</div>
+          <h2 class="card-title">MFS-Stuhlsystem: Die modulare Lösung für schwerste Sitzprobleme</h2>
+          <p class="card-excerpt">Wenn Standard-Rollstühle und Bürostühle versagen, beginnt das MFS-Stuhlsystem...</p>
+          <span class="card-read">Weiterlesen &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 2 – Kleinwuchs -->
+      <a href="kleinwuchs-sitzloesung-arbeitsplatz.html" class="card">
+        <div class="card-img card-img--teal">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_111353_398236ee-3d1f-464a-9168-d2d5ef8b2c6a.png" alt="Kleinwuchs und angepasste Sitzlösungen" />
+          <span class="badge badge--teal">Diagnose</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">02. Mai 2026 &middot; 6 Min. Lesen</div>
+          <h2 class="card-title">Kleinwuchs und Sitzen: Warum Standard-Stühle nicht funktionieren</h2>
+          <p class="card-excerpt">Menschen mit Kleinwuchs brauchen Stühle mit angepasster Sitztiefe, Sitzhöhe und Fußstützen...</p>
+          <span class="card-read">Weiterlesen &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 3 – Kostenübernahme -->
+      <a href="kostenubernahme-sitzversorgung-krankenkasse.html" class="card">
+        <div class="card-img card-img--amber">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_345sRtj9JJ8Vh71OXBlRXIosLyO/hf_20260521_130750_42931348-ac71-483c-a62a-642bb19d7496.png" alt="Kostenübernahme für Sitzversorgung" />
+          <span class="badge badge--amber">Kostenübernahme</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">18. April 2026 &middot; 7 Min. Lesen</div>
+          <h2 class="card-title">Kostenübernahme Sitzversorgung: Krankenkasse, DRV, Integrationsamt – wer zahlt?</h2>
+          <p class="card-excerpt">Nicht nur die Krankenkasse übernimmt Kosten für ergonomische Sitzlösungen...</p>
+          <span class="card-read">Weiterlesen &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 ERGO-PLUS Seating Concepts GmbH</span>
+      <div class="footer-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
