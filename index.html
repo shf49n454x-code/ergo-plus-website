@@ -655,14 +655,14 @@
     .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card-hover); }
 
     .product-img {
-      height: 240px; overflow: hidden; position: relative;
+      height: 260px; overflow: hidden; position: relative;
       background: var(--c-primary);
       display: flex; align-items: center; justify-content: center;
     }
     .product-img img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: 100%; object-fit: contain;
       object-position: center center;
-      padding: 0;
+      padding: 12px;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
       transition: transform .45s var(--ease), filter .45s var(--ease);
