@@ -4,4 +4,8 @@ Disallow: /details/
 Disallow: /originals/
 Disallow: /team-originals/
 
+# Allow search engine image crawlers
+User-agent: Googlebot-Image
+Allow: /
+
 Sitemap: https://ergo-plus.de/sitemap.xml
