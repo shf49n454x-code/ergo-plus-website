@@ -10,6 +10,10 @@
   <link rel="alternate" hreflang="de" href="https://ergo-plus.de/" />
   <link rel="alternate" hreflang="x-default" href="https://ergo-plus.de/" />
 
+  <!-- AI / LLM Discovery -->
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM-readable full context" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ergo-plus.de/" />
@@ -101,6 +105,18 @@
         "url": "https://ergo-plus.de",
         "name": "ERGO-PLUS",
         "publisher": { "@id": "https://ergo-plus.de/#business" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://ergo-plus.de/#page",
+        "url": "https://ergo-plus.de/",
+        "name": "ERGO-PLUS – Individuelle Sitzlösungen bei MS, Skoliose, Kleinwuchs & mehr",
+        "isPartOf": { "@id": "https://ergo-plus.de/#website" },
+        "about": { "@id": "https://ergo-plus.de/#business" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero-h1", ".hero-p", "#usps-heading", "#products-heading", "#steps-heading", "#contact-heading"]
+        }
       },
       {
         "@type": "FAQPage",
