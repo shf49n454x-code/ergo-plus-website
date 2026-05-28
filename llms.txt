@@ -59,6 +59,8 @@ ERGO-PLUS begleitet Kunden durch den gesamten Antragsprozess und arbeitet mit ze
 ## Weitere Informationen
 
 - [Startseite](https://ergo-plus.de/)
+- [Über ERGO-PLUS](https://ergo-plus.de/ueber-ergo-plus.html)
+- [Häufige Fragen (FAQ)](https://ergo-plus.de/faq.html)
 - [Blog: News & Ratgeber](https://ergo-plus.de/blog/)
 - [MFS-Stuhlsystem bei Skoliose](https://ergo-plus.de/blog/mfs-stuhlsystem-skoliose-sitzloesung.html)
 - [Kleinwuchs und Sitzen](https://ergo-plus.de/blog/kleinwuchs-sitzloesung-arbeitsplatz.html)

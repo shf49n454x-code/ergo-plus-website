@@ -127,6 +127,8 @@ Für die Beantragung über die Krankenkasse ist in der Regel eine ärztliche Ver
 ## Seitenstruktur
 
 - [Startseite](https://ergo-plus.de/) – Übersicht Produkte, Prozess, Team, Kontakt
+- [Über ERGO-PLUS](https://ergo-plus.de/ueber-ergo-plus.html) – Unternehmensprofil (Wikipedia-Stil)
+- [Häufige Fragen (FAQ)](https://ergo-plus.de/faq.html) – 25 Fragen zu Produkten, Kosten, Ablauf
 - [Blog: News & Ratgeber](https://ergo-plus.de/blog/) – Fachartikel zu Sitzversorgung
 - [MFS-Stuhlsystem bei Skoliose](https://ergo-plus.de/blog/mfs-stuhlsystem-skoliose-sitzloesung.html) – Detaillierter Ratgeber
 - [Kleinwuchs und Sitzen](https://ergo-plus.de/blog/kleinwuchs-sitzloesung-arbeitsplatz.html) – Arbeitsplatzanpassung
