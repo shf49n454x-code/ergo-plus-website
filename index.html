@@ -207,6 +207,9 @@
       --c-primary-lt:  #d6eaf8;
       --c-secondary:   #148f77;
       --c-cta:         #148f77;
+      --c-teal:        #148f77;
+      --c-teal-dk:     #117a65;
+      --c-teal-lt:     #d1f2eb;
       --c-cta-lt:      #d1f2eb;
       --c-bg:          #f0f5fa;
       --c-bg2:         #ffffff;
@@ -216,7 +219,8 @@
       --c-text-soft:   #5d6d7e;
       --c-border:      #c8dae8;
       --c-border-lt:   #e2ecf4;
-      --c-accent:      #f39c12;
+      --c-amber:       #d68910;
+      --c-accent:      #d68910;
 
       --radius-sm:  10px;
       --radius:     14px;
@@ -230,7 +234,7 @@
       --shadow-card: 0 1px 3px rgba(26,82,118,.05), 0 6px 24px rgba(26,82,118,.06);
       --shadow-card-hover: 0 8px 30px rgba(26,82,118,.12), 0 2px 8px rgba(26,82,118,.06);
 
-      --ease: cubic-bezier(.4,0,.2,1);
+      --ease: cubic-bezier(.22,1,.36,1);
       --dur: 200ms;
     }
 
@@ -273,11 +277,14 @@
       font-size: 16px;
       line-height: 1.65;
       color: var(--c-text);
-      background: var(--c-bg2);
+      background: var(--c-bg);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
+    a { color: var(--c-cta); }
+    a:hover { color: var(--c-teal-dk); }
 
     /* ── Focus ring (a11y) ──────────────────────────── */
     :focus-visible {
@@ -323,6 +330,7 @@
     .logo {
       display: flex; align-items: center; gap: 10px;
       text-decoration: none;
+      color: var(--c-primary);
       cursor: pointer;
     }
     .logo-img {
@@ -358,20 +366,21 @@
     .btn-nav {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 10px 22px;
-      background: var(--c-primary);
+      background: var(--c-cta);
       color: white !important;
       border-radius: 50px;
       font-size: 13px; font-weight: 600 !important;
       letter-spacing: .01em;
       transition: background var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease) !important;
       cursor: pointer !important;
-      box-shadow: 0 2px 8px rgba(26,82,118,.20);
+      box-shadow: 0 2px 8px rgba(20,143,119,.25);
     }
-    .btn-nav:hover { background: var(--c-primary-dk); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(26,82,118,.28); }
+    .btn-nav:hover { background: var(--c-teal-dk); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(20,143,119,.35); }
 
     .burger {
       display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 6px; border: none; background: none;
+      cursor: pointer; padding: 10px; border: none; background: none;
+      min-width: 44px; min-height: 44px; justify-content: center; align-items: center;
     }
     .burger span {
       display: block; width: 22px; height: 2px;
@@ -498,7 +507,7 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .hero-stat span { font-size: 13px; color: var(--c-text-soft); margin-top: 6px; display:block; font-weight: 500; }
+    .hero-stat span { font-size: 14px; color: var(--c-text-soft); margin-top: 6px; display:block; font-weight: 500; }
 
     /* Hero card */
     .hero-card {
@@ -559,7 +568,7 @@
 
     .eyebrow-label {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 11px; font-weight: 700;
+      font-size: 12px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 2px;
       color: var(--c-secondary); margin-bottom: 14px;
     }
