@@ -1,0 +1,170 @@
+{
+  "name": "ERGO-PLUS Blog Content Calendar",
+  "frequency": "weekly",
+  "publish_day": "Monday",
+  "status_legend": {
+    "published": "Live on site",
+    "ready": "Written, waiting for publish date",
+    "planned": "Topic defined, not yet written"
+  },
+  "existing_posts": [
+    {
+      "date": "2026-04-18",
+      "slug": "kostenubernahme-sitzversorgung-krankenkasse",
+      "title": "Kostenübernahme Sitzversorgung: Krankenkasse, DRV, Integrationsamt – wer zahlt?",
+      "category": "Kostenübernahme",
+      "status": "published",
+      "primary_keyword": "Kostenübernahme Sitzversorgung Krankenkasse"
+    },
+    {
+      "date": "2026-05-02",
+      "slug": "kleinwuchs-sitzloesung-arbeitsplatz",
+      "title": "Kleinwuchs und Sitzen: Warum Standard-Stühle nicht funktionieren",
+      "category": "Diagnose",
+      "status": "published",
+      "primary_keyword": "Kleinwuchs Stuhl Arbeitsplatz"
+    },
+    {
+      "date": "2026-05-16",
+      "slug": "mfs-stuhlsystem-skoliose-sitzloesung",
+      "title": "MFS-Stuhlsystem bei Skoliose – Individuelle Sitzlösung",
+      "category": "Speziallösung",
+      "status": "published",
+      "primary_keyword": "MFS Stuhlsystem Skoliose"
+    }
+  ],
+  "upcoming_posts": [
+    {
+      "date": "2026-06-02",
+      "slug": "multiple-sklerose-sitzen-alltag",
+      "title": "Multiple Sklerose und Sitzen: Was der richtige Stuhl verändern kann",
+      "category": "Diagnose",
+      "status": "ready",
+      "primary_keyword": "Multiple Sklerose Stuhl",
+      "secondary_keywords": ["MS Sitzlösung", "MS ergonomischer Stuhl", "MS Alltag Hilfsmittel", "VELA Stuhl MS"],
+      "search_intent": "Betroffene und Angehörige suchen nach Sitzlösungen die Fatigue, Spastik und Transferprobleme berücksichtigen",
+      "estimated_volume": "880/mo"
+    },
+    {
+      "date": "2026-06-09",
+      "slug": "querschnittlaehmung-sitzversorgung-rollstuhl-alternative",
+      "title": "Sitzversorgung bei Querschnittlähmung: Wenn der Rollstuhl nicht reicht",
+      "category": "Diagnose",
+      "status": "ready",
+      "primary_keyword": "Querschnittlähmung Sitzversorgung",
+      "secondary_keywords": ["Querschnitt Arbeitsstuhl", "Paraplegie Stuhl Arbeitsplatz", "Transferstuhl Querschnitt", "ELIFT 400"],
+      "search_intent": "Querschnittgelähmte brauchen am Arbeitsplatz oft einen Stuhl mit Transferhilfe statt nur einen Rollstuhl",
+      "estimated_volume": "390/mo"
+    },
+    {
+      "date": "2026-06-16",
+      "slug": "widerspruch-krankenkasse-hilfsmittel-stuhl",
+      "title": "Widerspruch gegen die Krankenkasse: So setzen Sie Ihren Anspruch auf einen Spezialstuhl durch",
+      "category": "Kostenübernahme",
+      "status": "ready",
+      "primary_keyword": "Widerspruch Krankenkasse Hilfsmittel",
+      "secondary_keywords": ["Widerspruch Krankenkasse Stuhl", "Ablehnung Hilfsmittel Widerspruch", "Krankenkasse Sitzlösung abgelehnt", "MDK Begutachtung Stuhl"],
+      "search_intent": "Betroffene deren Antrag abgelehnt wurde suchen Hilfe beim Widerspruchsverfahren",
+      "estimated_volume": "1.600/mo"
+    },
+    {
+      "date": "2026-06-23",
+      "slug": "als-amyotrophe-lateralsklerose-sitzen-stuhl",
+      "title": "ALS und Sitzen: Warum die Sitzversorgung so früh wie möglich beginnen sollte",
+      "category": "Diagnose",
+      "status": "ready",
+      "primary_keyword": "ALS Stuhl Sitzversorgung",
+      "secondary_keywords": ["Amyotrophe Lateralsklerose Sitzen", "ALS Hilfsmittel Stuhl", "ALS Aufstehhilfe", "motorisierter Stuhl ALS"],
+      "search_intent": "Betroffene und Angehörige suchen frühzeitig nach Sitzlösungen die mit der Krankheit mitwachsen können",
+      "estimated_volume": "480/mo"
+    },
+    {
+      "date": "2026-06-30",
+      "slug": "schwergewicht-stuhl-bariatrisch-250kg",
+      "title": "Bariatrische Sitzlösungen: Stühle für Menschen über 150 kg",
+      "category": "Speziallösung",
+      "status": "planned",
+      "primary_keyword": "bariatrischer Stuhl 250 kg",
+      "secondary_keywords": ["Schwergewichtsstuhl", "Stuhl bis 250 kg", "Adipositas Bürostuhl", "XXL Bürostuhl stabil"],
+      "search_intent": "Betroffene suchen Stühle die wirklich halten und nicht nach 6 Monaten kaputt gehen",
+      "estimated_volume": "1.200/mo"
+    },
+    {
+      "date": "2026-07-07",
+      "slug": "amputation-prothese-arbeitsstuhl",
+      "title": "Arbeitsstuhl nach Amputation: Worauf Prothesenträger achten müssen",
+      "category": "Diagnose",
+      "status": "planned",
+      "primary_keyword": "Arbeitsstuhl Amputation Prothese",
+      "secondary_keywords": ["Arthrodesenstuhl", "geteilte Sitzfläche Prothese", "Beinamputation Arbeitsplatz", "Stuhl Oberschenkelamputation"],
+      "search_intent": "Prothesenträger brauchen Stühle mit geteilter Sitzfläche und angepasstem Transferweg",
+      "estimated_volume": "320/mo"
+    },
+    {
+      "date": "2026-07-14",
+      "slug": "homeoffice-behinderung-ergonomisch-einrichten",
+      "title": "Homeoffice mit Behinderung: Ihr Recht auf einen ergonomischen Arbeitsplatz zu Hause",
+      "category": "Ratgeber",
+      "status": "planned",
+      "primary_keyword": "Homeoffice Behinderung ergonomisch",
+      "secondary_keywords": ["Homeoffice Arbeitsplatzanpassung", "Integrationsamt Homeoffice", "Stuhl Homeoffice Behinderung", "Telearbeit Schwerbehinderung"],
+      "search_intent": "Viele Betroffene wissen nicht dass die Kostenübernahme auch fürs Homeoffice gilt",
+      "estimated_volume": "720/mo"
+    },
+    {
+      "date": "2026-07-21",
+      "slug": "vela-tango-stuhlsystem-erfahrungsbericht",
+      "title": "VELA TANGO im Praxistest: Was der Aktivstuhl im Alltag wirklich leistet",
+      "category": "Produkttest",
+      "status": "planned",
+      "primary_keyword": "VELA TANGO Erfahrung",
+      "secondary_keywords": ["VELA TANGO 100", "VELA TANGO Test", "VELA Stuhl Erfahrung", "Aktivstuhl höhenverstellbar elektrisch"],
+      "search_intent": "Interessenten suchen echte Erfahrungsberichte bevor sie sich für ein VELA System entscheiden",
+      "estimated_volume": "590/mo"
+    },
+    {
+      "date": "2026-07-28",
+      "slug": "bandscheibenvorfall-buero-sitzen-stuhl",
+      "title": "Bandscheibenvorfall und Büroarbeit: Der richtige Stuhl macht den Unterschied",
+      "category": "Diagnose",
+      "status": "planned",
+      "primary_keyword": "Bandscheibenvorfall Bürostuhl",
+      "secondary_keywords": ["LWS Syndrom Stuhl", "HWS Stuhl Büro", "Bandscheibenvorfall Sitzen", "Opera 20 Rücken"],
+      "search_intent": "Millionen Deutsche mit Bandscheibenproblemen suchen nach dem richtigen Bürostuhl",
+      "estimated_volume": "6.600/mo"
+    },
+    {
+      "date": "2026-08-04",
+      "slug": "spastik-sitzen-stuhl-cerebralparese",
+      "title": "Sitzen mit Spastik: Individuelle Lösungen bei Cerebralparese und spastischen Lähmungen",
+      "category": "Diagnose",
+      "status": "planned",
+      "primary_keyword": "Spastik Sitzen Stuhl",
+      "secondary_keywords": ["Cerebralparese Stuhl", "spastische Lähmung Sitzlösung", "ICP Stuhl Erwachsene", "Rumpfpelotten Stuhl"],
+      "search_intent": "Betroffene mit spastischen Lähmungen brauchen Stühle mit lateraler Abstützung und Rumpfpelotten",
+      "estimated_volume": "390/mo"
+    },
+    {
+      "date": "2026-08-11",
+      "slug": "hilfsmittelnummer-stuhl-antrag-tipps",
+      "title": "Hilfsmittelnummer und Antragstellung: Alles was Sie über den Prozess wissen müssen",
+      "category": "Kostenübernahme",
+      "status": "planned",
+      "primary_keyword": "Hilfsmittelnummer Stuhl Antrag",
+      "secondary_keywords": ["Hilfsmittelverzeichnis Stuhl", "Antrag Hilfsmittel Stuhl", "GKV Hilfsmittelverzeichnis Sitzen", "Rezept Stuhl Arzt"],
+      "search_intent": "Betroffene verstehen den Antragsprozess nicht und wollen eine klare Schritt-für-Schritt-Anleitung",
+      "estimated_volume": "880/mo"
+    },
+    {
+      "date": "2026-08-18",
+      "slug": "elift-400-aufstehhilfe-transfer",
+      "title": "ELIFT 400: Wie eine motorisierte Aufstehhilfe den Alltag verändert",
+      "category": "Produkttest",
+      "status": "planned",
+      "primary_keyword": "ELIFT 400 Aufstehhilfe",
+      "secondary_keywords": ["Aufstehhilfe Stuhl elektrisch", "Transferstuhl motorisiert", "Aufstehstuhl Senioren", "ELIFT Stuhl Test"],
+      "search_intent": "Betroffene die Hilfe beim Aufstehen brauchen suchen nach motorisierten Stuhlsystemen",
+      "estimated_volume": "480/mo"
+    }
+  ]
+}
