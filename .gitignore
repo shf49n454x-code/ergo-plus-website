@@ -1,0 +1,4 @@
+# Lokale Tool-/Deploy-Verzeichnisse (nicht Teil der Website)
+.gstack/
+.netlify/
+.DS_Store
