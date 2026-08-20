@@ -171,14 +171,8 @@
     ]
   }
   </script>
-  <!-- Google Analytics / Tag Manager – Platzhalter: Tracking-ID hier eintragen -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script> -->
+  <!-- GA4 laedt erst nach Cookie-Zustimmung ("Verstanden"), siehe Cookie-Banner-Skript unten -->
+
   <!-- Preconnect & DNS prefetch for external resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -2629,7 +2623,7 @@
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie-Hinweis">
   <div class="cookie-inner">
     <div class="cookie-text">
-      Wir verwenden nur technisch notwendige Cookies, um diese Website bereitzustellen. Weitere Informationen finden Sie in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.
+      Wir verwenden technisch notwendige Cookies sowie, mit Ihrer Zustimmung, Google Analytics zur Reichweitenmessung. Weitere Informationen finden Sie in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>.
     </div>
     <div class="cookie-btns">
       <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Verstanden</button>
@@ -2744,6 +2738,20 @@
 
   // ── Cookie Banner ──────────────────────────────
   (function() {
+    const GA4_ID = 'G-Y8T7VW3V73';
+    function ladeGA4() {
+      if (window.gtag) return;
+      const t = document.createElement('script');
+      t.async = true;
+      t.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+      document.head.appendChild(t);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', GA4_ID, { anonymize_ip: true });
+    }
+    if (localStorage.getItem('ep-cookies') === 'all') ladeGA4();
+
     const banner = document.getElementById('cookie-banner');
     if (!banner) return;
     if (!localStorage.getItem('ep-cookies')) {
@@ -2752,6 +2760,7 @@
     function closeBanner(val) {
       localStorage.setItem('ep-cookies', val);
       banner.classList.remove('visible');
+      if (val === 'all') ladeGA4();
     }
     document.getElementById('cookie-accept')?.addEventListener('click', () => closeBanner('all'));
     document.getElementById('cookie-essential')?.addEventListener('click', () => closeBanner('essential'));
