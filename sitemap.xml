@@ -73,6 +73,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ergo-plus.de/pose-bogen.html</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://ergo-plus.de/impressum.html</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>yearly</changefreq>

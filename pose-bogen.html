@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POSE-Bogen – Persönlicher Sitzberatungsbogen | ERGO-PLUS</title>
+  <meta name="description" content="Digitaler POSE-Bogen von ERGO-PLUS: erfassen Sie Maße, Arbeitsplatz und gesundheitliche Angaben für Ihre individuelle Sitzberatung. Läuft vollständig im Browser, ohne Server – Ihre Daten verlassen Ihr Gerät nicht." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://ergo-plus.de/pose-bogen.html" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ergo-plus.de/pose-bogen.html" />
+  <meta property="og:title" content="POSE-Bogen – Persönlicher Sitzberatungsbogen | ERGO-PLUS" />
+  <meta property="og:description" content="Digitaler POSE-Bogen für Ihre individuelle Sitzberatung bei ERGO-PLUS. Läuft vollständig lokal im Browser – keine Übertragung an einen Server." />
+  <meta property="og:image" content="https://ergo-plus.de/og-image.png" />
+  <meta property="og:site_name" content="ERGO-PLUS Seating Concepts" />
+  <meta property="og:locale" content="de_DE" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#1a5276" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ergo-plus.de/" },
+          { "@type": "ListItem", "position": 2, "name": "POSE-Bogen", "item": "https://ergo-plus.de/pose-bogen.html" }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "name": "POSE-Bogen – Persönlicher-Office-Sitz-Ergebnisbogen",
+        "url": "https://ergo-plus.de/pose-bogen.html",
+        "description": "Digitales Aufnahmeformular für die individuelle Sitzberatung bei ERGO-PLUS Seating Concepts."
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --c-primary: #1a5276;
+      --c-primary-dk: #143d5a;
+      --c-primary-lt: #d6eaf8;
+      --c-teal: #148f77;
+      --c-teal-dk: #117a65;
+      --c-teal-lt: #d1f2eb;
+      --c-text: #1a2a3a;
+      --c-text-soft: #5d6d7e;
+      --c-bg: #f0f5fa;
+      --c-bg2: #ffffff;
+      --c-bg3: #f7fafc;
+      --c-border: #c8dae8;
+      --c-border-lt: #e2ecf4;
+      --c-success: #27ae60;
+      --c-error: #c0392b;
+      --c-info-lt: #eaf3fb;
+      --radius-sm: 10px;
+      --radius: 14px;
+      --sp-sm: 8px;
+      --sp-md: 16px;
+      --sp-lg: 24px;
+      --ease: cubic-bezier(.22,1,.36,1);
+      --shadow-sm: 0 2px 8px rgba(26,82,118,.07), 0 4px 16px rgba(26,82,118,.05);
+      --shadow-md: 0 4px 16px rgba(26,82,118,.08), 0 12px 40px rgba(26,82,118,.06);
+    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 16px; line-height: 1.6;
+      color: var(--c-text); background: var(--c-bg);
+    }
+    a { color: var(--c-primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Nav (matches other subpages) */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--c-border-lt);
+      padding: 0 clamp(20px,5%,80px);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo-img { height: 48px; }
+    .btn-nav {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px; border-radius: 50px;
+      background: var(--c-teal); color: white;
+      font-family: 'Figtree', sans-serif;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none;
+      transition: background .2s var(--ease);
+    }
+    .btn-nav:hover { background: var(--c-teal-dk); text-decoration: none; }
+
+    main { max-width: 920px; margin: 0 auto; padding: clamp(24px,4vw,40px) clamp(16px,4vw,24px) 120px; }
+
+    .page-head { margin-bottom: var(--sp-lg); }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 500;
+      color: var(--c-text-soft); margin-bottom: var(--sp-md);
+    }
+    .back-link:hover { color: var(--c-primary); text-decoration: none; }
+    .page-head h1 {
+      font-family: 'Figtree', sans-serif;
+      font-size: clamp(26px, 4vw, 34px);
+      font-weight: 800; color: var(--c-text);
+      margin-bottom: 6px;
+    }
+    .page-head .subtitle { font-size: 15px; color: var(--c-text-soft); }
+    .page-head .subtitle b { color: var(--c-primary); }
+
+    .datenschutz-hinweis {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--c-info-lt); border: 1px solid var(--c-primary-lt);
+      border-radius: var(--radius); padding: var(--sp-md) var(--sp-lg);
+      margin: var(--sp-lg) 0; font-size: 14.5px; color: var(--c-text);
+    }
+    .datenschutz-hinweis strong { color: var(--c-primary); }
+
+    fieldset {
+      background: var(--c-bg2); border: 1px solid var(--c-border-lt);
+      border-radius: var(--radius); box-shadow: var(--shadow-sm);
+      margin: var(--sp-lg) 0; padding: var(--sp-lg) var(--sp-lg) 22px;
+    }
+    legend {
+      font-family: 'Figtree', sans-serif; font-weight: 700;
+      color: var(--c-primary); padding: 0 6px; font-size: 17px;
+    }
+    .zeile { display: flex; flex-wrap: wrap; gap: var(--sp-md) var(--sp-lg); margin-top: var(--sp-md); }
+    .feld { display: flex; flex-direction: column; gap: 4px; flex: 1 1 180px; min-width: 0; }
+    .feld.schmal { flex: 0 1 110px; }
+    .feld.breit { flex: 1 1 100%; }
+    label { font-size: 13px; font-weight: 500; color: var(--c-text-soft); }
+    input[type=text], input[type=tel], input[type=email], input[type=number],
+    input[type=date], textarea, select {
+      font: inherit; padding: 11px; border: 1px solid var(--c-border); border-radius: var(--radius-sm);
+      background: var(--c-bg2); color: var(--c-text); width: 100%; min-height: 44px;
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: 3px solid var(--c-teal-lt); border-color: var(--c-teal);
+    }
+    textarea { min-height: 84px; resize: vertical; }
+    .einheit { position: relative; }
+    .einheit input { padding-right: 44px; }
+    .einheit span { position: absolute; right: 11px; bottom: 12px; color: var(--c-text-soft); font-size: 14px; }
+    .wahl { display: flex; flex-wrap: wrap; gap: var(--sp-sm); margin-top: 4px; }
+    .wahl label {
+      display: flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 400; color: var(--c-text);
+      border: 1px solid var(--c-border); border-radius: var(--radius-sm); padding: 10px 14px; min-height: 44px;
+      cursor: pointer; background: var(--c-bg2); transition: background .15s var(--ease), border-color .15s var(--ease);
+    }
+    .wahl input { width: 18px; height: 18px; accent-color: var(--c-primary); margin: 0; }
+    .wahl label:has(input:checked) { background: var(--c-primary-lt); border-color: var(--c-primary); }
+    .hinweis { font-size: 13px; color: var(--c-text-soft); margin: var(--sp-sm) 0 0; }
+    .summe { font-weight: 700; }
+    .summe.ok { color: var(--c-success); }
+    .summe.warn { color: var(--c-error); }
+    .kv {
+      display: flex; align-items: center; gap: var(--sp-sm); background: var(--c-primary-lt);
+      border: 1px solid var(--c-primary); border-radius: var(--radius-sm); padding: 11px 14px;
+      font-weight: 600; min-height: 44px;
+    }
+    .kv input { width: 20px; height: 20px; accent-color: var(--c-primary); }
+    .masse { display: flex; gap: var(--sp-lg); flex-wrap: wrap; }
+    .masse .eingaben { flex: 1 1 340px; }
+    .skizze {
+      flex: 0 1 220px; align-self: flex-start; background: var(--c-bg3);
+      border: 1px solid var(--c-border-lt); border-radius: var(--radius); padding: var(--sp-md); text-align: center;
+    }
+    .skizze svg { max-width: 100%; height: auto; }
+    .skizze .legende { font-size: 12px; color: var(--c-text-soft); text-align: left; margin-top: var(--sp-sm); }
+
+    .leiste {
+      position: fixed; left: 0; right: 0; bottom: 0; background: var(--c-bg2);
+      border-top: 1px solid var(--c-border-lt); box-shadow: 0 -2px 10px rgba(26,82,118,.1);
+      padding: 10px 12px; display: flex; gap: var(--sp-sm); flex-wrap: wrap; justify-content: center; z-index: 5;
+    }
+    .leiste button {
+      font: inherit; font-family: 'Figtree', sans-serif; font-weight: 600; min-height: 44px;
+      padding: 11px 20px; border-radius: 50px; border: 1px solid var(--c-primary);
+      background: var(--c-bg2); color: var(--c-primary); cursor: pointer; transition: background .15s var(--ease);
+    }
+    .leiste button.primaer { background: var(--c-teal); border-color: var(--c-teal); color: white; }
+    .leiste button.primaer:hover { background: var(--c-teal-dk); }
+    .leiste button:not(.primaer):hover { background: var(--c-primary-lt); }
+    .leiste button:active { transform: translateY(1px); }
+    #status {
+      position: fixed; bottom: 74px; left: 50%; transform: translateX(-50%);
+      background: var(--c-text); color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 14px;
+      opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 6; white-space: nowrap;
+    }
+    #status.sichtbar { opacity: .95; }
+
+    footer {
+      background: var(--c-text); color: rgba(255,255,255,.55);
+      padding: 40px clamp(20px,5%,80px); text-align: center; font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,.7); }
+    footer a:hover { color: white; }
+
+    #druck { display: none; }
+    @media print {
+      body { background: #fff; }
+      nav, main, .leiste, #status, footer { display: none !important; }
+      #druck { display: block; font: 10.5pt/1.45 "Noto Sans", Arial, sans-serif; color: #111; }
+      @page { size: A4; margin: 14mm 16mm; }
+      #druck .dkopf {
+        display: flex; justify-content: space-between; align-items: flex-start;
+        border-bottom: 2.5pt solid #1a5276; padding-bottom: 4mm; margin-bottom: 5mm;
+      }
+      #druck .dmarke { font-family: "Figtree", Arial, sans-serif; font-size: 20pt; font-weight: 800; color: #1a5276; }
+      #druck .dmarke em { font-weight: 400; font-style: italic; }
+      #druck .dtitel { font-size: 11pt; color: #444; margin-top: 1mm; }
+      #druck .dmeta { text-align: right; font-size: 10pt; }
+      #druck .dkv { font-weight: 700; color: #1a5276; }
+      #druck .spalten { display: flex; gap: 8mm; }
+      #druck .spalten > div { flex: 1; }
+      #druck h3 {
+        font-family: "Figtree", Arial, sans-serif; font-size: 10.5pt; color: #1a5276;
+        border-bottom: .4pt solid #999; margin: 4mm 0 1.5mm; padding-bottom: .6mm;
+      }
+      #druck table { width: 100%; border-collapse: collapse; }
+      #druck td { padding: .6mm 0; vertical-align: top; }
+      #druck td:first-child { color: #555; width: 46%; padding-right: 2mm; }
+      #druck td:last-child { font-weight: 600; }
+      #druck .frei { white-space: pre-wrap; }
+      #druck .dfuss {
+        margin-top: 6mm; border-top: .4pt solid #999; padding-top: 2mm;
+        font-size: 7.5pt; color: #555; text-align: center; line-height: 1.5;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" aria-label="ERGO-PLUS Startseite">
+      <img src="logo-ergoplus.png" alt="ERGO plus" class="logo-img" />
+    </a>
+    <a href="/#contact" class="btn-nav">Beratung anfragen</a>
+  </div>
+</nav>
+
+<main>
+<div class="page-head">
+  <a href="/" class="back-link">&larr; Zurück zur Startseite</a>
+  <h1>POSE-Bogen</h1>
+  <p class="subtitle"><b>P</b>ersönlicher-<b>O</b>ffice-<b>S</b>itz-<b>E</b>rgebnisbogen</p>
+</div>
+
+<div class="datenschutz-hinweis">
+  <span aria-hidden="true">🔒</span>
+  <div>
+    <strong>Ihre Daten bleiben auf Ihrem Gerät.</strong> Dieser Bogen läuft vollständig in Ihrem Browser,
+    ohne Server und ohne Datenbank im Hintergrund. Zwischenspeicherungen erfolgen ausschließlich lokal
+    auf diesem Gerät. Erst wenn Sie selbst auf „Per E-Mail senden“ tippen, wird Ihr E-Mail-Programm mit
+    einem vorausgefüllten Entwurf an ERGO-PLUS geöffnet – gesendet wird nur, wenn Sie das dort bestätigen.
+  </div>
+</div>
+
+<form id="bogen" autocomplete="off">
+
+  <fieldset>
+    <legend>Vorgang</legend>
+    <div class="zeile">
+      <div class="feld schmal" style="flex:0 1 190px">
+        <label for="datum">Datum</label>
+        <input type="date" id="datum" name="datum">
+      </div>
+      <div class="feld" style="justify-content:flex-end">
+        <label class="kv"><input type="checkbox" name="nur_kv"> Nur Kostenvoranschlag</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Privatadresse</legend>
+    <div class="zeile">
+      <div class="feld breit"><label for="p_name">Name</label>
+        <input type="text" id="p_name" name="p_name" autocomplete="name"></div>
+      <div class="feld breit"><label>Straße / Hausnummer</label>
+        <input type="text" name="p_strasse"></div>
+      <div class="feld schmal"><label>PLZ</label>
+        <input type="text" name="p_plz" inputmode="numeric"></div>
+      <div class="feld"><label>Stadt</label>
+        <input type="text" name="p_stadt"></div>
+      <div class="feld"><label>Telefon</label>
+        <input type="tel" name="p_telefon"></div>
+      <div class="feld"><label>Fax</label>
+        <input type="tel" name="p_fax"></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Lieferadresse</legend>
+    <div class="zeile">
+      <div class="feld breit"><label>Firma</label>
+        <input type="text" name="l_firma"></div>
+      <div class="feld breit"><label>Straße / Hausnummer</label>
+        <input type="text" name="l_strasse"></div>
+      <div class="feld schmal"><label>PLZ</label>
+        <input type="text" name="l_plz" inputmode="numeric"></div>
+      <div class="feld"><label>Stadt</label>
+        <input type="text" name="l_stadt"></div>
+      <div class="feld"><label>Telefon</label>
+        <input type="tel" name="l_telefon"></div>
+      <div class="feld"><label>Fax</label>
+        <input type="tel" name="l_fax"></div>
+      <div class="feld breit"><label>E-Mail</label>
+        <input type="email" name="l_email" autocomplete="email"></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Arbeitsplatz</legend>
+    <div class="zeile">
+      <div class="feld breit"><label>Berufsbezeichnung</label>
+        <input type="text" name="beruf"></div>
+    </div>
+    <p class="hinweis">Wie ist Ihre Zeit während eines normalen Arbeitstages aufgeteilt?
+      <span id="prozentsumme" class="summe"></span></p>
+    <div class="zeile">
+      <div class="feld schmal einheit"><label>Computer</label>
+        <input type="number" name="pc_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
+      <div class="feld schmal einheit"><label>Schreiben</label>
+        <input type="number" name="schreiben_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
+      <div class="feld schmal einheit"><label>Telefon</label>
+        <input type="number" name="telefon_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
+      <div class="feld schmal einheit"><label>Anders</label>
+        <input type="number" name="anders_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
+      <div class="feld breit"><label>Wenn „anders“, bitte spezifizieren</label>
+        <input type="text" name="anders_text"></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Beschwerden &amp; Gesundheit</legend>
+    <div class="zeile">
+      <div class="feld breit"><label>Kurze Beschreibung Ihrer Beschwerden</label>
+        <textarea name="beschwerden"></textarea></div>
+      <div class="feld"><label>Klinikaufenthalt von</label>
+        <input type="date" name="klinik_von"></div>
+      <div class="feld"><label>Klinikaufenthalt bis</label>
+        <input type="date" name="klinik_bis"></div>
+      <div class="feld"><label>Krankheitstage wegen Rückenschmerzen im letzten Jahr</label>
+        <input type="number" name="krank_tage" min="0" max="365" inputmode="numeric"></div>
+    </div>
+    <div class="zeile">
+      <div class="feld"><label>Diagnostizierte Skoliose?</label>
+        <div class="wahl">
+          <label><input type="radio" name="skoliose" value="Ja"> Ja</label>
+          <label><input type="radio" name="skoliose" value="Nein"> Nein</label>
+        </div></div>
+      <div class="feld schmal einheit"><label>Wenn ja: wieviel Grad?</label>
+        <input type="number" name="skoliose_grad" min="0" max="180" inputmode="numeric"><span>°</span></div>
+      <div class="feld"><label>Gegen Wolle allergisch?</label>
+        <div class="wahl">
+          <label><input type="radio" name="wollallergie" value="Ja"> Ja</label>
+          <label><input type="radio" name="wollallergie" value="Nein"> Nein</label>
+        </div></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Maße</legend>
+    <div class="masse">
+      <div class="eingaben">
+        <div class="zeile">
+          <div class="feld schmal"><label>Alter</label>
+            <input type="number" name="alter" min="0" max="120" inputmode="numeric"></div>
+          <div class="feld schmal einheit"><label>Gewicht</label>
+            <input type="number" name="gewicht" min="0" max="350" inputmode="numeric"><span>kg</span></div>
+          <div class="feld"><label>Geschlecht</label>
+            <div class="wahl">
+              <label><input type="radio" name="geschlecht" value="M"> M</label>
+              <label><input type="radio" name="geschlecht" value="W"> W</label>
+            </div></div>
+          <div class="feld einheit"><label>Körpergröße (ohne Schuhe)</label>
+            <input type="number" name="koerpergroesse" min="0" max="250" inputmode="decimal"><span>cm</span></div>
+        </div>
+        <div class="zeile">
+          <div class="feld einheit"><label>A – Hüftgelenk bis Kniegelenk</label>
+            <input type="number" step="0.5" name="mass_a" min="0" max="120" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label>B – Kniegelenk bis zum Boden</label>
+            <input type="number" step="0.5" name="mass_b" min="0" max="120" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label>C – Gesäß bis Kniekehle</label>
+            <input type="number" step="0.5" name="mass_c" min="0" max="120" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label>D – Boden bis Oberkante Tisch</label>
+            <input type="number" step="0.5" name="mass_d" min="0" max="150" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label>E – Sitzfläche bis Schulter</label>
+            <input type="number" step="0.5" name="mass_e" min="0" max="120" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label>F – Absatzhöhe Schuhe</label>
+            <input type="number" step="0.5" name="mass_f" min="0" max="20" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label>H – Oberkante Sitzfläche bis Ellenbogen (90° angewinkelt)</label>
+            <input type="number" step="0.5" name="mass_h" min="0" max="60" inputmode="decimal"><span>cm</span></div>
+        </div>
+        <div class="zeile">
+          <div class="feld breit"><label>G – Wie ist die Kurvatur Ihrer unteren LWS?</label>
+            <div class="wahl">
+              <label><input type="radio" name="lws" value="flach"> flach</label>
+              <label><input type="radio" name="lws" value="medium"> medium</label>
+              <label><input type="radio" name="lws" value="stark gewölbt"> stark gewölbt</label>
+            </div></div>
+        </div>
+      </div>
+      <div class="skizze" aria-hidden="true">
+        <svg viewBox="0 0 200 240" width="200" height="240">
+          <g stroke="#1a5276" stroke-width="6" stroke-linecap="round" fill="none">
+            <circle cx="88" cy="38" r="14" fill="#1a5276" stroke="none"/>
+            <path d="M88 54 L88 120"/>
+            <path d="M88 74 L124 96 L124 120"/>
+            <path d="M88 120 L134 122"/>
+            <path d="M134 122 L134 196"/>
+            <path d="M134 196 L152 196"/>
+          </g>
+          <g stroke="#888" stroke-width="1.5">
+            <line x1="60" y1="196" x2="196" y2="196"/>
+            <line x1="60" y1="120" x2="92" y2="120"/>
+            <line x1="158" y1="88" x2="196" y2="88"/>
+            <line x1="186" y1="88" x2="186" y2="196" stroke-dasharray="3 3"/>
+          </g>
+          <g font-family="Arial" font-size="13" font-weight="700" fill="#c0392b">
+            <text x="104" y="116">A</text>
+            <text x="140" y="162">B</text>
+            <text x="100" y="136">C</text>
+            <text x="172" y="150">D</text>
+            <text x="66"  y="90">E</text>
+            <text x="146" y="208">F</text>
+            <text x="112" y="86">H</text>
+          </g>
+        </svg>
+        <div class="legende">Alle Maße im Sitzen, in cm, ohne Schuhe messen
+          (außer F = Absatzhöhe der Arbeitsschuhe).</div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Arbeitsumgebung &amp; Ausstattung</legend>
+    <div class="zeile">
+      <div class="feld breit"><label>Fußbodenoberfläche</label>
+        <div class="wahl">
+          <label><input type="checkbox" name="boden" value="Hochfloriger Teppich"> Hochfloriger Teppich</label>
+          <label><input type="checkbox" name="boden" value="Teppichfliesen"> Teppichfliesen</label>
+          <label><input type="checkbox" name="boden" value="PVC"> PVC</label>
+          <label><input type="checkbox" name="boden" value="Parkett"> Parkett</label>
+          <label><input type="checkbox" name="boden" value="Kacheln"> Kacheln</label>
+          <label><input type="checkbox" name="boden" value="Beton"> Beton</label>
+        </div></div>
+      <div class="feld breit"><label>Anderer Bodenbelag</label>
+        <input type="text" name="boden_andere"></div>
+      <div class="feld breit"><label>Gewünschte Polsterfarbe</label>
+        <input type="text" name="polsterfarbe"></div>
+    </div>
+    <p class="hinweis">Alle unsere Polsterstoffe sind sehr hochwertig und haben
+      mindestens 75.000 Scheuertouren.</p>
+    <div class="zeile">
+      <div class="feld breit"><label>Wie haben Sie von unserem Stuhlsystem erfahren?</label>
+        <input type="text" name="erfahren"></div>
+    </div>
+  </fieldset>
+
+</form>
+</main>
+
+<div class="leiste">
+  <button type="button" class="primaer" onclick="drucken()">🖨&nbsp;Drucken / PDF</button>
+  <button type="button" class="primaer" onclick="mailen()">✉&nbsp;Per E-Mail senden</button>
+  <button type="button" onclick="sichern()">Sichern</button>
+  <button type="button" onclick="ladenKlick()">Laden</button>
+  <button type="button" onclick="neuerBogen()">Neuer Bogen</button>
+  <input type="file" id="ladedatei" accept=".json,application/json" hidden>
+</div>
+<div id="status" role="status"></div>
+
+<div id="druck"></div>
+
+<footer>
+  <p>&copy; 2026 ERGO-PLUS Seating Concepts GmbH &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a></p>
+</footer>
+
+<script>
+"use strict";
+const MAIL_AN = "info@ergo-plus.de";
+const SPEICHER = "ergoplus.pose.entwurf";
+const form = document.getElementById("bogen");
+
+function werte() {
+  const d = {};
+  for (const el of form.elements) {
+    if (!el.name) continue;
+    if (el.type === "radio") { if (el.checked) d[el.name] = el.value; }
+    else if (el.type === "checkbox") {
+      if (el.name === "boden") { (d.boden ??= []); if (el.checked) d.boden.push(el.value); }
+      else d[el.name] = el.checked;
+    }
+    else d[el.name] = el.value;
+  }
+  d.boden ??= [];
+  return d;
+}
+
+function setzen(d) {
+  for (const el of form.elements) {
+    if (!el.name) continue;
+    if (el.type === "radio") el.checked = d[el.name] === el.value;
+    else if (el.type === "checkbox") {
+      el.checked = el.name === "boden" ? (d.boden ?? []).includes(el.value) : Boolean(d[el.name]);
+    }
+    else el.value = d[el.name] ?? "";
+  }
+  aktualisieren();
+}
+
+let sichernTimer = null;
+form.addEventListener("input", () => {
+  aktualisieren();
+  clearTimeout(sichernTimer);
+  sichernTimer = setTimeout(() => {
+    try { localStorage.setItem(SPEICHER, JSON.stringify(werte())); } catch { /* voll/gesperrt */ }
+  }, 400);
+});
+
+function entwurfLaden() {
+  try {
+    const roh = localStorage.getItem(SPEICHER);
+    if (!roh) return false;
+    const d = JSON.parse(roh);
+    const befuellt = Object.entries(d).some(([k, v]) =>
+      k !== "datum" && (Array.isArray(v) ? v.length : v !== "" && v !== false));
+    if (!befuellt) return false;
+    setzen(d);
+    meldung("Entwurf wiederhergestellt");
+    return true;
+  } catch { return false; }
+}
+
+function aktualisieren() {
+  const d = werte();
+  const summe = ["pc_prozent", "schreiben_prozent", "telefon_prozent", "anders_prozent"]
+    .reduce((s, k) => s + (Number(d[k]) || 0), 0);
+  const anzeige = document.getElementById("prozentsumme");
+  if (summe === 0) { anzeige.textContent = ""; }
+  else {
+    anzeige.textContent = `(Summe: ${summe} %)`;
+    anzeige.className = "summe " + (summe === 100 ? "ok" : "warn");
+  }
+  form.elements.skoliose_grad.disabled = d.skoliose !== "Ja";
+  if (d.skoliose !== "Ja") form.elements.skoliose_grad.value = "";
+  form.elements.anders_text.disabled = !(Number(d.anders_prozent) > 0);
+}
+
+function heute() { return new Date().toISOString().slice(0, 10); }
+
+function deDatum(iso) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return iso;
+  const [j, m, t] = iso.split("-");
+  return `${t}.${m}.${j}`;
+}
+
+function meldung(text) {
+  const s = document.getElementById("status");
+  s.textContent = text;
+  s.classList.add("sichtbar");
+  clearTimeout(meldung.timer);
+  meldung.timer = setTimeout(() => s.classList.remove("sichtbar"), 2200);
+}
+
+function abschnitte(d) {
+  const cm = (v) => (v === "" ? "" : `${v} cm`);
+  const boden = [...d.boden, d.boden_andere].filter(Boolean).join(", ");
+  const zeit = [
+    d.pc_prozent && `Computer ${d.pc_prozent} %`,
+    d.schreiben_prozent && `Schreiben ${d.schreiben_prozent} %`,
+    d.telefon_prozent && `Telefon ${d.telefon_prozent} %`,
+    d.anders_prozent && `Anders ${d.anders_prozent} %${d.anders_text ? ` (${d.anders_text})` : ""}`,
+  ].filter(Boolean).join(", ");
+  const klinik = d.klinik_von || d.klinik_bis
+    ? `${deDatum(d.klinik_von) || "?"} bis ${deDatum(d.klinik_bis) || "?"}` : "";
+  const skoliose = d.skoliose
+    ? d.skoliose + (d.skoliose === "Ja" && d.skoliose_grad ? `, ${d.skoliose_grad}°` : "") : "";
+  return [
+    ["Privatadresse", [
+      ["Name", d.p_name],
+      ["Straße/Hsnr.", d.p_strasse],
+      ["PLZ / Stadt", [d.p_plz, d.p_stadt].filter(Boolean).join(" ")],
+      ["Telefon", d.p_telefon],
+      ["Fax", d.p_fax],
+    ]],
+    ["Lieferadresse", [
+      ["Firma", d.l_firma],
+      ["Straße/Hsnr.", d.l_strasse],
+      ["PLZ / Stadt", [d.l_plz, d.l_stadt].filter(Boolean).join(" ")],
+      ["Telefon", d.l_telefon],
+      ["Fax", d.l_fax],
+      ["E-Mail", d.l_email],
+    ]],
+    ["Arbeitsplatz", [
+      ["Berufsbezeichnung", d.beruf],
+      ["Zeitaufteilung", zeit],
+    ]],
+    ["Beschwerden & Gesundheit", [
+      ["Beschwerden", d.beschwerden],
+      ["Klinikaufenthalt", klinik],
+      ["Krankheitstage (Rücken, letztes Jahr)", d.krank_tage],
+      ["Diagnostizierte Skoliose", skoliose],
+      ["Wollallergie", d.wollallergie],
+    ]],
+    ["Maße", [
+      ["Alter", d.alter],
+      ["Gewicht", d.gewicht ? `${d.gewicht} kg` : ""],
+      ["Geschlecht", d.geschlecht],
+      ["Körpergröße (ohne Schuhe)", cm(d.koerpergroesse)],
+      ["A – Hüftgelenk bis Kniegelenk", cm(d.mass_a)],
+      ["B – Kniegelenk bis zum Boden", cm(d.mass_b)],
+      ["C – Gesäß bis Kniekehle", cm(d.mass_c)],
+      ["D – Boden bis Oberkante Tisch", cm(d.mass_d)],
+      ["E – Sitzfläche bis Schulter", cm(d.mass_e)],
+      ["F – Absatzhöhe Schuhe", cm(d.mass_f)],
+      ["G – Kurvatur untere LWS", d.lws],
+      ["H – Sitzfläche bis Ellenbogen (90°)", cm(d.mass_h)],
+    ]],
+    ["Arbeitsumgebung & Ausstattung", [
+      ["Fußbodenoberfläche", boden],
+      ["Gewünschte Polsterfarbe", d.polsterfarbe],
+      ["Vom Stuhlsystem erfahren durch", d.erfahren],
+    ]],
+  ];
+}
+
+function esc(t) {
+  return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function drucken() {
+  const d = werte();
+  const bloecke = abschnitte(d).map(([titel, zeilen]) => {
+    const gefuellt = zeilen.filter(([, wert]) => String(wert ?? "").trim() !== "");
+    if (gefuellt.length === 0) return "";
+    const zeilenHtml = gefuellt.map(([bez, wert]) =>
+      `<tr><td>${esc(bez)}</td><td class="frei">${esc(wert)}</td></tr>`).join("");
+    return `<h3>${esc(titel)}</h3><table>${zeilenHtml}</table>`;
+  }).filter(Boolean);
+
+  const links = bloecke.filter((b) => !/Maße|Umgebung/.test(b)).join("");
+  const rechts = bloecke.filter((b) => /Maße|Umgebung/.test(b)).join("");
+
+  document.getElementById("druck").innerHTML = `
+    <div class="dkopf">
+      <div>
+        <div class="dmarke">Ergo <em>plus</em></div>
+        <div class="dtitel">POSE – Persönlicher-Office-Sitz-Ergebnisbogen</div>
+      </div>
+      <div class="dmeta">
+        Datum: <b>${esc(deDatum(d.datum) || "–")}</b>
+        ${d.nur_kv ? '<div class="dkv">☑ Nur Kostenvoranschlag</div>' : ""}
+      </div>
+    </div>
+    <div class="spalten"><div>${links}</div><div>${rechts}</div></div>
+    <div class="dfuss">
+      Diese Informationen werden streng vertraulich behandelt und dienen nur dazu,
+      ein individuelles Angebot für Sie zu erstellen.<br>
+      ERGO plus Seating Concepts GmbH · Am Sportplatz 15 · 63867 Johannesberg ·
+      Tel. +49 (0) 6021/12807 · Fax +49 (0) 6021/4942237 ·
+      info@ergo-plus.de · www.ergo-plus-seating.de
+    </div>`;
+  window.print();
+}
+
+function mailtoUrl() {
+  const d = werte();
+  const teile = abschnitte(d).map(([titel, zeilen]) => {
+    const gefuellt = zeilen.filter(([, wert]) => String(wert ?? "").trim() !== "");
+    if (gefuellt.length === 0) return "";
+    return `${titel}\n${"-".repeat(titel.length)}\n` +
+      gefuellt.map(([bez, wert]) => `${bez}: ${wert}`).join("\n");
+  }).filter(Boolean);
+
+  const betreff = ["POSE-Bogen", d.p_name || d.l_firma, deDatum(d.datum), d.nur_kv ? "(nur Kostenvoranschlag)" : ""]
+    .filter(Boolean).join(" – ");
+  const rumpf = `POSE-Bogen vom ${deDatum(d.datum) || heute()}` +
+    (d.nur_kv ? "\nNUR KOSTENVORANSCHLAG" : "") + "\n\n" + teile.join("\n\n") + "\n";
+
+  const gefuellt = {};
+  for (const [k, v] of Object.entries(d)) {
+    if (Array.isArray(v) ? v.length > 0 : v !== "" && v !== false) gefuellt[k] = v;
+  }
+  const maschinenteil = `\n--- Maschinenlesbar, bitte nicht veraendern ---\nPOSE-JSON v1: ${JSON.stringify(gefuellt)}\n`;
+
+  const basis = `mailto:${MAIL_AN}?subject=${encodeURIComponent(betreff)}&body=`;
+  const mitJson = basis + encodeURIComponent(rumpf + maschinenteil);
+  return mitJson.length <= 7000 ? mitJson : basis + encodeURIComponent(rumpf);
+}
+
+function mailen() { location.href = mailtoUrl(); }
+
+function dateiname(d, endung) {
+  const wer = (d.p_name || d.l_firma || "unbenannt").replace(/[^\wäöüÄÖÜß-]+/g, "_");
+  return `POSE_${wer}_${d.datum || heute()}.${endung}`;
+}
+
+function sichern() {
+  const d = werte();
+  const blob = new Blob([JSON.stringify(d, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = dateiname(d, "json");
+  a.click();
+  URL.revokeObjectURL(a.href);
+  meldung("Bogen als Datei gesichert");
+}
+
+function ladenKlick() { document.getElementById("ladedatei").click(); }
+
+document.getElementById("ladedatei").addEventListener("change", async (e) => {
+  const datei = e.target.files[0];
+  if (!datei) return;
+  try {
+    setzen(JSON.parse(await datei.text()));
+    meldung(`Geladen: ${datei.name}`);
+  } catch {
+    meldung("Datei konnte nicht gelesen werden");
+  }
+  e.target.value = "";
+});
+
+function neuerBogen() {
+  if (!confirm("Alle Eingaben löschen und einen neuen Bogen beginnen?")) return;
+  form.reset();
+  form.elements.datum.value = heute();
+  localStorage.removeItem(SPEICHER);
+  aktualisieren();
+  meldung("Neuer Bogen");
+}
+
+if (!entwurfLaden()) aktualisieren();
+if (!form.elements.datum.value) form.elements.datum.value = heute();
+</script>
+</body>
+</html>
