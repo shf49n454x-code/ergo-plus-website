@@ -2,8 +2,8 @@
   "name": "ERGO-PLUS Blog Content Calendar",
   "frequency": "weekly",
   "publish_day": "Monday",
-  "status": "on_hold",
-  "on_hold_note": "20.08.2026: Kalender pausiert. Die vier ready-Artikel sind seit 11.06.2026 live, wurden aber nie als published markiert. Vor Fortsetzung: SEO/GEO-Nacharbeit an den 5 live Diagnose-Artikeln (Person-Schema/Autorschaft fehlt, dateModified nicht sichtbar, kein FAQPage-Schema, Cluster-Verlinkung zwischen den Diagnose-Artikeln fast nicht vorhanden). Siehe Vault-Notiz ERGO-PLUS Website.",
+  "status": "active",
+  "on_hold_note": "05.09.2026: Hold aufgehoben. Die 4 SEO/GEO-Lücken aus dem 20.08.2026-Review sind behoben: Person-Schema/Autorschaft (Joachim Stolz) auf allen 8 Artikeln, sichtbares Aktualisierungsdatum, FAQPage-Schema + sichtbare FAQ-Sektion auf den 5 Diagnose-Artikeln, Cluster-Verlinkung bereits aus dem 22.08.2026-Fix. Kalender kann mit den 8 geplanten Artikeln fortgesetzt werden.",
   "status_legend": {
     "published": "Live on site",
     "ready": "Written, waiting for publish date",
