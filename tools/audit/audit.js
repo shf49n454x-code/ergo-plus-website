@@ -12,6 +12,7 @@
  *   node tools/audit/audit.js --perf     # nur Ladeverhalten
  *   node tools/audit/audit.js --static   # nur strukturelle Prüfung (kein Browser)
  *   node tools/audit/audit.js --json     # Maschinenausgabe für CI
+ *   node tools/audit/audit.js --out b.json  # Bericht zusätzlich in Datei
  *
  * Beendet sich mit Code 1, sobald eine Schwelle gerissen wird.
  * Diese Schwellen sind bewusst dort gesetzt, wo der Stand am 05.09.2026
@@ -210,6 +211,11 @@ async function browserChecks(files, want) {
   }
 
   report.probleme = fails;
+
+  const outIdx = args.indexOf('--out');
+  if (outIdx !== -1 && args[outIdx + 1]) {
+    fs.writeFileSync(args[outIdx + 1], JSON.stringify(report, null, 1));
+  }
 
   if (asJson) {
     console.log(JSON.stringify(report, null, 1));

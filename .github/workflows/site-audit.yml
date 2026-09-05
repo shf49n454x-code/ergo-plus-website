@@ -1,0 +1,48 @@
+name: Site-Audit
+
+# Prüft bei jedem Pull Request und auf main, ob Barrierefreiheit,
+# Ladeverhalten und Struktur der Seite noch stimmen.
+# Schwellen und Begründungen: .claude/skills/site-audit/SKILL.md
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Kein Lockfile im Repo (die Seite hat keinen Build-Schritt),
+      # deshalb npm install statt npm ci.
+      - name: Abhängigkeiten installieren
+        run: npm install --no-audit --no-fund
+
+      - name: Playwright und Chromium installieren
+        run: |
+          npm install --no-save --no-audit --no-fund playwright
+          npx playwright install --with-deps chromium
+
+      # Ohne Browser liefe das Audit nur strukturell durch und meldete
+      # trotzdem Erfolg. In CI wäre das eine Prüfung, die nichts prüft.
+      - name: Browser vorhanden?
+        run: node -e "require('playwright').chromium.executablePath()"
+
+      - name: Audit
+        run: node tools/audit/audit.js --out audit-report.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site-audit-report
+          path: audit-report.json
+          retention-days: 14
