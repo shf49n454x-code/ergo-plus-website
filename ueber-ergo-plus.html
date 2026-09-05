@@ -257,9 +257,12 @@
       padding: 40px clamp(20px,5%,80px);
       text-align: center; font-size: 13px;
     }
-    footer a { color: rgba(255,255,255,.7); }
+    footer a { color: rgba(255,255,255,.7); text-decoration: underline; }
     footer a:hover { color: white; }
-  </style>
+  
+    /* a11y: in-text links must be distinguishable without colour (WCAG 1.4.1) */
+    p a:not([class]), li a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
+</style>
 </head>
 <body>
 

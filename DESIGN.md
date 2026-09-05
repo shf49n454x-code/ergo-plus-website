@@ -5,7 +5,8 @@
 - **Who it's for:** People with physical disabilities (MS, ALS, scoliosis, dwarfism, amputation), their families, therapists, and cost carriers (Krankenkassen)
 - **Space/industry:** German healthcare / rehabilitation aids (Hilfsmittelversorgung)
 - **Project type:** Marketing site with informational blog, FAQ, and company profile pages
-- **Competitors:** vela-stuhl.de, thomashilfen.de, pohlig.net, pflege-sessel.de
+- **Competitors:** thomashilfen.de, pohlig.net, pflege-sessel.de
+- **Supplier (not a competitor):** VELA / vela-stuhl.de -- ERGO-PLUS is a VELA dealer. Never position against VELA brand terms.
 - **Positioning:** Specialist, not Sanitatshaus. Human warmth over clinical sterility.
 
 ## Aesthetic Direction
@@ -13,7 +14,7 @@
 - **Decoration level:** Intentional -- subtle background gradients, card shadows, no visual clutter
 - **Mood:** Trustworthy and competent, but approachable. Not a hospital brochure, not a startup landing page. The visual language says "we understand your situation, and we have the expertise to help."
 - **Memorable thing:** Teal CTAs on blue-gray backgrounds. No competitor in the space uses this split. Instant recognition.
-- **Reference sites:** vela-stuhl.de (clean but generic), thomashilfen.de (corporate reha), pohlig.net (clinical)
+- **Reference sites:** thomashilfen.de (corporate reha), pohlig.net (clinical). vela-stuhl.de is the supplier's own site -- reference for product accuracy, not a competitor benchmark.
 
 ## Typography
 - **Display/Hero:** Figtree (800, 700, 600) -- geometric humanist sans with personality. Differentiator: no competitor uses a font with this much character.
@@ -52,9 +53,11 @@
 | `--c-primary-dk` | #154360 | Hover states, dark accents. |
 | `--c-primary-lt` | #d6eaf8 | Light backgrounds, info alerts, badges. |
 | `--c-teal` / `--c-cta` | #148f77 | CTA buttons, links, success accents. THE differentiator. |
-| `--c-teal-dk` | #117a65 | CTA hover state. |
+| `--c-teal-dk` | #117a65 | Teal on white/light. WCAG AA (5.3:1 on white) -- use for CTA fills, badges, box titles. |
+| `--c-teal-dkr` | #0d6350 | Teal text on a light teal wash (rgba teal .1). AA where `--c-teal-dk` falls short. |
 | `--c-teal-lt` | #d1f2eb | Teal badges, light teal backgrounds. |
-| `--c-amber` / `--c-accent` | #d68910 | Warnings, highlights, stat numbers. |
+| `--c-amber` / `--c-accent` | #d68910 | Warnings, highlights, stat numbers. As a fill, pair with `--c-text`, never white (white is 2.8:1). |
+| `--c-amber-dk` | #8a5606 | Amber *text* on light amber backgrounds. AA (5.6:1). |
 | `--c-amber-lt` | #fef3cd | Warning alert background. |
 
 ### Neutrals

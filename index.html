@@ -422,7 +422,7 @@
     .btn-nav {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 10px 22px;
-      background: var(--c-cta);
+      background: var(--c-teal-dk);
       color: white !important;
       border-radius: 50px;
       font-size: 13px; font-weight: 600 !important;
@@ -431,7 +431,7 @@
       cursor: pointer !important;
       box-shadow: 0 2px 8px rgba(20,143,119,.25);
     }
-    .btn-nav:hover { background: var(--c-teal-dk); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(20,143,119,.35); }
+    .btn-nav:hover { background: var(--c-teal-dk); filter: brightness(.9); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(20,143,119,.35); }
 
     .burger {
       display: none; flex-direction: column; gap: 5px;
@@ -1594,7 +1594,7 @@
 <body>
 
 <!-- ═══════════════════  TRUST BAR (from B)  ═══════════════════ -->
-<div class="trust-bar" aria-label="Vertrauensindikatoren">
+<div class="trust-bar" role="region" aria-label="Vertrauensindikatoren">
   <div class="trust-bar-inner">
     <div class="trust-item"><span class="check" aria-hidden="true">&#10003;</span> Zertifizierter Hilfsmittellieferant</div>
     <div class="trust-item"><span class="check" aria-hidden="true">&#10003;</span> Seit 30+ Jahren Spezialist</div>
@@ -1629,6 +1629,7 @@
 </nav>
 
 <!-- ═══════════════════  HERO  ═══════════════════ -->
+<main id="content">
 <section id="hero" aria-labelledby="hero-heading">
   <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
   <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
@@ -2570,6 +2571,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- ═══════════════════  FOOTER  ═══════════════════ -->
 <footer>
