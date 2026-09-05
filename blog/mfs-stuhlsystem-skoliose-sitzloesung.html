@@ -24,10 +24,9 @@
   <meta name="theme-color" content="#1a5276" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="preload" href="/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <!-- Schema.org BlogPosting -->
   <script type="application/ld+json">
   {
@@ -376,7 +375,7 @@
     <img src="/assets/img/lifestyle-mfs-skoliose.webp"
          alt="MFS modulares Funktions-Stuhlsystem von ERGO-PLUS &ndash; individuell angepasste Sitzl&ouml;sung f&uuml;r Skoliose"
          width="600" height="400"
-         loading="eager" />
+         loading="eager" srcset="/assets/img/lifestyle-mfs-skoliose-800w.webp 800w, /assets/img/lifestyle-mfs-skoliose.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 380px"/>
   </div>
 
   <!-- Table of contents -->

@@ -174,12 +174,10 @@
   <!-- GA4 laedt erst nach Cookie-Zustimmung ("Verstanden"), siehe Cookie-Banner-Skript unten -->
 
   <!-- Preconnect & DNS prefetch for external resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <!-- Fonts — reduced to only needed weights -->
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,500;0,600;0,700;0,800;1,300&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="preload" href="/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <!-- Preload LCP hero image candidates -->
   <link rel="preload" as="image" href="logo-ergoplus.png" />
 
@@ -1589,7 +1587,6 @@
     .form-success p { color: var(--c-text-soft); font-size: 15px; }
 
   </style>
-  <script src="/assets/js/lucide.min.js" defer></script>
 </head>
 <body>
 
@@ -1705,7 +1702,7 @@
         </div>
 
         <div class="hero-float hero-float-tl">
-          <div class="float-icon teal"><i data-lucide="shield-check"></i></div>
+          <div class="float-icon teal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
           <div class="float-txt">
             <strong>Deutschlandweit</strong>
             <span>Beratung vor Ort</span>
@@ -1729,17 +1726,17 @@
     </div>
     <div class="usp-grid">
       <div class="usp-card reveal-scale">
-        <div class="usp-icon teal"><i data-lucide="award" aria-hidden="true"></i></div>
+        <div class="usp-icon teal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg></div>
         <h3>Kein Sanitätshaus – Spezialisten</h3>
         <p>Wo das Sanitätshaus aufhört, fangen wir an. Wir sind spezialisiert auf komplexe Sitzversorgungen bei MS, ALS, Skoliose, Kleinwuchs, Amputation und Schwergewicht bis 250 kg.</p>
       </div>
       <div class="usp-card reveal-scale">
-        <div class="usp-icon green"><i data-lucide="users" aria-hidden="true"></i></div>
+        <div class="usp-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
         <h3>Individuelle Beratung</h3>
         <p>Mit dem POSE-Assessmenttool und über 30 Jahren therapeutischer Expertise finden wir Ihre persönliche Lösung – kein Schema F.</p>
       </div>
       <div class="usp-card reveal-scale">
-        <div class="usp-icon amber"><i data-lucide="clipboard-check" aria-hidden="true"></i></div>
+        <div class="usp-icon amber"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg></div>
         <h3>Alle Kostenträger – wir regeln das</h3>
         <p>Krankenkasse, DRV, Integrationsamt, Versorgungsamt, Arbeitsamt oder BG – wir kennen jeden Kostenträger und begleiten Sie durch den gesamten Antragsprozess über unsere Reha-Partner.</p>
       </div>
@@ -1758,7 +1755,7 @@
 
     <div class="tech-hero reveal-scale">
       <img src="/assets/img/hf_20260521_132503_b0258300-fc7d-496d-b3a8-06227542cbc8.webp"
-           alt="Wirbelsäulenmodell: gesunde Haltung vs. Fehlbelastung beim Sitzen" loading="lazy" decoding="async" />
+           alt="Wirbelsäulenmodell: gesunde Haltung vs. Fehlbelastung beim Sitzen" loading="lazy" decoding="async" width="1600" height="904"/>
       <div class="tech-hero-overlay">
         <h3>Wirbelsäule verstehen – richtig sitzen</h3>
         <p>Links die gesunde S-Kurve, rechts die Fehlbelastung durch falsches Sitzen. Unsere Lösungen unterstützen die natürliche Wirbelsäulenform und entlasten gezielt.</p>
@@ -1769,7 +1766,7 @@
       <div class="tech-card reveal-left">
         <div class="tech-card-img">
           <img src="/assets/img/hf_20260521_132506_12bd0b2b-ca9a-45fe-a590-a56757c5ded8.webp"
-               alt="Wirbelsäulenmodell in teal-farbener ergonomischer Lordosenstütze" loading="lazy" decoding="async" />
+               alt="Wirbelsäulenmodell in teal-farbener ergonomischer Lordosenstütze" loading="lazy" decoding="async" width="1600" height="1600"/>
         </div>
         <div class="tech-card-body">
           <span class="tech-badge">Lordosenstütze</span>
@@ -1781,7 +1778,7 @@
       <div class="tech-card reveal">
         <div class="tech-card-img">
           <img src="/assets/img/hf_20260521_132504_9f5f1985-df2f-4d68-bfc4-f0cbdd6869a6.webp"
-               alt="3-Schicht Sitzpolster-Querschnitt mit High-Density-Basis, Druckentlastung und Gel-Kühlung" loading="lazy" decoding="async" />
+               alt="3-Schicht Sitzpolster-Querschnitt mit High-Density-Basis, Druckentlastung und Gel-Kühlung" loading="lazy" decoding="async" width="1600" height="1194"/>
         </div>
         <div class="tech-card-body">
           <span class="tech-badge">3-Schicht Sitzpolster</span>
@@ -1793,7 +1790,7 @@
       <div class="tech-card reveal-right">
         <div class="tech-card-img">
           <img src="/assets/img/hf_20260521_132458_c569e8e8-ac42-46d2-9a51-964091a07afc.webp"
-               alt="Präzisions-Bremsrolle mit Doppelrad und zentralem Bremshebel" loading="lazy" decoding="async" />
+               alt="Präzisions-Bremsrolle mit Doppelrad und zentralem Bremshebel" loading="lazy" decoding="async" width="1600" height="1194"/>
         </div>
         <div class="tech-card-body">
           <span class="tech-badge">Sicherheitsbremse</span>
@@ -1821,7 +1818,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="VELA TANGO Serie">
         <div class="product-img">
           <img src="/assets/img/vela-tango-aktivstuhl.webp"
-               alt="VELA TANGO Aktivstuhl – ergonomischer Stuhl mit Rollen und höhenverstellbarem Sitz" loading="lazy" decoding="async" />
+               alt="VELA TANGO Aktivstuhl – ergonomischer Stuhl mit Rollen und höhenverstellbarem Sitz" loading="lazy" decoding="async" width="900" height="900"/>
           <span class="product-badge">Bestseller</span>
         </div>
         <div class="product-body">
@@ -1838,7 +1835,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="VELA BLUES Serie">
         <div class="product-img">
           <img src="/assets/img/vela-blues-aktivstuhl.webp"
-               alt="VELA BLUES Aktivstuhl – kompakter ergonomischer Stuhl" loading="lazy" decoding="async" />
+               alt="VELA BLUES Aktivstuhl – kompakter ergonomischer Stuhl" loading="lazy" decoding="async" width="900" height="895"/>
         </div>
         <div class="product-body">
           <h3>VELA BLUES Serie</h3>
@@ -1852,7 +1849,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="MFS-Stuhlsystem">
         <div class="product-img">
           <img src="/assets/img/mfs-stuhlsystem.webp"
-               alt="MFS-Stuhlsystem – modularer Rehabilitationsstuhl mit individuellen Stützelementen" loading="lazy" decoding="async" />
+               alt="MFS-Stuhlsystem – modularer Rehabilitationsstuhl mit individuellen Stützelementen" loading="lazy" decoding="async" width="900" height="900"/>
           <span class="product-badge">Speziallösung</span>
         </div>
         <div class="product-body">
@@ -1867,7 +1864,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="ELIFT 400">
         <div class="product-img">
           <img src="/assets/img/elift-400-aufstehstuhl.webp"
-               alt="ELIFT 400 – motorisierte Aufstehhilfe mit 46–86 cm Höhenverstellung" loading="lazy" decoding="async" />
+               alt="ELIFT 400 – motorisierte Aufstehhilfe mit 46–86 cm Höhenverstellung" loading="lazy" decoding="async" width="900" height="892"/>
         </div>
         <div class="product-body">
           <h3>ELIFT 400</h3>
@@ -1881,7 +1878,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="Opera 20 / SMARTMOVE">
         <div class="product-img">
           <img src="/assets/img/opera-20-buerostuhl.webp"
-               alt="Opera 20 ergonomischer Bürostuhl mit Aluminiumbasis und Lordosenstütze" loading="lazy" decoding="async" />
+               alt="Opera 20 ergonomischer Bürostuhl mit Aluminiumbasis und Lordosenstütze" loading="lazy" decoding="async" width="900" height="889"/>
         </div>
         <div class="product-body">
           <h3>Opera 20 / SMARTMOVE</h3>
@@ -1895,7 +1892,7 @@
       <article class="product-card reveal" tabindex="0" aria-label="Speziallösungen">
         <div class="product-img">
           <img src="/assets/img/spezialstuhl-schwergewicht.webp"
-               alt="Bariatrischer Aktivstuhl – robuster Stuhl für erhöhte Belastung bis 250 kg" loading="lazy" decoding="async" />
+               alt="Bariatrischer Aktivstuhl – robuster Stuhl für erhöhte Belastung bis 250 kg" loading="lazy" decoding="async" width="900" height="884"/>
         </div>
         <div class="product-body">
           <h3>Speziallösungen</h3>
@@ -1991,7 +1988,7 @@
       <div class="step-visual" style="padding:0">
         <img src="/assets/img/hf_20260521_132500_61336418-b910-4de5-a30d-b7906e41bc72.webp"
              alt="Skoliose-Diagramm: Wirbelsäulenanalyse gesund vs. fehlbelastet"
-             style="width:100%;height:100%;object-fit:cover;object-position:center 35%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" />
+             style="width:100%;height:100%;object-fit:cover;object-position:center 35%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" width="1600" height="1600"/>
         <span class="step-visual-num" aria-hidden="true">01</span>
       </div>
       <div class="step-content">
@@ -2023,7 +2020,7 @@
       <div class="step-visual" style="padding:0">
         <img src="/assets/img/hf_20260521_132458_878164aa-dcdc-4147-8dcb-79ea64d5a832.webp"
              alt="Elektrische Höhenverstellungs-Mechanik – Präzisionsmotor für individuelle Anpassung"
-             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" />
+             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" width="1600" height="1194"/>
         <span class="step-visual-num" aria-hidden="true">02</span>
       </div>
       <div class="step-content">
@@ -2055,7 +2052,7 @@
       <div class="step-visual" style="padding:0">
         <img src="/assets/img/istock-1203933819.webp"
              alt="Beratungsgespräch zur Kostenübernahme – Fachberaterin erklärt Optionen"
-             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" />
+             style="width:100%;height:100%;object-fit:cover;object-position:center 40%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" width="1600" height="1066"/>
         <span class="step-visual-num" aria-hidden="true">03</span>
       </div>
       <div class="step-content">
@@ -2087,7 +2084,7 @@
       <div class="step-visual" style="padding:0">
         <img src="/assets/img/istock-985118730.webp"
              alt="Anwenderin arbeitet selbstständig am Schreibtisch – nach persönlicher Übergabe und Einweisung"
-             style="width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" />
+             style="width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:var(--radius-xl)" loading="lazy" decoding="async" width="1600" height="1066"/>
         <span class="step-visual-num" aria-hidden="true">04</span>
       </div>
       <div class="step-content">
@@ -2208,7 +2205,7 @@
     <div class="anwender-grid">
       <div class="anwender-card reveal-scale">
         <img src="/assets/img/istock-985118730.webp"
-             alt="Frau im Rollstuhl arbeitet am Schreibtisch mit Laptop" loading="lazy" decoding="async" />
+             alt="Frau im Rollstuhl arbeitet am Schreibtisch mit Laptop" loading="lazy" decoding="async" width="1600" height="1066"/>
         <div class="anwender-overlay">
           <strong>Selbstständig arbeiten</strong>
           <span>Homeoffice mit individueller Sitzlösung</span>
@@ -2216,7 +2213,7 @@
       </div>
       <div class="anwender-card reveal-scale">
         <img src="/assets/img/istock-1203933819.webp"
-             alt="Beratungsgespräch im Büro mit Rollstuhlnutzerin" loading="lazy" decoding="async" />
+             alt="Beratungsgespräch im Büro mit Rollstuhlnutzerin" loading="lazy" decoding="async" width="1600" height="1066"/>
         <div class="anwender-overlay">
           <strong>Aktiv im Beruf</strong>
           <span>Professionelle Meetings auf Augenhöhe</span>
@@ -2224,7 +2221,7 @@
       </div>
       <div class="anwender-card reveal-scale">
         <img src="/assets/img/hf_20260521_130752_d9a634bf-f965-4da5-9aec-f0f9c347358e.webp"
-             alt="Kollegin übergibt Dokumente an Rollstuhlnutzerin im Büro" loading="lazy" decoding="async" />
+             alt="Kollegin übergibt Dokumente an Rollstuhlnutzerin im Büro" loading="lazy" decoding="async" width="1600" height="1194"/>
         <div class="anwender-overlay">
           <strong>Teamarbeit ohne Barrieren</strong>
           <span>Inklusion am Arbeitsplatz</span>
@@ -2232,7 +2229,7 @@
       </div>
       <div class="anwender-card reveal-scale">
         <img src="/assets/img/hf_20260521_130750_42931348-ac71-483c-a62a-642bb19d7496.webp"
-             alt="Frau im Rollstuhl telefoniert und arbeitet am Laptop" loading="lazy" decoding="async" />
+             alt="Frau im Rollstuhl telefoniert und arbeitet am Laptop" loading="lazy" decoding="async" width="1600" height="1194"/>
         <div class="anwender-overlay">
           <strong>Mobilität im Alltag</strong>
           <span>Flexibel und unabhängig von zu Hause</span>
@@ -2267,7 +2264,7 @@
       <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="/assets/img/hf_20260527_214509_6dc19116-34bf-415b-a1e6-f95161938a2b.webp"
-               alt="Joachim Stolz – Geschäftsführer ERGO-PLUS" loading="lazy" decoding="async" />
+               alt="Joachim Stolz – Geschäftsführer ERGO-PLUS" loading="lazy" decoding="async" width="1194" height="1600"/>
         </div>
         <div class="team-body">
           <h3>Joachim Stolz</h3>
@@ -2284,7 +2281,7 @@
       <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="/assets/img/hf_20260527_214300_a8653587-7362-4a6a-a7f9-5d96c5ba82e1.webp"
-               alt="Philipp Klein – Technik ERGO-PLUS" loading="lazy" decoding="async" />
+               alt="Philipp Klein – Technik ERGO-PLUS" loading="lazy" decoding="async" width="1194" height="1600"/>
         </div>
         <div class="team-body">
           <h3>Philipp Klein</h3>
@@ -2301,7 +2298,7 @@
       <div class="team-card reveal-scale">
         <div class="team-photo">
           <img src="/assets/img/hf_20260527_214513_775217c8-c6b2-450f-8628-a25f67cb6056.webp"
-               alt="Reinhard Reuhl – Finanzen ERGO-PLUS" loading="lazy" decoding="async" />
+               alt="Reinhard Reuhl – Finanzen ERGO-PLUS" loading="lazy" decoding="async" width="1194" height="1600"/>
         </div>
         <div class="team-body">
           <h3>Reinhard Reuhl</h3>
@@ -2337,7 +2334,7 @@
       <a href="/blog/mfs-stuhlsystem-skoliose-sitzloesung.html" class="blog-card reveal" tabindex="0" style="text-decoration:none;color:inherit">
         <div class="blog-img">
           <img src="/assets/img/hf_20260521_111434_d30f0e5c-1221-4f54-8ff8-b04c3f2aab58.webp"
-               alt="MFS-Stuhlsystem – modularer Rehabilitationsstuhl" loading="lazy" decoding="async" />
+               alt="MFS-Stuhlsystem – modularer Rehabilitationsstuhl" loading="lazy" decoding="async" width="1600" height="1194"/>
           <span class="blog-cat">Speziallösung</span>
         </div>
         <div class="blog-body">
@@ -2358,7 +2355,7 @@
       <a href="/blog/kleinwuchs-sitzloesung-arbeitsplatz.html" class="blog-card reveal" tabindex="0" style="text-decoration:none;color:inherit">
         <div class="blog-img">
           <img src="/assets/img/hf_20260521_111353_398236ee-3d1f-464a-9168-d2d5ef8b2c6a.webp"
-               alt="ELIFT 400 Aufstehstuhl – ergonomische Sitzlösung bei Kleinwuchs" loading="lazy" decoding="async" />
+               alt="ELIFT 400 Aufstehstuhl – ergonomische Sitzlösung bei Kleinwuchs" loading="lazy" decoding="async" width="1600" height="1194"/>
           <span class="blog-cat green">Diagnose</span>
         </div>
         <div class="blog-body">
@@ -2379,7 +2376,7 @@
       <a href="/blog/kostenubernahme-sitzversorgung-krankenkasse.html" class="blog-card reveal" tabindex="0" style="text-decoration:none;color:inherit">
         <div class="blog-img">
           <img src="/assets/img/hf_20260521_130750_42931348-ac71-483c-a62a-642bb19d7496.webp"
-               alt="Frau am Arbeitsplatz – Kostenübernahme durch Krankenkasse oder Integrationsamt" loading="lazy" decoding="async" />
+               alt="Frau am Arbeitsplatz – Kostenübernahme durch Krankenkasse oder Integrationsamt" loading="lazy" decoding="async" width="1600" height="1194"/>
           <span class="blog-cat amber">Kostenübernahme</span>
         </div>
         <div class="blog-body">
@@ -2411,51 +2408,51 @@
     </div>
     <div class="conditions-grid">
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="brain" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path><path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path><path d="M19.938 10.5a4 4 0 0 1 .585.396"></path><path d="M6 18a4 4 0 0 1-1.967-.516"></path><path d="M19.967 17.484A4 4 0 0 1 18 18"></path></svg></div>
         <span>Multiple Sklerose (MS)</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="activity" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg></div>
         <span>ALS (Amyotrophe Lateralsklerose)</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="trending-down" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline><polyline points="16 17 22 17 22 11"></polyline></svg></div>
         <span>Muskelschwund & Muskeldystrophie</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="spline" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><path d="M5 17A12 12 0 0 1 17 5"></path></svg></div>
         <span>Skoliose & Wirbelsäulenerkrankungen</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="disc-3" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M6 12c0-1.7.7-3.2 1.8-4.2"></path><circle cx="12" cy="12" r="2"></circle><path d="M18 12c0 1.7-.7 3.2-1.8 4.2"></path></svg></div>
         <span>Bandscheibenvorfall & HWS-Syndrom</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="move-vertical" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="m8 18 4 4 4-4"></path><path d="m8 6 4-4 4 4"></path></svg></div>
         <span>Kleinwuchs</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="weight" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"></circle><path d="M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"></path></svg></div>
         <span>Schwergewicht (bis 250 kg)</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="accessibility" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1"></circle><path d="m18 19 1-7-6 1"></path><path d="m5 8 3-3 5.5 3-2.36 3.5"></path><path d="M4.24 14.5a5 5 0 0 0 6.88 6"></path><path d="M13.76 17.5a5 5 0 0 0-6.88-6"></path></svg></div>
         <span>Amputationen & Prothesenträger</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="lock" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
         <span>Arthrodese (versteiftes Gelenk)</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="heart-pulse" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg></div>
         <span>Chronische Schmerzerkrankungen</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="stethoscope" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg></div>
         <span>Post-operative Versorgung</span>
       </div>
       <div class="cond-card reveal-scale">
-        <div class="cond-icon"><i data-lucide="hand" aria-hidden="true"></i></div>
+        <div class="cond-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"></path><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"></path><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg></div>
         <span>Muskelschwäche & Lähmungen</span>
       </div>
     </div>
@@ -2579,7 +2576,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo" aria-label="ERGO-PLUS Startseite">
-          <img src="logo-ergoplus.png" alt="ERGO plus – Beraten · Gestalten · Behandeln" class="logo-img" style="height: 56px; background: white; border-radius: 6px; padding: 4px 6px;" />
+          <img src="logo-ergoplus.png" alt="ERGO plus – Beraten · Gestalten · Behandeln" class="logo-img" style="height: 56px; background: white; border-radius: 6px; padding: 4px 6px;" loading="lazy" decoding="async"/>
         </a>
         <p>ERGO-PLUS Seating Concepts GmbH – Individuelle Sitzlösungen mit über 30 Jahren therapeutischer Erfahrung. Wir lassen Sie nicht nur sitzen.</p>
       </div>
@@ -2818,9 +2815,6 @@
   })();
 
   /* Lucide icons init */
-  if (typeof lucide !== 'undefined') lucide.createIcons();
-  else window.addEventListener('DOMContentLoaded', () => { if (typeof lucide !== 'undefined') lucide.createIcons(); });
 </script>
-<script>window.addEventListener('load', () => { if (typeof lucide !== 'undefined') lucide.createIcons(); });</script>
 </body>
 </html>
