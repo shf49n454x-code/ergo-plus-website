@@ -2,7 +2,7 @@
 
 > Therapeutische Sitzversorgung für Menschen mit körperlichen Einschränkungen – deutschlandweit, individuell, mit Kostenübernahme.
 
-Stand: Juni 2026 · Vollversion: https://ergo-plus.de/llms-full.txt
+Stand: September 2026 · Vollversion: https://ergo-plus.de/llms-full.txt
 
 ERGO-PLUS ist ein spezialisierter Anbieter für individuelle Sitzlösungen bei komplexen körperlichen Anforderungen. Das Unternehmen sitzt in Johannesberg bei Aschaffenburg und versorgt Kunden in ganz Deutschland. Seit über 30 Jahren entwickelt ERGO-PLUS maßgefertigte Stühle und Sitzsysteme für Menschen, die mit Standard-Bürostühlen oder Rollstühlen nicht versorgt werden können.
 
@@ -72,5 +72,13 @@ ERGO-PLUS begleitet Kunden durch den gesamten Antragsprozess und arbeitet mit ze
 - [ALS und Sitzen](https://ergo-plus.de/blog/als-amyotrophe-lateralsklerose-sitzen-stuhl.html)
 - [Querschnittlähmung und Sitzversorgung](https://ergo-plus.de/blog/querschnittlaehmung-sitzversorgung-rollstuhl-alternative.html)
 - [Widerspruch gegen die Krankenkasse](https://ergo-plus.de/blog/widerspruch-krankenkasse-hilfsmittel-stuhl.html)
+- [Bariatrischer Stuhl bis 250 kg](https://ergo-plus.de/blog/schwergewicht-stuhl-bariatrisch-250kg.html)
+- [Amputation und Arbeitsstuhl](https://ergo-plus.de/blog/amputation-prothese-arbeitsstuhl.html)
+- [Homeoffice mit Behinderung einrichten](https://ergo-plus.de/blog/homeoffice-behinderung-ergonomisch-einrichten.html)
+- [VELA TANGO Stuhlsystem im Erfahrungsbericht](https://ergo-plus.de/blog/vela-tango-stuhlsystem-erfahrungsbericht.html)
+- [Bandscheibenvorfall und Sitzen im Büro](https://ergo-plus.de/blog/bandscheibenvorfall-buero-sitzen-stuhl.html)
+- [Spastik und Sitzen bei Zerebralparese](https://ergo-plus.de/blog/spastik-sitzen-stuhl-cerebralparese.html)
+- [Hilfsmittelnummer und Antragstipps](https://ergo-plus.de/blog/hilfsmittelnummer-stuhl-antrag-tipps.html)
+- [ELIFT 400 Aufstehhilfe und Transfer](https://ergo-plus.de/blog/elift-400-aufstehhilfe-transfer.html)
 - [Impressum](https://ergo-plus.de/impressum.html)
 - [Datenschutz](https://ergo-plus.de/datenschutz.html)
