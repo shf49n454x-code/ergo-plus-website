@@ -1,74 +1,109 @@
 # Search-Console-Daten automatisch abholen
 
-Einmal einrichten, danach schreibt sich die Tabelle montags von selbst
-fort. Kein manueller Export mehr.
+Ein Service Account holt die Zahlen woechentlich direkt von Google, die
+GitHub Action legt sie im Repo ab. Kein manueller Export, kein Connector
+dazwischen.
 
-## Warum dieser Umweg
+Ergebnis nach jedem Lauf:
+
+| Datei | Inhalt |
+|---|---|
+| `data/search-console/latest.json` | alle Dimensionen, maschinenlesbar |
+| `data/search-console/BERICHT.md` | die Auffaelligkeiten in Textform |
+
+## Warum dieser Weg
 
 Die Search-Console-API direkt aus einer Claude-Sitzung aufzurufen geht
-nicht: der Egress-Proxy dieser Umgebung lässt `googleapis.com` nicht
-durch. Apps Script läuft dagegen auf Googles eigenen Servern — dort ist
-der Zugriff ohnehin erlaubt. Die fertige Tabelle liegt anschließend in
-Google Drive, und Drive ist als Connector verbunden.
+nicht: der Egress-Proxy laesst `googleapis.com` nicht durch. GitHub
+Actions hat diese Einschraenkung nicht.
 
-## Einrichtung (einmalig, etwa fünf Minuten)
+Der Vorteil gegenueber einem Export in eine Google-Tabelle: die Daten
+liegen **im Repo**, neben dem Code. Claude liest sie in jeder Sitzung
+direkt, ohne Umweg.
 
-1. **Tabelle anlegen.** In Google Drive eine leere Google-Tabelle
-   erstellen, zum Beispiel `ERGO-PLUS Search Console`.
+## Einrichtung (einmalig)
 
-2. **Skript öffnen.** In der Tabelle: *Erweiterungen → Apps Script*.
+### 1. Service Account
 
-3. **Code einfügen.** Den Inhalt von `Code.gs` in die Datei `Code.gs`
-   des Projekts kopieren (den vorhandenen Beispielcode ersetzen).
+Falls schon einer existiert — etwa aus einem anderen Projekt —
+**diesen wiederverwenden**. Dann entfaellt dieser Schritt und es bleibt
+nur Schritt 2.
 
-4. **Manifest sichtbar machen und ersetzen.** Links auf *Projekt­einstellungen*,
-   dort **„Manifestdatei appsscript.json im Editor anzeigen"** anhaken.
-   Dann im Editor `appsscript.json` öffnen und durch die Datei aus diesem
-   Ordner ersetzen. Ohne diesen Schritt fehlt die Berechtigung für die
-   Search Console.
+Sonst in der [Google Cloud Console](https://console.cloud.google.com):
 
-5. **Property eintragen.** In `Code.gs` oben bei `CONFIG.siteUrl` den
-   Wert setzen, **genau** wie in der Search Console:
-   - Domain-Property → `sc-domain:ergo-plus.de`
-   - URL-Property → `https://ergo-plus.de/`
+1. Projekt anlegen (oder ein bestehendes waehlen)
+2. *APIs & Dienste → Bibliothek* → **Google Search Console API** aktivieren
+3. *IAM → Dienstkonten* → Dienstkonto erstellen
+4. Beim Dienstkonto: *Schluessel → Schluessel hinzufuegen → JSON*
 
-   Ein falsches Präfix ist der häufigste Fehler; das Skript sagt dann
-   ausdrücklich, woran es lag.
+Die JSON-Datei enthaelt einen privaten Schluessel. Sie gehoert **nicht**
+ins Repo und nicht in einen Chat — nur in das GitHub-Secret aus Schritt 3.
 
-6. **Einmal starten.** Oben die Funktion `triggerEinrichten` auswählen
-   und ausführen. Google fragt nach Berechtigungen — das ist der Punkt,
-   an dem der Zugriff erteilt wird. Danach ist die Tabelle gefüllt und
-   der wöchentliche Trigger steht.
+### 2. Service Account in der Search Console eintragen
 
-Das ausführende Google-Konto muss in der Search Console Zugriff auf die
-Property haben. Ein Konto mit der Rolle *Eingeschränkt* reicht zum Lesen.
+Search Console → *Einstellungen → Nutzer und Berechtigungen → Nutzer
+hinzufuegen*. Als E-Mail die Adresse des Dienstkontos eintragen; sie
+steht in der JSON-Datei unter `client_email` und sieht aus wie
+`name@projekt-id.iam.gserviceaccount.com`.
 
-## Was in der Tabelle steht
+Rolle **Eingeschraenkt** reicht zum Lesen.
 
-| Blatt | Inhalt |
-|---|---|
-| Suchanfragen | Wonach gesucht wurde, mit Klicks, Impressionen, CTR, Position |
-| Seiten | Welche Seite wie läuft |
-| Anfrage x Seite | Welche Seite für welche Anfrage rankt |
-| Verlauf | Tagesverlauf über den Zeitraum |
-| Stand | Property, Zeitraum, Zeitpunkt der letzten Aktualisierung |
+Ohne diesen Schritt antwortet die API mit 403 — das Skript sagt das dann
+auch so.
 
-Sortiert ist nach **Impressionen**, nicht nach Klicks. Seiten mit vielen
-Impressionen und wenigen Klicks sind die eigentlichen Baustellen: sie
-werden gefunden, aber nicht geklickt — dort wirkt ein besserer Titel.
+### 3. Secret in GitHub hinterlegen
+
+Repo → *Settings → Secrets and variables → Actions → New repository
+secret*
+
+- Name: `GOOGLE_SERVICE_ACCOUNT_JSON`
+- Wert: der **komplette Inhalt** der JSON-Datei
+
+Weicht die Property vom Standard ab, zusaetzlich unter *Variables* eine
+Variable `GSC_SITE_URL` anlegen. Voreingestellt ist
+`sc-domain:ergo-plus.de`.
+
+- Domain-Property → `sc-domain:ergo-plus.de`
+- URL-Property → `https://ergo-plus.de/`
+
+Ein falsches Praefix ist der haeufigste Fehler; das Skript nennt bei 404
+gleich die wahrscheinliche Ursache.
+
+### 4. Einmal von Hand starten
+
+Repo → *Actions → Search Console → Run workflow*. Danach laeuft er
+montags um 05:00 UTC von selbst.
+
+## Was im Bericht steht
+
+`BERICHT.md` listet nicht alles auf, sondern nur, was eine Entscheidung
+nach sich zieht:
+
+**Viel gesehen, wenig geklickt** — Seiten ab 50 Impressionen, nach
+Klickrate aufsteigend. Sie werden gefunden, aber nicht geklickt; dort
+wirkt ein besserer Titel oder eine bessere Description.
+
+**Knapp vor Seite 1** — Anfrage-Seite-Paare auf Position 8 bis 20 mit
+mindestens 20 Impressionen. Der kuerzeste Weg zu mehr Klicks.
 
 ## Zwei Fallstricke
 
-**Die letzten Tage fehlen absichtlich.** Search Console hinkt zwei bis
-drei Tage hinterher. Ohne `tageAuslassen` sähe das Ende jedes Zeitraums
-wie ein Einbruch aus.
+**Die letzten drei Tage fehlen absichtlich.** Search Console hinkt zwei
+bis drei Tage hinterher. Ohne diesen Abstand saehe das Ende jedes
+Zeitraums wie ein Einbruch aus.
 
-**Nicht aufsummieren.** Die Zeilen unter *Suchanfragen* lassen
-Anfragen mit sehr wenig Volumen aus Datenschutzgründen weg. Ihre Summe
-ist deshalb kleiner als die tatsächliche Gesamtzahl. Für Gesamtwerte das
-Blatt *Verlauf* nehmen.
+**Suchanfragen nicht aufsummieren.** Google laesst Anfragen mit sehr
+wenig Volumen aus Datenschutzgruenden weg. Die Summe der Zeilen unter
+*Suchanfragen* ist deshalb kleiner als die tatsaechliche Gesamtzahl. Fuer
+Gesamtwerte den Tagesverlauf nehmen — genau das tut der Bericht.
 
-## Danach
+## Lokal ausfuehren
 
-Sag Claude einfach den Namen der Tabelle. Der Drive-Connector liest sie,
-und die Auswertung läuft auf echten Zahlen statt auf Schätzungen.
+```bash
+pip install google-auth requests
+export GOOGLE_SERVICE_ACCOUNT_JSON="$(cat schluessel.json)"
+python3 tools/search-console/fetch_gsc.py --tage 90
+```
+
+Aus der Claude-Umgebung heraus schlaegt das fehl (Egress-Proxy). Vom
+eigenen Rechner aus funktioniert es.

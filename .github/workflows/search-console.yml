@@ -1,0 +1,58 @@
+name: Search Console
+
+# Holt die Search-Console-Zahlen woechentlich und legt sie im Repo ab.
+# Der Service-Account-Schluessel steckt im Secret GOOGLE_SERVICE_ACCOUNT_JSON
+# und taucht nirgends im Repo auf.
+# Einrichtung: tools/search-console/README.md
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'   # montags 05:00 UTC
+  workflow_dispatch:       # und auf Zuruf
+
+permissions:
+  contents: write          # nur zum Committen der abgeholten Daten
+
+jobs:
+  abholen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Abhaengigkeiten
+        run: pip install --quiet google-auth requests
+
+      # Ohne Secret bricht der Lauf mit einer klaren Meldung ab, statt
+      # eine leere Datei zu committen und Erfolg zu melden.
+      - name: Secret vorhanden?
+        env:
+          KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -z "$KEY" ]; then
+            echo "::error::GOOGLE_SERVICE_ACCOUNT_JSON fehlt. Siehe tools/search-console/README.md"
+            exit 1
+          fi
+
+      - name: Daten abholen
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:ergo-plus.de' }}
+        run: python3 tools/search-console/fetch_gsc.py --tage 90
+
+      - name: Aenderungen committen
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add data/search-console
+          if git diff --staged --quiet; then
+            echo "Keine Aenderungen."
+          else
+            git commit -m "Search-Console-Daten: Stand $(date -u +%Y-%m-%d)"
+            git push
+          fi
