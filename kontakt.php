@@ -15,10 +15,13 @@ declare(strict_types=1);
 
 // ── Einstellungen ───────────────────────────────────────────────────
 const EMPFAENGER      = 'info@ergo-plus.de';
-// Muss bei Strato als Postfach oder Alias auf der eigenen Domain
-// existieren, sonst weist der Mailserver die Nachricht ab. Falls kein
-// noreply-Postfach angelegt werden soll: hier info@ergo-plus.de eintragen.
-const ABSENDER        = 'noreply@ergo-plus.de';
+// Absender bewusst identisch mit dem Empfaenger: diese Adresse existiert
+// auf der Domain garantiert, also weist kein Mailserver die Nachricht
+// wegen eines unbekannten Absenders ab. Antworten gehen trotzdem an den
+// Besucher, dafuer sorgt das Reply-To weiter unten.
+// Wer lieber ein eigenes noreply-Postfach nutzt: hier eintragen, aber
+// vorher bei Strato als Postfach oder Alias anlegen.
+const ABSENDER        = 'info@ergo-plus.de';
 const BETREFF         = 'Beratungsanfrage ueber ergo-plus.de';
 const MIN_SEKUNDEN    = 3;      // schneller ausgefuellt = maschinell
 const MAX_PRO_STUNDE  = 5;      // pro Absender
