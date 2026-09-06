@@ -43,6 +43,7 @@ als bestanden gemeldet.
 | Fehlende Assets | 0 | inklusive aller `srcset`-Kandidaten |
 | Undefinierte CSS-Variablen | 0 | `var(--x)` ohne Definition fällt still aus — genau so ist hier schon einmal eine Kontrastkorrektur wirkungslos geblieben |
 | Uneinheitliche Telefonnummern | genau 1 Ziel | siehe unten |
+| Doppeltes Titelbild in der Blog-Übersicht | 0 | siehe unten |
 | Google Fonts extern | keine | siehe unten |
 
 ## Zwei Regeln, die aus echten Fehlern stammen
@@ -52,6 +53,14 @@ Ziffer fehlte. Das war der einzige Telefonlink der Startseite und damit
 das Ende praktisch jedes Weges durch die Seite. Zwei weitere Seiten hatten
 eigene Varianten. Richtig ist `+49 6021 12807` (Impressum, JSON-LD).
 Das Audit besteht nur, wenn **alle** `tel:`-Links auf dasselbe Ziel zeigen.
+
+**Doppelte Titelbilder.** Zwei Karten mit demselben Foto fallen sofort
+auf. Das Raster ist je nach Fensterbreite 3-, 2- oder einspaltig
+(Breakpoints 960 px und 600 px), deshalb reicht es nicht, die beiden
+Karten im Quelltext auseinanderzuziehen: Position 2 und 5 stehen bei drei
+Spalten direkt untereinander in derselben Spalte. Das Audit meldet jedes
+mehrfach verwendete Kartenbild — die Lösung ist ein eigenes Bild, nicht
+eine andere Reihenfolge.
 
 **Schriften.** Figtree und Noto Sans liegen unter `assets/fonts` und werden
 über `assets/fonts/fonts.css` geladen. Nicht auf Google Fonts zurückbauen:

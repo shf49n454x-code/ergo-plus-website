@@ -86,6 +86,24 @@ function staticChecks(files) {
       issues.push({ file: f, type: 'externe-schriftart', detail: 'Google Fonts wieder eingebunden' });
   }
 
+  // Zwei Karten mit demselben Titelbild fallen sofort auf, besonders wenn
+  // sie im Raster nebeneinander oder untereinander landen. Das Raster ist
+  // 3-, 2- oder 1-spaltig (Breakpoints 960px / 600px), deshalb reicht es
+  // nicht, sie in der Quelltextreihenfolge auseinanderzuziehen.
+  const uebersicht = path.join(ROOT, 'blog/index.html');
+  if (fs.existsSync(uebersicht)) {
+    const s = fs.readFileSync(uebersicht, 'utf8');
+    const bilder = [...s.matchAll(/<a href="[^"]+" class="card">[\s\S]*?src="\/assets\/img\/([^"]+?)(?:-800w)?\.webp"/g)]
+      .map((m) => m[1]);
+    const zaehl = {};
+    bilder.forEach((b, i) => (zaehl[b] = zaehl[b] || []).push(i));
+    for (const [b, pos] of Object.entries(zaehl)) {
+      if (pos.length < 2) continue;
+      issues.push({ file: 'blog/index.html', type: 'doppeltes-titelbild',
+        detail: `${b} auf Karte ${pos.map((p) => p + 1).join(' und ')}` });
+    }
+  }
+
   if (telTargets.size > 1)
     issues.push({
       file: '(mehrere)',
