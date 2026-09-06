@@ -1585,6 +1585,16 @@
       margin-bottom: 8px;
     }
     .form-success p { color: var(--c-text-soft); font-size: 15px; }
+    .hp-feld {
+      position: absolute; left: -9999px; width: 1px; height: 1px;
+      overflow: hidden;
+    }
+    .form-fehler {
+      margin-top: 12px; padding: 12px 16px;
+      background: #fdecea; border: 1px solid #f5c6c2;
+      border-radius: 10px; color: #922b21; font-size: 14.5px;
+    }
+    .form-fehler a { color: #922b21; font-weight: 600; text-decoration: underline; }
     .form-success-fallback {
       margin-top: 16px; padding-top: 16px;
       border-top: 1px solid var(--c-border-lt);
@@ -2557,6 +2567,13 @@
           <div class="form-group" style="font-size:12px;color:var(--c-text-soft)">
             Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer <a href="/datenschutz.html">Datenschutzerklärung</a> zu.
           </div>
+          <!-- Spamschutz ohne CAPTCHA: Honigtopf und Ladezeitpunkt.
+               Ein Bilderrätsel wäre für diese Zielgruppe die falsche Hürde. -->
+          <div class="hp-feld" aria-hidden="true">
+            <label for="f-website">Bitte nicht ausfüllen</label>
+            <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <input type="hidden" name="ts" id="f-ts" value="" />
           <button type="submit" class="btn-submit" id="btn-submit">
             Anfrage absenden
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -2564,11 +2581,11 @@
         </form>
         <div class="form-success" id="form-success">
           <div class="form-success-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="32" height="32" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
           </div>
-          <h3>Fast geschafft</h3>
-          <p>Wir haben eine E-Mail mit Ihren Angaben vorbereitet und Ihr E-Mail-Programm ge&ouml;ffnet. <strong>Bitte schicken Sie die Nachricht dort noch ab</strong> &ndash; erst dann erreicht sie uns.</p>
-          <p class="form-success-fallback">Es hat sich nichts ge&ouml;ffnet? Dann rufen Sie uns einfach an: <a href="tel:+49602112807">+49 6021 12807</a><br />oder schreiben Sie an <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a></p>
+          <h3>Vielen Dank</h3>
+          <p id="form-success-text">Ihre Anfrage ist bei uns eingegangen. Wir melden uns in der Regel innerhalb von 1&ndash;2 Werktagen bei Ihnen.</p>
+          <p class="form-success-fallback">Sie erreichen uns auch direkt: <a href="tel:+49602112807">+49 6021 12807</a><br />oder <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a></p>
         </div>
       </div>
     </div>
@@ -2780,16 +2797,36 @@
 
   // ── Contact Form Handler ──────────────────────
   (function() {
-    const form = document.getElementById('contact-form');
+    const form    = document.getElementById('contact-form');
     const success = document.getElementById('form-success');
-    const btn = document.getElementById('btn-submit');
+    const erfolgstext = document.getElementById('form-success-text');
+    const btn     = document.getElementById('btn-submit');
+    const ts      = document.getElementById('f-ts');
     if (!form) return;
 
-    form.addEventListener('submit', function(e) {
+    // Ladezeitpunkt setzen. Wer das Formular in unter drei Sekunden
+    // abschickt, hat es nicht gelesen — der Server weist das ab.
+    if (ts) ts.value = String(Date.now());
+
+    const beschriftung = btn ? btn.innerHTML : '';
+
+    function fehlerZeigen(text) {
+      let box = form.querySelector('.form-fehler');
+      if (!box) {
+        box = document.createElement('div');
+        box.className = 'form-fehler';
+        box.setAttribute('role', 'alert');
+        form.appendChild(box);
+      }
+      box.textContent = text;
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      // Basic validation
+
       const first = form.querySelector('#f-first');
-      const last = form.querySelector('#f-last');
+      const last  = form.querySelector('#f-last');
       const email = form.querySelector('#f-email');
       let valid = true;
       [first, last, email].forEach(el => {
@@ -2799,24 +2836,50 @@
       if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
         email.style.borderColor = '#e74c3c'; valid = false;
       }
-      if (!valid) return;
+      if (!valid) {
+        fehlerZeigen('Bitte füllen Sie Vorname, Nachname und E-Mail aus.');
+        return;
+      }
 
-      // Build mailto
-      const data = new FormData(form);
-      const subject = encodeURIComponent('Beratungsanfrage über ergo-plus.de');
-      const body = encodeURIComponent(
-        'Vorname: ' + (data.get('first') || '') + '\n' +
-        'Nachname: ' + (data.get('last') || '') + '\n' +
-        'Telefon: ' + (data.get('phone') || '') + '\n' +
-        'E-Mail: ' + (data.get('email') || '') + '\n' +
-        'Produkt: ' + (data.get('product') || '') + '\n\n' +
-        'Nachricht:\n' + (data.get('message') || '')
-      );
-      window.location.href = 'mailto:info@ergo-plus.de?subject=' + subject + '&body=' + body;
+      const alteBox = form.querySelector('.form-fehler');
+      if (alteBox) alteBox.remove();
 
-      // Show success state
-      form.style.display = 'none';
-      success.classList.add('show');
+      if (btn) { btn.disabled = true; btn.textContent = 'Wird gesendet …'; }
+
+      try {
+        const antwort = await fetch('/kontakt.php', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        const daten = await antwort.json();
+
+        if (daten.ok) {
+          if (erfolgstext && daten.meldung) erfolgstext.textContent = daten.meldung;
+          form.style.display = 'none';
+          success.classList.add('show');
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        const eigen = new Error((daten.meldung || 'Das Absenden hat nicht geklappt.').replace(/\s*$/, ''));
+        eigen.eigeneMeldung = true;
+        throw eigen;
+
+      } catch (fehler) {
+        // Kein stiller Erfolg: sagen, dass es nicht geklappt hat, und
+        // sofort einen Weg nennen, der funktioniert.
+        fehlerZeigen('');
+        const box = form.querySelector('.form-fehler');
+        // Nur unsere eigenen, deutschen Servermeldungen zeigen. Der
+        // Browser meldet Netzfehler auf Englisch ("Failed to fetch") —
+        // das hilft hier niemandem.
+        const vomServer = fehler && fehler.eigeneMeldung ? fehler.message : '';
+        box.innerHTML = (vomServer || 'Das Absenden hat nicht geklappt.') +
+          ' Bitte rufen Sie uns an: <a href="tel:+49602112807">+49 6021 12807</a> ' +
+          'oder schreiben Sie an <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>.';
+      } finally {
+        if (btn) { btn.disabled = false; btn.innerHTML = beschriftung; }
+      }
     });
   })();
 
