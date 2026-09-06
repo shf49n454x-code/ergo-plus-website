@@ -223,6 +223,14 @@
     .card-img--teal  { background: linear-gradient(135deg, #e0f5f0, #c8ece3); }
     .card-img--amber { background: linear-gradient(135deg, #fdf2e0, #f8e4c0); }
 
+    /* Freigestellte Produktfotos sind nahezu quadratisch, die Karte ist
+       fast doppelt so breit wie hoch. Mit object-fit: cover wurde rund die
+       Haelfte des Stuhls abgeschnitten. Diese Karten zeigen das Bild
+       deshalb vollstaendig auf weissem Grund — wie .product-img auf der
+       Startseite. Szenenfotos bleiben formatfuellend. */
+    .card-img--produkt { background: #ffffff; }
+    .card-img--produkt img { object-fit: contain; padding: 14px; }
+
     .badge {
       position: absolute;
       top: 12px;
@@ -388,8 +396,8 @@
 
       <!-- Card – Bariatrische Sitzlösungen -->
       <a href="schwergewicht-stuhl-bariatrisch-250kg.html" class="card">
-        <div class="card-img card-img--blue">
-          <img src="/assets/img/spezialstuhl-schwergewicht.webp" alt="Bariatrischer Stuhl bis 250 kg" width="900" height="884" loading="lazy" decoding="async" srcset="/assets/img/spezialstuhl-schwergewicht-800w.webp 800w, /assets/img/spezialstuhl-schwergewicht.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 380px"/>
+        <div class="card-img card-img--produkt card-img--blue">
+          <img src="/assets/img/spezialstuhl-schwergewicht.webp" alt="Bariatrischer Stuhl bis 250 kg" width="361" height="585" loading="lazy" decoding="async"/>
           <span class="badge badge--blue">Speziallösung</span>
         </div>
         <div class="card-body">
@@ -416,8 +424,8 @@
 
       <!-- Card – Bandscheibenvorfall -->
       <a href="bandscheibenvorfall-buero-sitzen-stuhl.html" class="card">
-        <div class="card-img card-img--teal">
-          <img src="/assets/img/opera-20-buerostuhl.webp" alt="Opera 20 Bürostuhl bei Bandscheibenvorfall" width="900" height="889" loading="lazy" decoding="async" srcset="/assets/img/opera-20-buerostuhl-800w.webp 800w, /assets/img/opera-20-buerostuhl.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 380px"/>
+        <div class="card-img card-img--produkt card-img--teal">
+          <img src="/assets/img/opera-20-buerostuhl.webp" alt="Opera 20 Bürostuhl bei Bandscheibenvorfall" width="329" height="594" loading="lazy" decoding="async"/>
           <span class="badge badge--teal">Diagnose</span>
         </div>
         <div class="card-body">
@@ -430,8 +438,8 @@
 
       <!-- Card – VELA TANGO Praxistest -->
       <a href="vela-tango-stuhlsystem-erfahrungsbericht.html" class="card">
-        <div class="card-img card-img--blue">
-          <img src="/assets/img/vela-tango-aktivstuhl.webp" alt="VELA TANGO Aktivstuhl im Praxistest" width="900" height="900" loading="lazy" decoding="async" srcset="/assets/img/vela-tango-aktivstuhl-800w.webp 800w, /assets/img/vela-tango-aktivstuhl.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 380px"/>
+        <div class="card-img card-img--produkt card-img--blue">
+          <img src="/assets/img/vela-tango-aktivstuhl.webp" alt="VELA TANGO Aktivstuhl im Praxistest" width="452" height="600" loading="lazy" decoding="async"/>
           <span class="badge badge--blue">Produkttest</span>
         </div>
         <div class="card-body">
@@ -458,8 +466,8 @@
 
       <!-- Card – Spastik/Cerebralparese -->
       <a href="spastik-sitzen-stuhl-cerebralparese.html" class="card">
-        <div class="card-img card-img--teal">
-          <img src="/assets/img/mfs-stuhlsystem.webp" alt="MFS-Stuhlsystem bei Spastik und Cerebralparese" width="900" height="900" loading="lazy" decoding="async" srcset="/assets/img/mfs-stuhlsystem-800w.webp 800w, /assets/img/mfs-stuhlsystem.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 380px"/>
+        <div class="card-img card-img--produkt card-img--teal">
+          <img src="/assets/img/mfs-stuhlsystem.webp" alt="MFS-Stuhlsystem bei Spastik und Cerebralparese" width="326" height="600" loading="lazy" decoding="async"/>
           <span class="badge badge--teal">Diagnose</span>
         </div>
         <div class="card-body">
@@ -486,8 +494,8 @@
 
       <!-- Card – ELIFT 400 Praxistest -->
       <a href="elift-400-aufstehhilfe-transfer.html" class="card">
-        <div class="card-img card-img--blue">
-          <img src="/assets/img/elift-400-aufstehstuhl.webp" alt="ELIFT 400 motorisierte Aufstehhilfe im Praxistest" width="900" height="892" loading="lazy" decoding="async" srcset="/assets/img/elift-400-aufstehstuhl-800w.webp 800w, /assets/img/elift-400-aufstehstuhl.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 380px"/>
+        <div class="card-img card-img--produkt card-img--blue">
+          <img src="/assets/img/elift-400-aufstehstuhl.webp" alt="ELIFT 400 motorisierte Aufstehhilfe im Praxistest" width="363" height="570" loading="lazy" decoding="async"/>
           <span class="badge badge--blue">Produkttest</span>
         </div>
         <div class="card-body">
