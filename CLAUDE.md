@@ -8,6 +8,20 @@ All font choices, colors, spacing, and aesthetic direction are defined there.
 Do not deviate without explicit user approval.
 In QA mode, flag any code that doesn't match DESIGN.md.
 
+## Prüfen vor dem Merge
+
+Vor jedem Merge und nach jedem Design- oder Content-Eingriff:
+
+```bash
+node tools/audit/audit.js
+```
+
+Barrierefreiheit (axe-core, 0 Verstöße), Ladeverhalten (LCP/CLS/Gewicht)
+und strukturelle Fehler in einem Lauf. Exit-Code 1, wenn eine Schwelle
+gerissen wird. Details und die Regeln dahinter: `.claude/skills/site-audit/SKILL.md`.
+
+Nicht schätzen, ob etwas schnell oder barrierefrei ist — messen.
+
 ## Skill routing
 
 When the user's request matches an available skill, invoke it via the Skill tool. When in doubt, invoke the skill.
