@@ -31,6 +31,15 @@ const BUDGET = {
   lcpMs: 2500,            // Core Web Vitals "gut"
   cls: 0.1,               // Core Web Vitals "gut"
   pageKb: { 'index.html': 400, 'blog/index.html': 600, _default: 350 },
+
+  // Bilder werden separat auf der Platte gewogen, nicht im Browser. Die
+  // Messung oben laedt die Seite und schaut, was ueber die Leitung geht -
+  // Bilder mit loading="lazy" unterhalb des Falzes kommen dabei nie an und
+  // bleiben unsichtbar. So sind sechs PNGs mit zusammen 38 MB monatelang
+  // durchgerutscht: gemessen war die Startseite schnell, auf dem Handy
+  // blieben die Kacheln leer.
+  bildKb: 250,
+  bilderProSeiteKb: { 'index.html': 1800, 'blog/index.html': 1600, _default: 600 },
 };
 
 const args = process.argv.slice(2);
@@ -65,13 +74,32 @@ function staticChecks(files) {
     const assets = [...s.matchAll(/src="([^":]+)"/g)].map((m) => m[1]);
     for (const m of s.matchAll(/srcset="([^"]+)"/g))
       for (const cand of m[1].split(',')) assets.push(cand.trim().split(' ')[0]);
+    // Nach Pfad zaehlen, nicht nach Fundstelle: dieselbe Datei zweimal im
+    // Quelltext laedt der Browser trotzdem nur einmal.
+    let bildSumme = 0;
+    const gewogen = new Set();
     for (const u of assets) {
       if (!u) continue;
       const p = u.startsWith('/')
         ? path.join(ROOT, u.slice(1))
         : path.resolve(ROOT, path.dirname(f), u);
-      if (!fs.existsSync(p)) issues.push({ file: f, type: 'fehlendes-asset', detail: u });
+      if (!fs.existsSync(p)) {
+        issues.push({ file: f, type: 'fehlendes-asset', detail: u });
+        continue;
+      }
+      if (!/\.(webp|avif|png|jpe?g|gif)$/i.test(p)) continue;
+      if (gewogen.has(p)) continue;
+      gewogen.add(p);
+      const kb = Math.round(fs.statSync(p).size / 1024);
+      bildSumme += kb;
+      if (kb > BUDGET.bildKb)
+        issues.push({ file: f, type: 'bild-zu-gross',
+          detail: `${u} ist ${kb} KB (Grenze ${BUDGET.bildKb} KB)` });
     }
+    const bildBudget = BUDGET.bilderProSeiteKb[f] ?? BUDGET.bilderProSeiteKb._default;
+    if (bildSumme > bildBudget)
+      issues.push({ file: f, type: 'bilder-gesamt-zu-schwer',
+        detail: `${bildSumme} KB referenziert (Grenze ${bildBudget} KB)` });
 
     const used = new Set([...s.matchAll(/var\((--[a-z0-9-]+)\)/g)].map((m) => m[1]));
     const defined = new Set([...s.matchAll(/(--[a-z0-9-]+)\s*:/g)].map((m) => m[1]));
