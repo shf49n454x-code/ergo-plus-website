@@ -41,6 +41,7 @@ als bestanden gemeldet.
 | Seitengewicht | 400 KB Start, 600 KB Blogübersicht, sonst 350 KB | Zielgruppe surft oft mobil und nicht auf Glasfaser |
 | Einzelnes Bild | ≤ 250 KB | siehe unten |
 | Bilder je Seite zusammen | 1800 KB Start, 1600 KB Blogübersicht, sonst 600 KB | siehe unten |
+| Alter der Search-Console-Daten | ≤ 10 Tage | siehe unten |
 | Tote interne Links | 0 | |
 | Fehlende Assets | 0 | inklusive aller `srcset`-Kandidaten |
 | Undefinierte CSS-Variablen | 0 | `var(--x)` ohne Definition fällt still aus — genau so ist hier schon einmal eine Kontrastkorrektur wirkungslos geblieben |
@@ -62,6 +63,17 @@ ein Browser sie je anfordert.
 Faustregel für neue Bilder: WebP, in der Breite, in der sie angezeigt
 werden (plus 2× für Retina), mit `srcset`. Nicht das Original einhängen und
 den Browser skalieren lassen.
+
+**Eine Schleife, die stehenbleibt, sieht aus wie eine, die nichts zu tun
+hatte.** Beide sind still. GitHub schaltet Zeitplan-Workflows in ruhigen
+Repos nach 60 Tagen ab, ein abgelaufener Schlüssel wirkt genauso — in
+beiden Fällen hören die Montagsdaten auf, ohne dass irgendwo etwas rot
+wird. Deshalb prüft das Audit das Alter von
+`data/search-console/latest.json` und wird ab zehn Tagen rot.
+
+Maßgeblich ist das Feld `abgerufen_am` **in** der Datei, nicht ihr
+Änderungsdatum: ein frischer Checkout setzt allen Dateien das heutige
+Datum, damit wäre die Prüfung in der CI immer grün und genau dort wertlos.
 
 **Telefonnummer.** Auf der Startseite stand `tel:+4960211280` — die letzte
 Ziffer fehlte. Das war der einzige Telefonlink der Startseite und damit

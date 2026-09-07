@@ -40,6 +40,14 @@ const BUDGET = {
   // blieben die Kacheln leer.
   bildKb: 250,
   bilderProSeiteKb: { 'index.html': 1800, 'blog/index.html': 1600, _default: 600 },
+
+  // Totmannschalter fuer die woechentliche Datenabholung. Eine Schleife,
+  // die gar nicht mehr laeuft, sieht von aussen aus wie eine, bei der es
+  // nichts zu tun gab: still. GitHub schaltet Zeitplan-Workflows in ruhigen
+  // Repos nach 60 Tagen ab, ein abgelaufener Schluessel tut dasselbe - beides
+  // ohne eine einzige rote Meldung. Zehn Tage lassen einen ausgefallenen
+  // Montag durchgehen, zwei nicht mehr.
+  datenAlterTage: 10,
 };
 
 const args = process.argv.slice(2);
@@ -139,7 +147,39 @@ function staticChecks(files) {
       detail: [...telTargets].join(' vs. '),
     });
 
+  issues.push(...datenAktuell());
+
   return issues;
+}
+
+/* ── Totmannschalter: laeuft die Datenabholung ueberhaupt noch? ───────── */
+function datenAktuell() {
+  const datei = path.join(ROOT, 'data/search-console/latest.json');
+  if (!fs.existsSync(datei)) return [];   // noch nie gelaufen: nichts zu melden
+
+  let stand;
+  try {
+    stand = JSON.parse(fs.readFileSync(datei, 'utf8')).abgerufen_am;
+  } catch {
+    return [{ file: 'data/search-console/latest.json', type: 'daten-unlesbar',
+              detail: 'JSON laesst sich nicht lesen' }];
+  }
+
+  // Bewusst der Zeitstempel aus der Datei, nicht ihr Aenderungsdatum: ein
+  // frischer Checkout setzt allen Dateien das heutige Datum, damit waere
+  // die Pruefung in der CI immer gruen und genau dort wertlos.
+  const alterTage = (Date.now() - Date.parse(stand)) / 86400000;
+  if (!Number.isFinite(alterTage))
+    return [{ file: 'data/search-console/latest.json', type: 'daten-unlesbar',
+              detail: `abgerufen_am unbrauchbar: ${stand}` }];
+
+  if (alterTage > BUDGET.datenAlterTage)
+    return [{ file: 'data/search-console/latest.json', type: 'daten-veraltet',
+              detail: `zuletzt vor ${Math.floor(alterTage)} Tagen abgeholt `
+                    + `(Grenze ${BUDGET.datenAlterTage}). Laeuft der Workflow `
+                    + `Search Console noch?` }];
+
+  return [];
 }
 
 /* ── Browserprüfungen ────────────────────────────────────────────────── */

@@ -38,6 +38,17 @@ Die letzte ist die einzige, die Inhalte anfasst — und sie öffnet immer nur
 einen **Entwurf**. Gemergt wird nichts automatisch, hier nicht und
 nirgends. Was sie tut und wo sie aufhört: `.claude/skills/seo-vorschlag/SKILL.md`.
 
+Damit keine dieser Schleifen still ausfallen kann:
+
+| Datei | wofür |
+|---|---|
+| `data/search-console/LETZTER-LAUF.md` | was der letzte Datenlauf getan hat — auch wenn er gescheitert ist |
+| `data/search-console/VERSUCHE.md` | was geändert wurde und was daraus wurde |
+| Audit-Prüfung „Alter der Daten" | wird rot, wenn seit zehn Tagen nichts abgeholt wurde |
+
+Ein grüner Lauf heißt nicht, dass etwas passiert ist. Genau dieser
+Trugschluss hat hier schon dreimal Zeit gekostet.
+
 ## Skill routing
 
 When the user's request matches an available skill, invoke it via the Skill tool. When in doubt, invoke the skill.

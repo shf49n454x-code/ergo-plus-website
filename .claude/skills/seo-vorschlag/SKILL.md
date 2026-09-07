@@ -25,7 +25,24 @@ Abschnitte tragen die Arbeit:
   kein Inhaltsproblem.
 - **Knapp vor Seite 1** — Position 8 bis 20. Der kürzeste Weg zu Klicks.
 
-### 2. Prüfen, ob überhaupt genug Daten da sind
+### 2. Nachsehen, was schon versucht wurde
+
+`data/search-console/VERSUCHE.md`. Zwei Gründe:
+
+**Nichts zweimal vorschlagen.** Steht die Änderung dort schon, ist sie
+entweder drauf oder wurde verworfen. Beides heißt: etwas anderes suchen.
+
+**Die eigene Wirkung messen.** Liegt ein Eintrag vier Wochen oder länger
+zurück und ist die Spalte *Nachher* noch leer, jetzt füllen — Zahlen aus
+dem aktuellen `BERICHT.md`, Urteil dazu. **Das ist wichtiger als ein neuer
+Vorschlag.** Eine Schleife, die nur vorschlägt und nie nachmisst, weiß
+nach einem Jahr genauso wenig wie am ersten Tag.
+
+Auch `data/search-console/LETZTER-LAUF.md` kurz ansehen: hat der Datenlauf
+überhaupt funktioniert? Steht dort **gescheitert**, sind die Zahlen alt —
+dann keinen Vorschlag bauen, sondern das melden.
+
+### 3. Prüfen, ob überhaupt genug Daten da sind
 
 Unter **50 Impressionen** auf einer Seite ist jede Klickrate Zufall. Zwei
 Klicks mehr oder weniger verschieben sie um Prozentpunkte.
@@ -34,7 +51,7 @@ Steht nichts Belastbares im Bericht: **keinen PR öffnen.** Sagen, dass die
 Datenlage nicht reicht, und den Zeitraum nennen, ab dem sie es täte. Ein
 PR mit erfundener Begründung ist schlechter als kein PR.
 
-### 3. Die betroffene Seite ansehen
+### 4. Die betroffene Seite ansehen
 
 Erst die Datei öffnen, dann urteilen. Der Bericht nennt URLs, nicht
 Dateien — `https://ergo-plus.de/blog/xyz.html` ist `blog/xyz.html`.
@@ -48,7 +65,7 @@ Konkret nachsehen:
   Kandidaten.
 - Verspricht der Title etwas anderes, als die Seite einlöst?
 
-### 4. Vorschlag schreiben
+### 5. Vorschlag schreiben
 
 Hausmaß, aus dem Bestand abgeleitet: **Title 32–64 Zeichen**,
 **Description 120–155 Zeichen**.
@@ -62,7 +79,7 @@ hält.
 **Höchstens drei Seiten pro Lauf.** Ein PR, den Jan in fünf Minuten
 gegenlesen kann, wird gelesen. Einer mit zwanzig Änderungen nicht.
 
-### 5. Absichern
+### 6. Absichern
 
 ```bash
 node tools/audit/audit.js
@@ -72,7 +89,7 @@ Muss 0 Befunde melden. Title und Description stehen im `<head>` neben
 Open-Graph- und JSON-LD-Angaben — wer nur eine Stelle ändert,
 hinterlässt widersprüchliche Angaben. Alle Stellen mitziehen.
 
-### 6. Entwurfs-PR öffnen
+### 7. Entwurfs-PR öffnen
 
 Branch, Commit, Push, **Draft-PR**. In der Beschreibung für jede Änderung:
 
@@ -86,6 +103,22 @@ Branch, Commit, Push, **Draft-PR**. In der Beschreibung für jede Änderung:
 Die Zahlen kommen aus dem Bericht. **Nie schätzen, nie runden, nie
 ausschmücken.** Wer hier eine Zahl erfindet, macht den ganzen Kreislauf
 wertlos.
+
+### 8. Den Versuch eintragen
+
+Im selben PR eine Zeile in `data/search-console/VERSUCHE.md` ergänzen:
+Datum, Seite, was geändert wurde, die *Vorher*-Zahlen. Die Spalte
+*Nachher* bleibt leer — sie wird in vier Wochen gefüllt.
+
+Ohne diesen Eintrag ist der Vorschlag in vier Wochen vergessen, und die
+Schleife fängt bei null an.
+
+### Wenn nichts zu tun ist
+
+Ein Lauf ohne PR ist ein vollständiges Ergebnis, kein Fehlschlag — aber er
+darf nicht stumm bleiben. Kurz sagen: welche Zahlen vorlagen, warum sie
+nicht reichten, und ob ein *Nachher* nachgetragen wurde. Ein stiller Lauf
+ist von einem ausgefallenen nicht zu unterscheiden.
 
 ## Was dieser Kreislauf nicht kann
 
