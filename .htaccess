@@ -10,9 +10,20 @@
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:"
 </IfModule>
 
-# --- HTTPS erzwingen ---
+# --- Eine einzige gueltige Adresse: https://ergo-plus.de/ ---
+# Alle canonical-Angaben und die Sitemap nennen die Domain ohne www und
+# ueber https. Google hat aber http://www.ergo-plus.de/ im Index. Ohne die
+# erste Regel bliebe das www nach der HTTPS-Weiterleitung erhalten, und die
+# Seite gaebe es weiterhin unter zwei Adressen.
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # www entfernen und dabei gleich auf https gehen. Muss vor der Regel
+  # darunter stehen, sonst braucht ein Aufruf von http://www. zwei
+  # Weiterleitungen statt einer.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
