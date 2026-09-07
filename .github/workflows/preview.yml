@@ -1,0 +1,68 @@
+name: Vorschau
+
+# Zieht den Branch gh-pages-preview nach, sobald sich main aendert.
+# Der Link https://shf49n454x-code.github.io/ergo-plus-website/ zeigt damit
+# immer den aktuellen Stand, ohne dass ihn jemand von Hand nachbaut.
+#
+# Vorher wurde der Branch von Hand gebaut - und stand deshalb sieben Wochen
+# lang auf einem alten Stand, ohne dass es jemandem auffiel.
+#
+# Was die Vorschau von der echten Seite unterscheidet und warum:
+# tools/preview/build.py
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write          # nur zum Schreiben des Vorschau-Branches
+
+concurrency:
+  # Zwei gleichzeitige Laeufe wuerden sich beim Push gegenseitig abweisen.
+  group: vorschau
+  cancel-in-progress: false
+
+jobs:
+  bauen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: quelle
+
+      # Der Vorschau-Branch wird nicht neu angelegt, sondern fortgeschrieben:
+      # so bleibt seine Geschichte erhalten und der Push ist ein Fast-Forward.
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages-preview
+          path: vorschau
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Vorschau bauen
+        # build.py prueft selbst, ob jeder Verweis das Praefix traegt und auf
+        # eine vorhandene Datei zeigt, und bricht sonst ab. Ein falscher Pfad
+        # faellt in der Vorschau sonst nicht auf: die Seite laedt, nur das
+        # Bild fehlt.
+        run: python3 quelle/tools/preview/build.py "$RUNNER_TEMP/gebaut"
+
+      - name: Uebernehmen und pushen
+        run: |
+          cd vorschau
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -a "$RUNNER_TEMP/gebaut/." .
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Vorschau ist bereits aktuell."
+          else
+            git commit -m "Vorschau: Stand von main ($GITHUB_SHA)"
+            git push origin HEAD:gh-pages-preview
+          fi
