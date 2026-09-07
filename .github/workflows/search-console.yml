@@ -35,6 +35,18 @@ jobs:
           KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: |
           if [ -z "$KEY" ]; then
+            mkdir -p data/search-console
+            {
+              echo "# Letzter Lauf"
+              echo
+              echo "**$(date -u '+%d.%m.%Y %H:%M') UTC** — **gescheitert**"
+              echo
+              echo '```'
+              echo "GOOGLE_SERVICE_ACCOUNT_JSON fehlt."
+              echo '```'
+              echo
+              echo "Einrichtung: \`tools/search-console/README.md\`, Schritt 3."
+            } > data/search-console/LETZTER-LAUF.md
             echo "::error::GOOGLE_SERVICE_ACCOUNT_JSON fehlt. Siehe tools/search-console/README.md"
             exit 1
           fi
@@ -45,7 +57,10 @@ jobs:
           GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:ergo-plus.de' }}
         run: python3 tools/search-console/fetch_gsc.py --tage 90
 
+      # Laeuft auch nach einem Fehlschlag: sonst bliebe der Laufbericht, der
+      # den Fehlschlag erklaert, im Container liegen und niemand saehe ihn.
       - name: Aenderungen committen
+        if: always()
         run: |
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'

@@ -12,6 +12,7 @@ Aufruf:
 Ergebnis:
     data/search-console/latest.json      alle Dimensionen, maschinenlesbar
     data/search-console/BERICHT.md       die Auffälligkeiten in Textform
+    data/search-console/LETZTER-LAUF.md  was dieser Lauf getan hat
 
 Einrichtung: siehe README.md im selben Ordner.
 """
@@ -207,6 +208,36 @@ def bericht(daten: dict, site: str, von: str, bis: str) -> str:
     return "\n".join(zeilen) + "\n"
 
 
+def laufbericht(ordner: pathlib.Path, zeilen: list[str], fehler: str = "") -> None:
+    """Haelt fest, was dieser Lauf getan hat - auch wenn er gescheitert ist.
+
+    Ohne diese Datei ist ein Lauf, der nichts bewirkt hat, von einem, bei
+    dem es nichts zu tun gab, nicht zu unterscheiden: beide enden still und
+    beide melden Erfolg. Genau daran ist hier schon dreimal Zeit
+    verlorengegangen.
+    """
+    ordner.mkdir(parents=True, exist_ok=True)
+    kopf = [
+        "# Letzter Lauf",
+        "",
+        f"**{dt.datetime.now(dt.timezone.utc):%d.%m.%Y %H:%M} UTC** — "
+        + ("**gescheitert**" if fehler else "erfolgreich"),
+        "",
+    ]
+    if fehler:
+        kopf += ["```", fehler.strip(), "```", ""]
+    kopf += zeilen + [
+        "",
+        "---",
+        "",
+        "Erzeugt von `tools/search-console/fetch_gsc.py` bei jedem Lauf. "
+        "Ist diese Datei aelter als der letzte Montag, ist der Workflow "
+        "nicht gelaufen — das Audit meldet das ab zehn Tagen von allein.",
+    ]
+    (ordner / "LETZTER-LAUF.md").write_text("\n".join(kopf) + "\n",
+                                            encoding="utf-8")
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--site", default=os.environ.get("GSC_SITE_URL",
@@ -220,19 +251,33 @@ def main() -> None:
     von_d = bis_d - dt.timedelta(days=args.tage)
     von, bis = von_d.isoformat(), bis_d.isoformat()
 
-    creds, konto = zugangsdaten()
-    print(f"Service Account: {konto}")
-    print(f"Property: {args.site}")
-    print(f"Zeitraum: {von} bis {bis}")
-
-    daten = {}
-    for name, dimensionen in ABFRAGEN.items():
-        zeilen = hole_alles(creds, args.site, dimensionen, von, bis,
-                            args.max_zeilen)
-        daten[name] = als_tabelle(zeilen, dimensionen)
-        print(f"  {name}: {len(daten[name])} Zeilen")
-
     ordner = pathlib.Path(args.out)
+
+    try:
+        creds, konto = zugangsdaten()
+        print(f"Service Account: {konto}")
+        print(f"Property: {args.site}")
+        print(f"Zeitraum: {von} bis {bis}")
+
+        daten = {}
+        for name, dimensionen in ABFRAGEN.items():
+            zeilen = hole_alles(creds, args.site, dimensionen, von, bis,
+                                args.max_zeilen)
+            daten[name] = als_tabelle(zeilen, dimensionen)
+            print(f"  {name}: {len(daten[name])} Zeilen")
+    # SystemExit gehoert bewusst dazu: zugangsdaten() und frage_api() beenden
+    # das Programm mit sys.exit() und einer verstaendlichen Meldung. Ohne
+    # SystemExit hier bliebe genau der haeufigste Fehlschlag - fehlendes oder
+    # abgelaufenes Secret - unprotokolliert.
+    except (Exception, SystemExit) as e:
+        laufbericht(ordner,
+                    [f"Property `{args.site}`, Zeitraum {von} bis {bis}.",
+                     "",
+                     "`latest.json` und `BERICHT.md` sind unveraendert "
+                     "geblieben und zeigen weiterhin den vorherigen Stand."],
+                    fehler=f"{type(e).__name__}: {e}")
+        raise
+
     ordner.mkdir(parents=True, exist_ok=True)
 
     (ordner / "latest.json").write_text(json.dumps({
@@ -244,6 +289,23 @@ def main() -> None:
 
     (ordner / "BERICHT.md").write_text(
         bericht(daten, args.site, von, bis), encoding="utf-8")
+
+    gesamt = {"klicks": 0, "impressionen": 0}
+    for zeile in daten.get("verlauf", []):
+        gesamt["klicks"] += zeile.get("klicks", 0)
+        gesamt["impressionen"] += zeile.get("impressionen", 0)
+
+    laufbericht(ordner, [
+        f"Property `{args.site}`, Zeitraum {von} bis {bis} "
+        f"({len(daten.get('verlauf', []))} Tage mit Daten).",
+        "",
+        "| Dimension | Zeilen |",
+        "|---|---:|",
+        *[f"| {name} | {len(zeilen)} |" for name, zeilen in daten.items()],
+        "",
+        f"Gesamt: **{gesamt['klicks']} Klicks**, "
+        f"**{gesamt['impressionen']} Impressionen** (aus dem Tagesverlauf).",
+    ])
 
     print(f"Geschrieben nach {ordner}/")
 
