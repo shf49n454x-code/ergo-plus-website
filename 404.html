@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seite nicht gefunden – ERGO-PLUS</title>
-  <meta name="robots" content="noindex, nofollow" />
+  
   <link rel="icon" href="/ergo-plus-website/favicon.ico" sizes="any" />
   <link rel="icon" href="/ergo-plus-website/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/ergo-plus-website/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="/ergo-plus-website/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a5276" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;700;800&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/ergo-plus-website/assets/fonts/fonts.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -105,7 +105,7 @@
       padding: 40px clamp(20px,5%,80px);
       text-align: center; font-size: 13px;
     }
-    footer a { color: rgba(255,255,255,.7); }
+    footer a { color: rgba(255,255,255,.7); text-decoration: underline; }
     footer a:hover { color: white; }
   </style>
 </head>

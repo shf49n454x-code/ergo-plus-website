@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>POSE-Bogen – Persönlicher Sitzberatungsbogen | ERGO-PLUS</title>
   <meta name="description" content="Digitaler POSE-Bogen von ERGO-PLUS: erfassen Sie Maße, Arbeitsplatz und gesundheitliche Angaben für Ihre individuelle Sitzberatung. Läuft vollständig im Browser, ohne Server – Ihre Daten verlassen Ihr Gerät nicht." />
-  <meta name="robots" content="noindex, follow" />
+  
   <link rel="canonical" href="https://ergo-plus.de/pose-bogen.html" />
   <link rel="alternate" type="text/plain" href="/ergo-plus-website/llms.txt" />
 
@@ -22,10 +22,9 @@
   <link rel="icon" href="/ergo-plus-website/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="/ergo-plus-website/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a5276" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/ergo-plus-website/assets/fonts/fonts.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,6 +56,7 @@
       --c-teal-dk: #117a65;
       --c-teal-lt: #d1f2eb;
       --c-text: #1a2a3a;
+      --c-text-md: #2c3e50;
       --c-text-soft: #5d6d7e;
       --c-bg: #f0f5fa;
       --c-bg2: #ffffff;
@@ -100,13 +100,13 @@
     .btn-nav {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 10px 22px; border-radius: 50px;
-      background: var(--c-teal); color: white;
+      background: var(--c-teal-dk); color: white;
       font-family: 'Figtree', sans-serif;
       font-size: 14px; font-weight: 600;
       text-decoration: none;
       transition: background .2s var(--ease);
     }
-    .btn-nav:hover { background: var(--c-teal-dk); text-decoration: none; }
+    .btn-nav:hover { background: var(--c-teal-dk); filter: brightness(.9); text-decoration: none; }
 
     main { max-width: 920px; margin: 0 auto; padding: clamp(24px,4vw,40px) clamp(16px,4vw,24px) 120px; }
 
@@ -175,7 +175,7 @@
     .kv {
       display: flex; align-items: center; gap: var(--sp-sm); background: var(--c-primary-lt);
       border: 1px solid var(--c-primary); border-radius: var(--radius-sm); padding: 11px 14px;
-      font-weight: 600; min-height: 44px;
+      font-weight: 600; min-height: 44px; color: var(--c-text-md);
     }
     .kv input { width: 20px; height: 20px; accent-color: var(--c-primary); }
     .masse { display: flex; gap: var(--sp-lg); flex-wrap: wrap; }
@@ -197,8 +197,8 @@
       padding: 11px 20px; border-radius: 50px; border: 1px solid var(--c-primary);
       background: var(--c-bg2); color: var(--c-primary); cursor: pointer; transition: background .15s var(--ease);
     }
-    .leiste button.primaer { background: var(--c-teal); border-color: var(--c-teal); color: white; }
-    .leiste button.primaer:hover { background: var(--c-teal-dk); }
+    .leiste button.primaer { background: var(--c-teal-dk); border-color: var(--c-teal-dk); color: white; }
+    .leiste button.primaer:hover { background: var(--c-teal-dk); filter: brightness(.9); }
     .leiste button:not(.primaer):hover { background: var(--c-primary-lt); }
     .leiste button:active { transform: translateY(1px); }
     #status {
@@ -212,7 +212,7 @@
       background: var(--c-text); color: rgba(255,255,255,.55);
       padding: 40px clamp(20px,5%,80px); text-align: center; font-size: 13px;
     }
-    footer a { color: rgba(255,255,255,.7); }
+    footer a { color: rgba(255,255,255,.7); text-decoration: underline; }
     footer a:hover { color: white; }
 
     #druck { display: none; }
@@ -296,72 +296,72 @@
     <div class="zeile">
       <div class="feld breit"><label for="p_name">Name</label>
         <input type="text" id="p_name" name="p_name" autocomplete="name"></div>
-      <div class="feld breit"><label>Straße / Hausnummer</label>
-        <input type="text" name="p_strasse"></div>
-      <div class="feld schmal"><label>PLZ</label>
-        <input type="text" name="p_plz" inputmode="numeric"></div>
-      <div class="feld"><label>Stadt</label>
-        <input type="text" name="p_stadt"></div>
-      <div class="feld"><label>Telefon</label>
-        <input type="tel" name="p_telefon"></div>
-      <div class="feld"><label>Fax</label>
-        <input type="tel" name="p_fax"></div>
+      <div class="feld breit"><label for="p_strasse">Straße / Hausnummer</label>
+        <input type="text" name="p_strasse" id="p_strasse"></div>
+      <div class="feld schmal"><label for="p_plz">PLZ</label>
+        <input type="text" name="p_plz" id="p_plz" inputmode="numeric"></div>
+      <div class="feld"><label for="p_stadt">Stadt</label>
+        <input type="text" name="p_stadt" id="p_stadt"></div>
+      <div class="feld"><label for="p_telefon">Telefon</label>
+        <input type="tel" name="p_telefon" id="p_telefon"></div>
+      <div class="feld"><label for="p_fax">Fax</label>
+        <input type="tel" name="p_fax" id="p_fax"></div>
     </div>
   </fieldset>
 
   <fieldset>
     <legend>Lieferadresse</legend>
     <div class="zeile">
-      <div class="feld breit"><label>Firma</label>
-        <input type="text" name="l_firma"></div>
-      <div class="feld breit"><label>Straße / Hausnummer</label>
-        <input type="text" name="l_strasse"></div>
-      <div class="feld schmal"><label>PLZ</label>
-        <input type="text" name="l_plz" inputmode="numeric"></div>
-      <div class="feld"><label>Stadt</label>
-        <input type="text" name="l_stadt"></div>
-      <div class="feld"><label>Telefon</label>
-        <input type="tel" name="l_telefon"></div>
-      <div class="feld"><label>Fax</label>
-        <input type="tel" name="l_fax"></div>
-      <div class="feld breit"><label>E-Mail</label>
-        <input type="email" name="l_email" autocomplete="email"></div>
+      <div class="feld breit"><label for="l_firma">Firma</label>
+        <input type="text" name="l_firma" id="l_firma"></div>
+      <div class="feld breit"><label for="l_strasse">Straße / Hausnummer</label>
+        <input type="text" name="l_strasse" id="l_strasse"></div>
+      <div class="feld schmal"><label for="l_plz">PLZ</label>
+        <input type="text" name="l_plz" id="l_plz" inputmode="numeric"></div>
+      <div class="feld"><label for="l_stadt">Stadt</label>
+        <input type="text" name="l_stadt" id="l_stadt"></div>
+      <div class="feld"><label for="l_telefon">Telefon</label>
+        <input type="tel" name="l_telefon" id="l_telefon"></div>
+      <div class="feld"><label for="l_fax">Fax</label>
+        <input type="tel" name="l_fax" id="l_fax"></div>
+      <div class="feld breit"><label for="l_email">E-Mail</label>
+        <input type="email" name="l_email" id="l_email" autocomplete="email"></div>
     </div>
   </fieldset>
 
   <fieldset>
     <legend>Arbeitsplatz</legend>
     <div class="zeile">
-      <div class="feld breit"><label>Berufsbezeichnung</label>
-        <input type="text" name="beruf"></div>
+      <div class="feld breit"><label for="beruf">Berufsbezeichnung</label>
+        <input type="text" name="beruf" id="beruf"></div>
     </div>
     <p class="hinweis">Wie ist Ihre Zeit während eines normalen Arbeitstages aufgeteilt?
       <span id="prozentsumme" class="summe"></span></p>
     <div class="zeile">
-      <div class="feld schmal einheit"><label>Computer</label>
-        <input type="number" name="pc_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
-      <div class="feld schmal einheit"><label>Schreiben</label>
-        <input type="number" name="schreiben_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
-      <div class="feld schmal einheit"><label>Telefon</label>
-        <input type="number" name="telefon_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
-      <div class="feld schmal einheit"><label>Anders</label>
-        <input type="number" name="anders_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
-      <div class="feld breit"><label>Wenn „anders“, bitte spezifizieren</label>
-        <input type="text" name="anders_text"></div>
+      <div class="feld schmal einheit"><label for="pc_prozent">Computer</label>
+        <input type="number" name="pc_prozent" id="pc_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
+      <div class="feld schmal einheit"><label for="schreiben_prozent">Schreiben</label>
+        <input type="number" name="schreiben_prozent" id="schreiben_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
+      <div class="feld schmal einheit"><label for="telefon_prozent">Telefon</label>
+        <input type="number" name="telefon_prozent" id="telefon_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
+      <div class="feld schmal einheit"><label for="anders_prozent">Anders</label>
+        <input type="number" name="anders_prozent" id="anders_prozent" min="0" max="100" inputmode="numeric"><span>%</span></div>
+      <div class="feld breit"><label for="anders_text">Wenn „anders“, bitte spezifizieren</label>
+        <input type="text" name="anders_text" id="anders_text"></div>
     </div>
   </fieldset>
 
   <fieldset>
     <legend>Beschwerden &amp; Gesundheit</legend>
     <div class="zeile">
-      <div class="feld breit"><label>Kurze Beschreibung Ihrer Beschwerden</label>
-        <textarea name="beschwerden"></textarea></div>
-      <div class="feld"><label>Klinikaufenthalt von</label>
-        <input type="date" name="klinik_von"></div>
-      <div class="feld"><label>Klinikaufenthalt bis</label>
-        <input type="date" name="klinik_bis"></div>
-      <div class="feld"><label>Krankheitstage wegen Rückenschmerzen im letzten Jahr</label>
-        <input type="number" name="krank_tage" min="0" max="365" inputmode="numeric"></div>
+      <div class="feld breit"><label for="beschwerden">Kurze Beschreibung Ihrer Beschwerden</label>
+        <textarea name="beschwerden" id="beschwerden"></textarea></div>
+      <div class="feld"><label for="klinik_von">Klinikaufenthalt von</label>
+        <input type="date" name="klinik_von" id="klinik_von"></div>
+      <div class="feld"><label for="klinik_bis">Klinikaufenthalt bis</label>
+        <input type="date" name="klinik_bis" id="klinik_bis"></div>
+      <div class="feld"><label for="krank_tage">Krankheitstage wegen Rückenschmerzen im letzten Jahr</label>
+        <input type="number" name="krank_tage" id="krank_tage" min="0" max="365" inputmode="numeric"></div>
     </div>
     <div class="zeile">
       <div class="feld"><label>Diagnostizierte Skoliose?</label>
@@ -369,8 +369,8 @@
           <label><input type="radio" name="skoliose" value="Ja"> Ja</label>
           <label><input type="radio" name="skoliose" value="Nein"> Nein</label>
         </div></div>
-      <div class="feld schmal einheit"><label>Wenn ja: wieviel Grad?</label>
-        <input type="number" name="skoliose_grad" min="0" max="180" inputmode="numeric"><span>°</span></div>
+      <div class="feld schmal einheit"><label for="skoliose_grad">Wenn ja: wieviel Grad?</label>
+        <input type="number" name="skoliose_grad" id="skoliose_grad" min="0" max="180" inputmode="numeric"><span>°</span></div>
       <div class="feld"><label>Gegen Wolle allergisch?</label>
         <div class="wahl">
           <label><input type="radio" name="wollallergie" value="Ja"> Ja</label>
@@ -384,33 +384,33 @@
     <div class="masse">
       <div class="eingaben">
         <div class="zeile">
-          <div class="feld schmal"><label>Alter</label>
-            <input type="number" name="alter" min="0" max="120" inputmode="numeric"></div>
-          <div class="feld schmal einheit"><label>Gewicht</label>
-            <input type="number" name="gewicht" min="0" max="350" inputmode="numeric"><span>kg</span></div>
+          <div class="feld schmal"><label for="alter">Alter</label>
+            <input type="number" name="alter" id="alter" min="0" max="120" inputmode="numeric"></div>
+          <div class="feld schmal einheit"><label for="gewicht">Gewicht</label>
+            <input type="number" name="gewicht" id="gewicht" min="0" max="350" inputmode="numeric"><span>kg</span></div>
           <div class="feld"><label>Geschlecht</label>
             <div class="wahl">
               <label><input type="radio" name="geschlecht" value="M"> M</label>
               <label><input type="radio" name="geschlecht" value="W"> W</label>
             </div></div>
-          <div class="feld einheit"><label>Körpergröße (ohne Schuhe)</label>
-            <input type="number" name="koerpergroesse" min="0" max="250" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label for="koerpergroesse">Körpergröße (ohne Schuhe)</label>
+            <input type="number" name="koerpergroesse" id="koerpergroesse" min="0" max="250" inputmode="decimal"><span>cm</span></div>
         </div>
         <div class="zeile">
-          <div class="feld einheit"><label>A – Hüftgelenk bis Kniegelenk</label>
-            <input type="number" step="0.5" name="mass_a" min="0" max="120" inputmode="decimal"><span>cm</span></div>
-          <div class="feld einheit"><label>B – Kniegelenk bis zum Boden</label>
-            <input type="number" step="0.5" name="mass_b" min="0" max="120" inputmode="decimal"><span>cm</span></div>
-          <div class="feld einheit"><label>C – Gesäß bis Kniekehle</label>
-            <input type="number" step="0.5" name="mass_c" min="0" max="120" inputmode="decimal"><span>cm</span></div>
-          <div class="feld einheit"><label>D – Boden bis Oberkante Tisch</label>
-            <input type="number" step="0.5" name="mass_d" min="0" max="150" inputmode="decimal"><span>cm</span></div>
-          <div class="feld einheit"><label>E – Sitzfläche bis Schulter</label>
-            <input type="number" step="0.5" name="mass_e" min="0" max="120" inputmode="decimal"><span>cm</span></div>
-          <div class="feld einheit"><label>F – Absatzhöhe Schuhe</label>
-            <input type="number" step="0.5" name="mass_f" min="0" max="20" inputmode="decimal"><span>cm</span></div>
-          <div class="feld einheit"><label>H – Oberkante Sitzfläche bis Ellenbogen (90° angewinkelt)</label>
-            <input type="number" step="0.5" name="mass_h" min="0" max="60" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label for="mass_a">A – Hüftgelenk bis Kniegelenk</label>
+            <input type="number" step="0.5" name="mass_a" id="mass_a" min="0" max="120" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label for="mass_b">B – Kniegelenk bis zum Boden</label>
+            <input type="number" step="0.5" name="mass_b" id="mass_b" min="0" max="120" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label for="mass_c">C – Gesäß bis Kniekehle</label>
+            <input type="number" step="0.5" name="mass_c" id="mass_c" min="0" max="120" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label for="mass_d">D – Boden bis Oberkante Tisch</label>
+            <input type="number" step="0.5" name="mass_d" id="mass_d" min="0" max="150" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label for="mass_e">E – Sitzfläche bis Schulter</label>
+            <input type="number" step="0.5" name="mass_e" id="mass_e" min="0" max="120" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label for="mass_f">F – Absatzhöhe Schuhe</label>
+            <input type="number" step="0.5" name="mass_f" id="mass_f" min="0" max="20" inputmode="decimal"><span>cm</span></div>
+          <div class="feld einheit"><label for="mass_h">H – Oberkante Sitzfläche bis Ellenbogen (90° angewinkelt)</label>
+            <input type="number" step="0.5" name="mass_h" id="mass_h" min="0" max="60" inputmode="decimal"><span>cm</span></div>
         </div>
         <div class="zeile">
           <div class="feld breit"><label>G – Wie ist die Kurvatur Ihrer unteren LWS?</label>
@@ -465,16 +465,16 @@
           <label><input type="checkbox" name="boden" value="Kacheln"> Kacheln</label>
           <label><input type="checkbox" name="boden" value="Beton"> Beton</label>
         </div></div>
-      <div class="feld breit"><label>Anderer Bodenbelag</label>
-        <input type="text" name="boden_andere"></div>
-      <div class="feld breit"><label>Gewünschte Polsterfarbe</label>
-        <input type="text" name="polsterfarbe"></div>
+      <div class="feld breit"><label for="boden_andere">Anderer Bodenbelag</label>
+        <input type="text" name="boden_andere" id="boden_andere"></div>
+      <div class="feld breit"><label for="polsterfarbe">Gewünschte Polsterfarbe</label>
+        <input type="text" name="polsterfarbe" id="polsterfarbe"></div>
     </div>
     <p class="hinweis">Alle unsere Polsterstoffe sind sehr hochwertig und haben
       mindestens 75.000 Scheuertouren.</p>
     <div class="zeile">
-      <div class="feld breit"><label>Wie haben Sie von unserem Stuhlsystem erfahren?</label>
-        <input type="text" name="erfahren"></div>
+      <div class="feld breit"><label for="erfahren">Wie haben Sie von unserem Stuhlsystem erfahren?</label>
+        <input type="text" name="erfahren" id="erfahren"></div>
     </div>
   </fieldset>
 

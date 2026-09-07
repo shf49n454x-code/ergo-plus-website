@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Datenschutzerklärung – ERGO-PLUS Seating Concepts GmbH</title>
   <meta name="description" content="Datenschutzerklärung der ERGO-PLUS Seating Concepts GmbH gemäß DSGVO." />
-  <meta name="robots" content="noindex, follow" />
+  
   <link rel="canonical" href="https://ergo-plus.de/datenschutz.html" />
 
   <!-- Open Graph -->
@@ -22,9 +22,9 @@
   <link rel="icon" href="/ergo-plus-website/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="/ergo-plus-website/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a5276" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/ergo-plus-website/assets/fonts/fonts.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -116,9 +116,12 @@
       padding: 40px clamp(20px,5%,80px);
       text-align: center; font-size: 13px;
     }
-    footer a { color: rgba(255,255,255,.7); }
+    footer a { color: rgba(255,255,255,.7); text-decoration: underline; }
     footer a:hover { color: white; }
-  </style>
+  
+    /* a11y: in-text links must be distinguishable without colour (WCAG 1.4.1) */
+    p a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
+</style>
 </head>
 <body>
 
@@ -236,11 +239,9 @@
   <p>Google Analytics wird nur eingesetzt, wenn Sie zuvor über den Cookie-Banner ausdrücklich zugestimmt haben. Die Verarbeitung erfolgt in diesem Fall ausschließlich auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG. Diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie über den Link „Cookie-Einstellungen" im Footer der Website Ihre Auswahl ändern.</p>
   <p>Weitere Informationen zum Umgang mit Nutzerdaten bei Google Analytics finden Sie in der Datenschutzerklärung von Google: <a href="https://support.google.com/analytics/answer/6004245?hl=de" target="_blank" rel="noopener">https://support.google.com/analytics/answer/6004245?hl=de</a>.</p>
 
-  <h3>Google Fonts</h3>
-  <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google bereitgestellt werden. Anbieter ist die Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland.</p>
-  <p>Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten in Ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse diese Website aufgerufen wurde.</p>
-  <p>Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der einheitlichen Darstellung des Schriftbildes auf seiner Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG; die Einwilligung ist jederzeit widerrufbar.</p>
-  <p>Weitere Informationen: <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener">https://developers.google.com/fonts/faq</a> und <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">https://policies.google.com/privacy?hl=de</a>.</p>
+  <h3>Schriftarten (lokal gehostet)</h3>
+  <p>Diese Website verwendet zur einheitlichen Darstellung von Schriftarten die Schriften &bdquo;Figtree&ldquo; und &bdquo;Noto Sans&ldquo;. Diese sind lokal auf unserem Server hinterlegt und werden von dort ausgeliefert.</p>
+  <p>Eine Verbindung zu Servern von Google oder anderen Dritten findet dabei <strong>nicht</strong> statt. Ihre IP-Adresse wird beim Laden der Schriftarten an keinen Drittanbieter &uuml;bermittelt.</p>
 
   <p style="margin-top:32px;font-size:13px;color:var(--c-text-soft)">Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener">e-recht24.de</a></p>
 </main>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Über ERGO-PLUS – Therapeutische Sitzversorgung seit 30 Jahren</title>
-  <meta name="description" content="ERGO-PLUS Seating Concepts GmbH ist ein auf therapeutische Sitzversorgung spezialisiertes Unternehmen mit Sitz in Johannesberg bei Aschaffenburg. Seit über 30 Jahren versorgt ERGO-PLUS Menschen mit komplexen körperlichen Einschränkungen deutschlandweit mit individuell angepassten Stühlen und Sitzsystemen." />
-  <meta name="robots" content="index, follow" />
+  <title>Über ERGO-PLUS: Spezialist seit über 30 Jahren</title>
+  <meta name="description" content="ERGO-PLUS aus Johannesberg bei Aschaffenburg versorgt seit über 30 Jahren Menschen mit komplexen körperlichen Einschränkungen — deutschlandweit." />
+  
   <link rel="canonical" href="https://ergo-plus.de/ueber-ergo-plus.html" />
   <link rel="alternate" type="text/plain" href="/ergo-plus-website/llms.txt" />
 
@@ -22,10 +22,9 @@
   <link rel="icon" href="/ergo-plus-website/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="/ergo-plus-website/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a5276" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/ergo-plus-website/assets/fonts/fonts.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -257,9 +256,12 @@
       padding: 40px clamp(20px,5%,80px);
       text-align: center; font-size: 13px;
     }
-    footer a { color: rgba(255,255,255,.7); }
+    footer a { color: rgba(255,255,255,.7); text-decoration: underline; }
     footer a:hover { color: white; }
-  </style>
+  
+    /* a11y: in-text links must be distinguishable without colour (WCAG 1.4.1) */
+    p a:not([class]), li a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
+</style>
 </head>
 <body>
 
