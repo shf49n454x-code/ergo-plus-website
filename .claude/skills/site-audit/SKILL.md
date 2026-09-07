@@ -39,6 +39,8 @@ als bestanden gemeldet.
 | LCP | ≤ 2500 ms | Core Web Vitals "gut" |
 | CLS | ≤ 0,1 | Core Web Vitals "gut" |
 | Seitengewicht | 400 KB Start, 600 KB Blogübersicht, sonst 350 KB | Zielgruppe surft oft mobil und nicht auf Glasfaser |
+| Einzelnes Bild | ≤ 250 KB | siehe unten |
+| Bilder je Seite zusammen | 1800 KB Start, 1600 KB Blogübersicht, sonst 600 KB | siehe unten |
 | Tote interne Links | 0 | |
 | Fehlende Assets | 0 | inklusive aller `srcset`-Kandidaten |
 | Undefinierte CSS-Variablen | 0 | `var(--x)` ohne Definition fällt still aus — genau so ist hier schon einmal eine Kontrastkorrektur wirkungslos geblieben |
@@ -46,7 +48,20 @@ als bestanden gemeldet.
 | Doppeltes Titelbild in der Blog-Übersicht | 0 | siehe unten |
 | Google Fonts extern | keine | siehe unten |
 
-## Zwei Regeln, die aus echten Fehlern stammen
+## Regeln, die aus echten Fehlern stammen
+
+**Bildgewicht wird auf der Platte gemessen, nicht im Browser.** Die
+Detailgalerie der Startseite lud sechs PNGs mit zusammen 38 MB — 8 MB für
+eine 220 px hohe Kachel. Das Seitengewicht oben hatte das nie gesehen: es
+misst, was beim Laden über die Leitung geht, und die Bilder trugen
+`loading="lazy"` unterhalb des Falzes. Gemessen war die Startseite schnell,
+auf dem Handy blieben die Kacheln leer. Deshalb wiegt das Audit zusätzlich
+jede referenzierte Bilddatei direkt im Dateisystem — unabhängig davon, ob
+ein Browser sie je anfordert.
+
+Faustregel für neue Bilder: WebP, in der Breite, in der sie angezeigt
+werden (plus 2× für Retina), mit `srcset`. Nicht das Original einhängen und
+den Browser skalieren lassen.
 
 **Telefonnummer.** Auf der Startseite stand `tel:+4960211280` — die letzte
 Ziffer fehlte. Das war der einzige Telefonlink der Startseite und damit
