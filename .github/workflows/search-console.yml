@@ -13,6 +13,14 @@ on:
 permissions:
   contents: write          # nur zum Committen der abgeholten Daten
 
+concurrency:
+  # Ohne das wuerden ein manueller Lauf und der Montags-Zeitplan sich beim
+  # Push gegenseitig abweisen, wenn sie sich ueberschneiden - genau das ist
+  # in diesem Projekt schon vorgekommen, als der Lauf mehrfach von Hand
+  # angestossen wurde, um das fehlende Secret zu pruefen.
+  group: search-console
+  cancel-in-progress: false
+
 jobs:
   abholen:
     runs-on: ubuntu-latest
