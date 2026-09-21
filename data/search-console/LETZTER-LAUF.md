@@ -1,17 +1,17 @@
 # Letzter Lauf
 
-**14.09.2026 05:01 UTC** — erfolgreich
+**21.09.2026 10:16 UTC** — erfolgreich
 
-Property `sc-domain:ergo-plus.de`, Zeitraum 2026-06-13 bis 2026-09-11 (24 Tage mit Daten).
+Property `sc-domain:ergo-plus.de`, Zeitraum 2026-06-20 bis 2026-09-18 (31 Tage mit Daten).
 
 | Dimension | Zeilen |
 |---|---:|
-| suchanfragen | 44 |
+| suchanfragen | 49 |
 | seiten | 2 |
-| anfrage_x_seite | 45 |
-| verlauf | 24 |
+| anfrage_x_seite | 51 |
+| verlauf | 31 |
 
-Gesamt: **3 Klicks**, **309 Impressionen** (aus dem Tagesverlauf).
+Gesamt: **4 Klicks**, **361 Impressionen** (aus dem Tagesverlauf).
 
 ---
 
