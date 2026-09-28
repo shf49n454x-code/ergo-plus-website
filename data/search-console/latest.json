@@ -1,10 +1,10 @@
 {
  "property": "sc-domain:ergo-plus.de",
  "zeitraum": {
-  "von": "2026-06-20",
-  "bis": "2026-09-18"
+  "von": "2026-06-27",
+  "bis": "2026-09-25"
  },
- "abgerufen_am": "2026-09-21T10:16:18.994834+00:00",
+ "abgerufen_am": "2026-09-28T11:18:05.542692+00:00",
  "daten": {
   "suchanfragen": [
    {
@@ -31,9 +31,9 @@
    {
     "query": "ergo",
     "klicks": 0,
-    "impressionen": 4,
+    "impressionen": 8,
     "ctr_prozent": 0,
-    "position": 2.8
+    "position": 2.9
    },
    {
     "query": "ergo adresse",
@@ -85,6 +85,13 @@
     "position": 3
    },
    {
+    "query": "ergo kantine",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 34
+   },
+   {
     "query": "ergo konzept",
     "klicks": 0,
     "impressionen": 1,
@@ -92,11 +99,25 @@
     "position": 85
    },
    {
+    "query": "ergo masters",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 6
+   },
+   {
+    "query": "ergo office furniture",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 12
+   },
+   {
     "query": "ergo outdoor",
     "klicks": 0,
-    "impressionen": 7,
+    "impressionen": 8,
     "ctr_prozent": 0,
-    "position": 28.9
+    "position": 28.8
    },
    {
     "query": "ergo paul",
@@ -108,16 +129,16 @@
    {
     "query": "ergo platz",
     "klicks": 0,
-    "impressionen": 6,
+    "impressionen": 8,
     "ctr_prozent": 0,
-    "position": 64.7
+    "position": 63.4
    },
    {
     "query": "ergo plus",
     "klicks": 0,
-    "impressionen": 62,
+    "impressionen": 70,
     "ctr_prozent": 0,
-    "position": 10.7
+    "position": 10.4
    },
    {
     "query": "ergo plus physio",
@@ -129,9 +150,9 @@
    {
     "query": "ergo plus rückenorthese",
     "klicks": 0,
-    "impressionen": 2,
+    "impressionen": 4,
     "ctr_prozent": 0,
-    "position": 7.5
+    "position": 9
    },
    {
     "query": "ergo shop",
@@ -143,9 +164,9 @@
    {
     "query": "ergo solutions",
     "klicks": 0,
-    "impressionen": 2,
+    "impressionen": 3,
     "ctr_prozent": 0,
-    "position": 31
+    "position": 21.7
    },
    {
     "query": "ergo store",
@@ -178,9 +199,9 @@
    {
     "query": "ergo-plus",
     "klicks": 0,
-    "impressionen": 2,
+    "impressionen": 3,
     "ctr_prozent": 0,
-    "position": 11
+    "position": 9
    },
    {
     "query": "ergolutions kinderschreibtisch",
@@ -213,7 +234,7 @@
    {
     "query": "ergonomie experten",
     "klicks": 0,
-    "impressionen": 6,
+    "impressionen": 8,
     "ctr_prozent": 0,
     "position": 21
    },
@@ -234,9 +255,9 @@
    {
     "query": "ergonomieberatung",
     "klicks": 0,
-    "impressionen": 1,
+    "impressionen": 2,
     "ctr_prozent": 0,
-    "position": 1
+    "position": 3
    },
    {
     "query": "ergonomische arbeitsplдtze",
@@ -255,9 +276,9 @@
    {
     "query": "ergoplus",
     "klicks": 0,
-    "impressionen": 42,
+    "impressionen": 53,
     "ctr_prozent": 0,
-    "position": 30.1
+    "position": 26.5
    },
    {
     "query": "ergoplus smartcool",
@@ -283,9 +304,9 @@
    {
     "query": "ergotherapie plus",
     "klicks": 0,
-    "impressionen": 1,
+    "impressionen": 2,
     "ctr_prozent": 0,
-    "position": 12
+    "position": 9
    },
    {
     "query": "ergotopia kundenservice",
@@ -332,9 +353,9 @@
    {
     "query": "sattelhocker ergonomisch",
     "klicks": 0,
-    "impressionen": 2,
+    "impressionen": 3,
     "ctr_prozent": 0,
-    "position": 10.5
+    "position": 10
    },
    {
     "query": "skoliose bürostühle",
@@ -349,22 +370,29 @@
     "impressionen": 6,
     "ctr_prozent": 0,
     "position": 15.8
+   },
+   {
+    "query": "visuelle ergonomie im büro",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 11
    }
   ],
   "seiten": [
    {
     "page": "http://www.ergo-plus.de/",
     "klicks": 4,
-    "impressionen": 356,
-    "ctr_prozent": 1.12,
-    "position": 17.6
+    "impressionen": 411,
+    "ctr_prozent": 0.97,
+    "position": 16.8
    },
    {
     "page": "http://ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 6,
+    "impressionen": 8,
     "ctr_prozent": 0,
-    "position": 27.3
+    "position": 21.8
    }
   ],
   "anfrage_x_seite": [
@@ -396,9 +424,9 @@
     "query": "ergo",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 4,
+    "impressionen": 8,
     "ctr_prozent": 0,
-    "position": 2.8
+    "position": 2.9
    },
    {
     "query": "ergo adresse",
@@ -465,6 +493,14 @@
     "position": 3
    },
    {
+    "query": "ergo kantine",
+    "page": "http://www.ergo-plus.de/",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 34
+   },
+   {
     "query": "ergo konzept",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
@@ -473,12 +509,28 @@
     "position": 85
    },
    {
+    "query": "ergo masters",
+    "page": "http://www.ergo-plus.de/",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 6
+   },
+   {
+    "query": "ergo office furniture",
+    "page": "http://www.ergo-plus.de/",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 12
+   },
+   {
     "query": "ergo outdoor",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 7,
+    "impressionen": 8,
     "ctr_prozent": 0,
-    "position": 28.9
+    "position": 28.8
    },
    {
     "query": "ergo paul",
@@ -492,17 +544,25 @@
     "query": "ergo platz",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 6,
+    "impressionen": 8,
     "ctr_prozent": 0,
-    "position": 64.7
+    "position": 63.4
+   },
+   {
+    "query": "ergo plus",
+    "page": "http://ergo-plus.de/",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 5
    },
    {
     "query": "ergo plus",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 62,
+    "impressionen": 69,
     "ctr_prozent": 0,
-    "position": 10.7
+    "position": 10.4
    },
    {
     "query": "ergo plus physio",
@@ -516,9 +576,9 @@
     "query": "ergo plus rückenorthese",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 2,
+    "impressionen": 4,
     "ctr_prozent": 0,
-    "position": 7.5
+    "position": 9
    },
    {
     "query": "ergo shop",
@@ -532,9 +592,9 @@
     "query": "ergo solutions",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 2,
+    "impressionen": 3,
     "ctr_prozent": 0,
-    "position": 31
+    "position": 21.7
    },
    {
     "query": "ergo store",
@@ -567,6 +627,14 @@
     "impressionen": 1,
     "ctr_prozent": 0,
     "position": 2
+   },
+   {
+    "query": "ergo-plus",
+    "page": "http://ergo-plus.de/",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 5
    },
    {
     "query": "ergo-plus",
@@ -620,7 +688,7 @@
     "query": "ergonomie experten",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 6,
+    "impressionen": 8,
     "ctr_prozent": 0,
     "position": 21
    },
@@ -644,9 +712,9 @@
     "query": "ergonomieberatung",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 1,
+    "impressionen": 2,
     "ctr_prozent": 0,
-    "position": 1
+    "position": 3
    },
    {
     "query": "ergonomische arbeitsplдtze",
@@ -668,9 +736,9 @@
     "query": "ergoplus",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 42,
+    "impressionen": 53,
     "ctr_prozent": 0,
-    "position": 30.1
+    "position": 26.5
    },
    {
     "query": "ergoplus smartcool",
@@ -700,9 +768,9 @@
     "query": "ergotherapie plus",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 1,
+    "impressionen": 2,
     "ctr_prozent": 0,
-    "position": 12
+    "position": 9
    },
    {
     "query": "ergotopia kundenservice",
@@ -756,9 +824,9 @@
     "query": "sattelhocker ergonomisch",
     "page": "http://www.ergo-plus.de/",
     "klicks": 0,
-    "impressionen": 2,
+    "impressionen": 3,
     "ctr_prozent": 0,
-    "position": 10.5
+    "position": 10
    },
    {
     "query": "skoliose bürostühle",
@@ -775,6 +843,14 @@
     "impressionen": 6,
     "ctr_prozent": 0,
     "position": 15.8
+   },
+   {
+    "query": "visuelle ergonomie im büro",
+    "page": "http://www.ergo-plus.de/",
+    "klicks": 0,
+    "impressionen": 1,
+    "ctr_prozent": 0,
+    "position": 11
    }
   ],
   "verlauf": [
@@ -994,6 +1070,55 @@
     "impressionen": 9,
     "ctr_prozent": 0,
     "position": 18.6
+   },
+   {
+    "date": "2026-09-19",
+    "klicks": 0,
+    "impressionen": 3,
+    "ctr_prozent": 0,
+    "position": 6.3
+   },
+   {
+    "date": "2026-09-20",
+    "klicks": 0,
+    "impressionen": 8,
+    "ctr_prozent": 0,
+    "position": 10.9
+   },
+   {
+    "date": "2026-09-21",
+    "klicks": 0,
+    "impressionen": 12,
+    "ctr_prozent": 0,
+    "position": 8.4
+   },
+   {
+    "date": "2026-09-22",
+    "klicks": 0,
+    "impressionen": 10,
+    "ctr_prozent": 0,
+    "position": 6.9
+   },
+   {
+    "date": "2026-09-23",
+    "klicks": 0,
+    "impressionen": 5,
+    "ctr_prozent": 0,
+    "position": 8
+   },
+   {
+    "date": "2026-09-24",
+    "klicks": 0,
+    "impressionen": 7,
+    "ctr_prozent": 0,
+    "position": 20.4
+   },
+   {
+    "date": "2026-09-25",
+    "klicks": 0,
+    "impressionen": 12,
+    "ctr_prozent": 0,
+    "position": 17.2
    }
   ]
  }
