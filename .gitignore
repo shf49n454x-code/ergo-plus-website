@@ -6,3 +6,8 @@ __pycache__/
 *.pyc
 node_modules/
 audit-report.json
+
+# Konfigurator: Server-Geheimnisse und Postfach nie ins Repo
+api/einstellungen-lokal.php
+api/postfach/
+tools/konfigurator/vorgaenge/

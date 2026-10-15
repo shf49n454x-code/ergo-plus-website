@@ -49,6 +49,12 @@ Damit keine dieser Schleifen still ausfallen kann:
 Ein grüner Lauf heißt nicht, dass etwas passiert ist. Genau dieser
 Trugschluss hat hier schon dreimal Zeit gekostet.
 
+## Konfigurator (Tablet-App + verschlüsselter Eingang)
+
+`konfigurator/`, `api/`, `tools/konfigurator/` – Einrichtung und Betrieb: `tools/konfigurator/README.md`.
+Regeln: Gesundheitsdaten nie im Klartext an den Server, nie per Mail. Der private Schlüssel gehört
+nie ins Repo. Nach Änderungen an Konfigurator-Dateien `VERSION` in `konfigurator/sw.js` hochzählen.
+
 ## Skill routing
 
 When the user's request matches an available skill, invoke it via the Skill tool. When in doubt, invoke the skill.

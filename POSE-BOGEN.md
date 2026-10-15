@@ -1,5 +1,7 @@
 # POSE-Bogen
 
+> **Nachfolger:** der [Konfigurator](tools/konfigurator/README.md) (`/konfigurator/`, Kundenmodus `?modus=kunde`) überträgt den Bogen Ende-zu-Ende-verschlüsselt statt per E-Mail und ergänzt Zusatzbögen, Versorgung und Angebot. Diese Seite bleibt als Rückfallweg und verlinkt auf den neuen Bogen.
+
 Digitaler Ersatz für den papierenen POSE-Bogen (Persönlicher-Office-Sitz-Ergebnisbogen) –
 das Kundenaufnahmeformular für die individuelle Sitzberatung bei ERGO-PLUS.
 

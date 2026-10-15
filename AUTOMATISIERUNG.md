@@ -18,7 +18,7 @@ Aktuell werden für Angebote/Rechnungen/Mahnungen drei Werkzeuge genutzt:
   gelang – XRechnung ist Pflicht für Zahlungen von Integrationsämtern.
 - **Excel** für Mahnungen.
 
-Zusätzlich zum POSE-Bogen gibt es noch einen Add-on-Bogen für Sonderfälle (liegt noch nicht vor).
+Zusätzlich zum POSE-Bogen gibt es noch einen Add-on-Bogen für Sonderfälle (liegt noch nicht vor). Im Konfigurator steht ein Entwurf (Kleinwuchs u. a.) in `konfigurator/katalog.json → zusatzboegen`, der mit dem Papierbogen abgeglichen werden muss.
 
 ## Stufen
 
@@ -26,6 +26,10 @@ Zusätzlich zum POSE-Bogen gibt es noch einen Add-on-Bogen für Sonderfälle (li
   am Ende der E-Mail.
 - **Stufe 1b (fertig):** [`scripts/pose_json_lesen.py`](scripts/pose_json_lesen.py) liest diesen
   Block wieder ein und validiert ihn grob.
+- **Stufe 1c (fertig, 2026-10):** [Konfigurator](tools/konfigurator/README.md) – Tablet-App mit
+  Ergänzungsbögen, Versorgung, Fotos, Angebot, Einwilligung/Unterschrift, Ende-zu-Ende-verschlüsselter
+  Übertragung und Offline-Warteschlange. Das Büro-Werkzeug baut daraus KV-**Entwurf**, Begründung,
+  Vorlage ärztliche Stellungnahme und Montage-Checkliste als PDF.
 - **Stufe 2 (noch nicht gebaut):** Automatischer Angebotsentwurf im Faktura-System per API.
   Bewusst noch nicht angebunden – ohne verifizierten API-Zugang und echte Feldnamen des
   Zielsystems wäre eine geratene Integration gegen ein echtes Geschäftssystem ein Risiko, kein

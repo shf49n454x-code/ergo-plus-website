@@ -1,0 +1,598 @@
+{
+  "stand": "2026-10-15",
+  "hinweis": "Modelle, Optionen, Grenzwerte und Preise mit Joachim abgleichen, bevor das erste echte Angebot rausgeht.",
+  "beispielpreise": true,
+  "mwst_standard": 19,
+  "kostentraeger": [
+    "Deutsche Rentenversicherung",
+    "Integrationsamt / Inklusionsamt",
+    "Versorgungsamt",
+    "Agentur für Arbeit",
+    "Berufsgenossenschaft / Unfallkasse",
+    "Krankenkasse (Einzelfall über Reha-Partner)",
+    "Arbeitgeber",
+    "Selbstzahler",
+    "Noch offen"
+  ],
+  "linien": [
+    {
+      "id": "mfs",
+      "name": "MFS-Stuhlsystem",
+      "kurz": "Schwere Skoliose, komplexe Haltung",
+      "modelle": [
+        {
+          "id": "mfs-individuell",
+          "name": "MFS-Stuhlsystem, individuelle Visco-Anpassung",
+          "max_kg": 150,
+          "preis_netto": 4890
+        }
+      ]
+    },
+    {
+      "id": "kleinwuchs",
+      "name": "Kleinwuchsstuhl",
+      "kurz": "Körpergröße ca. 1,00–1,40 m, Arbeitsplatz",
+      "zusatzbogen": "kleinwuchs",
+      "modelle": [
+        {
+          "id": "tango-kw",
+          "name": "VELA TANGO mit Kleinwuchs-Anpassung",
+          "max_kg": 135,
+          "preis_netto": 3980
+        },
+        {
+          "id": "blues-kw",
+          "name": "VELA BLUES mit Kleinwuchs-Anpassung",
+          "max_kg": 135,
+          "preis_netto": 3190
+        }
+      ]
+    },
+    {
+      "id": "schwer",
+      "name": "Schwergewichtsstuhl",
+      "kurz": "Belastbar bis 250 kg",
+      "zusatzbogen": "schwergewicht",
+      "modelle": [
+        {
+          "id": "spezial-250",
+          "name": "Spezialstuhl Schwergewicht bis 250 kg",
+          "max_kg": 250,
+          "preis_netto": 3450
+        }
+      ]
+    },
+    {
+      "id": "aufsteh",
+      "name": "Aufsteh- und Trippelstuhl",
+      "kurz": "Aufstehhilfe, Bremse, Mobilität",
+      "zusatzbogen": "mobilitaet",
+      "modelle": [
+        {
+          "id": "elift-400",
+          "name": "ELIFT 400 Aufstehstuhl (46–86 cm, motorisch)",
+          "max_kg": 150,
+          "preis_netto": 4290
+        }
+      ]
+    },
+    {
+      "id": "arthrodese",
+      "name": "Arthrodesenstuhl",
+      "kurz": "Geteilte Sitzfläche, Prothese",
+      "zusatzbogen": "arthrodese",
+      "modelle": [
+        {
+          "id": "arthro-geteilt",
+          "name": "Arthrodesenstuhl mit geteilter Sitzfläche",
+          "max_kg": 150,
+          "preis_netto": 3290
+        }
+      ]
+    },
+    {
+      "id": "motor",
+      "name": "Motorisierter Fahrstuhl",
+      "kurz": "Innenbereich, motorisch verstellbar",
+      "zusatzbogen": "mobilitaet",
+      "modelle": [
+        {
+          "id": "tango-100-el",
+          "name": "VELA TANGO 100 EL",
+          "max_kg": 135,
+          "preis_netto": 5480
+        },
+        {
+          "id": "tango-500",
+          "name": "VELA TANGO 500",
+          "max_kg": 135,
+          "preis_netto": 6190
+        }
+      ]
+    },
+    {
+      "id": "ergo",
+      "name": "Ergonomischer Arbeitsstuhl",
+      "kurz": "Rücken, Wirbelsäule, Büro",
+      "modelle": [
+        {
+          "id": "opera-20",
+          "name": "Opera 20 / SMARTMOVE",
+          "max_kg": 150,
+          "preis_netto": 1490
+        },
+        {
+          "id": "blues-100",
+          "name": "VELA BLUES 100",
+          "max_kg": 135,
+          "preis_netto": 2390
+        },
+        {
+          "id": "tango-200",
+          "name": "VELA TANGO 200",
+          "max_kg": 135,
+          "preis_netto": 2990
+        }
+      ]
+    }
+  ],
+  "optionen": [
+    {
+      "gruppe": "Sitz & Rücken",
+      "auswahl": "mehrfach",
+      "eintraege": [
+        {
+          "id": "sitz_visco",
+          "name": "Sitz mit individueller Visco-Anpassung",
+          "preis_netto": 420
+        },
+        {
+          "id": "ruecken_visco",
+          "name": "Rücken mit individueller Visco-Anpassung",
+          "preis_netto": 480
+        },
+        {
+          "id": "lordose",
+          "name": "Verstellbare Lordosenstütze",
+          "preis_netto": 140
+        },
+        {
+          "id": "kopfstuetze",
+          "name": "Kopf-/Nackenstütze",
+          "preis_netto": 190
+        },
+        {
+          "id": "sitzneigung",
+          "name": "Sitzneigung verstellbar",
+          "preis_netto": 160
+        },
+        {
+          "id": "sitz_geteilt",
+          "name": "Geteilte Sitzfläche",
+          "preis_netto": 360,
+          "nur_fuer": [
+            "arthrodese"
+          ]
+        },
+        {
+          "id": "sitz_breit",
+          "name": "Verbreiterte Sitzfläche",
+          "preis_netto": 290,
+          "nur_fuer": [
+            "schwer",
+            "ergo",
+            "aufsteh"
+          ]
+        }
+      ]
+    },
+    {
+      "gruppe": "Armlehnen",
+      "auswahl": "einfach",
+      "eintraege": [
+        {
+          "id": "arm_hv",
+          "name": "Armlehnen höhenverstellbar",
+          "preis_netto": 180
+        },
+        {
+          "id": "arm_klapp",
+          "name": "Armlehnen hochklappbar (seitlicher Transfer)",
+          "preis_netto": 240
+        },
+        {
+          "id": "arm_ohne",
+          "name": "Ohne Armlehnen",
+          "preis_netto": 0
+        }
+      ]
+    },
+    {
+      "gruppe": "Fahrwerk",
+      "auswahl": "einfach",
+      "eintraege": [
+        {
+          "id": "fw_zentralbremse",
+          "name": "Zentralbremse (Stuhl steht beim Aufstehen fest)",
+          "preis_netto": 310
+        },
+        {
+          "id": "fw_rollen_gebremst",
+          "name": "Belastungsgebremste Rollen",
+          "preis_netto": 90
+        },
+        {
+          "id": "fw_gleiter",
+          "name": "Gleiter statt Rollen",
+          "preis_netto": 40
+        }
+      ]
+    },
+    {
+      "gruppe": "Höhe & Antrieb",
+      "auswahl": "mehrfach",
+      "eintraege": [
+        {
+          "id": "motor_hoehe",
+          "name": "Elektrische Sitzhöhenverstellung",
+          "preis_netto": 890,
+          "nicht_fuer": [
+            "aufsteh",
+            "motor"
+          ]
+        },
+        {
+          "id": "gasfeder_kurz",
+          "name": "Kurze Gasfeder (niedrige Sitzhöhe)",
+          "preis_netto": 60
+        },
+        {
+          "id": "gasfeder_lang",
+          "name": "Lange Gasfeder (hohe Sitzhöhe)",
+          "preis_netto": 60,
+          "schliesst_aus": [
+            "gasfeder_kurz"
+          ]
+        }
+      ]
+    },
+    {
+      "gruppe": "Bezug",
+      "auswahl": "einfach",
+      "eintraege": [
+        {
+          "id": "bezug_stoff",
+          "name": "Bezug Stoff mit Wollanteil (min. 75.000 Scheuertouren)",
+          "preis_netto": 0,
+          "wolle": true
+        },
+        {
+          "id": "bezug_wollfrei",
+          "name": "Bezug Stoff wollfrei",
+          "preis_netto": 0
+        },
+        {
+          "id": "bezug_kunstleder",
+          "name": "Bezug Kunstleder, abwischbar",
+          "preis_netto": 120
+        }
+      ]
+    },
+    {
+      "gruppe": "Zubehör & Arbeitsplatz",
+      "auswahl": "mehrfach",
+      "eintraege": [
+        {
+          "id": "fusspodest",
+          "name": "Fußpodest höhenverstellbar",
+          "preis_netto": 260
+        },
+        {
+          "id": "fussring",
+          "name": "Fußring am Stuhl",
+          "preis_netto": 140
+        },
+        {
+          "id": "trittstufe",
+          "name": "Einstiegs-Trittstufe",
+          "preis_netto": 180
+        },
+        {
+          "id": "tisch_hv",
+          "name": "Höhenverstellbarer Arbeitstisch (elektrisch)",
+          "preis_netto": 890
+        },
+        {
+          "id": "stockhalter",
+          "name": "Halter für Gehstock / Unterarmstütze",
+          "preis_netto": 45
+        }
+      ]
+    }
+  ],
+  "leistungen": [
+    {
+      "id": "beratung",
+      "name": "Beratung, Vermessung und Bedarfsanalyse vor Ort",
+      "preis_netto": 180,
+      "fest": true
+    },
+    {
+      "id": "anfahrt",
+      "name": "Anfahrt (Hin- und Rückweg)",
+      "je_km_netto": 0.8,
+      "fest": true
+    },
+    {
+      "id": "antrag",
+      "name": "Dokumentation und Unterlagen für den Kostenträger",
+      "preis_netto": 85,
+      "fest": true
+    },
+    {
+      "id": "lieferung",
+      "name": "Lieferung frei Verwendungsstelle",
+      "preis_netto": 120,
+      "fest": true
+    },
+    {
+      "id": "einweisung",
+      "name": "Einstellung, Anpassung und Einweisung vor Ort",
+      "preis_netto": 95,
+      "fest": true
+    },
+    {
+      "id": "anpassung_werkstatt",
+      "name": "Individuelle Nacharbeit in der eigenen Werkstatt",
+      "preis_netto": 150,
+      "fest": false
+    }
+  ],
+  "zusatzboegen": {
+    "kleinwuchs": {
+      "titel": "Ergänzung Kleinwuchs",
+      "hinweis": "Entwurf – mit Joachims Papier-Ergänzungsbogen abgleichen.",
+      "felder": [
+        {
+          "id": "kw_form",
+          "label": "Form des Kleinwuchses",
+          "typ": "auswahl",
+          "werte": [
+            "Achondroplasie",
+            "Hypochondroplasie",
+            "Spondyloepiphysäre Dysplasie",
+            "Andere Form",
+            "Nicht bekannt"
+          ]
+        },
+        {
+          "id": "kw_wachstum",
+          "label": "Ist das Wachstum abgeschlossen?",
+          "typ": "jn",
+          "folge": {
+            "wert": "Nein",
+            "felder": [
+              {
+                "id": "kw_wachstum_info",
+                "label": "Erwartete Veränderung / nächste Kontrolle",
+                "typ": "text"
+              }
+            ]
+          }
+        },
+        {
+          "id": "kw_arm",
+          "label": "Armlänge Schulter bis Fingerspitze",
+          "typ": "zahl",
+          "einheit": "cm"
+        },
+        {
+          "id": "kw_reichweite",
+          "label": "Greifhöhe im Sitzen (Sitzfläche bis Fingerspitze, Arm gestreckt nach oben)",
+          "typ": "zahl",
+          "einheit": "cm"
+        },
+        {
+          "id": "kw_sitzhoehe",
+          "label": "Benötigte Sitzhöhe am Arbeitsplatz",
+          "typ": "zahl",
+          "einheit": "cm"
+        },
+        {
+          "id": "kw_tisch_verstellbar",
+          "label": "Ist der Arbeitstisch höhenverstellbar?",
+          "typ": "jn"
+        },
+        {
+          "id": "kw_aufstieg",
+          "label": "Wie kommt die Person auf den Stuhl?",
+          "typ": "auswahl",
+          "werte": [
+            "Ohne Hilfe",
+            "Mit Trittstufe",
+            "Stuhl muss tief fahren",
+            "Mit Hilfe einer Person"
+          ]
+        },
+        {
+          "id": "kw_lordose",
+          "label": "Ausgeprägte Lendenlordose?",
+          "typ": "jn"
+        },
+        {
+          "id": "kw_beweglichkeit",
+          "label": "Eingeschränkte Beweglichkeit (Hüfte, Knie, Ellenbogen)?",
+          "typ": "jn",
+          "folge": {
+            "wert": "Ja",
+            "felder": [
+              {
+                "id": "kw_beweglichkeit_wo",
+                "label": "Wo und wie stark?",
+                "typ": "text"
+              }
+            ]
+          }
+        },
+        {
+          "id": "kw_stenose",
+          "label": "Spinalkanalstenose oder Rückenoperation bekannt?",
+          "typ": "jn"
+        },
+        {
+          "id": "kw_weitere",
+          "label": "Weitere Hilfsmittel am Arbeitsplatz (Tritt, Halter, Bedienelemente)",
+          "typ": "text"
+        }
+      ]
+    },
+    "schwergewicht": {
+      "titel": "Ergänzung Schwergewicht",
+      "felder": [
+        {
+          "id": "sg_hueftbreite",
+          "label": "Hüftbreite im Sitzen",
+          "typ": "zahl",
+          "einheit": "cm"
+        },
+        {
+          "id": "sg_sitzdauer",
+          "label": "Sitzdauer pro Tag",
+          "typ": "zahl",
+          "einheit": "h"
+        },
+        {
+          "id": "sg_aufstehen",
+          "label": "Ist das Aufstehen erschwert?",
+          "typ": "jn"
+        },
+        {
+          "id": "sg_haut",
+          "label": "Druckstellen oder Hautprobleme im Sitzbereich?",
+          "typ": "jn"
+        }
+      ]
+    },
+    "arthrodese": {
+      "titel": "Ergänzung Amputation / Arthrodese / Prothese",
+      "felder": [
+        {
+          "id": "ar_art",
+          "label": "Art der Versorgung",
+          "typ": "auswahl",
+          "werte": [
+            "Hüftarthrodese",
+            "Kniearthrodese",
+            "Amputation Oberschenkel",
+            "Amputation Unterschenkel",
+            "Andere"
+          ]
+        },
+        {
+          "id": "ar_seite",
+          "label": "Seite",
+          "typ": "auswahl",
+          "werte": [
+            "Links",
+            "Rechts",
+            "Beidseitig"
+          ]
+        },
+        {
+          "id": "ar_prothese",
+          "label": "Wird eine Prothese getragen?",
+          "typ": "jn"
+        },
+        {
+          "id": "ar_winkel",
+          "label": "Versteifungswinkel (falls bekannt)",
+          "typ": "zahl",
+          "einheit": "°"
+        }
+      ]
+    },
+    "mobilitaet": {
+      "titel": "Ergänzung Aufstehen & Mobilität",
+      "felder": [
+        {
+          "id": "mo_gehhilfe",
+          "label": "Gehhilfe",
+          "typ": "auswahl",
+          "werte": [
+            "Keine",
+            "Gehstock",
+            "Unterarmstützen",
+            "Rollator",
+            "Rollstuhl"
+          ]
+        },
+        {
+          "id": "mo_sturz",
+          "label": "Erhöhte Sturzgefahr?",
+          "typ": "jn"
+        },
+        {
+          "id": "mo_trippeln",
+          "label": "Bewegt sich die Person sitzend durch Trippeln fort?",
+          "typ": "jn"
+        },
+        {
+          "id": "mo_tuerbreite",
+          "label": "Engste Türbreite im Bewegungsbereich",
+          "typ": "zahl",
+          "einheit": "cm"
+        },
+        {
+          "id": "mo_innen",
+          "label": "Nutzung",
+          "typ": "auswahl",
+          "werte": [
+            "Nur innen",
+            "Innen und kurz außen"
+          ]
+        }
+      ]
+    },
+    "skoliose": {
+      "titel": "Ergänzung Skoliose / Haltung",
+      "felder": [
+        {
+          "id": "sk_form",
+          "label": "Verlauf",
+          "typ": "auswahl",
+          "werte": [
+            "C-Form",
+            "S-Form",
+            "Nicht bekannt"
+          ]
+        },
+        {
+          "id": "sk_korsett",
+          "label": "Wird ein Korsett getragen?",
+          "typ": "jn"
+        },
+        {
+          "id": "sk_op",
+          "label": "Wirbelsäulen-OP / Versteifung?",
+          "typ": "jn",
+          "folge": {
+            "wert": "Ja",
+            "felder": [
+              {
+                "id": "sk_op_bereich",
+                "label": "Welcher Bereich?",
+                "typ": "text"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sk_schmerz",
+          "label": "Schmerzen nach wie vielen Minuten Sitzen?",
+          "typ": "zahl",
+          "einheit": "min"
+        }
+      ]
+    }
+  }
+}

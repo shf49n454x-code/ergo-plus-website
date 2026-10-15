@@ -1,0 +1,16 @@
+{
+  "name": "ERGO-PLUS Sitzberatung",
+  "short_name": "ERGO-PLUS",
+  "description": "POSE-Bogen, Versorgung und Angebot – offline-fähig, Ende-zu-Ende-verschlüsselt.",
+  "start_url": "/konfigurator/",
+  "scope": "/konfigurator/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f0f5fa",
+  "theme_color": "#1a5276",
+  "lang": "de",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
