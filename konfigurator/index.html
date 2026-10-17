@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sitzberatung – Konfigurator | ERGO-PLUS</title>
+  <meta name="description" content="ERGO-PLUS Sitzberatung: POSE-Bogen, Versorgung und Angebot in einem Schritt – Ende-zu-Ende-verschlüsselt." />
+  
+  <meta name="theme-color" content="#1a5276" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="ERGO-PLUS" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="/ergo-plus-website/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/ergo-plus-website/apple-touch-icon.png" />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/ergo-plus-website/assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="kopf">
+    <img src="/ergo-plus-website/logo-ergoplus.png" alt="ERGO plus" class="logo" width="75" height="44" />
+    <div class="kopf-mitte">
+      <span class="modus" id="modus-chip">Beratung vor Ort</span>
+      <span class="vorgang" id="vorgang-nr" aria-label="Vorgangsnummer"></span>
+    </div>
+    <button type="button" class="sync" id="sync-chip" aria-live="polite">
+      <span class="sync-punkt" aria-hidden="true"></span><span id="sync-text">Bereit</span>
+    </button>
+  </header>
+
+  <div class="rahmen">
+    <nav class="schritte" aria-label="Schritte">
+      <ol id="schritt-liste"></ol>
+      <div class="schritte-fuss">
+        <button type="button" class="link-btn" id="btn-neu">Neuer Vorgang</button>
+      </div>
+    </nav>
+
+    <main id="inhalt" tabindex="-1">
+      <div class="fortschritt" aria-hidden="true"><div class="fortschritt-balken" id="fortschritt"></div></div>
+      <div id="schritt-buehne"></div>
+    </main>
+  </div>
+
+  <footer class="leiste">
+    <button type="button" class="btn sekundaer" id="btn-zurueck">Zurück</button>
+    <span class="leiste-info" id="leiste-info"></span>
+    <button type="button" class="btn primaer" id="btn-weiter">Weiter</button>
+  </footer>
+
+  <div id="meldung" class="meldung" role="status" aria-live="polite"></div>
+  <div id="druck" aria-hidden="true"></div>
+
+  <noscript><p class="noscript">Bitte JavaScript aktivieren, um den Bogen zu nutzen.</p></noscript>
+  <script src="krypto.js"></script>
+  <script src="speicher.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
