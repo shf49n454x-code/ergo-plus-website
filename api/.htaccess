@@ -1,0 +1,14 @@
+# Nur die zwei Endpunkte sind erreichbar; Einstellungen und Postfach nie.
+<FilesMatch "^(einstellungen|einstellungen-lokal|einstellungen-lokal\.beispiel)\.php$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/api/postfach/
+# Authorization-Header an PHP durchreichen (bei CGI/FastCGI sonst verschluckt)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+<IfModule mod_headers.c>
+  Header always set Cache-Control "no-store"
+</IfModule>
