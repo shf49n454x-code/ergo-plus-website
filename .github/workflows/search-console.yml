@@ -90,6 +90,16 @@ jobs:
         run: |
           if [ -f data/search-console/INDEX.md ]; then
             cat data/search-console/INDEX.md >> "$GITHUB_STEP_SUMMARY"
+            # Als Anmerkungen am Lauf und am PR sichtbar, auch ohne die
+            # Zusammenfassung zu oeffnen.
+            python3 -c "
+          import json
+          d = json.load(open('data/search-console/index.json'))
+          print(f\"::notice title=Index::{d['im_index']} von {d['adressen']} Sitemap-Adressen im Google-Index\")
+          for e in d['ergebnisse']:
+              if not e['im_index']:
+                  print(f\"::warning title=Nicht im Index::{e['url']} - {e['zustand'] or e['urteil'] or 'ohne Angabe'}\")
+          "
           fi
 
       # Laeuft auch nach einem Fehlschlag: sonst bliebe der Laufbericht, der
