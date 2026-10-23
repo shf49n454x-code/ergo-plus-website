@@ -39,8 +39,15 @@ SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
 PAUSE_S = 0.25
 HOECHSTENS = 1500
 
-# coverageState kommt als englischer Text. Was davon "im Index" heißt:
-IM_INDEX = {"Submitted and indexed", "Indexed, not submitted in sitemap"}
+# Ob eine Seite im Index ist, entscheidet das Urteil der API: PASS heißt
+# "im Index". coverageState ist nur Googles Begründung in Worten; sie wird
+# auf Englisch angefordert, damit der Bericht die Begriffe aus der Google-
+# Hilfe zeigt, und dient nur der Erklärung, nie der Entscheidung.
+SPRACHE = "en-US"
+
+
+class Abbruch(Exception):
+    """Die API verweigert weitere Prüfungen; bisherige Ergebnisse bleiben."""
 
 
 def adressen_aus_sitemap(pfad: pathlib.Path) -> list[str]:
@@ -66,19 +73,20 @@ def pruefe(sitzung, creds, site: str, url: str) -> dict:
     antwort = sitzung.post(
         API,
         headers={"Authorization": f"Bearer {creds.token}"},
-        json={"inspectionUrl": url, "siteUrl": site, "languageCode": "de"},
+        json={"inspectionUrl": url, "siteUrl": site, "languageCode": SPRACHE},
         timeout=60,
     )
     if antwort.status_code == 403:
-        sys.exit("403 von der URL Inspection API. Der Service Account braucht "
-                 "in der Search Console mindestens die Rolle 'Eingeschraenkt'.")
+        raise Abbruch("403 von der URL Inspection API. Der Service Account braucht "
+                      "in der Search Console mindestens die Rolle 'Eingeschraenkt'.")
     if antwort.status_code == 429:
-        sys.exit("429: Tageskontingent der URL Inspection API erschoepft.")
+        raise Abbruch("429 von der URL Inspection API: Minuten- oder Tageskontingent "
+                      "erschoepft (600 pro Minute, 2000 pro Tag).")
     antwort.raise_for_status()
     erg = antwort.json().get("inspectionResult", {}).get("indexStatusResult", {})
     return {
         "url": url,
-        "im_index": erg.get("coverageState") in IM_INDEX,
+        "im_index": erg.get("verdict") == "PASS",
         "urteil": erg.get("verdict", ""),               # PASS / NEUTRAL / FAIL
         "zustand": erg.get("coverageState", ""),        # Googles Begründung
         "abruf": erg.get("pageFetchState", ""),         # SUCCESSFUL, SOFT_404, ...
@@ -162,8 +170,13 @@ def main() -> None:
     creds = zugangsdaten()
     sitzung = requests.Session()
     ergebnisse = []
+    abbruch = ""
     for url in adressen:
-        ergebnisse.append(pruefe(sitzung, creds, args.site, url))
+        try:
+            ergebnisse.append(pruefe(sitzung, creds, args.site, url))
+        except Abbruch as e:
+            abbruch = f"{e} Geprueft: {len(ergebnisse)} von {len(adressen)}."
+            break
         time.sleep(PAUSE_S)
 
     stand = dt.datetime.now(dt.timezone.utc).strftime("%d.%m.%Y %H:%M UTC")
@@ -174,11 +187,16 @@ def main() -> None:
         "abgerufen_am": dt.datetime.now(dt.timezone.utc).isoformat(),
         "im_index": sum(e["im_index"] for e in ergebnisse),
         "adressen": len(ergebnisse),
+        "abgebrochen": abbruch,
         "ergebnisse": ergebnisse,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
-    (ordner / "INDEX.md").write_text(bericht(ergebnisse, args.site, stand),
-                                     encoding="utf-8")
+    text = bericht(ergebnisse, args.site, stand)
+    if abbruch:
+        text = text.replace("\n\n", f"\n\n**Abgebrochen:** {abbruch}\n\n", 1)
+    (ordner / "INDEX.md").write_text(text, encoding="utf-8")
     print(f"{sum(e['im_index'] for e in ergebnisse)} von {len(ergebnisse)} im Index.")
+    if abbruch:
+        sys.exit(abbruch)
 
 
 if __name__ == "__main__":

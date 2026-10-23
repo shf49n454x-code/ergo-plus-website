@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import html
 import json
 import pathlib
 import socket
@@ -60,7 +61,7 @@ class OhneWeiterleitung(urllib.request.HTTPRedirectHandler):
 
 
 def abrufen(url: str, kontext: ssl.SSLContext, folgen: bool = True,
-            zeit: int = 20) -> tuple[int, dict, str]:
+            zeit: int = 20) -> tuple[int, "email.message.Message", str]:
     """Status, Kopfzeilen und Text. Fehlerstatus kommen zurück statt Ausnahme."""
     handler = [urllib.request.HTTPSHandler(context=kontext)]
     if not folgen:
@@ -69,9 +70,20 @@ def abrufen(url: str, kontext: ssl.SSLContext, folgen: bool = True,
     anfrage = urllib.request.Request(url, headers={"User-Agent": AGENT})
     try:
         with oeffner.open(anfrage, timeout=zeit) as r:
-            return r.status, dict(r.headers), r.read(400_000).decode("utf-8", "replace")
+            return r.status, r.headers, lesen(r.read(400_000), r.headers)
     except urllib.error.HTTPError as e:
-        return e.code, dict(e.headers or {}), (e.read(50_000) or b"").decode("utf-8", "replace")
+        return e.code, e.headers, lesen(e.read(50_000) or b"", e.headers)
+
+
+def lesen(roh: bytes, kopf) -> str:
+    """Text im angegebenen Zeichensatz, Entitäten aufgelöst: Eine Platzhalterseite
+    in Latin-1 oder mit &auml; soll genauso erkannt werden wie in UTF-8."""
+    satz = (kopf.get_content_charset() if kopf is not None else None) or "utf-8"
+    try:
+        text = roh.decode(satz, "replace")
+    except LookupError:
+        text = roh.decode("utf-8", "replace")
+    return html.unescape(text)
 
 
 def platzhalter_in(text: str) -> str:
@@ -173,8 +185,12 @@ def main() -> None:
         pfad = urllib.parse.urlsplit(url).path or "/"
         try:
             status, _, text = abrufen(basis + pfad, kontext)
-            if status != 200 or platzhalter_in(text):
-                kaputt.append(f"{pfad} ({status}{', Platzhalter' if platzhalter_in(text) else ''})")
+            ph = platzhalter_in(text)
+            fremd = pfad.endswith((".html", "/")) and KENNUNG not in text
+            if status != 200 or ph or fremd:
+                kaputt.append(f"{pfad} ({status}"
+                              + (", Platzhalter" if ph else "")
+                              + (f", ohne „{KENNUNG}“" if fremd and not ph else "") + ")")
         except Exception as e:  # noqa: BLE001
             kaputt.append(f"{pfad} ({type(e).__name__})")
     if adressen:

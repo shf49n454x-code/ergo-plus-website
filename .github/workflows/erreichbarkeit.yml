@@ -26,7 +26,10 @@ permissions:
   contents: write
 
 concurrency:
-  group: erreichbarkeit
+  # PR-Laeufe in eine eigene Gruppe: Sonst kann ein PR-Push einen
+  # wartenden Zeitplan-Lauf still verdraengen (eine Gruppe haelt nur einen
+  # wartenden Lauf).
+  group: erreichbarkeit-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
   cancel-in-progress: false
 
 jobs:

@@ -25,7 +25,10 @@ concurrency:
   # Push gegenseitig abweisen, wenn sie sich ueberschneiden - genau das ist
   # in diesem Projekt schon vorgekommen, als der Lauf mehrfach von Hand
   # angestossen wurde, um das fehlende Secret zu pruefen.
-  group: search-console
+  # PR-Laeufe in eine eigene Gruppe: Sonst kann ein PR-Push einen
+  # wartenden Zeitplan-Lauf still verdraengen (eine Gruppe haelt nur einen
+  # wartenden Lauf).
+  group: search-console-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
   cancel-in-progress: false
 
 jobs:
