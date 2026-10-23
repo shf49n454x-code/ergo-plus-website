@@ -11,3 +11,4 @@ audit-report.json
 api/einstellungen-lokal.php
 api/postfach/
 tools/konfigurator/vorgaenge/
+package-lock.json
