@@ -12,3 +12,19 @@ RedirectMatch 404 ^/api/postfach/
 <IfModule mod_headers.c>
   Header always set Cache-Control "no-store"
 </IfModule>
+
+# --- PHP2Shell-Abwehr (CVE-2026-109618 / CVE-2026-109619), Okt. 2026 ---
+# Eigene Rewrite-Regeln hier ersetzen die der Wurzel-.htaccess, daher wiederholt.
+# eingang.php nimmt nur JSON, postfach.php nur GET/DELETE mit Bearer-Token.
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP:Content-Type} multipart/ [NC]
+  RewriteRule ^ - [F,L]
+  RewriteCond %{HTTP:Transfer-Encoding} chunked [NC]
+  RewriteRule ^ - [R=411,L]
+  # MAX_BYTES in einstellungen.php ist 25 MB: ab 30 MB gar nicht erst an PHP.
+  RewriteCond %{HTTP:Content-Length} ^([3-9][0-9]{7}|[0-9]{9,})$
+  RewriteRule ^ - [R=413,L]
+</IfModule>
+<IfModule mod_headers.c>
+  RequestHeader unset Cookie
+</IfModule>
