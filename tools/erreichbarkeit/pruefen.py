@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Prüft, ob ergo-plus.de wirklich erreichbar ist, so wie Besucher und Google sie sehen.
 
-Ein grüner Deploy und eine Seite, die lokal funktioniert, sagen nichts darüber,
+Ein grüner Audit und eine Seite, die lokal funktioniert, sagen nichts darüber,
 ob der Server draußen antwortet. Am 23.10.2026 zeigte ergo-plus.de die
 STRATO-Platzhalterseite „Diese Internetpräsenz ist zur Zeit nicht erreichbar“,
-ohne gültiges Zertifikat, und niemand hat es gemerkt, bis Google nur noch die
-alte Startseite kannte. Dieser Wächter hätte es am ersten Tag gemeldet.
+ohne gültiges Zertifikat: Die neue Website war nie live gegangen, obwohl alle
+Prüfungen im Repo grün waren. Dieser Wächter prüft die echte Adresse.
 
 Prüft:
   1. TLS: Handshake mit gültigem Zertifikat für ergo-plus.de und www, Restlaufzeit.

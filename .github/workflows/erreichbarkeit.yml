@@ -10,8 +10,8 @@ name: Erreichbarkeit
 # nicht jeden Tag ein Commit entsteht.
 #
 # Anlass: Am 23.10.2026 zeigte ergo-plus.de die STRATO-Seite "Diese
-# Internetpraesenz ist zur Zeit nicht erreichbar", und niemand hatte es
-# bemerkt.
+# Internetpraesenz ist zur Zeit nicht erreichbar": Die neue Website war nie
+# live gegangen, obwohl alle Pruefungen im Repo gruen waren.
 
 on:
   schedule:
