@@ -39,6 +39,53 @@
     });
   }
 
+  // ── Startseite: Kopfzeile über der dunklen Bühne ──
+  var kopf = document.querySelector('.start .site-head');
+  if (kopf) {
+    var kopfSetzen = function () { kopf.classList.toggle('ist-fest', window.scrollY > 24); };
+    kopfSetzen();
+    window.addEventListener('scroll', kopfSetzen, { passive: true });
+  }
+
+  // ── Bühne: das Maß hervorheben, dessen Text gerade in der Mitte steht ──
+  var buehne = document.querySelector('.buehne');
+  var figur = buehne && buehne.querySelector('.measure-fig');
+  if (figur && 'IntersectionObserver' in window) {
+    var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setTimeout(function () { figur.classList.add('ist-bereit'); }, ruhig ? 0 : 1900);
+    buehne.classList.add('ist-interaktiv');
+    var schritte = buehne.querySelectorAll('.buehne__schritt');
+    var beobachter = new IntersectionObserver(function (eintraege) {
+      eintraege.forEach(function (e) {
+        e.target.classList.toggle('ist-aktiv', e.isIntersecting);
+        if (e.isIntersecting) figur.setAttribute('data-aktiv', e.target.getAttribute('data-mass'));
+      });
+      if (!buehne.querySelector('.buehne__schritt.ist-aktiv')) figur.setAttribute('data-aktiv', '');
+    }, { rootMargin: window.matchMedia('(min-width: 960px)').matches ? '-42% 0px -42% 0px' : '-62% 0px -36% 0px' });
+    schritte.forEach(function (el) { beobachter.observe(el); });
+  }
+
+  // ── Technik-Galerie: Pfeile blättern um ein Bild ──
+  var liste = document.getElementById('galerie-liste');
+  if (liste) {
+    var knoepfe = document.querySelectorAll('.galerie__btn');
+    var schritt = function () { var i = liste.querySelector('.galerie__item'); return i ? i.getBoundingClientRect().width + 24 : 400; };
+    var zustand = function () {
+      var max = liste.scrollWidth - liste.clientWidth - 4;
+      knoepfe.forEach(function (k) {
+        k.disabled = k.getAttribute('data-richtung') === '-1' ? liste.scrollLeft <= 4 : liste.scrollLeft >= max;
+      });
+    };
+    knoepfe.forEach(function (k) {
+      k.addEventListener('click', function () {
+        liste.scrollBy({ left: schritt() * Number(k.getAttribute('data-richtung')), behavior: 'smooth' });
+      });
+    });
+    liste.addEventListener('scroll', zustand, { passive: true });
+    window.addEventListener('resize', zustand);
+    zustand();
+  }
+
   // ── Cookie-Hinweis und Google Analytics (erst nach Zustimmung) ──
   var GA4_ID = 'G-Y8T7VW3V73';
   var lesen = function () { try { return localStorage.getItem('ep-cookies'); } catch (e) { return null; } };

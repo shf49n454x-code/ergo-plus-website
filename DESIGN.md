@@ -12,7 +12,7 @@
 ## Aesthetic Direction (seit Oktober 2026)
 - **Direction:** Ruhiges Fachhaus, kein Prospekt. Die Seite liest sich wie die Unterlagen eines guten Orthopädietechnikers: genau, hell, mit viel Luft.
 - **Decoration level:** Minimal. Haarlinien statt Kartenschatten, weiße Flächen statt Verläufe. Keine Blobs, keine Glas-Effekte, keine Scroll-Reveals.
-- **Memorable thing:** Die Maßlinien im Hero. Der VELA TANGO steht freigestellt da, teal eingezeichnet sind Rückenlehne, Sitzhöhe und Sitztiefe, jeweils „nach Ihrer …“. Das ist die Botschaft der Firma in einem Bild: Der Stuhl wird an Ihnen gemessen. Diese Bildsprache (technische Bemaßung) darf an anderer Stelle wieder auftauchen, sparsam.
+- **Memorable thing:** Die Maßlinien auf der dunklen Bühne der Startseite. Der VELA TANGO steht freigestellt da, teal eingezeichnet sind Rückenlehne, Sitzhöhe und Sitztiefe, jeweils „nach Ihrer …“. Das ist die Botschaft der Firma in einem Bild: Der Stuhl wird an Ihnen gemessen. Diese Bildsprache (technische Bemaßung) darf an anderer Stelle wieder auftauchen, sparsam.
 - **Mood:** Kompetent und zugewandt. Weder Krankenhausbroschüre noch Startup-Landingpage.
 - **Referenzen:** godly.design, uiuxshowcase.com, recent.design (Oktober 2026, Jon): redaktionelle Gitter, große ruhige Typografie, eine einzige bewegte Stelle.
 
@@ -42,6 +42,9 @@ Alle Tokens stehen in `assets/css/site.css` unter `:root`.
 | `--surface` | #ffffff | Flächen |
 | `--rule` / `--rule-soft` | #d3dfe8 / #e6edf3 | Haarlinien |
 | `--note` / `--note-wash` | #8a5606 / #fdf3dc | Hinweis-Kästen |
+| `--night` / `--night-2` | #0b2131 / #12324a | dunkle Bühne der Startseite, Seitenköpfe der Hauptseiten |
+| `--line-hell` | #5fd6bb | Maßlinien und Links auf Dunkel |
+| `--text-hell` | rgba(255,255,255,.78) | Fließtext auf Dunkel |
 
 Die alten `--c-*`-Namen sind in `site.css` als Aliase hinterlegt, weil Inline-Styles in den Ratgeber-Artikeln sie benutzen. Für neuen Code nicht verwenden.
 
@@ -73,9 +76,13 @@ Jede Unterseite endet mit „Weiterführend“ (3–4 interne Links), Autor und 
 **Bilder:** Echte Menschen und echte Produkte vor Symbolbildern. Kein Bild, das dem Text widerspricht (z. B. Rollstuhl-Stockfoto zum Amputationsartikel). Telefonnummer immer „06021 12807“ (DIN 5008), im Link `tel:+49602112807`.
 
 ## Motion
-- **Genau eine inszenierte Bewegung:** die Maßlinien im Hero zeichnen sich beim Laden einmal ein (0,9 s, gestaffelt), die Beschriftungen blenden danach ein.
-- Sonst nur Rückmeldung auf Handlungen: Hover-Farbe, Menü öffnen, Formular-Status.
-- `prefers-reduced-motion: reduce` schaltet alles ab, die Linien stehen dann sofort da.
+Bewegung erklärt etwas oder antwortet auf eine Handlung. Sie dekoriert nicht.
+- **Startseite, Bühne:** Beim Laden setzt der Stuhl auf, die drei Maßlinien zeichnen sich ein (0,9 s, gestaffelt). Beim Scrollen bleibt der Stuhl stehen (sticky), links laufen Sitzhöhe, Sitztiefe und Rückenlehne durch, und das jeweils beschriebene Maß leuchtet auf. Ohne JavaScript sind alle drei Maße sichtbar.
+- **Hauptseiten:** Das Maßband an der Unterkante des dunklen Seitenkopfs läuft einmal von links ein, Überschrift und Lead tauchen leicht auf.
+- **Technik-Galerie:** seitlich blättern (Scroll-Snap, Pfeiltasten und Knöpfe). Keine automatische Bewegung.
+- **Seitenwechsel:** weicher Übergang per View Transitions (0,28 s), die Kopfzeile bleibt stehen.
+- Keine Scroll-Reveals einzelner Abschnitte, keine Parallax, keine Zähler.
+- `prefers-reduced-motion: reduce` schaltet alles ab, auch den Seitenwechsel.
 
 ## Accessibility Notes
 - WCAG AA für allen Text; `--line-teal` nie für Text unter 24 px.
@@ -98,3 +105,4 @@ Jede Unterseite endet mit „Weiterführend“ (3–4 interne Links), Autor und 
 | 2026-10-23 | Haarlinien statt Kartenschatten, keine Pillen-Buttons | Weg vom SaaS-Karten-Baukasten, hin zu redaktionellem Raster (Referenzen godly.design, uiuxshowcase.com, recent.design). |
 | 2026-10-23 | Figtree + Noto Sans bleiben, Teal bleibt Handlungsfarbe | Wiedererkennung; nur Größen, Laufweite und Zeilenlänge neu gesetzt. |
 | 2026-10-23 | Design-Review (Senior Design Director) umgesetzt | Keine Kennzahl-Kacheln, kein anonymes Kundenzitat, keine Stock- und KI-Wirbelsäulenbilder mehr auf Haupt- und Ablaufseite. Stattdessen das echte Team auf der Startseite. Produkte und Ratgeber als Listen mit Haarlinien statt Kartenraster. Lesespalten linksbündig im Raster, Telefonnummer überall „06021 12807“. |
+| 2026-10-23 | Moderner und edler (Jon: „noch edler, hochwertiger, moderner, Vollbild, Animationen“) | Startseite öffnet als dunkle Vollbild-Bühne mit freigestelltem Stuhl auf hellem Lichtkreis; das Maßnehmen wird beim Scrollen erzählt. Hauptseiten bekommen einen dunklen Kopf mit Maßband-Kante. Technik als randabfallende Galerie mit großen Renderings. Teamfotos schwarzweiß. Seitenwechsel mit View Transitions. Die Bewegung bleibt an den Inhalt gebunden. |

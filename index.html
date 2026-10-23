@@ -19,14 +19,14 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a5276" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable summary" />
-  <link rel="preload" as="image" href="/assets/img/vela-tango-aktivstuhl.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/img/vela-tango-freigestellt.webp" fetchpriority="high" />
   <!-- SEITE:KOPF -->
   <link rel="preload" href="/assets/fonts/figtree-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=a94f025cab" />
-  <script src="/assets/js/site.js?v=a557a70c5f" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=76d8ee9b9d" />
+  <script src="/assets/js/site.js?v=f9a617a206" defer></script>
   <!-- /SEITE:KOPF -->
   <script type="application/ld+json">
 {
@@ -104,7 +104,7 @@
 }
   </script>
 </head>
-<body>
+<body class="start">
 <!-- SEITE:NAV -->
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="site-head">
@@ -131,30 +131,61 @@
 <!-- /SEITE:NAV -->
 <main id="inhalt">
 
-  <section class="hero" aria-labelledby="hero-titel">
-    <div class="wrap hero__grid">
-      <div class="hero__text">
+  <section class="buehne" aria-labelledby="hero-titel">
+    <div class="wrap buehne__grid">
+      <div class="buehne__intro">
         <h1 id="hero-titel">Wir lassen Sie nicht nur sitzen.</h1>
         <p class="lead">Therapeutische Sitzversorgung bei MS, ALS, Skoliose, Kleinwuchs, Amputation und Schwergewicht bis 250&nbsp;kg. Deutschlandweit, mit über 30 Jahren Erfahrung. Dort, wo das Sanitätshaus aufhört, fangen wir an.</p>
         <div class="btn-row">
           <a class="btn btn--act" href="/kontakt.html">Kostenlose Beratung anfragen</a>
-          <a class="btn btn--line" href="tel:+49602112807">06021 12807 anrufen</a>
+          <a class="btn btn--hell" href="tel:+49602112807">06021 12807 anrufen</a>
         </div>
+        <a class="buehne__weiter" href="#messen">So messen wir</a>
       </div>
-      <figure class="measure-fig">
-        <img src="/assets/img/vela-tango-aktivstuhl.webp" alt="VELA TANGO Aktivstuhl mit Armlehnen und Bremsrollen" width="452" height="600" fetchpriority="high" />
-        <svg viewBox="0 0 600 460" aria-hidden="true" focusable="false">
-          <path class="ml-ext" d="M392 163 H436 M372 359 H436 M190 38 H246 M190 142 H226" />
-          <path class="ml-ext" d="M241 330 V403 M405 300 V403" />
-          <path class="ml ml--1" pathLength="1" d="M180 38 V142 M172 38 H188 M172 142 H188" />
-          <path class="ml ml--2" pathLength="1" d="M428 163 V359 M420 163 H436 M420 359 H436" />
-          <path class="ml ml--3" pathLength="1" d="M241 395 H405 M241 387 V403 M405 387 V403" />
-        </svg>
-        <span class="ml-tag ml-tag--lehne" aria-hidden="true">Rückenlehne<small>nach Ihrer Wirbelsäule</small></span>
-        <span class="ml-tag ml-tag--hoehe" aria-hidden="true">Sitzhöhe<small>nach Ihrer Beinlänge</small></span>
-        <span class="ml-tag ml-tag--tiefe" aria-hidden="true">Sitztiefe<small>nach Ihren Oberschenkeln</small></span>
-        <figcaption class="sr-only">Der VELA TANGO mit eingezeichneten Maßen: Rückenlehne, Sitzhöhe und Sitztiefe werden auf den einzelnen Menschen eingestellt.</figcaption>
-      </figure>
+
+      <div class="buehne__fig">
+        <figure class="measure-fig" data-aktiv="">
+          <span class="measure-fig__licht" aria-hidden="true"></span>
+          <img src="/assets/img/vela-tango-freigestellt.webp" alt="VELA TANGO Aktivstuhl mit Armlehnen und Bremsrollen" width="452" height="600" fetchpriority="high" />
+          <svg viewBox="0 0 600 460" aria-hidden="true" focusable="false">
+            <g class="mg" data-mass="lehne">
+              <path class="ml-ext" d="M152 38 H246 M152 142 H226" />
+              <path class="ml ml--1" pathLength="1" d="M140 38 V142 M132 38 H148 M132 142 H148" />
+            </g>
+            <g class="mg" data-mass="hoehe">
+              <path class="ml-ext" d="M392 163 H470 M372 359 H470" />
+              <path class="ml ml--2" pathLength="1" d="M462 163 V359 M454 163 H470 M454 359 H470" />
+            </g>
+            <g class="mg" data-mass="tiefe">
+              <path class="ml-ext" d="M241 330 V403 M405 300 V403" />
+              <path class="ml ml--3" pathLength="1" d="M241 395 H405 M241 387 V403 M405 387 V403" />
+            </g>
+          </svg>
+          <span class="ml-tag ml-tag--lehne" data-mass="lehne" aria-hidden="true">Rückenlehne<small>nach Ihrer Wirbelsäule</small></span>
+          <span class="ml-tag ml-tag--hoehe" data-mass="hoehe" aria-hidden="true">Sitzhöhe<small>nach Ihrer Beinlänge</small></span>
+          <span class="ml-tag ml-tag--tiefe" data-mass="tiefe" aria-hidden="true">Sitztiefe<small>nach Ihren Oberschenkeln</small></span>
+          <figcaption class="sr-only">Der VELA TANGO mit eingezeichneten Maßen: Rückenlehne, Sitzhöhe und Sitztiefe werden auf den einzelnen Menschen eingestellt.</figcaption>
+        </figure>
+      </div>
+
+      <div class="buehne__schritte" id="messen">
+        <h2 class="buehne__titel">So messen wir</h2>
+        <ol>
+          <li class="buehne__schritt" data-mass="hoehe">
+            <h3>Sitzhöhe</h3>
+            <p>Die Füße stehen flach auf dem Boden, die Knie sind etwa im rechten Winkel. Wie hoch der Sitz dafür sein muss, ergibt sich aus Ihrer Unterschenkellänge. Beim VELA TANGO stellen Sie sie später selbst per Handschalter nach, ohne Hebel und ohne Griffkraft.</p>
+          </li>
+          <li class="buehne__schritt" data-mass="tiefe">
+            <h3>Sitztiefe</h3>
+            <p>Die Sitzfläche trägt die Oberschenkel, ohne in die Kniekehle zu drücken. Ist sie zu kurz, fehlt Halt; ist sie zu lang, rutscht man nach vorn und das Becken kippt. Deshalb messen wir die Oberschenkellänge, statt eine Standardtiefe anzunehmen.</p>
+          </li>
+          <li class="buehne__schritt" data-mass="lehne">
+            <h3>Rückenlehne</h3>
+            <p>Die Lehne stützt die Lendenwirbelsäule dort, wo sie sonst durchhängt. Höhe, Neigung und Seitenführung werden am Menschen eingestellt, nicht ab Werk festgelegt. Bei Skoliose oder schwachem Rumpf kommen Pelotten dazu.</p>
+            <p class="buehne__mehr">Diese und weitere Maße erfassen wir strukturiert mit dem POSE-Assessment. <a href="/ablauf-und-kosten.html">So läuft die Versorgung ab</a></p>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -196,7 +227,44 @@
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="produkte-titel">
+  <section class="sec galerie" aria-labelledby="technik-titel">
+    <div class="wrap galerie__kopf">
+      <h2 id="technik-titel">Technik, die man im Alltag spürt</h2>
+      <div class="galerie__nav">
+        <button type="button" class="galerie__btn" data-richtung="-1" aria-label="Vorheriges Bild" aria-controls="galerie-liste"><span aria-hidden="true">‹</span></button>
+        <button type="button" class="galerie__btn" data-richtung="1" aria-label="Nächstes Bild" aria-controls="galerie-liste"><span aria-hidden="true">›</span></button>
+      </div>
+    </div>
+    <ul class="galerie__liste" id="galerie-liste" tabindex="0" aria-label="Technik-Details, seitlich blättern">
+        <li class="galerie__item">
+          <figure>
+            <img src="/assets/img/render-height-adjust-1200w.webp" srcset="/assets/img/render-height-adjust-1200w.webp 1200w, /assets/img/render-height-adjust-2000w.webp 2000w" sizes="(min-width: 960px) 62vw, 86vw" alt="Mechanik der elektrischen Höhenverstellung" width="1200" height="896" loading="lazy" decoding="async" />
+            <figcaption><strong>Elektrische Höhenverstellung</strong>Ein Präzisionsgetriebe verstellt die Sitzhöhe stufenlos, belastbar bis 250 kg und leise im Betrieb.</figcaption>
+          </figure>
+        </li>
+        <li class="galerie__item">
+          <figure>
+            <img src="/assets/img/render-brake-wheels-1200w.webp" srcset="/assets/img/render-brake-wheels-1200w.webp 1200w, /assets/img/render-brake-wheels-2000w.webp 2000w" sizes="(min-width: 960px) 62vw, 86vw" alt="Doppelrolle mit Feststellbremse" width="1200" height="896" loading="lazy" decoding="async" />
+            <figcaption><strong>Zentralbremse</strong>Doppelrollen mit zentraler Feststellbremse: verriegelt für sicheren Transfer, gelöst für müheloses Rollen.</figcaption>
+          </figure>
+        </li>
+        <li class="galerie__item">
+          <figure>
+            <img src="/assets/img/render-seat-cushion-1200w.webp" srcset="/assets/img/render-seat-cushion-1200w.webp 1200w, /assets/img/render-seat-cushion-2000w.webp 2000w" sizes="(min-width: 960px) 62vw, 86vw" alt="Querschnitt eines dreischichtigen Sitzpolsters" width="1200" height="896" loading="lazy" decoding="async" />
+            <figcaption><strong>Dreischichtiges Sitzpolster</strong>Stabile Basis, adaptiver Druckausgleich und eine kühlende Gel-Oberfläche verteilen den Druck über die ganze Sitzfläche.</figcaption>
+          </figure>
+        </li>
+        <li class="galerie__item">
+          <figure>
+            <img src="/assets/img/render-spine-posture-1200w.webp" srcset="/assets/img/render-spine-posture-1200w.webp 1200w, /assets/img/render-spine-posture-2000w.webp 2000w" sizes="(min-width: 960px) 62vw, 86vw" alt="Wirbelsäule in aufrechter Sitzhaltung" width="1200" height="679" loading="lazy" decoding="async" />
+            <figcaption><strong>Rückensysteme</strong>Die Lehne folgt der natürlichen S-Kurve der Wirbelsäule und wirkt Fehlhaltungen entgegen.</figcaption>
+          </figure>
+        </li>
+    </ul>
+    <p class="wrap sec__more"><a href="/sitzloesungen.html#technik">Alle Technik-Details</a></p>
+  </section>
+
+  <section class="sec sec--white" aria-labelledby="produkte-titel">
     <div class="wrap">
       <div class="sec__head">
         <h2 id="produkte-titel">Sitzlösungen für Alltag, Arbeit und Sonderfälle</h2>
@@ -232,7 +300,7 @@
     </div>
   </section>
 
-  <section class="sec sec--white" aria-labelledby="team-titel">
+  <section class="sec" aria-labelledby="team-titel">
     <div class="wrap team-strip">
       <div class="team-strip__text">
         <h2 id="team-titel">Sie sprechen mit Menschen, nicht mit einem Katalog</h2>
@@ -256,7 +324,7 @@
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="ablauf-titel">
+  <section class="sec sec--white" aria-labelledby="ablauf-titel">
     <div class="wrap">
       <div class="sec__head">
         <h2 id="ablauf-titel">Vier Schritte bis zum passenden Stuhl</h2>
@@ -272,7 +340,7 @@
     </div>
   </section>
 
-  <section class="sec sec--white" aria-labelledby="ratgeber-titel">
+  <section class="sec" aria-labelledby="ratgeber-titel">
     <div class="wrap">
       <h2 id="ratgeber-titel" class="sec__title">Aus dem Ratgeber</h2>
       <div class="posts">
