@@ -45,9 +45,19 @@ jobs:
         continue-on-error: true
         run: python3 tools/erreichbarkeit/pruefen.py
 
+      # Jede Pruefung als Anmerkung: Die stehen direkt am Lauf und am PR,
+      # auch dort, wo niemand die Zusammenfassung oeffnet.
       - name: Ergebnis im Protokoll
         if: always()
-        run: cat data/erreichbarkeit/ERREICHBARKEIT.md >> "$GITHUB_STEP_SUMMARY"
+        run: |
+          cat data/erreichbarkeit/ERREICHBARKEIT.md >> "$GITHUB_STEP_SUMMARY"
+          python3 -c "
+          import json
+          for p in json.load(open('data/erreichbarkeit/status.json'))['pruefungen']:
+              art = 'notice' if p['ok'] else 'error'
+              text = (p['pruefung'] + ': ' + p['hinweis']).replace('%', '%25').replace('\n', ' ')
+              print(f'::{art} title=Erreichbarkeit::{text}')
+          "
 
       - name: Zustandswechsel committen
         if: always() && github.event_name != 'pull_request'
