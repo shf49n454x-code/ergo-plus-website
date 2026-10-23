@@ -39,6 +39,37 @@
   ExpiresByType text/html "access plus 1 hour"
 </IfModule>
 
+# --- PHP2Shell-Abwehr (CVE-2026-109618 / CVE-2026-109619), Okt. 2026 ---
+# Beide Luecken werden ausgeloest, bevor PHP-Code laeuft: ueber multipart-
+# Uploads, Speicherdruck beim Request-Aufbau und manipulierte PHPSESSID-Cookies.
+# Diese Seite braucht nichts davon: das Kontaktformular sendet urlencoded,
+# der Konfigurator JSON, und PHP nutzt hier keine Cookies/Sessions.
+# Unabhaengig davon, ob STRATO PHP schon gepatcht hat, kommen diese Muster
+# gar nicht erst bei PHP an.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} \.php$ [NC]
+  RewriteCond %{HTTP:Content-Type} multipart/ [NC]
+  RewriteRule ^ - [F,L]
+  # Ohne Laengenangabe (chunked) kein Request an PHP.
+  RewriteCond %{REQUEST_URI} \.php$ [NC]
+  RewriteCond %{HTTP:Transfer-Encoding} chunked [NC]
+  RewriteRule ^ - [R=411,L]
+  # Kontaktformular: Text, max. 6 Felder a 5000 Zeichen -> ab 1 MB abweisen.
+  # (LimitRequestBody greift bei PHP-FPM aus der .htaccess nicht zuverlaessig.)
+  RewriteCond %{REQUEST_URI} \.php$ [NC]
+  RewriteCond %{HTTP:Content-Length} ^[0-9]{7,}$
+  RewriteRule ^ - [R=413,L]
+</IfModule>
+<FilesMatch "\.php$">
+  <IfModule mod_headers.c>
+    RequestHeader unset Cookie
+  </IfModule>
+</FilesMatch>
+<Files ".user.ini">
+  Require all denied
+</Files>
+
 # --- Eigene 404-Seite ---
 ErrorDocument 404 /404.html
 

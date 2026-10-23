@@ -2867,7 +2867,8 @@
       try {
         const antwort = await fetch('/kontakt.php', {
           method: 'POST',
-          body: new FormData(form),
+          // urlencoded statt multipart: der Server weist multipart an PHP ab (PHP2Shell-Abwehr, .htaccess)
+          body: new URLSearchParams(new FormData(form)),
           headers: { 'Accept': 'application/json' }
         });
         const daten = await antwort.json();
