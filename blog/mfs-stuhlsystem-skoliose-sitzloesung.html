@@ -24,338 +24,86 @@
   <meta name="theme-color" content="#1a5276" />
 
   <!-- Fonts -->
-  <link rel="preload" href="/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <!-- Schema.org BlogPosting -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BlogPosting",
-        "headline": "MFS-Stuhlsystem: Die modulare Lösung für schwerste Sitzprobleme",
-        "datePublished": "2026-05-15",
-        "dateModified": "2026-05-15",
-        "author": {"@type": "Person", "name": "Joachim Stolz", "jobTitle": "Geschäftsführer", "url": "https://ergo-plus.de/ueber-ergo-plus.html", "worksFor": {"@type": "Organization", "name": "ERGO-PLUS Seating Concepts GmbH", "url": "https://ergo-plus.de"}},
-        "publisher": {"@type": "Organization", "name": "ERGO-PLUS Seating Concepts GmbH", "url": "https://ergo-plus.de", "logo": {"@type": "ImageObject", "url": "https://ergo-plus.de/logo-ergoplus.png"}},
-        "description": "Das MFS-Stuhlsystem bietet individuell angepasste Sitzlösungen für Menschen mit schwerer Skoliose und komplexen Rückenproblemen.",
-        "mainEntityOfPage": "https://ergo-plus.de/blog/mfs-stuhlsystem-skoliose-sitzloesung.html",
-        "image": "https://ergo-plus.de/assets/img/lifestyle-mfs-skoliose.webp"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "MFS-Stuhlsystem: Die modulare Lösung für schwerste Sitzprobleme",
+      "datePublished": "2026-05-15",
+      "dateModified": "2026-05-15",
+      "author": {
+        "@type": "Person",
+        "name": "Joachim Stolz",
+        "jobTitle": "Geschäftsführer",
+        "url": "https://ergo-plus.de/ueber-ergo-plus.html",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "ERGO-PLUS Seating Concepts GmbH",
+          "url": "https://ergo-plus.de"
+        }
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ergo-plus.de/"},
-          {"@type": "ListItem", "position": 2, "name": "News & Ratgeber", "item": "https://ergo-plus.de/blog/"},
-          {"@type": "ListItem", "position": 3, "name": "MFS-Stuhlsystem bei Skoliose"}
-        ]
-      }
-    ]
-  }
+      "publisher": {
+        "@type": "Organization",
+        "name": "ERGO-PLUS Seating Concepts GmbH",
+        "url": "https://ergo-plus.de",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ergo-plus.de/logo-ergoplus.png"
+        }
+      },
+      "description": "Das MFS-Stuhlsystem bietet individuell angepasste Sitzlösungen für Menschen mit schwerer Skoliose und komplexen Rückenproblemen.",
+      "mainEntityOfPage": "https://ergo-plus.de/blog/mfs-stuhlsystem-skoliose-sitzloesung.html",
+      "image": "https://ergo-plus.de/assets/img/lifestyle-mfs-skoliose.webp"
+    }
+  ]
+}
   </script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --c-primary: #1a5276;
-      --c-primary-dk: #143d5a;
-      --c-teal: #148f77;
-      --c-teal-dk: #117a65;
-      --c-text: #1a2a3a;
-      --c-text-soft: #5a6a7a;
-      --c-bg: #ffffff;
-      --c-bg2: #f5f7fa;
-      --c-border-lt: #e8ecf1;
-      --ease: cubic-bezier(.22,1,.36,1);
-      --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Noto Sans', sans-serif;
-      font-size: 16px; line-height: 1.75;
-      color: var(--c-text); background: var(--c-bg2);
-    }
-    a { color: var(--c-primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Nav */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.92); backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--c-border-lt);
-      padding: 0 clamp(20px,5%,80px);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
-    }
-    .logo-img { height: 48px; }
-    .btn-nav {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px; border-radius: 50px;
-      background: var(--c-primary); color: white;
-      font-size: 14px; font-weight: 600;
-      text-decoration: none;
-      transition: background .2s var(--ease);
-    }
-    .btn-nav:hover { background: var(--c-primary-dk); text-decoration: none; }
-
-    /* Article layout */
-    .article-wrap {
-      max-width: 780px; margin: 0 auto;
-      padding: 40px clamp(20px,5%,80px) 80px;
-    }
-    .back-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 14px; font-weight: 500;
-      color: var(--c-text-soft); margin-bottom: 32px;
-    }
-    .back-link:hover { color: var(--c-primary); text-decoration: none; }
-
-    /* Hero / Header */
-    .article-meta {
-      display: flex; align-items: center; gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-    .badge {
-      display: inline-block;
-      padding: 4px 14px; border-radius: 20px;
-      background: var(--c-primary); color: white;
-      font-size: 12px; font-weight: 600;
-      letter-spacing: .03em; text-transform: uppercase;
-    }
-    .meta-text {
-      font-size: 14px; color: var(--c-text-soft);
-    }
-    .meta-text span + span::before {
-      content: "\00b7";
-      margin: 0 8px;
-    }
-    .article-title {
-      font-family: 'Figtree', sans-serif;
-      font-size: clamp(28px, 4.5vw, 42px);
-      font-weight: 800; line-height: 1.2;
-      color: var(--c-text);
-      margin-bottom: 16px;
-    }
-    .article-subtitle {
-      font-size: 18px; line-height: 1.6;
-      color: var(--c-text-soft);
-      margin-bottom: 36px;
-    }
-
-    /* Hero image */
-    .hero-image {
-      background: linear-gradient(135deg, #e8f0f8, #e4f3ee);
-      border-radius: 16px;
-      padding: 40px;
-      margin-bottom: 48px;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-    }
-    .hero-image img {
-      max-width: 100%; max-height: 420px;
-      object-fit: contain;
-    }
-
-    /* Table of contents */
-    .toc {
-      background: var(--c-bg);
-      border: 1px solid var(--c-border-lt);
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-bottom: 48px;
-    }
-    .toc-title {
-      font-family: 'Figtree', sans-serif;
-      font-size: 15px; font-weight: 700;
-      color: var(--c-text);
-      margin-bottom: 14px;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-    .toc ol {
-      list-style: none; counter-reset: toc;
-      margin: 0; padding: 0;
-    }
-    .toc li {
-      counter-increment: toc;
-      margin-bottom: 8px;
-    }
-    .toc li::before {
-      content: counter(toc) ".";
-      display: inline-block; width: 24px;
-      font-weight: 600; color: var(--c-teal);
-      font-size: 14px;
-    }
-    .toc a {
-      font-size: 15px; color: var(--c-text);
-      font-weight: 500;
-    }
-    .toc a:hover { color: var(--c-primary); }
-
-    /* Article body */
-    .article-body h2 {
-      font-family: 'Figtree', sans-serif;
-      font-size: 24px; font-weight: 700;
-      color: var(--c-primary);
-      margin: 48px 0 16px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--c-border-lt);
-    }
-    .article-body h3 {
-      font-family: 'Figtree', sans-serif;
-      font-size: 18px; font-weight: 700;
-      color: var(--c-text);
-      margin: 32px 0 10px;
-    }
-    .article-body p {
-      margin-bottom: 18px;
-    }
-    .article-body ul, .article-body ol {
-      margin: 10px 0 20px 24px;
-    }
-    .article-body li {
-      margin-bottom: 8px;
-    }
-    .article-body strong {
-      font-weight: 600;
-    }
-
-    /* Blockquote */
-    .article-body blockquote {
-      border-left: 4px solid var(--c-teal);
-      background: var(--c-bg);
-      margin: 28px 0;
-      padding: 20px 24px;
-      border-radius: 0 10px 10px 0;
-      font-size: 17px;
-      font-style: italic;
-      color: var(--c-text);
-      line-height: 1.7;
-    }
-    .article-body blockquote p:last-child { margin-bottom: 0; }
-
-    /* Info box */
-    .info-box {
-      background: #eaf6f2;
-      border: 1px solid #b2e0d2;
-      border-radius: 12px;
-      padding: 24px 28px;
-      margin: 32px 0;
-    }
-    .info-box-title {
-      font-family: 'Figtree', sans-serif;
-      font-size: 16px; font-weight: 700;
-      color: var(--c-teal-dk);
-      margin-bottom: 10px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .info-box p { margin-bottom: 10px; }
-    .info-box p:last-child { margin-bottom: 0; }
-    .info-box ul { margin: 8px 0 10px 20px; }
-    .info-box li { margin-bottom: 4px; font-size: 15px; }
-
-    /* CTA section */
-    .cta-section {
-      background: var(--c-primary);
-      color: white;
-      border-radius: 16px;
-      padding: 40px 36px;
-      margin: 56px 0 0;
-      text-align: center;
-    }
-    .cta-section h2 {
-      font-family: 'Figtree', sans-serif;
-      font-size: 24px; font-weight: 700;
-      color: white;
-      border: none; margin: 0 0 12px; padding: 0;
-    }
-    .cta-section p {
-      color: rgba(255,255,255,.85);
-      margin-bottom: 24px;
-      font-size: 16px;
-    }
-    .cta-section p:last-of-type { margin-bottom: 0; }
-    .cta-channels {
-      display: flex; justify-content: center; gap: 32px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-    .cta-channel {
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-    }
-    .cta-channel-label {
-      font-size: 12px; text-transform: uppercase; letter-spacing: .05em;
-      color: rgba(255,255,255,.78); font-weight: 600;
-    }
-    .cta-channel a {
-      color: white; font-weight: 600; font-size: 17px;
-    }
-    .cta-channel a:hover { text-decoration: underline; }
-
-    /* Process steps */
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin: 20px 0 28px;
-    }
-    .step {
-      background: var(--c-bg);
-      border: 1px solid var(--c-border-lt);
-      border-radius: 10px;
-      padding: 18px 16px;
-      text-align: center;
-    }
-    .step-num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 32px; height: 32px; border-radius: 50%;
-      background: var(--c-primary); color: white;
-      font-family: 'Figtree', sans-serif;
-      font-size: 14px; font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .step-label {
-      font-size: 14px; font-weight: 600;
-      color: var(--c-text);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--c-text); color: rgba(255,255,255,.55);
-      padding: 40px clamp(20px,5%,80px);
-      text-align: center; font-size: 13px;
-    }
-    footer a { color: rgba(255,255,255,.7); text-decoration: underline; }
-    footer a:hover { color: white; }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .hero-image { padding: 24px; }
-      .toc { padding: 20px; }
-      .cta-section { padding: 28px 20px; }
-      .cta-channels { gap: 20px; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
+  <!-- SEITE:KOPF -->
+  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=7989acb6bf" />
+  <script src="/assets/js/site.js?v=465b4c756b" defer></script>
+  <!-- /SEITE:KOPF -->
 </head>
 <body>
-
-<nav>
-  <div class="nav-inner">
-    <a href="/" aria-label="ERGO-PLUS Startseite">
-      <img src="../logo-ergoplus.png" alt="ERGO plus" class="logo-img" />
-    </a>
-    <a href="/#contact" class="btn-nav">Beratung anfragen</a>
+<!-- SEITE:NAV -->
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="site-head__logo" href="/"><img src="/logo-ergoplus.png" alt="ERGO-PLUS Startseite" width="110" height="65" /></a>
+    <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="/sitzloesungen.html">Sitzlösungen</a></li>
+        <li><a href="/ablauf-und-kosten.html">Ablauf &amp; Kosten</a></li>
+        <li><a href="/krankheitsbilder.html">Krankheitsbilder</a></li>
+        <li><a href="/blog/" aria-current="true">Ratgeber</a></li>
+        <li><a href="/ueber-ergo-plus.html">Über uns</a></li>
+      </ul>
+      <div class="site-nav__extra">
+        <a class="btn btn--act" href="/kontakt.html">Beratung anfragen</a>
+        <a class="btn btn--line" href="tel:+49602112807">06021 12807 anrufen</a>
+      </div>
+    </nav>
+    <a class="site-head__tel" href="tel:+49602112807">06021 12807<small>Beratung am Telefon</small></a>
+    <a class="btn btn--act site-head__cta" href="/kontakt.html">Beratung anfragen</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
   </div>
-</nav>
+</header>
+<!-- /SEITE:NAV -->
 
-<main class="article-wrap">
-  <a href="/" class="back-link">&larr; Zur&uuml;ck zur Startseite</a>
+<main id="inhalt" class="article-wrap">
+<!-- SEITE:KRUMEN -->
+  <nav class="crumbs wrap" aria-label="Brotkrumen">
+    <ol>
+      <li><a href="/">Startseite</a></li>
+      <li><a href="/blog/">Ratgeber</a></li>
+      <li aria-current="page">MFS-Stuhlsystem: Die modulare Lösung für schwerste Sitzprobleme bei Skoliose</li>
+    </ol>
+  </nav>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ergo-plus.de/"}, {"@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://ergo-plus.de/blog/"}, {"@type": "ListItem", "position": 3, "name": "MFS-Stuhlsystem: Die modulare Lösung für schwerste Sitzprobleme bei Skoliose", "item": "https://ergo-plus.de/blog/mfs-stuhlsystem-skoliose-sitzloesung.html"}]}</script>
+  <!-- /SEITE:KRUMEN -->
 
   <!-- Article header -->
   <div class="article-meta">
@@ -374,7 +122,7 @@
   <div class="hero-image">
     <img src="/assets/img/lifestyle-mfs-skoliose.webp"
          alt="MFS modulares Funktions-Stuhlsystem von ERGO-PLUS &ndash; individuell angepasste Sitzl&ouml;sung f&uuml;r Skoliose"
-         width="600" height="400"
+         width="1200" height="670"
          loading="eager" srcset="/assets/img/lifestyle-mfs-skoliose-800w.webp 800w, /assets/img/lifestyle-mfs-skoliose.webp 1200w" sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 380px"/>
   </div>
 
@@ -574,9 +322,80 @@
   </div><!-- /.article-body -->
 </main>
 
-<footer>
-  <p>&copy; 2026 ERGO-PLUS Seating Concepts GmbH &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a></p>
+<!-- SEITE:FUSS -->
+<section class="contact-band" aria-labelledby="kontaktband-titel">
+  <div class="wrap contact-band__grid">
+    <div>
+      <h2 id="kontaktband-titel">Erzählen Sie uns, wie Sie heute sitzen.</h2>
+      <p>Das erste Gespräch ist kostenlos und unverbindlich. Wir klären, was Sie brauchen, und wer die Kosten tragen kann.</p>
+    </div>
+    <div>
+      <a class="contact-band__tel" href="tel:+49602112807">06021 12807</a>
+      <div class="btn-row"><a class="btn btn--light" href="/kontakt.html">Beratung anfragen</a></div>
+      <small>Oder schreiben Sie an <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a></small>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="site-foot__grid">
+      <div class="site-foot__brand">
+        <img src="/logo-ergoplus.png" alt="" width="110" height="65" loading="lazy" />
+        <address>
+          ERGO-PLUS Seating Concepts GmbH<br />
+          Am Sportplatz 15<br />
+          63867 Johannesberg<br />
+          Telefon <a href="tel:+49602112807">+49 6021 12807</a><br />
+          <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>
+        </address>
+      </div>
+      <div>
+        <h2>Sitzlösungen</h2>
+        <ul>
+          <li><a href="/sitzloesungen.html#vela-tango">VELA TANGO</a></li>
+          <li><a href="/sitzloesungen.html#vela-blues">VELA BLUES</a></li>
+          <li><a href="/sitzloesungen.html#mfs">MFS-Stuhlsystem</a></li>
+          <li><a href="/sitzloesungen.html#elift">ELIFT 400</a></li>
+          <li><a href="/sitzloesungen.html#opera">Opera 20 und SMARTMOVE</a></li>
+          <li><a href="/sitzloesungen.html#speziell">Speziallösungen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Wissen</h2>
+        <ul>
+          <li><a href="/krankheitsbilder.html">Krankheitsbilder</a></li>
+          <li><a href="/ablauf-und-kosten.html">Ablauf und Kostenübernahme</a></li>
+          <li><a href="/blog/">Ratgeber</a></li>
+          <li><a href="/faq.html">Häufige Fragen</a></li>
+          <li><a href="/pose-bogen.html">POSE-Bogen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Unternehmen</h2>
+        <ul>
+          <li><a href="/ueber-ergo-plus.html">Über uns</a></li>
+          <li><a href="/ueber-ergo-plus.html#team">Team</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-foot__base">
+      <span>© 2026 ERGO-PLUS Seating Concepts GmbH</span>
+      <button type="button" id="cookie-settings-link">Cookie-Einstellungen</button>
+    </div>
+  </div>
 </footer>
+
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie-Hinweis">
+  <p class="cookie-text">Wir verwenden technisch notwendige Cookies sowie, mit Ihrer Zustimmung, Google Analytics zur Reichweitenmessung. Mehr dazu in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-btns">
+    <button type="button" class="cookie-btn cookie-btn-essential" id="cookie-essential">Nur essenzielle</button>
+    <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-accept">Verstanden</button>
+  </div>
+</div>
+<!-- /SEITE:FUSS -->
 
 </body>
 </html>

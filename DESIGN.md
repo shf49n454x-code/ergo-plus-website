@@ -9,144 +9,79 @@
 - **Supplier (not a competitor):** VELA / vela-stuhl.de -- ERGO-PLUS is a VELA dealer. Never position against VELA brand terms.
 - **Positioning:** Specialist, not Sanitatshaus. Human warmth over clinical sterility.
 
-## Aesthetic Direction
-- **Direction:** Refined Professional with warm human touch
-- **Decoration level:** Intentional -- subtle background gradients, card shadows, no visual clutter
-- **Mood:** Trustworthy and competent, but approachable. Not a hospital brochure, not a startup landing page. The visual language says "we understand your situation, and we have the expertise to help."
-- **Memorable thing:** Teal CTAs on blue-gray backgrounds. No competitor in the space uses this split. Instant recognition.
-- **Reference sites:** thomashilfen.de (corporate reha), pohlig.net (clinical). vela-stuhl.de is the supplier's own site -- reference for product accuracy, not a competitor benchmark.
+## Aesthetic Direction (seit Oktober 2026)
+- **Direction:** Ruhiges Fachhaus, kein Prospekt. Die Seite liest sich wie die Unterlagen eines guten Orthopädietechnikers: genau, hell, mit viel Luft.
+- **Decoration level:** Minimal. Haarlinien statt Kartenschatten, weiße Flächen statt Verläufe. Keine Blobs, keine Glas-Effekte, keine Scroll-Reveals.
+- **Memorable thing:** Die Maßlinien im Hero. Der VELA TANGO steht freigestellt da, teal eingezeichnet sind Rückenlehne, Sitzhöhe und Sitztiefe, jeweils „nach Ihrer …“. Das ist die Botschaft der Firma in einem Bild: Der Stuhl wird an Ihnen gemessen. Diese Bildsprache (technische Bemaßung) darf an anderer Stelle wieder auftauchen, sparsam.
+- **Mood:** Kompetent und zugewandt. Weder Krankenhausbroschüre noch Startup-Landingpage.
+- **Referenzen:** godly.design, uiuxshowcase.com, recent.design (Oktober 2026, Jon): redaktionelle Gitter, große ruhige Typografie, eine einzige bewegte Stelle.
 
 ## Typography
-- **Display/Hero:** Figtree (800, 700, 600) -- geometric humanist sans with personality. Differentiator: no competitor uses a font with this much character.
-- **Body:** Noto Sans (400, 500, 600, 700) -- excellent readability, wide language support, pairs well with Figtree's geometry.
-- **UI/Labels:** Figtree (600, 700) for buttons, badges, nav items. Noto Sans (600) for form labels.
-- **Data/Tables:** Noto Sans with tabular-nums for any numerical data.
-- **Code:** Not applicable (no code display on this site).
-- **Loading:** Google Fonts CDN with preconnect. Only load needed weights.
-  ```html
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  ```
-- **Scale:**
-  | Token | Size | Weight | Use |
-  |-------|------|--------|-----|
-  | 5xl | 3rem / 48px | Figtree 800 | Hero headline |
-  | 4xl | 2.25rem / 36px | Figtree 700 | Page titles |
-  | 3xl | 1.875rem / 30px | Figtree 700 | Section headings |
-  | 2xl | 1.5rem / 24px | Figtree 600 | Subsection headings |
-  | xl | 1.25rem / 20px | Noto 500 | Card titles, large body |
-  | lg | 1.125rem / 18px | Noto 400 | Lead paragraphs |
-  | base | 1rem / 16px | Noto 400 | Body text |
-  | sm | 0.875rem / 14px | Noto 400-500 | Captions, metadata |
-  | xs | 0.75rem / 12px | Noto 400 | Fine print, labels |
+- **Display:** Figtree 700/800, enge Laufweite (−0,018 bis −0,025 em), `text-wrap: balance`.
+- **Body:** Noto Sans 400/500, 17 px mobil, 18 px ab 900 px, Zeilenhöhe 1,7, Zeilenlänge höchstens 68 Zeichen (`--text`).
+- **Labels/Buttons:** Figtree 600/700, Satzschreibung. **Keine Versalien-Labels** über Überschriften.
+- **Loading:** selbst gehostet über `/assets/fonts/fonts.css` (kein Google-CDN, DSGVO).
+- **Scale (clamp, mobil → Desktop):** H1 36→68 px (Startseite 40→84), H2 28→42, H3 20→24, Lead 18→21, Body 17→18, Meta 14–15. Nie unter 14 px.
 
 ## Color
 
-- **Approach:** Balanced -- primary blue + teal secondary, with amber for highlights. Color has clear semantic roles.
+Alle Tokens stehen in `assets/css/site.css` unter `:root`.
 
-### Core Palette
+| Token | Hex | Rolle |
+|-------|-----|-------|
+| `--ink` | #142f45 | Text, Überschriften |
+| `--ink-soft` | #3d5468 | Zweitrangiger Fließtext |
+| `--ink-mute` | #5b6f80 | Metadaten (AA auf Weiß und auf `--paper`) |
+| `--brand` | #1a5276 | Markenblau, Zitate |
+| `--brand-deep` | #0f3550 | Kontaktband, Fußzeile |
+| `--act` | #117a65 | Handlung: Buttons, Links (5,3:1 auf Weiß) |
+| `--act-deep` | #0d6350 | Hover |
+| `--act-wash` | #e2f1ed | helle Teal-Fläche, Badges |
+| `--line-teal` | #1f9b80 | Maßlinien, Schrittnummern. Nur Linien und große Ziffern, nie Fließtext (3,4:1) |
+| `--paper` | #f2f6f9 | Seitengrund |
+| `--surface` | #ffffff | Flächen |
+| `--rule` / `--rule-soft` | #d3dfe8 / #e6edf3 | Haarlinien |
+| `--note` / `--note-wash` | #8a5606 / #fdf3dc | Hinweis-Kästen |
 
-| Token | Hex | Role |
-|-------|-----|------|
-| `--c-primary` | #1a5276 | Brand blue. Headings, nav, trust signals. |
-| `--c-primary-dk` | #154360 | Hover states, dark accents. |
-| `--c-primary-lt` | #d6eaf8 | Light backgrounds, info alerts, badges. |
-| `--c-teal` / `--c-cta` | #148f77 | CTA buttons, links, success accents. THE differentiator. |
-| `--c-teal-dk` | #117a65 | Teal on white/light. WCAG AA (5.3:1 on white) -- use for CTA fills, badges, box titles. |
-| `--c-teal-dkr` | #0d6350 | Teal text on a light teal wash (rgba teal .1). AA where `--c-teal-dk` falls short. |
-| `--c-teal-lt` | #d1f2eb | Teal badges, light teal backgrounds. |
-| `--c-amber` / `--c-accent` | #d68910 | Warnings, highlights, stat numbers. As a fill, pair with `--c-text`, never white (white is 2.8:1). |
-| `--c-amber-dk` | #8a5606 | Amber *text* on light amber backgrounds. AA (5.6:1). |
-| `--c-amber-lt` | #fef3cd | Warning alert background. |
+Die alten `--c-*`-Namen sind in `site.css` als Aliase hinterlegt, weil Inline-Styles in den Ratgeber-Artikeln sie benutzen. Für neuen Code nicht verwenden.
 
-### Neutrals
+**Produktfreisteller haben weißen Grund** (keine Transparenz). Sie stehen deshalb immer auf Weiß mit Haarlinie, nie auf `--paper`.
 
-| Token | Hex | Role |
-|-------|-----|------|
-| `--c-bg` | #f0f5fa | Page background (blue-tinted gray). |
-| `--c-bg2` | #ffffff | Card/surface background. |
-| `--c-bg3` | #f7fafc | Alternate section background. |
-| `--c-text` | #1a2a3a | Primary text (near-black with blue tint). |
-| `--c-text-md` | #2c3e50 | Secondary text. |
-| `--c-text-soft` | #5d6d7e | Tertiary text, placeholders. |
-| `--c-border` | #c8dae8 | Default borders. |
-| `--c-border-lt` | #e2ecf4 | Light borders, dividers. |
+## Spacing & Layout
+- **Raster:** linksbündig, max. 1240 px (`--wrap`), Seitenrand `clamp(16px, 4vw, 40px)`, Abschnittsabstand `clamp(64px, 9vw, 128px)`.
+- **Abschnittskopf:** H2 links (5 Spalten), Einleitung rechts (6 Spalten) ab 960 px.
+- **Abschnitte wechseln** zwischen `--paper` und Weiß (`.sec` / `.sec--white`). Keine Karten-Schatten.
+- **Radien:** 8 px (Buttons, Eingaben), 12 px (Bilder), 20 px (große Flächen). Keine Pillen-Buttons.
+- **Nummerierung nur, wo es eine echte Reihenfolge gibt** (Ablauf: `.weg`). Nirgends sonst 01/02/03.
 
-### Semantic
+## Seitenstruktur (Mehrseiten seit Oktober 2026)
 
-| Token | Hex | Use |
-|-------|-----|-----|
-| `--c-success` | #27ae60 | Success alerts, confirmations. |
-| `--c-warning` | #d68910 | Warning alerts (same as amber). |
-| `--c-error` | #c0392b | Error alerts, validation. |
-| `--c-info` | #2e86c1 | Info alerts, tooltips. |
+| Seite | Zweck |
+|---|---|
+| `/` | Hero mit Maßlinien, Unterschied zum Sanitätshaus, drei Einstiege, Produktübersicht, Ablauf kurz, Alltag, Ratgeber |
+| `/sitzloesungen.html` | Alle Produktfamilien mit Ausführungen (Anker `#vela-tango` usw.), Technik |
+| `/ablauf-und-kosten.html` | Vier Schritte, Kostenträger-Tabelle, POSE-Bogen |
+| `/krankheitsbilder.html` | Krankheitsbilder mit Link zum passenden Ratgeber-Artikel |
+| `/ueber-ergo-plus.html` | Unternehmen, Team (`#team`), Angaben |
+| `/kontakt.html` | Kontaktwege, Formular (`?thema=mfs` wählt das Produkt vor) |
+| `/blog/` | Ratgeber |
 
-### Dark Mode Strategy
-Redesign surfaces to deep blue-grays (#0f1923 base). Desaturate accent colors 10-20%. Primary becomes #5dade2 (lighter blue). Teal becomes #48c9b0. Maintain contrast ratios above WCAG AA.
+Kopf, Navigation, Brotkrumen, Kontaktband und Fußzeile setzt `tools/seiten/bauen.py` (siehe CLAUDE.md). Nie von Hand in einzelne Seiten kopieren.
 
-## Spacing
-- **Base unit:** 8px
-- **Density:** Comfortable -- generous whitespace for older/disabled target audience.
-- **Scale:**
-
-| Token | Value | Use |
-|-------|-------|-----|
-| `--sp-2xs` | 2px | Hairline gaps, icon padding |
-| `--sp-xs` | 4px | Tight inline spacing |
-| `--sp-sm` | 8px | Default gap, small padding |
-| `--sp-md` | 16px | Card padding, form gaps |
-| `--sp-lg` | 24px | Section inner padding |
-| `--sp-xl` | 32px | Section padding, large gaps |
-| `--sp-2xl` | 48px | Between major sections |
-| `--sp-3xl` | 64px | Top-level section padding |
-
-## Layout
-- **Approach:** Grid-disciplined with creative hero
-- **Grid:** Single-column mobile, 2-column tablet, asymmetric hero + 3-column content grid desktop
-- **Max content width:** 1200px (with 1100px for text-heavy sections)
-- **Border radius hierarchy:**
-
-| Token | Value | Use |
-|-------|-------|-----|
-| `--radius-sm` | 10px | Inputs, small cards, badges |
-| `--radius` | 14px | Default cards, containers |
-| `--radius-lg` | 20px | Large cards, sections |
-| `--radius-xl` | 28px | Hero sections, modals |
-| pill | 50px | Buttons, eyebrow badges |
-
-## Shadows
-
-All shadows use blue-tinted rgba (26, 82, 118) to match the primary color:
-
-| Token | Value | Use |
-|-------|-------|-----|
-| `--shadow-xs` | `0 1px 3px rgba(26,82,118,.06), 0 1px 2px rgba(26,82,118,.04)` | Subtle lift, badges |
-| `--shadow-sm` | `0 2px 8px rgba(26,82,118,.07), 0 4px 16px rgba(26,82,118,.05)` | Cards resting state |
-| `--shadow-md` | `0 4px 16px rgba(26,82,118,.08), 0 12px 40px rgba(26,82,118,.06)` | Card hover, dropdowns |
-| `--shadow-lg` | `0 8px 30px rgba(26,82,118,.10), 0 24px 60px rgba(26,82,118,.08)` | Modals, hero elements |
+Jede Unterseite endet mit „Weiterführend“ (3–4 interne Links), Autor und Stand-Datum.
 
 ## Motion
-- **Approach:** Intentional -- reveal animations on scroll, smooth hover transitions. Never jarring.
-- **Easing:**
-  - Enter: `cubic-bezier(.22, 1, .36, 1)` (spring-like ease-out)
-  - Exit: `ease-in`
-  - Move: `ease-in-out`
-- **Duration:**
-  | Token | Range | Use |
-  |-------|-------|-----|
-  | micro | 50-100ms | Hover color changes, focus rings |
-  | short | 150-250ms | Button transitions, card lifts |
-  | medium | 250-400ms | Scroll reveals, section entrances |
-  | long | 400-700ms | Hero entrance sequence, page transitions |
-- **Scroll reveals:** Elements fade in + translate 30px upward on viewport entry. Staggered 80ms between siblings.
-- **Reduced motion:** Respect `prefers-reduced-motion: reduce`. Disable transforms, keep opacity fades at 200ms max.
+- **Genau eine inszenierte Bewegung:** die Maßlinien im Hero zeichnen sich beim Laden einmal ein (0,9 s, gestaffelt), die Beschriftungen blenden danach ein.
+- Sonst nur Rückmeldung auf Handlungen: Hover-Farbe, Menü öffnen, Formular-Status.
+- `prefers-reduced-motion: reduce` schaltet alles ab, die Linien stehen dann sofort da.
 
 ## Accessibility Notes
-- All text meets WCAG AA contrast (4.5:1 for body, 3:1 for large text).
-- Focus rings: 3px solid teal with teal-lt background offset.
-- Touch targets: minimum 44x44px for all interactive elements.
-- Font sizes never below 14px for body content (target audience includes elderly/visually impaired).
+- WCAG AA für allen Text; `--line-teal` nie für Text unter 24 px.
+- Fokus: 3 px `--act`, 3 px Abstand.
+- Klickflächen ≥ 44 px, Buttons 52 px hoch.
+- Schriftgröße nie unter 14 px.
+- „Zum Inhalt springen“-Link auf jeder Seite, Menü per Escape schließbar.
+- Prüfen mit `node tools/audit/audit.js` (axe, 0 Verstöße).
 
 ## Decisions Log
 | Date | Decision | Rationale |
@@ -156,3 +91,7 @@ All shadows use blue-tinted rgba (26, 82, 118) to match the primary color:
 | 2026-05-28 | Teal CTA as key differentiator | No competitor uses teal for actions. Instant visual recognition. |
 | 2026-05-28 | Blue-tinted shadows | Cohesive with primary palette. Warmer than pure gray shadows. |
 | 2026-05-28 | Comfortable spacing density | Target audience (elderly, disabled) benefits from generous whitespace. |
+| 2026-10-23 | Mehrseitig statt Onepager | Jon: „sieht zu sehr nach Landingpage“, Unterseiten sollen sich in der Sitemap gegenseitig stützen. Sechs Hauptseiten, gemeinsamer Rahmen per Skript. |
+| 2026-10-23 | Maßlinien als einziges auffälliges Element | Zeigt den Kern der Firma (Anpassung am Menschen) statt einer Statistik-Kachel. Ersetzt Blobs, Verläufe und Scroll-Reveals. |
+| 2026-10-23 | Haarlinien statt Kartenschatten, keine Pillen-Buttons | Weg vom SaaS-Karten-Baukasten, hin zu redaktionellem Raster (Referenzen godly.design, uiuxshowcase.com, recent.design). |
+| 2026-10-23 | Figtree + Noto Sans bleiben, Teal bleibt Handlungsfarbe | Wiedererkennung; nur Größen, Laufweite und Zeilenlänge neu gesetzt. |

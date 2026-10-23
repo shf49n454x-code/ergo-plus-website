@@ -18,6 +18,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Gemeinsamer Seitenrahmen, Sitemap und Asset-Versionen aktuell?
+      # Rot heißt: python3 tools/seiten/bauen.py vergessen.
+      - name: Seitenrahmen und Sitemap
+        run: python3 tools/seiten/bauen.py --pruefen
+
+      - name: Bilder (Datei, Maße, Seitenverhältnis, alt)
+        run: python3 tools/seiten/bilder_pruefen.py
+
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
