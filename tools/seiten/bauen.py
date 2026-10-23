@@ -131,7 +131,7 @@ def nav(pfad):
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="site-head">
   <div class="wrap site-head__in">
-    <a class="site-head__logo" href="/"><img src="/logo-ergoplus.png" alt="ERGO-PLUS Startseite" width="110" height="65" /></a>
+    <a class="site-head__logo" href="/"><img src="/assets/img/logo-ergoplus-rahmen.png" alt="ERGO-PLUS Startseite" width="203" height="200" /></a>
     <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
       <ul>
 {chr(10).join(punkte)}
@@ -195,12 +195,12 @@ def fuss(pfad):
   <div class="wrap">
     <div class="site-foot__grid">
       <div class="site-foot__brand">
-        <img src="/logo-ergoplus.png" alt="" width="110" height="65" loading="lazy" />
+        <img src="/assets/img/logo-ergoplus-rahmen.png" alt="" width="203" height="200" loading="lazy" />
         <address>
           ERGO-PLUS Seating Concepts GmbH<br />
           Am Sportplatz 15<br />
           63867 Johannesberg<br />
-          Telefon <a href="{TEL_HREF}">+49 6021 12807</a><br />
+          Telefon <a href="{TEL_HREF}">{TEL_TEXT}</a><br />
           <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>
         </address>
       </div>

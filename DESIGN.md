@@ -68,7 +68,9 @@ Die alten `--c-*`-Namen sind in `site.css` als Aliase hinterlegt, weil Inline-St
 
 Kopf, Navigation, Brotkrumen, Kontaktband und Fußzeile setzt `tools/seiten/bauen.py` (siehe CLAUDE.md). Nie von Hand in einzelne Seiten kopieren.
 
-Jede Unterseite endet mit „Weiterführend“ (3–4 interne Links), Autor und Stand-Datum.
+Jede Unterseite endet mit „Weiterführend“ (3–4 interne Links), Autor und Stand-Datum. Ratgeber-Artikel zeigen den Autor sichtbar unter der H1.
+
+**Bilder:** Echte Menschen und echte Produkte vor Symbolbildern. Kein Bild, das dem Text widerspricht (z. B. Rollstuhl-Stockfoto zum Amputationsartikel). Telefonnummer immer „06021 12807“ (DIN 5008), im Link `tel:+49602112807`.
 
 ## Motion
 - **Genau eine inszenierte Bewegung:** die Maßlinien im Hero zeichnen sich beim Laden einmal ein (0,9 s, gestaffelt), die Beschriftungen blenden danach ein.
@@ -95,3 +97,4 @@ Jede Unterseite endet mit „Weiterführend“ (3–4 interne Links), Autor und 
 | 2026-10-23 | Maßlinien als einziges auffälliges Element | Zeigt den Kern der Firma (Anpassung am Menschen) statt einer Statistik-Kachel. Ersetzt Blobs, Verläufe und Scroll-Reveals. |
 | 2026-10-23 | Haarlinien statt Kartenschatten, keine Pillen-Buttons | Weg vom SaaS-Karten-Baukasten, hin zu redaktionellem Raster (Referenzen godly.design, uiuxshowcase.com, recent.design). |
 | 2026-10-23 | Figtree + Noto Sans bleiben, Teal bleibt Handlungsfarbe | Wiedererkennung; nur Größen, Laufweite und Zeilenlänge neu gesetzt. |
+| 2026-10-23 | Design-Review (Senior Design Director) umgesetzt | Keine Kennzahl-Kacheln, kein anonymes Kundenzitat, keine Stock- und KI-Wirbelsäulenbilder mehr auf Haupt- und Ablaufseite. Stattdessen das echte Team auf der Startseite. Produkte und Ratgeber als Listen mit Haarlinien statt Kartenraster. Lesespalten linksbündig im Raster, Telefonnummer überall „06021 12807“. |

@@ -156,14 +156,13 @@
         // Kein stiller Erfolg: sagen, dass es nicht geklappt hat, und sofort
         // einen Weg nennen, der funktioniert. Nur eigene, deutsche Servermeldungen zeigen.
         var text = fehler && fehler.eigeneMeldung ? fehler.message : 'Das Absenden hat nicht geklappt.';
+        // Der Server hängt teils selbst „Bitte rufen Sie uns an …“ an. Das schneiden wir ab
+        // und setzen den Satz einheitlich, mit antippbarer Nummer.
+        text = text.replace(/\s*Bitte rufen Sie uns an.*$/i, '').replace(/([^.!?])$/, '$1.');
         var span = document.createElement('span');
         span.textContent = text;
-        // Manche Servermeldungen nennen die Nummer schon; dann nur noch die Mail-Adresse anhängen.
-        var nummerDrin = /12807/.test(text);
-        fehlerZeigen(span.innerHTML + (nummerDrin
-          ? ' Oder schreiben Sie an <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>.'
-          : ' Bitte rufen Sie uns an: <a href="tel:+49602112807">+49 6021 12807</a> ' +
-            'oder schreiben Sie an <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>.'));
+        fehlerZeigen(span.innerHTML + ' Bitte rufen Sie uns an: <a class="nobr" href="tel:+49602112807">06021 12807</a>. ' +
+          'Oder schreiben Sie an <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>.');
       })
       .finally(function () {
         if (btn) { btn.disabled = false; btn.innerHTML = beschriftung; }
