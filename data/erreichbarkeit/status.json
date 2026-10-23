@@ -1,0 +1,22 @@
+{
+ "basis": "https://127.0.0.1:8999",
+ "geprueft_am": "2026-10-23T20:10:38.084561+00:00",
+ "ok": false,
+ "pruefungen": [
+  {
+   "pruefung": "Startseite",
+   "ok": false,
+   "hinweis": "200, Platzhalterseite erkannt („Diese Internetpräsenz ist zur Zeit nicht erreichbar“), „ERGO-PLUS“ fehlt im Text"
+  },
+  {
+   "pruefung": "robots.txt",
+   "ok": false,
+   "hinweis": "200"
+  },
+  {
+   "pruefung": "Sitemap",
+   "ok": false,
+   "hinweis": "200, 0 Adressen"
+  }
+ ]
+}
