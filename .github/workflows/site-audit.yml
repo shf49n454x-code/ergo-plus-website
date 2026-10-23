@@ -48,6 +48,13 @@ jobs:
       - name: Audit
         run: node tools/audit/audit.js --out audit-report.json
 
+      # Befunde zusätzlich als Annotationen: die sieht man direkt am PR,
+      # ohne Log oder Artefakt herunterzuladen.
+      - name: Befunde als Annotationen
+        if: failure()
+        run: |
+          node -e "const r=require('./audit-report.json'); for (const p of r.probleme||[]) console.log('::error::'+(typeof p==='string'?p:JSON.stringify(p)).replace(/\n/g,' '))" || true
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
