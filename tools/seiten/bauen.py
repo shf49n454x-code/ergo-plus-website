@@ -114,7 +114,12 @@ def kette(pfad: str, quellen: dict):
 def kopf(pfad):
     v_css, v_js = version("assets/css/site.css"), version("assets/js/site.js")
     return (
-        '\n  <link rel="stylesheet" href="/assets/fonts/fonts.css" />\n'
+        # Schriften vorladen: ohne Preload springt die große Überschrift beim Font-Tausch
+        # (CLS 0,16 auf der Startseite in der CI).
+        '\n  <link rel="preload" href="/assets/fonts/figtree-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />\n'
+        '  <link rel="preload" href="/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />\n'
+        '  <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />\n'
+        '  <link rel="stylesheet" href="/assets/fonts/fonts.css" />\n'
         f'  <link rel="stylesheet" href="/assets/css/site.css?v={v_css}" />\n'
         f'  <script src="/assets/js/site.js?v={v_js}" defer></script>\n  '
     )
