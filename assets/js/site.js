@@ -39,33 +39,54 @@
     });
   }
 
-  // ── Startseite: Kopfzeile über der dunklen Bühne ──
+  var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ── Startseite: Kopfzeile oben transparent, über der Bühne dunkel, danach weiß ──
   var kopf = document.querySelector('.start .site-head');
-  if (kopf) {
-    var kopfSetzen = function () { kopf.classList.toggle('ist-fest', window.scrollY > 24); };
+  var buehne = document.querySelector('.buehne');
+  if (kopf && buehne) {
+    var kopfSetzen = function () {
+      var hinterBuehne = buehne.getBoundingClientRect().bottom <= kopf.offsetHeight;
+      kopf.classList.toggle('ist-fest', hinterBuehne);
+      kopf.classList.toggle('ist-dunkel', !hinterBuehne && window.scrollY > 24);
+    };
     kopfSetzen();
     window.addEventListener('scroll', kopfSetzen, { passive: true });
+    window.addEventListener('resize', kopfSetzen);
   }
 
-  // ── Bühne: das Maß hervorheben, dessen Text gerade in der Mitte steht ──
-  var buehne = document.querySelector('.buehne');
+  // ── Bühne: das Maß hervorheben, dessen Text gerade gelesen wird ──
   var figur = buehne && buehne.querySelector('.measure-fig');
   if (figur && 'IntersectionObserver' in window) {
-    var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    setTimeout(function () { figur.classList.add('ist-bereit'); }, ruhig ? 0 : 1900);
+    // Erst nach dem Einzeichnen dimmen, sonst hält die Animation die Deckkraft fest
+    var letztes = figur.querySelector('.ml-tag--tiefe');
+    var bereit = function () { figur.classList.add('ist-bereit'); };
+    if (ruhig || !letztes) bereit(); else { letztes.addEventListener('animationend', bereit, { once: true }); setTimeout(bereit, 2500); }
     buehne.classList.add('ist-interaktiv');
     var schritte = buehne.querySelectorAll('.buehne__schritt');
-    var beobachter = new IntersectionObserver(function (eintraege) {
-      eintraege.forEach(function (e) {
-        e.target.classList.toggle('ist-aktiv', e.isIntersecting);
-        if (e.isIntersecting) figur.setAttribute('data-aktiv', e.target.getAttribute('data-mass'));
-      });
-      if (!buehne.querySelector('.buehne__schritt.ist-aktiv')) figur.setAttribute('data-aktiv', '');
-    }, { rootMargin: window.matchMedia('(min-width: 960px)').matches ? '-42% 0px -42% 0px' : '-62% 0px -36% 0px' });
-    schritte.forEach(function (el) { beobachter.observe(el); });
+    var beobachter;
+    var beobachten = function () {
+      if (beobachter) beobachter.disconnect();
+      // Aktiv ist der Schritt, der eine schmale Lesezeile kreuzt. Auf dem Handy liegt
+      // sie knapp unter der festen Figur, am Rechner in der Bildschirmmitte.
+      var h = window.innerHeight;
+      var hulle = buehne.querySelector('.buehne__fig');
+      var klebt = hulle && getComputedStyle(hulle).position === 'sticky' && window.innerWidth < 960;
+      var zeile = klebt ? Math.min(h - 40, hulle.getBoundingClientRect().height + 76 + 60) : h * 0.5;
+      beobachter = new IntersectionObserver(function (eintraege) {
+        eintraege.forEach(function (e) {
+          e.target.classList.toggle('ist-aktiv', e.isIntersecting);
+          if (e.isIntersecting) figur.setAttribute('data-aktiv', e.target.getAttribute('data-mass'));
+        });
+        if (!buehne.querySelector('.buehne__schritt.ist-aktiv')) figur.setAttribute('data-aktiv', '');
+      }, { rootMargin: '-' + Math.round(zeile) + 'px 0px -' + Math.round(h - zeile - 8) + 'px 0px' });
+      schritte.forEach(function (el) { beobachter.observe(el); });
+    };
+    beobachten();
+    window.addEventListener('resize', beobachten);
   }
 
-  // ── Technik-Galerie: Pfeile blättern um ein Bild ──
+  // ── Galerie: Pfeile blättern um eine Kachel ──
   var liste = document.getElementById('galerie-liste');
   if (liste) {
     var knoepfe = document.querySelectorAll('.galerie__btn');
@@ -78,7 +99,7 @@
     };
     knoepfe.forEach(function (k) {
       k.addEventListener('click', function () {
-        liste.scrollBy({ left: schritt() * Number(k.getAttribute('data-richtung')), behavior: 'smooth' });
+        liste.scrollBy({ left: schritt() * Number(k.getAttribute('data-richtung')), behavior: ruhig ? 'auto' : 'smooth' });
       });
     });
     liste.addEventListener('scroll', zustand, { passive: true });
@@ -155,7 +176,7 @@
       form.appendChild(box);
     }
     box.innerHTML = htmlText;
-    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    box.scrollIntoView({ behavior: ruhig ? 'auto' : 'smooth', block: 'center' });
   }
 
   form.addEventListener('submit', function (e) {

@@ -119,6 +119,8 @@ def kopf(pfad):
         '\n  <link rel="preload" href="/assets/fonts/figtree-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />\n'
         '  <link rel="preload" href="/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />\n'
         '  <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />\n'
+        # Vor dem ersten Zeichnen: Seiten mit JS bekommen .js (transparente Kopfzeile, Galerie-Knöpfe)
+        '  <script>document.documentElement.classList.add("js")</script>\n'
         '  <link rel="stylesheet" href="/assets/fonts/fonts.css" />\n'
         f'  <link rel="stylesheet" href="/assets/css/site.css?v={v_css}" />\n'
         f'  <script src="/assets/js/site.js?v={v_js}" defer></script>\n  '

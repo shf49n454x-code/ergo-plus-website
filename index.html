@@ -24,9 +24,10 @@
   <link rel="preload" href="/assets/fonts/figtree-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <script>document.documentElement.classList.add("js")</script>
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=76d8ee9b9d" />
-  <script src="/assets/js/site.js?v=f9a617a206" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=d27bbc4fe3" />
+  <script src="/assets/js/site.js?v=3da5b785a8" defer></script>
   <!-- /SEITE:KOPF -->
   <script type="application/ld+json">
 {
@@ -146,19 +147,20 @@
       <div class="buehne__fig">
         <figure class="measure-fig" data-aktiv="">
           <span class="measure-fig__licht" aria-hidden="true"></span>
+          <span class="measure-fig__boden" aria-hidden="true"></span>
           <img src="/assets/img/vela-tango-freigestellt.webp" alt="VELA TANGO Aktivstuhl mit Armlehnen und Bremsrollen" width="452" height="600" fetchpriority="high" />
           <svg viewBox="0 0 600 460" aria-hidden="true" focusable="false">
             <g class="mg" data-mass="lehne">
-              <path class="ml-ext" d="M152 38 H246 M152 142 H226" />
-              <path class="ml ml--1" pathLength="1" d="M140 38 V142 M132 38 H148 M132 142 H148" />
+              <path class="ml-ext" d="M122 38 H246 M122 142 H226" />
+              <path class="ml ml--1" pathLength="1" d="M110 38 V142 M102 38 H118 M102 142 H118" />
             </g>
             <g class="mg" data-mass="hoehe">
-              <path class="ml-ext" d="M392 163 H470 M372 359 H470" />
-              <path class="ml ml--2" pathLength="1" d="M462 163 V359 M454 163 H470 M454 359 H470" />
+              <path class="ml-ext" d="M392 163 H500 M372 359 H500" />
+              <path class="ml ml--2" pathLength="1" d="M492 163 V359 M484 163 H500 M484 359 H500" />
             </g>
             <g class="mg" data-mass="tiefe">
-              <path class="ml-ext" d="M241 330 V403 M405 300 V403" />
-              <path class="ml ml--3" pathLength="1" d="M241 395 H405 M241 387 V403 M405 387 V403" />
+              <path class="ml-ext" d="M239 196 V403 M390 202 V403" />
+              <path class="ml ml--3" pathLength="1" d="M239 395 H390 M239 387 V403 M390 387 V403" />
             </g>
           </svg>
           <span class="ml-tag ml-tag--lehne" data-mass="lehne" aria-hidden="true">Rückenlehne<small>nach Ihrer Wirbelsäule</small></span>
@@ -227,80 +229,66 @@
     </div>
   </section>
 
-  <section class="sec galerie" aria-labelledby="technik-titel">
+
+  <section class="sec galerie" aria-labelledby="produkte-titel">
     <div class="wrap galerie__kopf">
-      <h2 id="technik-titel">Technik, die man im Alltag spürt</h2>
-      <div class="galerie__nav">
-        <button type="button" class="galerie__btn" data-richtung="-1" aria-label="Vorheriges Bild" aria-controls="galerie-liste"><span aria-hidden="true">‹</span></button>
-        <button type="button" class="galerie__btn" data-richtung="1" aria-label="Nächstes Bild" aria-controls="galerie-liste"><span aria-hidden="true">›</span></button>
-      </div>
-    </div>
-    <ul class="galerie__liste" id="galerie-liste" tabindex="0" aria-label="Technik-Details, seitlich blättern">
-        <li class="galerie__item">
-          <figure>
-            <img src="/assets/img/render-height-adjust-1200w.webp" srcset="/assets/img/render-height-adjust-1200w.webp 1200w, /assets/img/render-height-adjust-2000w.webp 2000w" sizes="(min-width: 960px) 62vw, 86vw" alt="Mechanik der elektrischen Höhenverstellung" width="1200" height="896" loading="lazy" decoding="async" />
-            <figcaption><strong>Elektrische Höhenverstellung</strong>Ein Präzisionsgetriebe verstellt die Sitzhöhe stufenlos, belastbar bis 250 kg und leise im Betrieb.</figcaption>
-          </figure>
-        </li>
-        <li class="galerie__item">
-          <figure>
-            <img src="/assets/img/render-brake-wheels-1200w.webp" srcset="/assets/img/render-brake-wheels-1200w.webp 1200w, /assets/img/render-brake-wheels-2000w.webp 2000w" sizes="(min-width: 960px) 62vw, 86vw" alt="Doppelrolle mit Feststellbremse" width="1200" height="896" loading="lazy" decoding="async" />
-            <figcaption><strong>Zentralbremse</strong>Doppelrollen mit zentraler Feststellbremse: verriegelt für sicheren Transfer, gelöst für müheloses Rollen.</figcaption>
-          </figure>
-        </li>
-        <li class="galerie__item">
-          <figure>
-            <img src="/assets/img/render-seat-cushion-1200w.webp" srcset="/assets/img/render-seat-cushion-1200w.webp 1200w, /assets/img/render-seat-cushion-2000w.webp 2000w" sizes="(min-width: 960px) 62vw, 86vw" alt="Querschnitt eines dreischichtigen Sitzpolsters" width="1200" height="896" loading="lazy" decoding="async" />
-            <figcaption><strong>Dreischichtiges Sitzpolster</strong>Stabile Basis, adaptiver Druckausgleich und eine kühlende Gel-Oberfläche verteilen den Druck über die ganze Sitzfläche.</figcaption>
-          </figure>
-        </li>
-        <li class="galerie__item">
-          <figure>
-            <img src="/assets/img/render-spine-posture-1200w.webp" srcset="/assets/img/render-spine-posture-1200w.webp 1200w, /assets/img/render-spine-posture-2000w.webp 2000w" sizes="(min-width: 960px) 62vw, 86vw" alt="Wirbelsäule in aufrechter Sitzhaltung" width="1200" height="679" loading="lazy" decoding="async" />
-            <figcaption><strong>Rückensysteme</strong>Die Lehne folgt der natürlichen S-Kurve der Wirbelsäule und wirkt Fehlhaltungen entgegen.</figcaption>
-          </figure>
-        </li>
-    </ul>
-    <p class="wrap sec__more"><a href="/sitzloesungen.html#technik">Alle Technik-Details</a></p>
-  </section>
-
-  <section class="sec sec--white" aria-labelledby="produkte-titel">
-    <div class="wrap">
-      <div class="sec__head">
+      <div>
         <h2 id="produkte-titel">Sitzlösungen für Alltag, Arbeit und Sonderfälle</h2>
-        <p>Vom Aktivstuhl für die Küche bis zum modularen System für schwerste Sitzprobleme. Jeder Stuhl wird am Menschen eingestellt, nicht ab Werk.</p>
+        <p>Jeder Stuhl wird am Menschen eingestellt, nicht ab Werk.</p>
       </div>
-      <ul class="range">
-        <li><a href="/sitzloesungen.html#vela-tango">
-          <img src="/assets/img/vela-tango-aktivstuhl.webp" alt="" width="452" height="600" loading="lazy" decoding="async" />
-          <span><strong>VELA TANGO</strong>Für Alltag zu Hause und am Arbeitsplatz</span>
-        </a></li>
-        <li><a href="/sitzloesungen.html#vela-blues">
-          <img src="/assets/img/vela-blues-aktivstuhl.webp" alt="" width="388" height="569" loading="lazy" decoding="async" />
-          <span><strong>VELA BLUES</strong>Kompakt für Küche, Bad und Werkstatt</span>
-        </a></li>
-        <li><a href="/sitzloesungen.html#mfs">
-          <img src="/assets/img/mfs-stuhlsystem.webp" alt="" width="326" height="600" loading="lazy" decoding="async" />
-          <span><strong>MFS-Stuhlsystem</strong>Für schwerste Sitzprobleme</span>
-        </a></li>
-        <li><a href="/sitzloesungen.html#elift">
-          <img src="/assets/img/elift-400-aufstehstuhl.webp" alt="" width="363" height="570" loading="lazy" decoding="async" />
-          <span><strong>ELIFT 400</strong>Wenn das Aufstehen die größte Hürde ist</span>
-        </a></li>
-        <li><a href="/sitzloesungen.html#opera">
-          <img src="/assets/img/opera-20-buerostuhl.webp" alt="" width="329" height="594" loading="lazy" decoding="async" />
-          <span><strong>Opera 20 und SMARTMOVE</strong>Für den Büroarbeitsplatz</span>
-        </a></li>
-        <li><a href="/sitzloesungen.html#speziell">
-          <img src="/assets/img/spezialstuhl-schwergewicht.webp" alt="" width="361" height="585" loading="lazy" decoding="async" />
-          <span><strong>Speziallösungen</strong>Für Anforderungen, die kein Katalog abdeckt</span>
-        </a></li>
-      </ul>
-      <p class="sec__more"><a href="/sitzloesungen.html">Alle Sitzlösungen mit Ausführungen und Technik</a></p>
+      <div class="galerie__nav">
+        <button type="button" class="galerie__btn" data-richtung="-1" aria-label="Vorherige Sitzlösung" aria-controls="galerie-liste"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="galerie__btn" data-richtung="1" aria-label="Nächste Sitzlösung" aria-controls="galerie-liste"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
     </div>
+    <ul class="galerie__liste" id="galerie-liste" aria-label="Sitzlösungen, seitlich blättern">
+      <li class="galerie__item">
+        <a class="kachel" href="/sitzloesungen.html#vela-tango">
+          <span class="kachel__bild"><img src="/assets/img/vela-tango-aktivstuhl.webp" alt="" width="452" height="600" loading="lazy" decoding="async" /></span>
+          <strong>VELA TANGO</strong>
+          <span>Für Alltag zu Hause und am Arbeitsplatz</span>
+        </a>
+      </li>
+      <li class="galerie__item">
+        <a class="kachel" href="/sitzloesungen.html#vela-blues">
+          <span class="kachel__bild"><img src="/assets/img/vela-blues-aktivstuhl.webp" alt="" width="388" height="569" loading="lazy" decoding="async" /></span>
+          <strong>VELA BLUES</strong>
+          <span>Kompakt für Küche, Bad und Werkstatt</span>
+        </a>
+      </li>
+      <li class="galerie__item">
+        <a class="kachel" href="/sitzloesungen.html#mfs">
+          <span class="kachel__bild"><img src="/assets/img/mfs-stuhlsystem.webp" alt="" width="326" height="600" loading="lazy" decoding="async" /></span>
+          <strong>MFS-Stuhlsystem</strong>
+          <span>Für schwerste Sitzprobleme</span>
+        </a>
+      </li>
+      <li class="galerie__item">
+        <a class="kachel" href="/sitzloesungen.html#elift">
+          <span class="kachel__bild"><img src="/assets/img/elift-400-aufstehstuhl.webp" alt="" width="363" height="570" loading="lazy" decoding="async" /></span>
+          <strong>ELIFT 400</strong>
+          <span>Wenn das Aufstehen die größte Hürde ist</span>
+        </a>
+      </li>
+      <li class="galerie__item">
+        <a class="kachel" href="/sitzloesungen.html#opera">
+          <span class="kachel__bild"><img src="/assets/img/opera-20-buerostuhl.webp" alt="" width="329" height="594" loading="lazy" decoding="async" /></span>
+          <strong>Opera 20 und SMARTMOVE</strong>
+          <span>Für den Büroarbeitsplatz</span>
+        </a>
+      </li>
+      <li class="galerie__item">
+        <a class="kachel" href="/sitzloesungen.html#speziell">
+          <span class="kachel__bild"><img src="/assets/img/spezialstuhl-schwergewicht.webp" alt="" width="361" height="585" loading="lazy" decoding="async" /></span>
+          <strong>Speziallösungen</strong>
+          <span>Für Anforderungen, die kein Katalog abdeckt</span>
+        </a>
+      </li>
+    </ul>
+    <p class="wrap sec__more"><a href="/sitzloesungen.html">Alle Sitzlösungen mit Ausführungen und Technik</a></p>
   </section>
 
-  <section class="sec" aria-labelledby="team-titel">
+  <section class="sec sec--white" aria-labelledby="team-titel">
     <div class="wrap team-strip">
       <div class="team-strip__text">
         <h2 id="team-titel">Sie sprechen mit Menschen, nicht mit einem Katalog</h2>
@@ -310,7 +298,7 @@
       <div class="team-strip__people">
         <figure class="team-strip__p">
           <img src="/assets/img/hf_20260527_214509_6dc19116-34bf-415b-a1e6-f95161938a2b.webp" srcset="/assets/img/hf_20260527_214509_6dc19116-34bf-415b-a1e6-f95161938a2b-800w.webp 800w, /assets/img/hf_20260527_214509_6dc19116-34bf-415b-a1e6-f95161938a2b.webp 1194w" sizes="(min-width: 760px) 22vw, 33vw" alt="Joachim Stolz, Geschäftsführer" width="1194" height="1600" loading="lazy" decoding="async" />
-          <figcaption><strong>Joachim Stolz</strong>Geschäftsführer</figcaption>
+          <figcaption><strong>Joachim Stolz</strong>Geschäfts&shy;führer</figcaption>
         </figure>
         <figure class="team-strip__p">
           <img src="/assets/img/hf_20260527_214300_a8653587-7362-4a6a-a7f9-5d96c5ba82e1.webp" srcset="/assets/img/hf_20260527_214300_a8653587-7362-4a6a-a7f9-5d96c5ba82e1-800w.webp 800w, /assets/img/hf_20260527_214300_a8653587-7362-4a6a-a7f9-5d96c5ba82e1.webp 1194w" sizes="(min-width: 760px) 22vw, 33vw" alt="Philipp Klein, Technik" width="1194" height="1600" loading="lazy" decoding="async" />
@@ -324,7 +312,7 @@
     </div>
   </section>
 
-  <section class="sec sec--white" aria-labelledby="ablauf-titel">
+  <section class="sec" aria-labelledby="ablauf-titel">
     <div class="wrap">
       <div class="sec__head">
         <h2 id="ablauf-titel">Vier Schritte bis zum passenden Stuhl</h2>
@@ -340,7 +328,7 @@
     </div>
   </section>
 
-  <section class="sec" aria-labelledby="ratgeber-titel">
+  <section class="sec sec--white" aria-labelledby="ratgeber-titel">
     <div class="wrap">
       <h2 id="ratgeber-titel" class="sec__title">Aus dem Ratgeber</h2>
       <div class="posts">
