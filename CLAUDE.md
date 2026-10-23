@@ -24,13 +24,14 @@ Nicht schätzen, ob etwas schnell oder barrierefrei ist — messen.
 
 ## Was von selbst läuft
 
-Vier Schleifen, die ohne Zutun anlaufen. Wer hier etwas ändert, sollte
+Fünf Schleifen, die ohne Zutun anlaufen. Wer hier etwas ändert, sollte
 wissen, was sonst noch daran hängt.
 
 | Schleife | Auslöser | Ergebnis |
 |---|---|---|
 | `.github/workflows/site-audit.yml` | jeder PR, jeder Push auf main | rot bei Barrierefreiheits-, Lade- oder Strukturfehlern |
-| `.github/workflows/search-console.yml` | montags 05:00 UTC | Google-Zahlen nach `data/search-console/` |
+| `.github/workflows/search-console.yml` | montags 05:00 UTC | Google-Zahlen nach `data/search-console/`, dazu je Sitemap-Adresse der Index-Status (`INDEX.md`) |
+| `.github/workflows/erreichbarkeit.yml` | täglich 06:17 UTC | rot (Mail von GitHub), wenn ergo-plus.de nicht antwortet, das Zertifikat fehlt oder eine Platzhalterseite kommt; Commit nur bei Zustandswechsel |
 | `.github/workflows/preview.yml` | jeder Push auf main | baut `gh-pages-preview` nach |
 | Routine „SEO-Vorschlag" | montags nach dem Datenlauf | Entwurfs-PR mit besseren Titles/Descriptions |
 
@@ -45,6 +46,10 @@ Damit keine dieser Schleifen still ausfallen kann:
 | `data/search-console/LETZTER-LAUF.md` | was der letzte Datenlauf getan hat — auch wenn er gescheitert ist |
 | `data/search-console/VERSUCHE.md` | was geändert wurde und was daraus wurde |
 | Audit-Prüfung „Alter der Daten" | wird rot, wenn seit zehn Tagen nichts abgeholt wurde |
+| `data/search-console/INDEX.md` | welche Sitemap-Adressen Google im Index hat und warum die anderen fehlen |
+| `data/erreichbarkeit/ERREICHBARKEIT.md` | letzter Zustandswechsel der Live-Seite |
+
+**Vor jedem Upload auf den Server:** `python3 tools/erreichbarkeit/pruefen.py` muss grün sein. Die `.htaccess` setzt HSTS für ein Jahr; geht sie live, während https nicht funktioniert, sperrt sie Besucher und Google ein Jahr lang aus.
 
 Ein grüner Lauf heißt nicht, dass etwas passiert ist. Genau dieser
 Trugschluss hat hier schon dreimal Zeit gekostet.
