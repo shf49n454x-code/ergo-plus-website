@@ -22,6 +22,26 @@ gerissen wird. Details und die Regeln dahinter: `.claude/skills/site-audit/SKILL
 
 Nicht schätzen, ob etwas schnell oder barrierefrei ist — messen.
 
+## Seiten anlegen und ändern (seit Oktober 2026 mehrseitig)
+
+Kopf, Navigation, Brotkrumen, Kontaktband, Fußzeile, Cookie-Hinweis und die
+Adressen von `site.css`/`site.js` stehen auf jeder Seite zwischen Markern
+(`<!-- SEITE:NAV -->` … `<!-- /SEITE:NAV -->` usw.). Sie werden nie von Hand
+geändert, sondern von:
+
+```bash
+python3 tools/seiten/bauen.py          # setzt alle Rahmen, stempelt CSS/JS, baut sitemap.xml
+python3 tools/seiten/bilder_pruefen.py # Bilder: Datei, width/height, Seitenverhältnis, alt
+```
+
+Danach laufen lassen, wenn: CSS oder JS geändert, Seite angelegt, H1 geändert,
+Navigation geändert. Neue Seite = Eintrag in `SEITEN` in `bauen.py` plus die vier
+Marker (Vorlage: `kontakt.html`). Beide Skripte laufen in `site-audit.yml` mit,
+`bauen.py --pruefen` wird rot, wenn der Lauf vergessen wurde.
+
+Gestaltung: `DESIGN.md`. Warum es so gebaut ist: `LEARNINGS.md` (aus jonpride.de).
+Ausnahme: `pose-bogen.html` hat eine eigene Oberfläche und keinen gemeinsamen Rahmen.
+
 ## Was von selbst läuft
 
 Fünf Schleifen, die ohne Zutun anlaufen. Wer hier etwas ändert, sollte

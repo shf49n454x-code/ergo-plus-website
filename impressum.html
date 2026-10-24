@@ -22,118 +22,52 @@
   <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a5276" />
+  <!-- SEITE:KOPF -->
+  <link rel="preload" href="/assets/fonts/figtree-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <script>document.documentElement.classList.add("js")</script>
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --c-primary: #1a5276;
-      --c-primary-dk: #143d5a;
-      --c-teal: #148f77;
-      --c-text: #1a2a3a;
-      --c-text-soft: #5a6a7a;
-      --c-bg: #ffffff;
-      --c-bg2: #f5f7fa;
-      --c-border-lt: #e8ecf1;
-      --ease: cubic-bezier(.22,1,.36,1);
-      --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Noto Sans', sans-serif;
-      font-size: 16px; line-height: 1.75;
-      color: var(--c-text); background: var(--c-bg2);
-    }
-    a { color: var(--c-primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Nav */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.92); backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--c-border-lt);
-      padding: 0 clamp(20px,5%,80px);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
-    }
-    .logo-img { height: 48px; }
-    .btn-nav {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px; border-radius: 50px;
-      background: var(--c-primary); color: white;
-      font-size: 14px; font-weight: 600;
-      text-decoration: none;
-      transition: background .2s var(--ease);
-    }
-    .btn-nav:hover { background: var(--c-primary-dk); text-decoration: none; }
-
-    /* Content */
-    .legal-content {
-      max-width: 780px; margin: 0 auto;
-      padding: 56px clamp(20px,5%,80px) 80px;
-    }
-    .legal-content h1 {
-      font-family: 'Figtree', sans-serif;
-      font-size: clamp(28px, 4vw, 38px);
-      font-weight: 800; color: var(--c-text);
-      margin-bottom: 8px;
-    }
-    .legal-content .subtitle {
-      font-size: 15px; color: var(--c-text-soft);
-      margin-bottom: 40px;
-    }
-    .legal-content h2 {
-      font-family: 'Figtree', sans-serif;
-      font-size: 20px; font-weight: 700;
-      color: var(--c-primary); margin: 36px 0 12px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--c-border-lt);
-    }
-    .legal-content h3 {
-      font-size: 17px; font-weight: 600;
-      margin: 24px 0 8px;
-    }
-    .legal-content p { margin-bottom: 14px; }
-    .legal-content ul { margin: 8px 0 14px 24px; }
-    .legal-content li { margin-bottom: 6px; }
-    .legal-content strong { font-weight: 600; }
-    .back-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 14px; font-weight: 500;
-      color: var(--c-text-soft); margin-bottom: 24px;
-    }
-    .back-link:hover { color: var(--c-primary); text-decoration: none; }
-
-    /* Footer */
-    footer {
-      background: var(--c-text); color: rgba(255,255,255,.55);
-      padding: 40px clamp(20px,5%,80px);
-      text-align: center; font-size: 13px;
-    }
-    footer a { color: rgba(255,255,255,.7); text-decoration: underline; }
-    footer a:hover { color: white; }
-  
-    /* a11y: in-text links must be distinguishable without colour (WCAG 1.4.1) */
-    p a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
-</style>
+  <link rel="stylesheet" href="/assets/css/site.css?v=d27bbc4fe3" />
+  <script src="/assets/js/site.js?v=3da5b785a8" defer></script>
+  <!-- /SEITE:KOPF -->
 </head>
 <body>
-
-<nav>
-  <div class="nav-inner">
-    <a href="/" aria-label="ERGO-PLUS Startseite">
-      <img src="logo-ergoplus.png" alt="ERGO plus" class="logo-img" />
-    </a>
-    <a href="/#contact" class="btn-nav">Beratung anfragen</a>
+<!-- SEITE:NAV -->
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="site-head__logo" href="/"><img src="/assets/img/logo-ergoplus-rahmen.png" alt="ERGO-PLUS Startseite" width="203" height="200" /></a>
+    <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="/sitzloesungen.html">Sitzlösungen</a></li>
+        <li><a href="/ablauf-und-kosten.html">Ablauf &amp; Kosten</a></li>
+        <li><a href="/krankheitsbilder.html">Krankheitsbilder</a></li>
+        <li><a href="/blog/">Ratgeber</a></li>
+        <li><a href="/ueber-ergo-plus.html">Über uns</a></li>
+      </ul>
+      <div class="site-nav__extra">
+        <a class="btn btn--act" href="/kontakt.html">Beratung anfragen</a>
+        <a class="btn btn--line" href="tel:+49602112807">06021 12807 anrufen</a>
+      </div>
+    </nav>
+    <a class="site-head__tel" href="tel:+49602112807">06021 12807<small>Beratung am Telefon</small></a>
+    <a class="btn btn--act site-head__cta" href="/kontakt.html">Beratung anfragen</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
   </div>
-</nav>
+</header>
+<!-- /SEITE:NAV -->
 
-<main class="legal-content">
-  <a href="/" class="back-link">&larr; Zurück zur Startseite</a>
+<main id="inhalt" class="legal-content">
+<!-- SEITE:KRUMEN -->
+  <nav class="crumbs wrap" aria-label="Brotkrumen">
+    <ol>
+      <li><a href="/">Startseite</a></li>
+      <li aria-current="page">Impressum</li>
+    </ol>
+  </nav>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ergo-plus.de/"}, {"@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://ergo-plus.de/impressum.html"}]}</script>
+  <!-- /SEITE:KRUMEN -->
   <h1>Impressum</h1>
   <p class="subtitle">Angaben gemäß § 5 TMG</p>
 
@@ -151,8 +85,8 @@
 
   <h2>Kontakt</h2>
   <p>
-    Telefon: +49-6021-12807<br>
-    Fax: +49-6021-4942237<br>
+    Telefon: 06021 12807<br>
+    Fax: 06021 4942237<br>
     E-Mail: <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>
   </p>
 
@@ -179,9 +113,80 @@
   <p style="margin-top:32px;font-size:13px;color:var(--c-text-soft)">Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener">e-recht24.de</a></p>
 </main>
 
-<footer>
-  <p>&copy; 2026 ERGO-PLUS Seating Concepts GmbH &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a></p>
+<!-- SEITE:FUSS -->
+<section class="contact-band" aria-labelledby="kontaktband-titel">
+  <div class="wrap contact-band__grid">
+    <div>
+      <h2 id="kontaktband-titel">Erzählen Sie uns, wie Sie heute sitzen.</h2>
+      <p>Das erste Gespräch ist kostenlos und unverbindlich. Wir klären, was Sie brauchen, und wer die Kosten tragen kann.</p>
+    </div>
+    <div>
+      <a class="contact-band__tel" href="tel:+49602112807">06021 12807</a>
+      <div class="btn-row"><a class="btn btn--light" href="/kontakt.html">Beratung anfragen</a></div>
+      <small>Oder schreiben Sie an <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a></small>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="site-foot__grid">
+      <div class="site-foot__brand">
+        <img src="/assets/img/logo-ergoplus-rahmen.png" alt="" width="203" height="200" loading="lazy" />
+        <address>
+          ERGO-PLUS Seating Concepts GmbH<br />
+          Am Sportplatz 15<br />
+          63867 Johannesberg<br />
+          Telefon <a href="tel:+49602112807">06021 12807</a><br />
+          <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>
+        </address>
+      </div>
+      <div>
+        <h2>Sitzlösungen</h2>
+        <ul>
+          <li><a href="/sitzloesungen.html#vela-tango">VELA TANGO</a></li>
+          <li><a href="/sitzloesungen.html#vela-blues">VELA BLUES</a></li>
+          <li><a href="/sitzloesungen.html#mfs">MFS-Stuhlsystem</a></li>
+          <li><a href="/sitzloesungen.html#elift">ELIFT 400</a></li>
+          <li><a href="/sitzloesungen.html#opera">Opera 20 und SMARTMOVE</a></li>
+          <li><a href="/sitzloesungen.html#speziell">Speziallösungen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Wissen</h2>
+        <ul>
+          <li><a href="/krankheitsbilder.html">Krankheitsbilder</a></li>
+          <li><a href="/ablauf-und-kosten.html">Ablauf und Kostenübernahme</a></li>
+          <li><a href="/blog/">Ratgeber</a></li>
+          <li><a href="/faq.html">Häufige Fragen</a></li>
+          <li><a href="/pose-bogen.html">POSE-Bogen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Unternehmen</h2>
+        <ul>
+          <li><a href="/ueber-ergo-plus.html">Über uns</a></li>
+          <li><a href="/ueber-ergo-plus.html#team">Team</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
+          <li><a href="/impressum.html">Impressum</a></li>
+          <li><a href="/datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-foot__base">
+      <span>© 2026 ERGO-PLUS Seating Concepts GmbH</span>
+      <button type="button" id="cookie-settings-link">Cookie-Einstellungen</button>
+    </div>
+  </div>
 </footer>
+
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie-Hinweis">
+  <p class="cookie-text">Wir verwenden technisch notwendige Cookies sowie, mit Ihrer Zustimmung, Google Analytics zur Reichweitenmessung. Mehr dazu in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-btns">
+    <button type="button" class="cookie-btn cookie-btn-essential" id="cookie-essential">Nur essenzielle</button>
+    <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-accept">Verstanden</button>
+  </div>
+</div>
+<!-- /SEITE:FUSS -->
 
 </body>
 </html>

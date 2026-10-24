@@ -2,7 +2,7 @@
 
 > Therapeutische Sitzversorgung für Menschen mit körperlichen Einschränkungen – deutschlandweit, individuell, mit Kostenübernahme.
 
-Stand: September 2026 · Vollversion: https://ergo-plus.de/llms-full.txt
+Stand: Oktober 2026 · Vollversion: https://ergo-plus.de/llms-full.txt
 
 ERGO-PLUS ist ein spezialisierter Anbieter für individuelle Sitzlösungen bei komplexen körperlichen Anforderungen. Das Unternehmen sitzt in Johannesberg bei Aschaffenburg und versorgt Kunden in ganz Deutschland. Seit über 30 Jahren entwickelt ERGO-PLUS maßgefertigte Stühle und Sitzsysteme für Menschen, die mit Standard-Bürostühlen oder Rollstühlen nicht versorgt werden können.
 
@@ -61,7 +61,11 @@ ERGO-PLUS begleitet Kunden durch den gesamten Antragsprozess und arbeitet mit ze
 ## Weitere Informationen
 
 - [Startseite](https://ergo-plus.de/)
-- [Über ERGO-PLUS](https://ergo-plus.de/ueber-ergo-plus.html)
+- [Sitzlösungen: alle Produktfamilien mit Ausführungen](https://ergo-plus.de/sitzloesungen.html)
+- [Ablauf der Versorgung und Kostenübernahme](https://ergo-plus.de/ablauf-und-kosten.html)
+- [Sitzversorgung nach Krankheitsbild](https://ergo-plus.de/krankheitsbilder.html)
+- [Kontakt und Beratung](https://ergo-plus.de/kontakt.html)
+- [Über ERGO-PLUS und Team](https://ergo-plus.de/ueber-ergo-plus.html)
 - [Häufige Fragen (FAQ)](https://ergo-plus.de/faq.html)
 - [Blog: News & Ratgeber](https://ergo-plus.de/blog/)
 - [MFS-Stuhlsystem bei Skoliose](https://ergo-plus.de/blog/mfs-stuhlsystem-skoliose-sitzloesung.html)

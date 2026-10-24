@@ -86,7 +86,9 @@ function staticChecks(files) {
     // Quelltext laedt der Browser trotzdem nur einmal.
     let bildSumme = 0;
     const gewogen = new Set();
-    for (const u of assets) {
+    for (const roh of assets) {
+      // ?v=… ist der Fingerabdruck aus tools/seiten/bauen.py, kein Teil des Dateinamens
+      const u = roh && roh.split('?')[0];
       if (!u) continue;
       const p = u.startsWith('/')
         ? path.join(ROOT, u.slice(1))
@@ -110,7 +112,14 @@ function staticChecks(files) {
         detail: `${bildSumme} KB referenziert (Grenze ${bildBudget} KB)` });
 
     const used = new Set([...s.matchAll(/var\((--[a-z0-9-]+)\)/g)].map((m) => m[1]));
-    const defined = new Set([...s.matchAll(/(--[a-z0-9-]+)\s*:/g)].map((m) => m[1]));
+    // Variablen aus eingebundenen eigenen Stylesheets zählen mit (seit dem
+    // Mehrseiten-Umbau stehen die Tokens in /assets/css/site.css).
+    let css = s;
+    for (const m of s.matchAll(/<link rel="stylesheet" href="(\/[^"?]+)/g)) {
+      const datei = path.join(ROOT, m[1].slice(1));
+      if (fs.existsSync(datei)) css += fs.readFileSync(datei, 'utf8');
+    }
+    const defined = new Set([...css.matchAll(/(--[a-z0-9-]+)\s*:/g)].map((m) => m[1]));
     for (const v of used)
       if (!defined.has(v)) issues.push({ file: f, type: 'undefinierte-css-variable', detail: v });
 
