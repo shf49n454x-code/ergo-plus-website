@@ -1,0 +1,47 @@
+{
+ "basis": "https://ergo-plus.de",
+ "geprueft_am": "2026-10-24T05:25:46.402592+00:00",
+ "ok": false,
+ "pruefungen": [
+  {
+   "pruefung": "TLS ergo-plus.de",
+   "ok": false,
+   "hinweis": "TLS-Fehler: TLSV1_ALERT_INTERNAL_ERROR"
+  },
+  {
+   "pruefung": "TLS www.ergo-plus.de",
+   "ok": false,
+   "hinweis": "TLS-Fehler: TLSV1_ALERT_INTERNAL_ERROR"
+  },
+  {
+   "pruefung": "Weiterleitung http://ergo-plus.de/",
+   "ok": false,
+   "hinweis": "200 nach (keine); erwartet 301 nach https://ergo-plus.de/"
+  },
+  {
+   "pruefung": "Weiterleitung http://www.ergo-plus.de/",
+   "ok": false,
+   "hinweis": "200 nach (keine); erwartet 301 nach https://ergo-plus.de/"
+  },
+  {
+   "pruefung": "Weiterleitung https://www.ergo-plus.de/",
+   "ok": false,
+   "hinweis": "URLError: <urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010)>"
+  },
+  {
+   "pruefung": "Startseite",
+   "ok": false,
+   "hinweis": "URLError: <urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010)>"
+  },
+  {
+   "pruefung": "robots.txt",
+   "ok": false,
+   "hinweis": "URLError: <urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010)>"
+  },
+  {
+   "pruefung": "Sitemap",
+   "ok": false,
+   "hinweis": "URLError: <urlopen error [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1010)>"
+  }
+ ]
+}
