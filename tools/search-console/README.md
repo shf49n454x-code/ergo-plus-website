@@ -10,6 +10,7 @@ Ergebnis nach jedem Lauf:
 |---|---|
 | `data/search-console/latest.json` | alle Dimensionen, maschinenlesbar |
 | `data/search-console/BERICHT.md` | die Auffaelligkeiten in Textform |
+| `data/search-console/index.json`, `INDEX.md` | je Adresse der Sitemap: im Index ja/nein, Googles Begruendung, letzter Crawl, Canonical |
 
 ## Warum dieser Weg
 
@@ -85,6 +86,19 @@ wirkt ein besserer Titel oder eine bessere Description.
 
 **Knapp vor Seite 1** — Anfrage-Seite-Paare auf Position 8 bis 20 mit
 mindestens 20 Impressionen. Der kuerzeste Weg zu mehr Klicks.
+
+## Index-Waechter
+
+`index_waechter.py` fragt fuer jede Adresse aus `sitemap.xml` die URL
+Inspection API ab. Die Zahlen in `BERICHT.md` zeigen nur Seiten, die
+schon Impressionen haben. Eine Seite, die nie im Index war, taucht dort
+nie auf. Im Oktober 2026 stand genau deshalb monatelang kein einziger
+Ratgeber-Artikel bei Google, ohne dass es jemand gemerkt hat.
+
+Gleicher Service Account, gleiche Rolle, keine neue Freigabe. Kontingent:
+2000 Pruefungen pro Tag und Property; die Sitemap hat rund 25 Adressen.
+Laeuft im Montagslauf direkt nach dem Datenabruf und bei jedem PR, der
+die Skripte aendert (dann ohne Commit).
 
 ## Zwei Fallstricke
 

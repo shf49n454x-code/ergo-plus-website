@@ -9,6 +9,13 @@ on:
   schedule:
     - cron: '0 5 * * 1'   # montags 05:00 UTC
   workflow_dispatch:       # und auf Zuruf
+  # Bei Aenderungen an den Skripten selbst laeuft alles einmal echt durch,
+  # aber ohne zu committen. So ist jede Aenderung vor dem Merge gegen die
+  # echte API getestet und nicht nur gegen eine Attrappe.
+  pull_request:
+    paths:
+      - 'tools/search-console/**'
+      - '.github/workflows/search-console.yml'
 
 permissions:
   contents: write          # nur zum Committen der abgeholten Daten
@@ -18,7 +25,10 @@ concurrency:
   # Push gegenseitig abweisen, wenn sie sich ueberschneiden - genau das ist
   # in diesem Projekt schon vorgekommen, als der Lauf mehrfach von Hand
   # angestossen wurde, um das fehlende Secret zu pruefen.
-  group: search-console
+  # PR-Laeufe in eine eigene Gruppe: Sonst kann ein PR-Push einen
+  # wartenden Zeitplan-Lauf still verdraengen (eine Gruppe haelt nur einen
+  # wartenden Lauf).
+  group: search-console-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
   cancel-in-progress: false
 
 jobs:
@@ -65,10 +75,37 @@ jobs:
           GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:ergo-plus.de' }}
         run: python3 tools/search-console/fetch_gsc.py --tage 90
 
+      # Welche Adressen der Sitemap Google ueberhaupt im Index hat. Die
+      # Zahlen oben zeigen nur Seiten mit Impressionen; eine Seite, die nie
+      # im Index war, faellt dort nie auf. Braucht keine neue Freigabe:
+      # derselbe Service Account, dieselbe Rolle.
+      - name: Index pruefen
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE_URL: ${{ vars.GSC_SITE_URL || 'sc-domain:ergo-plus.de' }}
+        run: python3 tools/search-console/index_waechter.py --sitemap sitemap.xml
+
+      - name: Index im Protokoll
+        if: always()
+        run: |
+          if [ -f data/search-console/INDEX.md ]; then
+            cat data/search-console/INDEX.md >> "$GITHUB_STEP_SUMMARY"
+            # Als Anmerkungen am Lauf und am PR sichtbar, auch ohne die
+            # Zusammenfassung zu oeffnen.
+            python3 -c "
+          import json
+          d = json.load(open('data/search-console/index.json'))
+          print(f\"::notice title=Index::{d['im_index']} von {d['adressen']} Sitemap-Adressen im Google-Index\")
+          for e in d['ergebnisse']:
+              if not e['im_index']:
+                  print(f\"::warning title=Nicht im Index::{e['url']} - {e['zustand'] or e['urteil'] or 'ohne Angabe'}\")
+          "
+          fi
+
       # Laeuft auch nach einem Fehlschlag: sonst bliebe der Laufbericht, der
       # den Fehlschlag erklaert, im Container liegen und niemand saehe ihn.
       - name: Aenderungen committen
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         run: |
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'

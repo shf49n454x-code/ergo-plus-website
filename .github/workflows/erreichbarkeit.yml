@@ -1,0 +1,96 @@
+name: Erreichbarkeit
+
+# Prueft taeglich, ob ergo-plus.de so antwortet, wie Besucher und Google sie
+# sehen sollen: gueltiges Zertifikat, saubere Weiterleitungen, unsere Seite
+# statt einer Hoster-Platzhalterseite, jede Sitemap-Adresse mit 200.
+#
+# Gescheiterter Lauf = rote Action = GitHub schickt eine Mail. Ein gruener
+# Lauf meldet nichts. Ins Repo wird nur geschrieben, wenn sich der Zustand
+# aendert (gestoert -> ok oder umgekehrt, oder andere Pruefungen rot), damit
+# nicht jeden Tag ein Commit entsteht.
+#
+# Anlass: Am 23.10.2026 zeigte ergo-plus.de die STRATO-Seite "Diese
+# Internetpraesenz ist zur Zeit nicht erreichbar": Die neue Website war nie
+# live gegangen, obwohl alle Pruefungen im Repo gruen waren.
+
+on:
+  schedule:
+    - cron: '17 6 * * *'   # taeglich 06:17 UTC
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tools/erreichbarkeit/**'
+      - '.github/workflows/erreichbarkeit.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  # PR-Laeufe in eine eigene Gruppe: Sonst kann ein PR-Push einen
+  # wartenden Zeitplan-Lauf still verdraengen (eine Gruppe haelt nur einen
+  # wartenden Lauf).
+  group: erreichbarkeit-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: false
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Pruefen
+        id: pruefen
+        continue-on-error: true
+        run: python3 tools/erreichbarkeit/pruefen.py
+
+      # Jede Pruefung als Anmerkung: Die stehen direkt am Lauf und am PR,
+      # auch dort, wo niemand die Zusammenfassung oeffnet.
+      - name: Ergebnis im Protokoll
+        if: always()
+        run: |
+          cat data/erreichbarkeit/ERREICHBARKEIT.md >> "$GITHUB_STEP_SUMMARY"
+          python3 -c "
+          import json
+          for p in json.load(open('data/erreichbarkeit/status.json'))['pruefungen']:
+              art = 'notice' if p['ok'] else 'error'
+              text = (p['pruefung'] + ': ' + p['hinweis']).replace('%', '%25').replace('\n', ' ')
+              print(f'::{art} title=Erreichbarkeit::{text}')
+          "
+
+      - name: Zustandswechsel committen
+        if: always() && github.event_name != 'pull_request'
+        run: |
+          python3 - <<'PY'
+          import json, subprocess, sys
+          neu = json.load(open("data/erreichbarkeit/status.json"))
+          try:
+              alt = json.loads(subprocess.check_output(
+                  ["git", "show", "HEAD:data/erreichbarkeit/status.json"]))
+          except subprocess.CalledProcessError:
+              alt = None
+          sig = lambda d: (d["ok"], sorted(p["pruefung"] for p in d["pruefungen"] if not p["ok"]))
+          gleich = alt is not None and sig(alt) == sig(neu)
+          open("gleich.txt", "w").write("1" if gleich else "0")
+          PY
+          if [ "$(cat gleich.txt)" = "1" ]; then
+            echo "Zustand unveraendert, kein Commit."
+            git checkout -- data/erreichbarkeit
+          else
+            git config user.name  'github-actions[bot]'
+            git config user.email 'github-actions[bot]@users.noreply.github.com'
+            git add data/erreichbarkeit
+            git commit -m "Erreichbarkeit: Zustand geaendert ($(date -u +%Y-%m-%d))"
+            git push
+          fi
+          rm -f gleich.txt
+
+      - name: Rot, wenn gestoert
+        if: steps.pruefen.outcome == 'failure'
+        run: |
+          echo "::error::ergo-plus.de ist gestoert. Details in der Zusammenfassung dieses Laufs."
+          exit 1
