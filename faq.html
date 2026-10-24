@@ -22,19 +22,6 @@
   <link rel="icon" href="/ergo-plus-website/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="/ergo-plus-website/apple-touch-icon.png" />
   <meta name="theme-color" content="#1a5276" />
-  <link rel="preload" href="/ergo-plus-website/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/ergo-plus-website/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/ergo-plus-website/assets/fonts/fonts.css" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ergo-plus.de/" },
-      { "@type": "ListItem", "position": 2, "name": "Häufige Fragen", "item": "https://ergo-plus.de/faq.html" }
-    ]
-  }
-  </script>
 
   <script type="application/ld+json">
   {
@@ -180,188 +167,52 @@
     }
   }
   </script>
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --c-primary: #1a5276;
-      --c-primary-dk: #143d5a;
-      --c-teal: #148f77;
-      --c-text: #1a2a3a;
-      --c-text-soft: #5a6a7a;
-      --c-bg: #ffffff;
-      --c-bg2: #f5f7fa;
-      --c-border-lt: #e8ecf1;
-      --ease: cubic-bezier(.22,1,.36,1);
-      --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Noto Sans', sans-serif;
-      font-size: 16px; line-height: 1.75;
-      color: var(--c-text); background: var(--c-bg2);
-    }
-    a { color: var(--c-primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Nav */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.92); backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--c-border-lt);
-      padding: 0 clamp(20px,5%,80px);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
-    }
-    .logo-img { height: 48px; }
-    .btn-nav {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px; border-radius: 50px;
-      background: var(--c-primary); color: white;
-      font-size: 14px; font-weight: 600;
-      text-decoration: none;
-      transition: background .2s var(--ease);
-    }
-    .btn-nav:hover { background: var(--c-primary-dk); text-decoration: none; }
-
-    /* FAQ Content */
-    .faq-content {
-      max-width: 820px; margin: 0 auto;
-      padding: 56px clamp(20px,5%,80px) 80px;
-    }
-    .back-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 14px; font-weight: 500;
-      color: var(--c-text-soft); margin-bottom: 24px;
-    }
-    .back-link:hover { color: var(--c-primary); text-decoration: none; }
-    .faq-title {
-      font-family: 'Figtree', sans-serif;
-      font-size: clamp(28px, 4vw, 38px);
-      font-weight: 800; color: var(--c-text);
-      margin-bottom: 8px; line-height: 1.25;
-    }
-    .faq-subtitle {
-      font-size: 15px; color: var(--c-text-soft);
-      margin-bottom: 48px;
-    }
-
-    /* Category Headings */
-    .faq-category {
-      font-family: 'Figtree', sans-serif;
-      font-size: 20px; font-weight: 700;
-      color: var(--c-teal);
-      margin: 40px 0 16px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--c-border-lt);
-    }
-    .faq-category:first-of-type { margin-top: 0; }
-
-    /* FAQ Items */
-    .faq-item {
-      background: var(--c-bg);
-      border: 1px solid var(--c-border-lt);
-      border-radius: 10px;
-      margin-bottom: 10px;
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-    }
-    .faq-item summary {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 22px;
-      font-weight: 600; font-size: 15px;
-      color: var(--c-text);
-      cursor: pointer;
-      list-style: none;
-      transition: color .2s var(--ease);
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after {
-      content: '+';
-      font-size: 22px; font-weight: 300;
-      color: var(--c-teal);
-      flex-shrink: 0;
-      margin-left: 16px;
-      transition: transform .3s var(--ease);
-      width: 24px; text-align: center;
-    }
-    .faq-item[open] summary::after {
-      content: '\00d7';
-      transform: rotate(0deg);
-    }
-    .faq-item summary:hover { color: var(--c-teal); }
-    .faq-answer {
-      padding: 0 22px 20px;
-      font-size: 15px; line-height: 1.75;
-      color: var(--c-text-soft);
-      animation: fadeIn .3s var(--ease);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* CTA Section */
-    .faq-cta {
-      margin-top: 56px;
-      background: var(--c-bg);
-      border: 1px solid var(--c-border-lt);
-      border-radius: 14px;
-      padding: 36px 32px;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-    }
-    .faq-cta h2 {
-      font-family: 'Figtree', sans-serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--c-text);
-      margin-bottom: 12px;
-    }
-    .faq-cta p {
-      font-size: 15px; color: var(--c-text-soft);
-      margin-bottom: 20px;
-    }
-    .cta-contact {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;
-      font-size: 15px; font-weight: 500;
-    }
-    .cta-contact a {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: var(--c-primary); font-weight: 600;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--c-text); color: rgba(255,255,255,.55);
-      padding: 40px clamp(20px,5%,80px);
-      text-align: center; font-size: 13px;
-    }
-    footer a { color: rgba(255,255,255,.7); text-decoration: underline; }
-    footer a:hover { color: white; }
-
-    @media (max-width: 600px) {
-      .faq-item summary { padding: 16px 18px; font-size: 14px; }
-      .faq-answer { padding: 0 18px 16px; font-size: 14px; }
-      .faq-cta { padding: 28px 20px; }
-    }
-  </style>
+  <!-- SEITE:KOPF -->
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/figtree-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/figtree-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/ergo-plus-website/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="/ergo-plus-website/assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="/ergo-plus-website/assets/css/site.css?v=d27bbc4fe3" />
+  <script src="/ergo-plus-website/assets/js/site.js?v=3da5b785a8" defer></script>
+  <!-- /SEITE:KOPF -->
 </head>
 <body>
-
-<nav>
-  <div class="nav-inner">
-    <a href="/ergo-plus-website/" aria-label="ERGO-PLUS Startseite">
-      <img src="logo-ergoplus.png" alt="ERGO plus" class="logo-img" />
-    </a>
-    <a href="/ergo-plus-website/#contact" class="btn-nav">Beratung anfragen</a>
+<!-- SEITE:NAV -->
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="site-head__logo" href="/ergo-plus-website/"><img src="/ergo-plus-website/assets/img/logo-ergoplus-rahmen.png" alt="ERGO-PLUS Startseite" width="203" height="200" /></a>
+    <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="/ergo-plus-website/sitzloesungen.html">Sitzlösungen</a></li>
+        <li><a href="/ergo-plus-website/ablauf-und-kosten.html">Ablauf &amp; Kosten</a></li>
+        <li><a href="/ergo-plus-website/krankheitsbilder.html">Krankheitsbilder</a></li>
+        <li><a href="/ergo-plus-website/blog/">Ratgeber</a></li>
+        <li><a href="/ergo-plus-website/ueber-ergo-plus.html">Über uns</a></li>
+      </ul>
+      <div class="site-nav__extra">
+        <a class="btn btn--act" href="/ergo-plus-website/kontakt.html">Beratung anfragen</a>
+        <a class="btn btn--line" href="tel:+49602112807">06021 12807 anrufen</a>
+      </div>
+    </nav>
+    <a class="site-head__tel" href="tel:+49602112807">06021 12807<small>Beratung am Telefon</small></a>
+    <a class="btn btn--act site-head__cta" href="/ergo-plus-website/kontakt.html">Beratung anfragen</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
   </div>
-</nav>
+</header>
+<!-- /SEITE:NAV -->
 
-<main class="faq-content">
-  <a href="/ergo-plus-website/" class="back-link">&larr; Zurück zur Startseite</a>
+<main id="inhalt" class="faq-content">
+<!-- SEITE:KRUMEN -->
+  <nav class="crumbs wrap" aria-label="Brotkrumen">
+    <ol>
+      <li><a href="/ergo-plus-website/">Startseite</a></li>
+      <li aria-current="page">Häufige Fragen</li>
+    </ol>
+  </nav>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ergo-plus.de/"}, {"@type": "ListItem", "position": 2, "name": "Häufige Fragen", "item": "https://ergo-plus.de/faq.html"}]}</script>
+  <!-- /SEITE:KRUMEN -->
   <h1 class="faq-title">Häufige Fragen zur therapeutischen Sitzversorgung</h1>
   <p class="faq-subtitle">Alles zu Produkten, Kostenübernahme, Ablauf und Beratung</p>
 
@@ -556,20 +407,84 @@
   </details>
 
   <!-- CTA -->
-  <div class="faq-cta">
-    <h2>Ihre Frage ist nicht dabei?</h2>
-    <p>Kontaktieren Sie uns direkt – wir helfen Ihnen gerne persönlich weiter.</p>
-    <div class="cta-contact">
-      <a href="tel:+49602112807">&#9742; +49-6021-12807</a>
-      <a href="mailto:info@ergo-plus.de">&#9993; info@ergo-plus.de</a>
-    </div>
-  </div>
+  <p class="byline">Verantwortlich für den Inhalt: <strong>Joachim Stolz</strong>, Geschäftsführer, über 30 Jahre in der ergotherapeutischen Sitzversorgung. Stand: <time datetime="2026-10-23">23. Oktober 2026</time></p>
 
 </main>
 
-<footer>
-  <p>&copy; 2026 ERGO-PLUS Seating Concepts GmbH &middot; <a href="/ergo-plus-website/impressum.html">Impressum</a> &middot; <a href="/ergo-plus-website/datenschutz.html">Datenschutz</a></p>
+<!-- SEITE:FUSS -->
+<section class="contact-band" aria-labelledby="kontaktband-titel">
+  <div class="wrap contact-band__grid">
+    <div>
+      <h2 id="kontaktband-titel">Erzählen Sie uns, wie Sie heute sitzen.</h2>
+      <p>Das erste Gespräch ist kostenlos und unverbindlich. Wir klären, was Sie brauchen, und wer die Kosten tragen kann.</p>
+    </div>
+    <div>
+      <a class="contact-band__tel" href="tel:+49602112807">06021 12807</a>
+      <div class="btn-row"><a class="btn btn--light" href="/ergo-plus-website/kontakt.html">Beratung anfragen</a></div>
+      <small>Oder schreiben Sie an <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a></small>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="site-foot__grid">
+      <div class="site-foot__brand">
+        <img src="/ergo-plus-website/assets/img/logo-ergoplus-rahmen.png" alt="" width="203" height="200" loading="lazy" />
+        <address>
+          ERGO-PLUS Seating Concepts GmbH<br />
+          Am Sportplatz 15<br />
+          63867 Johannesberg<br />
+          Telefon <a href="tel:+49602112807">06021 12807</a><br />
+          <a href="mailto:info@ergo-plus.de">info@ergo-plus.de</a>
+        </address>
+      </div>
+      <div>
+        <h2>Sitzlösungen</h2>
+        <ul>
+          <li><a href="/ergo-plus-website/sitzloesungen.html#vela-tango">VELA TANGO</a></li>
+          <li><a href="/ergo-plus-website/sitzloesungen.html#vela-blues">VELA BLUES</a></li>
+          <li><a href="/ergo-plus-website/sitzloesungen.html#mfs">MFS-Stuhlsystem</a></li>
+          <li><a href="/ergo-plus-website/sitzloesungen.html#elift">ELIFT 400</a></li>
+          <li><a href="/ergo-plus-website/sitzloesungen.html#opera">Opera 20 und SMARTMOVE</a></li>
+          <li><a href="/ergo-plus-website/sitzloesungen.html#speziell">Speziallösungen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Wissen</h2>
+        <ul>
+          <li><a href="/ergo-plus-website/krankheitsbilder.html">Krankheitsbilder</a></li>
+          <li><a href="/ergo-plus-website/ablauf-und-kosten.html">Ablauf und Kostenübernahme</a></li>
+          <li><a href="/ergo-plus-website/blog/">Ratgeber</a></li>
+          <li><a href="/ergo-plus-website/faq.html">Häufige Fragen</a></li>
+          <li><a href="/ergo-plus-website/pose-bogen.html">POSE-Bogen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Unternehmen</h2>
+        <ul>
+          <li><a href="/ergo-plus-website/ueber-ergo-plus.html">Über uns</a></li>
+          <li><a href="/ergo-plus-website/ueber-ergo-plus.html#team">Team</a></li>
+          <li><a href="/ergo-plus-website/kontakt.html">Kontakt</a></li>
+          <li><a href="/ergo-plus-website/impressum.html">Impressum</a></li>
+          <li><a href="/ergo-plus-website/datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-foot__base">
+      <span>© 2026 ERGO-PLUS Seating Concepts GmbH</span>
+      <button type="button" id="cookie-settings-link">Cookie-Einstellungen</button>
+    </div>
+  </div>
 </footer>
+
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Cookie-Hinweis">
+  <p class="cookie-text">Wir verwenden technisch notwendige Cookies sowie, mit Ihrer Zustimmung, Google Analytics zur Reichweitenmessung. Mehr dazu in der <a href="/ergo-plus-website/datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-btns">
+    <button type="button" class="cookie-btn cookie-btn-essential" id="cookie-essential">Nur essenzielle</button>
+    <button type="button" class="cookie-btn cookie-btn-accept" id="cookie-accept">Verstanden</button>
+  </div>
+</div>
+<!-- /SEITE:FUSS -->
 
 </body>
 </html>
