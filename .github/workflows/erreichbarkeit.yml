@@ -85,7 +85,14 @@ jobs:
             git config user.email 'github-actions[bot]@users.noreply.github.com'
             git add data/erreichbarkeit
             git commit -m "Erreichbarkeit: Zustand geaendert ($(date -u +%Y-%m-%d))"
-            git push
+            # Zwei Workflows schreiben ins Repo. Laufen sie gleichzeitig,
+            # wird der zweite Push abgewiesen, weil main inzwischen weiter
+            # ist. Erst den neuen Stand holen, dann pushen; dreimal.
+            for versuch in 1 2 3; do
+              git pull --rebase -q origin main && git push && break
+              echo "Push abgewiesen, Versuch $versuch"; sleep 5
+              [ "$versuch" = 3 ] && exit 1
+            done
           fi
           rm -f gleich.txt
 

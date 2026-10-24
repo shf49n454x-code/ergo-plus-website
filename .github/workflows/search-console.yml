@@ -114,5 +114,12 @@ jobs:
             echo "Keine Aenderungen."
           else
             git commit -m "Search-Console-Daten: Stand $(date -u +%Y-%m-%d)"
-            git push
+            # Zwei Workflows schreiben ins Repo. Laufen sie gleichzeitig,
+            # wird der zweite Push abgewiesen, weil main inzwischen weiter
+            # ist. Erst den neuen Stand holen, dann pushen; dreimal.
+            for versuch in 1 2 3; do
+              git pull --rebase -q origin main && git push && break
+              echo "Push abgewiesen, Versuch $versuch"; sleep 5
+              [ "$versuch" = 3 ] && exit 1
+            done
           fi
