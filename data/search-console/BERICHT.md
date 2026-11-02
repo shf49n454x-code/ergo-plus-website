@@ -1,12 +1,12 @@
 # Search Console: sc-domain:ergo-plus.de
 
-Zeitraum 2026-07-25 bis 2026-10-23. Die letzten 3 Tage sind ausgelassen, weil Search Console hinterherhinkt.
+Zeitraum 2026-08-01 bis 2026-10-30. Die letzten 3 Tage sind ausgelassen, weil Search Console hinterherhinkt.
 
 ## Gesamt
 
-- Klicks: **13**
-- Impressionen: **649**
-- Klickrate: **2.0 %**
+- Klicks: **15**
+- Impressionen: **719**
+- Klickrate: **2.09 %**
 
 Diese Zahlen stammen aus dem Tagesverlauf. Die Zeilen unter *Suchanfragen* duerfen nicht aufsummiert werden: Google laesst Anfragen mit wenig Volumen aus Datenschutzgruenden weg.
 
@@ -16,7 +16,8 @@ Ab 50 Impressionen, nach Klickrate aufsteigend. Hier lohnt sich ein besserer Tit
 
 | Seite | Impressionen | Klicks | CTR | Position |
 |---|---:|---:|---:|---:|
-| http://www.ergo-plus.de/ | 615 | 12 | 1.95 % | 14.3 |
+| http://ergo-plus.de/ | 69 | 1 | 1.45 % | 8.7 |
+| http://www.ergo-plus.de/ | 658 | 14 | 2.13 % | 13.8 |
 
 ## Knapp vor Seite 1
 
@@ -24,8 +25,8 @@ Position 8 bis 20 bei mindestens 20 Impressionen. Der kuerzeste Weg zu mehr Klic
 
 | Suchanfrage | Seite | Impressionen | Position |
 |---|---|---:|---:|
-| ergo plus | http://www.ergo-plus.de/ | 87 | 12.1 |
-| sattelhocker ergonomisch | http://www.ergo-plus.de/ | 23 | 10.8 |
+| ergo plus | http://www.ergo-plus.de/ | 90 | 11.8 |
+| sattelhocker ergonomisch | http://www.ergo-plus.de/ | 28 | 9.9 |
 
 ---
 

@@ -1,6 +1,6 @@
 # Index: sc-domain:ergo-plus.de
 
-Stand 26.10.2026 10:40 UTC. **0 von 24** Adressen der Sitemap sind bei Google im Index.
+Stand 02.11.2026 12:58 UTC. **0 von 24** Adressen der Sitemap sind bei Google im Index.
 
 ## Nicht im Index
 
