@@ -18,6 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Tiefe Seiten (Fragen, Produkte, Kostenträger) aus Markdown aktuell?
+      # Rot heißt: python3 tools/seiten/tief.py vergessen.
+      - name: Tiefe Seiten aus tools/seiten/inhalte
+        run: |
+          pip install --quiet markdown==3.11
+          python3 tools/seiten/tief.py --pruefen
+
       # Gemeinsamer Seitenrahmen, Sitemap und Asset-Versionen aktuell?
       # Rot heißt: python3 tools/seiten/bauen.py vergessen.
       - name: Seitenrahmen und Sitemap

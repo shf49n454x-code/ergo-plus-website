@@ -106,7 +106,9 @@ def pruefe(seite: pathlib.Path):
 
 
 def main():
-    seiten = sorted(WURZEL.glob("*.html")) + sorted((WURZEL / "blog").glob("*.html"))
+    seiten = sorted(WURZEL.glob("*.html"))
+    for ordner in ("blog", "sitzloesungen", "kosten", "fragen", "team"):
+        seiten += sorted((WURZEL / ordner).glob("*.html"))
     n = 0
     for s in seiten:
         for grund, wo in pruefe(s):

@@ -37,7 +37,10 @@ SEITEN = {
     "krankheitsbilder.html": ("Krankheitsbilder", "index.html", "krankheitsbilder"),
     "ueber-ergo-plus.html": ("Über uns", "index.html", "ueber"),
     "kontakt.html": ("Kontakt", "index.html", None),
-    "faq.html": ("Häufige Fragen", "index.html", None),
+    "faq.html": ("Häufige Fragen", "index.html", "fragen"),
+    "fuer-arbeitgeber.html": ("Für Arbeitgeber", "index.html", None),
+    "fuer-therapeuten.html": ("Für Therapeuten", "index.html", None),
+    "beratung-vor-ort.html": ("Beratung vor Ort", "ablauf-und-kosten.html", "ablauf"),
     "impressum.html": ("Impressum", "index.html", None),
     "datenschutz.html": ("Datenschutz", "index.html", None),
     "blog/index.html": ("Ratgeber", "index.html", "ratgeber"),
@@ -52,6 +55,7 @@ NAV = [
     ("sitzloesungen", "/sitzloesungen.html", "Sitzlösungen"),
     ("ablauf", "/ablauf-und-kosten.html", "Ablauf & Kosten"),
     ("krankheitsbilder", "/krankheitsbilder.html", "Krankheitsbilder"),
+    ("fragen", "/faq.html", "Fragen"),
     ("ratgeber", "/blog/", "Ratgeber"),
     ("ueber", "/ueber-ergo-plus.html", "Über uns"),
 ]
@@ -83,17 +87,29 @@ def h1_text(quelle: str) -> str:
     return html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip()
 
 
+# Ordner mit tiefen Seiten (aus tools/seiten/inhalte, gebaut von tief.py) → Elternseite, Navigationspunkt
+ORDNER = {
+    "blog": ("blog/index.html", "ratgeber"),
+    "sitzloesungen": ("sitzloesungen.html", "sitzloesungen"),
+    "kosten": ("ablauf-und-kosten.html", "ablauf"),
+    "fragen": ("faq.html", "fragen"),
+    "team": ("ueber-ergo-plus.html", "ueber"),
+}
+
+
 def alle_seiten():
     out = sorted(p.relative_to(WURZEL).as_posix() for p in WURZEL.glob("*.html"))
-    out += sorted(p.relative_to(WURZEL).as_posix() for p in (WURZEL / "blog").glob("*.html"))
+    for ordner in ORDNER:
+        out += sorted(p.relative_to(WURZEL).as_posix() for p in (WURZEL / ordner).glob("*.html"))
     return out
 
 
 def eintrag(pfad: str):
     if pfad in SEITEN:
         return SEITEN[pfad]
-    if pfad.startswith("blog/"):
-        return (None, "blog/index.html", "ratgeber")
+    ordner = pfad.split("/")[0] if "/" in pfad else None
+    if ordner in ORDNER:
+        return (None,) + ORDNER[ordner]
     return None
 
 
@@ -214,12 +230,13 @@ def fuss(pfad):
       <div>
         <h2>Sitzlösungen</h2>
         <ul>
-          <li><a href="/sitzloesungen.html#vela-tango">VELA TANGO</a></li>
-          <li><a href="/sitzloesungen.html#vela-blues">VELA BLUES</a></li>
-          <li><a href="/sitzloesungen.html#mfs">MFS-Stuhlsystem</a></li>
-          <li><a href="/sitzloesungen.html#elift">ELIFT 400</a></li>
-          <li><a href="/sitzloesungen.html#opera">Opera 20 und SMARTMOVE</a></li>
-          <li><a href="/sitzloesungen.html#speziell">Speziallösungen</a></li>
+          <li><a href="/sitzloesungen/vela-tango.html">VELA TANGO</a></li>
+          <li><a href="/sitzloesungen/mfs-stuhlsystem.html">MFS-Stuhlsystem</a></li>
+          <li><a href="/sitzloesungen/elift-400.html">ELIFT 400</a></li>
+          <li><a href="/sitzloesungen/opera-20-smartmove.html">Opera 20 und SMARTMOVE</a></li>
+          <li><a href="/sitzloesungen/kleinwuchs-stuhl.html">Stuhl bei Kleinwuchs</a></li>
+          <li><a href="/sitzloesungen/schwerlast-stuhl.html">Schwergewichtsstuhl</a></li>
+          <li><a href="/sitzloesungen/arthrodesenstuhl.html">Arthrodesenstuhl</a></li>
         </ul>
       </div>
       <div>
@@ -227,8 +244,11 @@ def fuss(pfad):
         <ul>
           <li><a href="/krankheitsbilder.html">Krankheitsbilder</a></li>
           <li><a href="/ablauf-und-kosten.html">Ablauf und Kostenübernahme</a></li>
-          <li><a href="/blog/">Ratgeber</a></li>
+          <li><a href="/kosten/rentenversicherung.html">Kosten: Rentenversicherung</a></li>
+          <li><a href="/kosten/integrationsamt.html">Kosten: Integrationsamt</a></li>
+          <li><a href="/kosten/krankenkasse.html">Kosten: Krankenkasse</a></li>
           <li><a href="/faq.html">Häufige Fragen</a></li>
+          <li><a href="/blog/">Ratgeber</a></li>
           <li><a href="/pose-bogen.html">POSE-Bogen</a></li>
         </ul>
       </div>
@@ -236,7 +256,10 @@ def fuss(pfad):
         <h2>Unternehmen</h2>
         <ul>
           <li><a href="/ueber-ergo-plus.html">Über uns</a></li>
-          <li><a href="/ueber-ergo-plus.html#team">Team</a></li>
+          <li><a href="/team/joachim-stolz.html">Joachim Stolz</a></li>
+          <li><a href="/beratung-vor-ort.html">Beratung vor Ort</a></li>
+          <li><a href="/fuer-arbeitgeber.html">Für Arbeitgeber</a></li>
+          <li><a href="/fuer-therapeuten.html">Für Therapeuten</a></li>
           <li><a href="/kontakt.html">Kontakt</a></li>
           <li><a href="/impressum.html">Impressum</a></li>
           <li><a href="/datenschutz.html">Datenschutz</a></li>
