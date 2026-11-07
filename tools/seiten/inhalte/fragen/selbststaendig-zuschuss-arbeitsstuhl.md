@@ -3,7 +3,7 @@ titel: Arbeitsstuhl als Selbstständige: wer hilft?
 beschreibung: Welche Hilfen Selbstständige mit Behinderung für einen angepassten Arbeitsstuhl bekommen können, von Rentenversicherung bis Integrationsamt.
 h1: Ich bin selbstständig. Bekomme ich Hilfe für einen Arbeitsstuhl?
 lead: Ohne Arbeitgeber fällt die erste Stelle der Reihenfolge weg. Die anderen bleiben.
-kurz: Auch Selbstständige können Leistungen zur Teilhabe am Arbeitsleben bekommen, wenn sie die Voraussetzungen erfüllen, etwa als Pflichtversicherte in der Rentenversicherung. Schwerbehinderte Selbstständige kann das Integrationsamt zur Erhaltung ihrer selbstständigen Existenz unterstützen. Für den Stuhl zu Hause bleibt die Krankenkasse zuständig.
+kurz: Auch Selbstständige können Leistungen zur Teilhabe am Arbeitsleben bekommen, wenn sie die Voraussetzungen der Rentenversicherung erfüllen. Dafür zählen auch freiwillige Beiträge. Schwerbehinderte Selbstständige kann das Integrationsamt zur Erhaltung ihrer selbstständigen Existenz unterstützen. Für den Stuhl zu Hause bleibt die Krankenkasse zuständig.
 typ: frage
 kategorie: Kosten und Antrag
 stand: 2026-11-07
@@ -18,7 +18,7 @@ weiter:
 ---
 ## Rentenversicherung
 
-Leistungen zur Teilhabe am Arbeitsleben stehen nicht nur Angestellten offen. Entscheidend sind die versicherungsrechtlichen Voraussetzungen, in der Regel 15 Jahre Versicherungszeit oder eine Erwerbsminderungsrente (§ 11 SGB VI). Viele Selbstständige sind freiwillig oder gar nicht rentenversichert. Prüfen Sie Ihren Versicherungsverlauf, bevor Sie dort beantragen.
+Leistungen zur Teilhabe am Arbeitsleben stehen nicht nur Angestellten offen. Entscheidend sind die versicherungsrechtlichen Voraussetzungen, in der Regel 15 Jahre Versicherungszeit oder eine Erwerbsminderungsrente (§ 11 SGB VI). Für die 15 Jahre zählen auch freiwillige Beiträge und Jahre als Angestellte. Prüfen Sie Ihren Versicherungsverlauf, bevor Sie dort beantragen.
 
 ## Integrationsamt
 

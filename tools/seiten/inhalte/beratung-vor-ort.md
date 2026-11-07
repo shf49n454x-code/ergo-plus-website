@@ -22,7 +22,7 @@ Wir fahren in Touren durch Deutschland und bündeln Termine nach Region. Für Si
 
 - Sie nennen uns Ihre Postleitzahl und den Anlass, am Telefon oder über das [Kontaktformular](/kontakt.html).
 - Wir schlagen Ihnen einen Tag vor, an dem wir ohnehin in Ihrer Nähe sind, und ein Zeitfenster von zwei Stunden.
-- Liegt eine Tour weit weg, sagen wir Ihnen ehrlich, wann wir das nächste Mal in Ihre Region kommen.
+- Liegt eine Tour weit weg, sagen wir Ihnen, wann wir das nächste Mal in Ihre Region kommen.
 - Wenn Sie den Termin verschieben müssen, verschieben wir nur Ihren Termin. Sie bekommen einen neuen Vorschlag.
 
 Weil wir mehrere Kunden auf einer Fahrt besuchen, teilen sich die Kunden einer Tour die Anfahrt. Das hält die Fahrtkosten für jeden Einzelnen niedrig.

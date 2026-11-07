@@ -3,7 +3,7 @@ titel: Arbeitsstuhl über die Rentenversicherung
 beschreibung: Wann die Deutsche Rentenversicherung einen Arbeitsstuhl bei Behinderung bezahlt, welche Voraussetzungen gelten und welche Formulare Sie brauchen.
 h1: Arbeitsstuhl über die Rentenversicherung
 lead: Für Berufstätige ist die Deutsche Rentenversicherung oft der erste Ansprechpartner, wenn ein normaler Bürostuhl wegen einer Erkrankung nicht mehr reicht.
-kurz: Die Rentenversicherung zahlt einen Arbeitsstuhl als Leistung zur Teilhabe am Arbeitsleben, wenn Sie ihn wegen Ihrer Behinderung für Ihren konkreten Arbeitsplatz brauchen und die Ausstattung des Arbeitgebers medizinisch nicht reicht. Voraussetzung sind in der Regel 15 Jahre Versicherungszeit oder eine Erwerbsminderungsrente. Beantragt wird mit den Formularen G0100 und G0133.
+kurz: Die Rentenversicherung zahlt einen Arbeitsstuhl als Leistung zur Teilhabe am Arbeitsleben, wenn Sie ihn wegen Ihrer Behinderung für Ihren konkreten Arbeitsplatz brauchen und die Ausstattung des Arbeitgebers medizinisch nicht reicht. Voraussetzung sind 15 Jahre Versicherungszeit, eine Erwerbsminderungsrente oder, oft schon nach wenigen Jahren, dass ohne die Hilfe eine solche Rente zu zahlen wäre. Beantragt wird mit den Formularen G0100 und G0133.
 typ: kosten
 traeger: Deutsche Rentenversicherung
 stand: 2026-11-07
@@ -12,8 +12,9 @@ quellen:
   - § 11 SGB VI: Versicherungsrechtliche Voraussetzungen | https://www.gesetze-im-internet.de/sgb_6/__11.html
   - § 49 SGB IX: Leistungen zur Teilhabe am Arbeitsleben | https://www.gesetze-im-internet.de/sgb_9_2018/__49.html
   - § 14 SGB IX: Leistender Rehabilitationsträger | https://www.gesetze-im-internet.de/sgb_9_2018/__14.html
+  - § 43 SGB VI: Rente wegen Erwerbsminderung, Voraussetzungen | https://www.gesetze-im-internet.de/sgb_6/__43.html
 weiter:
-  - /kosten/agentur-fuer-arbeit.html | Weniger als 15 Jahre versichert? Dann oft die Agentur für Arbeit
+  - /fragen/weniger-als-15-jahre-versichert.html | Weniger als 15 Jahre versichert: wer zahlt?
   - /fragen/welche-unterlagen-fuer-den-antrag.html | Welche Unterlagen der Antrag braucht
   - /fragen/wie-lange-dauert-der-antrag.html | Wie lange die Entscheidung dauern darf
   - /fragen/antrag-abgelehnt-arbeitgeber-zustaendig.html | Abgelehnt mit Verweis auf den Arbeitgeber
@@ -22,9 +23,9 @@ weiter:
 
 Ein Arbeitsstuhl ist für die Rentenversicherung ein Hilfsmittel zur Berufsausübung. Sie übernimmt die Kosten, wenn der Stuhl wegen Art oder Schwere Ihrer Behinderung nötig ist, damit Sie Ihre Arbeit weiter machen können (§ 49 Abs. 8 Nr. 4 SGB IX).
 
-Zwei Einschränkungen nennt das Gesetz gleich mit: Die Rentenversicherung zahlt nicht, wenn der Arbeitgeber zur Ausstattung verpflichtet ist, und nicht, wenn der Stuhl als medizinische Leistung über die Krankenkasse läuft. In der Praxis heißt das: Ein guter ergonomischer Bürostuhl gehört zur Grundausstattung, die der Arbeitgeber stellt. Die Rentenversicherung kommt ins Spiel, wenn diese Ausstattung im Einzelfall medizinisch nicht ausreicht. So steht es auch in den Hinweisen der Rentenversicherung zum Formularpaket.
+Zwei Einschränkungen nennt das Gesetz gleich mit: Die Rentenversicherung zahlt nicht, wenn der Arbeitgeber zur Ausstattung verpflichtet ist, und nicht, wenn der Stuhl als medizinische Leistung erbracht werden kann, etwa über die Krankenkasse. In der Praxis heißt das: Ein guter ergonomischer Bürostuhl gehört zur Grundausstattung, die der Arbeitgeber stellt. Die Rentenversicherung kommt ins Spiel, wenn diese Ausstattung im Einzelfall medizinisch nicht ausreicht. So steht es auch in den Hinweisen der Rentenversicherung zum Formularpaket.
 
-Wichtig ist der konkrete Arbeitsplatz. Die Rentenversicherung prüft, ob der Stuhl für eine bestimmte Tätigkeit an einem bestimmten Arbeitsplatz notwendig ist. Ein Stuhl für zu Hause ist kein Fall für die Rentenversicherung.
+Wichtig ist der konkrete Arbeitsplatz. Die Rentenversicherung prüft, ob der Stuhl für eine bestimmte Tätigkeit an einem bestimmten Arbeitsplatz notwendig ist. Ein Stuhl nur für private Zwecke ist kein Fall für die Rentenversicherung. Ein Arbeitsplatz im Homeoffice ist dagegen ein Arbeitsplatz.
 
 ## Wer Anspruch hat
 
@@ -33,7 +34,7 @@ Leistungen zur Teilhabe bekommen Sie von der Rentenversicherung, wenn Sie bei An
 - die Wartezeit von 15 Jahren erfüllt haben oder
 - eine Rente wegen verminderter Erwerbsfähigkeit beziehen (§ 11 Abs. 1 SGB VI).
 
-Für Leistungen zur Teilhabe am Arbeitsleben gibt es einen weiteren Weg: Sie reichen auch, wenn ohne die Leistung eine Erwerbsminderungsrente drohen würde (§ 11 Abs. 2a SGB VI). Wer das nicht erfüllt, ist meist bei der [Agentur für Arbeit](/kosten/agentur-fuer-arbeit.html) richtig.
+Für Leistungen zur Teilhabe am Arbeitsleben gibt es einen weiteren Weg: Die Rentenversicherung zahlt auch, wenn Ihnen ohne die Leistung eine Erwerbsminderungsrente gezahlt werden müsste (§ 11 Abs. 2a SGB VI). Für diese Rente reichen in der Regel fünf Versicherungsjahre, davon drei mit Pflichtbeiträgen in den letzten fünf Jahren (§ 43 SGB VI). Viele Berufstätige mit weniger als 15 Jahren sind deshalb trotzdem bei der Rentenversicherung richtig. Erst wer auch das nicht erfüllt, ist meist bei der [Agentur für Arbeit](/kosten/agentur-fuer-arbeit.html) richtig.
 
 ## Welche Formulare Sie brauchen
 

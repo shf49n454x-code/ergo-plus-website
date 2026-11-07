@@ -2,8 +2,8 @@
 titel: Wer zahlt einen Arbeitsstuhl bei Behinderung?
 beschreibung: Arbeitgeber, Rentenversicherung, Agentur für Arbeit, Integrationsamt oder Krankenkasse: wer einen angepassten Arbeitsstuhl bezahlt und in welcher Reihenfolge.
 h1: Wer zahlt einen Arbeitsstuhl bei Behinderung?
-lead: Fünf Stellen kommen in Frage. Welche zuständig ist, hängt davon ab, wofür Sie den Stuhl brauchen und wie lange Sie schon arbeiten.
-kurz: Den normalen ergonomischen Bürostuhl zahlt der Arbeitgeber. Reicht der wegen Ihrer Behinderung nicht, zahlt meist die Rentenversicherung, bei weniger als 15 Versicherungsjahren oft die Agentur für Arbeit. Das Integrationsamt hilft schwerbehinderten Menschen, wenn beide nicht zahlen; für den Stuhl zu Hause ist die Krankenkasse zuständig.
+lead: Meist ist es eine von fünf Stellen, nach einem Arbeitsunfall die Berufsgenossenschaft. Welche zuständig ist, hängt davon ab, wofür Sie den Stuhl brauchen und wie lange Sie schon arbeiten.
+kurz: Den normalen ergonomischen Bürostuhl zahlt der Arbeitgeber. Reicht der wegen Ihrer Behinderung nicht, zahlt meist die Rentenversicherung, bei sehr kurzer Versicherungszeit die Agentur für Arbeit. Das Integrationsamt hilft schwerbehinderten Menschen, wenn kein Rehabilitationsträger zuständig ist; für den Stuhl zu Hause ist die Krankenkasse zuständig.
 typ: frage
 kategorie: Kosten und Antrag
 reihenfolge: 1
@@ -34,9 +34,10 @@ weiter:
     <label><input type="radio" name="unfall" value="nein" /> Nein</label>
   </fieldset>
   <fieldset data-wenn="unfall=nein" hidden>
-    <legend>Sind Sie 15 Jahre oder länger rentenversichert, oder beziehen Sie eine Erwerbsminderungsrente?</legend>
-    <label><input type="radio" name="rv" value="ja" /> Ja</label>
-    <label><input type="radio" name="rv" value="nein" /> Nein</label>
+    <legend>Wie lange sind Sie rentenversichert?</legend>
+    <label><input type="radio" name="rv" value="ja" /> 15 Jahre oder länger, oder ich beziehe eine Erwerbsminderungsrente</label>
+    <label><input type="radio" name="rv" value="fuenf" /> Weniger als 15, aber mindestens 5 Jahre</label>
+    <label><input type="radio" name="rv" value="nein" /> Weniger als 5 Jahre</label>
     <label><input type="radio" name="rv" value="unklar" /> Weiß ich nicht</label>
   </fieldset>
   <fieldset data-wenn="unfall=nein" hidden>
@@ -53,10 +54,10 @@ weiter:
 | Wer | Wann |
 | --- | --- |
 | [Arbeitgeber](/kosten/arbeitgeber.html) | Ergonomische Grundausstattung jedes Arbeitsplatzes; bei Schwerbehinderung auch technische Arbeitshilfen, soweit zumutbar |
-| [Rentenversicherung](/kosten/rentenversicherung.html) | Stuhl ist wegen der Behinderung zur Berufsausübung nötig, 15 Jahre Versicherungszeit oder Erwerbsminderungsrente |
+| [Rentenversicherung](/kosten/rentenversicherung.html) | Stuhl ist wegen der Behinderung zur Berufsausübung nötig; 15 Jahre Versicherungszeit, Erwerbsminderungsrente oder, oft schon nach fünf Jahren, ein drohender Rentenanspruch |
 | [Agentur für Arbeit](/kosten/agentur-fuer-arbeit.html) | Wie oben, wenn kein anderer Rehabilitationsträger zuständig ist |
-| [Integrationsamt](/kosten/integrationsamt.html) | Schwerbehinderte oder gleichgestellte Menschen, wenn Arbeitgeber und Rehabilitationsträger nicht zahlen |
-| [Krankenkasse](/kosten/krankenkasse.html) | Stuhl für den Alltag zu Hause, mit ärztlicher Verordnung |
+| [Integrationsamt](/kosten/integrationsamt.html) | Schwerbehinderte oder gleichgestellte Menschen, wenn kein Rehabilitationsträger zuständig ist; kein Aufstocken, wenn einer zahlt |
+| [Krankenkasse](/kosten/krankenkasse.html) | Stuhl für den Alltag zu Hause, in der Regel mit ärztlicher Verordnung |
 
 Nach einem Arbeitsunfall oder bei einer Berufskrankheit ist die Berufsgenossenschaft oder Unfallkasse zuständig.
 
@@ -66,4 +67,4 @@ Jede Stelle zahlt nur für ihren eigenen Zweck. Die Rentenversicherung soll Ihre
 
 ## Was Sie tun sollten
 
-Sie müssen die Zuständigkeit nicht selbst herausfinden. Der Träger, bei dem Ihr Antrag zuerst eingeht, muss innerhalb von zwei Wochen klären, ob er zuständig ist, und den Antrag sonst weiterleiten. Wir sagen Ihnen beim ersten Gespräch, welcher Weg bei Ihnen am wahrscheinlichsten ist, und schreiben den Kostenvoranschlag passend dazu.
+Sie müssen die Zuständigkeit nicht selbst herausfinden. Der Rehabilitationsträger, bei dem Ihr Antrag zuerst eingeht, muss innerhalb von zwei Wochen klären, ob er zuständig ist, und den Antrag sonst weiterleiten. Wir sagen Ihnen beim ersten Gespräch, welcher Weg bei Ihnen am wahrscheinlichsten ist, und schreiben den Kostenvoranschlag passend dazu.

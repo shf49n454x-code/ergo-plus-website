@@ -2,7 +2,7 @@
 titel: Welche Unterlagen braucht der Antrag?
 beschreibung: Welche Formulare, ärztlichen Unterlagen und Nachweise Sie für den Antrag auf einen Arbeits- oder Therapiestuhl brauchen und was wir davon vorbereiten.
 h1: Welche Unterlagen braucht der Antrag für den Stuhl?
-lead: Unvollständige Anträge kosten Wochen. Mit dieser Liste geht alles beim ersten Mal raus.
+lead: Fehlt eine Unterlage, fragt der Kostenträger nach, und das kostet oft Wochen. Mit dieser Liste haben Sie alles beisammen.
 kurz: Sie brauchen den Antrag des Kostenträgers, eine ärztliche Begründung, einen Kostenvoranschlag mit Begründung und, bei Arbeitsstühlen, eine Beschreibung Ihres Arbeitsplatzes. Bei der Rentenversicherung sind das die Formulare G0100 und G0133. Kostenvoranschlag, Begründung, Maßbogen und eine Vorlage für Ihren Arzt bereiten wir vor.
 typ: frage
 kategorie: Kosten und Antrag

@@ -2,7 +2,7 @@
 titel: Opera 20 und SMARTMOVE Therapie-Bürostühle
 beschreibung: Opera 20 mit vorderem Wipppunkt bei Bandscheibenvorfall und HWS-Syndrom, SMARTMOVE mit Liftmotor bis in die Stehposition. Beide mit MFS-System kombinierbar.
 h1: Opera 20 und SMARTMOVE
-lead: Zwei Bürostühle für den Arbeitsplatz. Der Opera 20 für alle, denen Sitzen in den Rücken oder die Beine fährt, der SMARTMOVE für alle, die zwischendurch aufstehen müssen.
+lead: Zwei Bürostühle für den Arbeitsplatz. Der Opera 20 ist für Menschen, denen das Sitzen Schmerzen in Rücken oder Beinen macht. Der SMARTMOVE ist für alle, die zwischendurch aufstehen müssen.
 kurz: Der Opera 20 hat seinen Wipppunkt vorn an der Sitzfläche, die Füße bleiben am Boden, und die Wippstärke wird am Körpergewicht eingestellt. Er wird bei Bandscheibenvorfall, HWS-Syndrom und ausstrahlenden Schmerzen eingesetzt. Der SMARTMOVE bringt Sie per Liftmotor bis in die Stehposition und trägt laut REHADAT bis 125 kg.
 typ: produkt
 produkt: Opera 20 und SMARTMOVE

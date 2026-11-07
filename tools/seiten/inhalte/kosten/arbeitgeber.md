@@ -2,8 +2,8 @@
 titel: Was der Arbeitgeber beim Arbeitsstuhl zahlt
 beschreibung: Welche Pflichten Arbeitgeber bei der Ausstattung von Arbeitsplätzen schwerbehinderter Menschen haben und wo Rentenversicherung oder Integrationsamt übernehmen.
 h1: Was der Arbeitgeber beim Arbeitsstuhl zahlt
-lead: Ein guter Bürostuhl ist Sache des Arbeitgebers. Ein individuell angepasster Therapiestuhl oft nicht. Wo die Grenze liegt und wer dann hilft.
-kurz: Der Arbeitgeber stellt die normale, ergonomische Ausstattung. Schwerbehinderte Beschäftigte haben zusätzlich Anspruch auf die nötigen technischen Arbeitshilfen, soweit das für den Arbeitgeber zumutbar ist. Reicht die Ausstattung des Arbeitgebers medizinisch nicht, zahlen meist Rentenversicherung oder Agentur für Arbeit; das Integrationsamt kann den Arbeitgeber zusätzlich unterstützen.
+lead: Einen guten Bürostuhl muss der Arbeitgeber stellen, einen angepassten Therapiestuhl meist nicht. Hier lesen Sie, wo die Grenze liegt und wer dann zahlt.
+kurz: Der Arbeitgeber stellt die normale, ergonomische Ausstattung. Schwerbehinderte Beschäftigte haben zusätzlich Anspruch auf die nötigen technischen Arbeitshilfen, soweit das für den Arbeitgeber zumutbar ist. Reicht die Ausstattung des Arbeitgebers medizinisch nicht, zahlen meist Rentenversicherung oder Agentur für Arbeit. Ist keiner von beiden zuständig, kann das Integrationsamt helfen.
 typ: kosten
 traeger: Arbeitgeber
 stand: 2026-11-07
@@ -26,11 +26,11 @@ Jeder Bildschirmarbeitsplatz braucht einen ergonomischen Stuhl, und den stellt d
 
 Schwerbehinderte und gleichgestellte Beschäftigte haben gegenüber dem Arbeitgeber Anspruch auf
 
-- eine behinderungsgerechte Einrichtung und Unterhaltung der Arbeitsstätte, einschließlich Arbeitsplatz und Arbeitsumfeld, und
+- einen Arbeitsplatz, der an ihre Behinderung angepasst ist, und
 - die Ausstattung ihres Arbeitsplatzes mit den erforderlichen technischen Arbeitshilfen (§ 164 Abs. 4 Satz 1 Nr. 4 und 5 SGB IX).
 
-Der Anspruch endet dort, wo er für den Arbeitgeber unzumutbar wird oder unverhältnismäßige Kosten verursacht (§ 164 Abs. 4 Satz 3 SGB IX). Agentur für Arbeit und Integrationsamt unterstützen den Arbeitgeber dabei (§ 164 Abs. 4 Satz 2 SGB IX), das Integrationsamt etwa mit Leistungen zur behinderungsgerechten Einrichtung des Arbeitsplatzes (§ 185 Abs. 3 Nr. 2a SGB IX).
+Der Anspruch endet dort, wo er für den Arbeitgeber unzumutbar wird oder unverhältnismäßige Aufwendungen verursacht (§ 164 Abs. 4 Satz 3 SGB IX). Agentur für Arbeit und Integrationsamt unterstützen den Arbeitgeber dabei (§ 164 Abs. 4 Satz 2 SGB IX), das Integrationsamt etwa mit Leistungen zur behinderungsgerechten Einrichtung des Arbeitsplatzes (§ 185 Abs. 3 Nr. 2a SGB IX).
 
 ## Was das in der Praxis heißt
 
-Für einen Stuhl, der nach einer Vermessung an einen Menschen mit Skoliose, MS oder Kleinwuchs angepasst wird, zahlt selten der Arbeitgeber allein. Meist läuft es so: Der Arbeitgeber bestätigt den Arbeitsplatz und die Tätigkeit, der Kostenträger zahlt den Stuhl, und das Integrationsamt hilft, wo eine Lücke bleibt. Wir schreiben den Kostenvoranschlag so, dass jeder Beteiligte sieht, was die normale Ausstattung leisten würde und warum sie hier nicht reicht.
+Für einen Stuhl, der nach einer Vermessung an einen Menschen mit Skoliose, MS oder Kleinwuchs angepasst wird, zahlt selten der Arbeitgeber allein. Meist läuft es so: Der Arbeitgeber bestätigt den Arbeitsplatz und die Tätigkeit, und der zuständige Kostenträger zahlt den Stuhl. Zahlt ein Rehabilitationsträger, legt das Integrationsamt nichts drauf (§ 185 Abs. 6 SGB IX); es springt ein, wenn kein Rehabilitationsträger zuständig ist. Wir schreiben den Kostenvoranschlag so, dass jeder Beteiligte sieht, was die normale Ausstattung leisten würde und warum sie hier nicht reicht.

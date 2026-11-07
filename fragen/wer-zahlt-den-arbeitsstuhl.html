@@ -26,7 +26,7 @@
   <script>document.documentElement.classList.add("js")</script>
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <link rel="stylesheet" href="/assets/css/site.css?v=10a2b5dbca" />
-  <script src="/assets/js/site.js?v=897574f565" defer></script>
+  <script src="/assets/js/site.js?v=cb75f63401" defer></script>
   <!-- /SEITE:KOPF -->
   <script type="application/ld+json">
 {
@@ -57,7 +57,7 @@
         "name": "Wer zahlt einen Arbeitsstuhl bei Behinderung?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Den normalen ergonomischen Bürostuhl zahlt der Arbeitgeber. Reicht der wegen Ihrer Behinderung nicht, zahlt meist die Rentenversicherung, bei weniger als 15 Versicherungsjahren oft die Agentur für Arbeit. Das Integrationsamt hilft schwerbehinderten Menschen, wenn beide nicht zahlen; für den Stuhl zu Hause ist die Krankenkasse zuständig."
+          "text": "Den normalen ergonomischen Bürostuhl zahlt der Arbeitgeber. Reicht der wegen Ihrer Behinderung nicht, zahlt meist die Rentenversicherung, bei sehr kurzer Versicherungszeit die Agentur für Arbeit. Das Integrationsamt hilft schwerbehinderten Menschen, wenn kein Rehabilitationsträger zuständig ist; für den Stuhl zu Hause ist die Krankenkasse zuständig."
         }
       }
     }
@@ -107,7 +107,7 @@
     <div class="wrap page-head__grid">
       <div>
         <h1>Wer zahlt einen Arbeitsstuhl bei Behinderung?</h1>
-        <p class="lead">Fünf Stellen kommen in Frage. Welche zuständig ist, hängt davon ab, wofür Sie den Stuhl brauchen und wie lange Sie schon arbeiten.</p>
+        <p class="lead">Meist ist es eine von fünf Stellen, nach einem Arbeitsunfall die Berufsgenossenschaft. Welche zuständig ist, hängt davon ab, wofür Sie den Stuhl brauchen und wie lange Sie schon arbeiten.</p>
       </div>
       <p class="quick">Lieber gleich sprechen?<strong><a href="tel:+49602112807">06021 12807</a></strong>Das Erstgespräch ist kostenlos.</p>
     </div>
@@ -117,7 +117,7 @@
     <div class="wrap deep">
       <aside class="answer" aria-labelledby="kurz-titel">
         <h2 id="kurz-titel">Kurz gesagt</h2>
-        <p>Den normalen ergonomischen Bürostuhl zahlt der Arbeitgeber. Reicht der wegen Ihrer Behinderung nicht, zahlt meist die Rentenversicherung, bei weniger als 15 Versicherungsjahren oft die Agentur für Arbeit. Das Integrationsamt hilft schwerbehinderten Menschen, wenn beide nicht zahlen; für den Stuhl zu Hause ist die Krankenkasse zuständig.</p>
+        <p>Den normalen ergonomischen Bürostuhl zahlt der Arbeitgeber. Reicht der wegen Ihrer Behinderung nicht, zahlt meist die Rentenversicherung, bei sehr kurzer Versicherungszeit die Agentur für Arbeit. Das Integrationsamt hilft schwerbehinderten Menschen, wenn kein Rehabilitationsträger zuständig ist; für den Stuhl zu Hause ist die Krankenkasse zuständig.</p>
       </aside>
       <div class="prose">
 <h2>Kurz prüfen: Wer ist bei Ihnen zuständig?</h2>
@@ -133,9 +133,10 @@
     <label><input type="radio" name="unfall" value="nein" /> Nein</label>
   </fieldset>
   <fieldset data-wenn="unfall=nein" hidden>
-    <legend>Sind Sie 15 Jahre oder länger rentenversichert, oder beziehen Sie eine Erwerbsminderungsrente?</legend>
-    <label><input type="radio" name="rv" value="ja" /> Ja</label>
-    <label><input type="radio" name="rv" value="nein" /> Nein</label>
+    <legend>Wie lange sind Sie rentenversichert?</legend>
+    <label><input type="radio" name="rv" value="ja" /> 15 Jahre oder länger, oder ich beziehe eine Erwerbsminderungsrente</label>
+    <label><input type="radio" name="rv" value="fuenf" /> Weniger als 15, aber mindestens 5 Jahre</label>
+    <label><input type="radio" name="rv" value="nein" /> Weniger als 5 Jahre</label>
     <label><input type="radio" name="rv" value="unklar" /> Weiß ich nicht</label>
   </fieldset>
   <fieldset data-wenn="unfall=nein" hidden>
@@ -162,7 +163,7 @@
 </tr>
 <tr>
 <td><a href="/kosten/rentenversicherung.html">Rentenversicherung</a></td>
-<td data-label="Wann">Stuhl ist wegen der Behinderung zur Berufsausübung nötig, 15 Jahre Versicherungszeit oder Erwerbsminderungsrente</td>
+<td data-label="Wann">Stuhl ist wegen der Behinderung zur Berufsausübung nötig; 15 Jahre Versicherungszeit, Erwerbsminderungsrente oder, oft schon nach fünf Jahren, ein drohender Rentenanspruch</td>
 </tr>
 <tr>
 <td><a href="/kosten/agentur-fuer-arbeit.html">Agentur für Arbeit</a></td>
@@ -170,11 +171,11 @@
 </tr>
 <tr>
 <td><a href="/kosten/integrationsamt.html">Integrationsamt</a></td>
-<td data-label="Wann">Schwerbehinderte oder gleichgestellte Menschen, wenn Arbeitgeber und Rehabilitationsträger nicht zahlen</td>
+<td data-label="Wann">Schwerbehinderte oder gleichgestellte Menschen, wenn kein Rehabilitationsträger zuständig ist; kein Aufstocken, wenn einer zahlt</td>
 </tr>
 <tr>
 <td><a href="/kosten/krankenkasse.html">Krankenkasse</a></td>
-<td data-label="Wann">Stuhl für den Alltag zu Hause, mit ärztlicher Verordnung</td>
+<td data-label="Wann">Stuhl für den Alltag zu Hause, in der Regel mit ärztlicher Verordnung</td>
 </tr>
 </tbody>
 </table></div>
@@ -182,7 +183,7 @@
 <h2>Warum es so kompliziert ist</h2>
 <p>Jede Stelle zahlt nur für ihren eigenen Zweck. Die Rentenversicherung soll Ihre Erwerbsfähigkeit erhalten, die Krankenkasse Ihre Gesundheit, das Integrationsamt die Beschäftigung schwerbehinderter Menschen. Ein Stuhl, der Sie bei der Arbeit hält, passt deshalb zu einer anderen Stelle als ein Stuhl, der Ihnen in der Küche das Aufstehen erleichtert.</p>
 <h2>Was Sie tun sollten</h2>
-<p>Sie müssen die Zuständigkeit nicht selbst herausfinden. Der Träger, bei dem Ihr Antrag zuerst eingeht, muss innerhalb von zwei Wochen klären, ob er zuständig ist, und den Antrag sonst weiterleiten. Wir sagen Ihnen beim ersten Gespräch, welcher Weg bei Ihnen am wahrscheinlichsten ist, und schreiben den Kostenvoranschlag passend dazu.</p>
+<p>Sie müssen die Zuständigkeit nicht selbst herausfinden. Der Rehabilitationsträger, bei dem Ihr Antrag zuerst eingeht, muss innerhalb von zwei Wochen klären, ob er zuständig ist, und den Antrag sonst weiterleiten. Wir sagen Ihnen beim ersten Gespräch, welcher Weg bei Ihnen am wahrscheinlichsten ist, und schreiben den Kostenvoranschlag passend dazu.</p>
       </div>
       <section class="sources" aria-labelledby="quellen-titel">
         <h2 id="quellen-titel">Quellen</h2>

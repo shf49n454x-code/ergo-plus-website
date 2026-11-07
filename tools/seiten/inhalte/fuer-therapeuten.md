@@ -26,7 +26,7 @@ Geben Sie Ihrem Patienten unsere Telefonnummer oder rufen Sie mit seinem Einvers
 
 ## Was wir von ärztlicher Seite brauchen
 
-Für den Antrag beim Kostenträger braucht es eine ärztliche Stellungnahme: Diagnose, die Einschränkung im Sitzen und warum ein normaler Stuhl sie nicht ausgleicht. Wir schicken dem behandelnden Arzt eine Vorlage, die nur noch geprüft und unterschrieben werden muss. Bei der Krankenkasse braucht es eine ärztliche Verordnung.
+Für den Antrag beim Kostenträger braucht es eine ärztliche Stellungnahme: Diagnose, die Einschränkung im Sitzen und warum ein normaler Stuhl sie nicht ausgleicht. Wir schicken dem behandelnden Arzt eine Vorlage mit den Punkten, die der Kostenträger erfahrungsgemäß sehen will. Bei der Krankenkasse braucht es in der Regel eine ärztliche Verordnung.
 
 ## Für Reha-Berater
 

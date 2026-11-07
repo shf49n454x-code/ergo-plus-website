@@ -20,7 +20,7 @@ weiter:
 ---
 ## Für wen das MFS-System gedacht ist
 
-Für Menschen mit schweren Sitzproblemen, bei denen eine normale Lehne an der falschen Stelle drückt oder an der richtigen Stelle fehlt: bei ausgeprägter Skoliose, bei einem starken Rundrücken (Gibbus), bei Asymmetrien des Rückens und bei Druckschmerz über Operationsnarben. Auch bei Schmerzpatienten haben wir mit dem System oft eine Sitzposition gefunden, in der die Schmerzen nachlassen.
+Für Menschen mit schweren Sitzproblemen, bei denen eine normale Lehne an der falschen Stelle drückt oder an der richtigen Stelle fehlt: bei ausgeprägter Skoliose, bei einem starken Rundrücken (Gibbus), bei Asymmetrien des Rückens und bei Druckschmerz über Operationsnarben. Auch bei Schmerzpatienten haben wir mit dem System manchmal eine Sitzposition gefunden, in der die Schmerzen nachlassen.
 
 ## Wie es funktioniert
 
@@ -38,4 +38,4 @@ Das MFS-System ist keine eigene Stuhlbasis. Es kommt auf einen Bürostuhl wie de
 
 ## Wenn sich etwas ändert
 
-Weil die Lehne aus Bausteinen besteht, lässt sie sich später umbauen. Verändert sich Ihre Haltung, setzen wir die Bausteine neu zusammen, statt einen neuen Stuhl zu beantragen.
+Weil die Lehne aus Bausteinen besteht, lässt sie sich später umbauen. Verändert sich Ihre Haltung, setzen wir die Bausteine neu zusammen, oft ohne neuen Antrag.

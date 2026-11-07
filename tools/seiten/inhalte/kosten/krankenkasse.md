@@ -3,7 +3,7 @@ titel: Therapiestuhl über die Krankenkasse
 beschreibung: Wann die Krankenkasse einen Therapiestuhl als Hilfsmittel bezahlt, wo die Grenze zum Arbeitsplatz liegt und welche Fristen für die Entscheidung gelten.
 h1: Therapiestuhl über die Krankenkasse
 lead: Die Krankenkasse zahlt Hilfsmittel für Ihre Gesundheit und Ihren Alltag. Für den Stuhl am Arbeitsplatz ist sie meistens nicht zuständig, für zu Hause schon eher.
-kurz: Die Krankenkasse bezahlt einen Therapiestuhl als Hilfsmittel, wenn er im Einzelfall nötig ist, um eine Behandlung zu sichern, einer Behinderung vorzubeugen oder sie auszugleichen, und wenn es kein gewöhnlicher Gebrauchsgegenstand ist. Sie braucht dafür eine ärztliche Verordnung und muss in der Regel innerhalb von drei Wochen entscheiden. Ein Stuhl, der nur für den Arbeitsplatz gebraucht wird, läuft meist über Rentenversicherung oder Agentur für Arbeit.
+kurz: Die Krankenkasse bezahlt einen Therapiestuhl als Hilfsmittel, wenn er im Einzelfall nötig ist, um eine Behandlung zu sichern, einer Behinderung vorzubeugen oder sie auszugleichen, und wenn es kein gewöhnlicher Gebrauchsgegenstand ist. In der Regel braucht es dafür eine ärztliche Verordnung. Ein Stuhl, der nur für den Arbeitsplatz gebraucht wird, läuft meist über Rentenversicherung oder Agentur für Arbeit.
 typ: kosten
 traeger: Gesetzliche Krankenversicherung
 stand: 2026-11-07
@@ -11,6 +11,8 @@ quellen:
   - § 33 SGB V: Hilfsmittel | https://www.gesetze-im-internet.de/sgb_5/__33.html
   - § 13 SGB V: Kostenerstattung, Entscheidungsfristen (Abs. 3a) | https://www.gesetze-im-internet.de/sgb_5/__13.html
   - § 49 SGB IX: Leistungen zur Teilhabe am Arbeitsleben | https://www.gesetze-im-internet.de/sgb_9_2018/__49.html
+  - BSG, Urteil vom 15.03.2018, B 3 KR 18/17 R: Fristen bei Hilfsmitteln zum Behinderungsausgleich | https://gesetze.co/urteile/B_3_KR_18-17_R
+  - § 18 SGB IX: Fristen bei Rehabilitationsleistungen | https://www.gesetze-im-internet.de/sgb_9_2018/__18.html
   - TK: Inhalte von Kostenvoranschlägen für Hilfsmittel | https://www.tk.de/leistungserbringer/personengruppen/hilfsmittelanbieter/leistungen-abrechnen/hilfsmittel-kostenvoranschlag-inhalte-2120172
 weiter:
   - /blog/kostenubernahme-sitzversorgung-krankenkasse.html | Ratgeber: Krankenkasse, DRV oder Integrationsamt?
@@ -34,10 +36,12 @@ Braucht jemand den Stuhl ausschließlich zur Berufsausübung, sind die Rehabilit
 
 ## Was der Antrag braucht
 
-- Eine ärztliche Verordnung mit Diagnose und Begründung
+- In der Regel eine ärztliche Verordnung mit Diagnose und Begründung
 - Unseren Kostenvoranschlag mit der passenden Hilfsmittelnummer und den Maßen
 - Bei Bedarf eine ausführliche Begründung, warum ein einfacheres Modell nicht reicht
 
 ## Wie lange die Kasse sich Zeit lassen darf
 
-Die Krankenkasse muss spätestens drei Wochen nach Antragseingang entscheiden, mit Gutachten des Medizinischen Dienstes fünf Wochen. Schafft sie das nicht, muss sie Ihnen rechtzeitig schriftlich oder elektronisch den Grund nennen. Tut sie das nicht, gilt der Antrag nach Ablauf der Frist als genehmigt (§ 13 Abs. 3a SGB V).
+Welche Frist gilt, hängt davon ab, wofür der Stuhl gedacht ist. Sichert er den Erfolg einer Krankenbehandlung, muss die Krankenkasse spätestens drei Wochen nach Antragseingang entscheiden, mit Gutachten des Medizinischen Dienstes fünf Wochen. Ohne rechtzeitige Begründung gilt der Antrag dann als genehmigt (§ 13 Abs. 3a SGB V).
+
+Ein Therapiestuhl gleicht aber meistens eine Behinderung aus. Dafür gelten nach der Rechtsprechung des Bundessozialgerichts die Fristen der Rehabilitation: Entscheidung ohne Gutachten innerhalb von drei Wochen, eine Genehmigung kraft Gesetzes erst nach zwei Monaten ohne begründete Mitteilung (§§ 14 und 18 SGB IX). Mehr dazu auf der Seite [Wie lange darf die Entscheidung dauern?](/fragen/wie-lange-dauert-der-antrag.html)

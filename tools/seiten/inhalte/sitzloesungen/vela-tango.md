@@ -2,7 +2,7 @@
 titel: VELA TANGO Arbeitsstuhl mit Zentralbremse
 beschreibung: VELA TANGO aus Dänemark: Arbeits- und Alltagsstühle mit Zentralbremse und Höhenverstellung, je nach Ausführung bis 300 kg. Beratung vor Ort.
 h1: VELA TANGO
-lead: Der Stuhl, mit dem man sich am Tisch bewegt, ohne aufzustehen. Mit Zentralbremse für sicheres Hinsetzen und Aufstehen, manuell oder elektrisch in der Höhe verstellbar.
+lead: Mit dem TANGO bewegen Sie sich am Tisch, ohne aufzustehen. Mit Zentralbremse für sicheres Hinsetzen und Aufstehen, manuell oder elektrisch in der Höhe verstellbar.
 kurz: VELA TANGO ist eine Stuhlfamilie des dänischen Herstellers VELA für Menschen mit Behinderung, zu Hause und im Beruf. Gemeinsam ist allen eine zentrale Bremse und die Höhenverstellung, manuell oder elektrisch. Die Ausführungen unterscheiden sich vor allem in Sitzgröße, Rückenlehne und Tragkraft, die beim TANGO 310E bis 300 kg reicht.
 typ: produkt
 produkt: VELA TANGO
@@ -33,14 +33,14 @@ Häufig eingesetzt wird der TANGO bei Multipler Sklerose, Parkinson, Arthritis u
 
 | Ausführung | Wofür | Tragkraft laut VELA |
 | --- | --- | --- |
-| TANGO 100 und 200 | kompakt, 200 mit größerem Sitz und höherer Lehne | 125 bis 160 kg, je nach Ausführung und Datenblatt |
+| TANGO 100 | kompakt | 125 kg |
 | TANGO 300 und 300E | breiter Sitz, für starke oder unwillkürliche Bewegungen, zum Beispiel bei Zerebralparese | 200 kg |
 | TANGO 310E | extra breiter Sitz, elektrisch | 300 kg |
-| TANGO 500 und 510 | hohe Rückenlehne mit Kopfstütze, stark neigbarer Sitz | 160 kg |
+| TANGO 500 | hohe Rückenlehne, neigbarer Sitz | 160 kg |
 
 Das „E“ steht für die elektrische Höhenverstellung. Für die Ausführung 100 gibt es außerdem einen zweiteiligen Coxit-Sitz für Menschen mit versteifter Hüfte.
 
-Nicht jede Ausführung ist dauerhaft lieferbar; VELA stellt einzelne Modelle um. Welche Ausführung wir aktuell liefern können, sagen wir Ihnen beim Termin.
+Nicht jede Ausführung ist dauerhaft lieferbar. Den TANGO 200 und den TANGO 510 mit Kopfstütze führt VELA inzwischen als eingestellt. Welche Ausführung wir aktuell liefern können, sagen wir Ihnen beim Termin.
 
 ## Was wir vor Ort einstellen
 

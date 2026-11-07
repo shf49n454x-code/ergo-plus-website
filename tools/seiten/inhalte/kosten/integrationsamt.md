@@ -3,7 +3,7 @@ titel: Arbeitsstuhl über das Integrationsamt
 beschreibung: Wann das Integrationsamt einen Arbeitsstuhl für schwerbehinderte Menschen bezahlt, warum der Antrag vor dem Kauf kommen muss und wem der Stuhl danach gehört.
 h1: Arbeitsstuhl über das Integrationsamt
 lead: Das Integrationsamt (in manchen Ländern Inklusionsamt) fördert technische Arbeitshilfen für schwerbehinderte und gleichgestellte Menschen. Es zahlt aber erst, wenn andere nicht zahlen müssen.
-kurz: Das Integrationsamt kann einen Arbeitsstuhl als technische Arbeitshilfe bezahlen, wenn Sie schwerbehindert oder gleichgestellt sind, der Arbeitgeber nicht zuständig ist und kein Rehabilitationsträger zahlt. Stellen Sie den Antrag, bevor Sie den Stuhl bestellen. Der geförderte Stuhl gehört danach Ihnen.
+kurz: Das Integrationsamt kann einen Arbeitsstuhl als technische Arbeitshilfe bezahlen, wenn Sie schwerbehindert oder gleichgestellt sind, der Arbeitgeber nicht zuständig ist und kein Rehabilitationsträger zahlt. Stellen Sie den Antrag, bevor Sie den Stuhl bestellen. Bekommen Sie die Förderung selbst, gehört der Stuhl danach Ihnen.
 typ: kosten
 traeger: Integrationsamt
 stand: 2026-11-07
@@ -31,7 +31,7 @@ Schwerbehindert sind Sie ab einem Grad der Behinderung von 50 (§ 2 Abs. 2 SGB I
 
 ## Warum das Integrationsamt erst später kommt
 
-Das Integrationsamt zahlt nachrangig. Erst ist der Arbeitgeber dran: Schwerbehinderte Beschäftigte haben Anspruch darauf, dass ihr Arbeitsplatz mit den nötigen technischen Arbeitshilfen ausgestattet wird, soweit das für den Arbeitgeber zumutbar ist (§ 164 Abs. 4 SGB IX). Dann kommen die Rehabilitationsträger wie Rentenversicherung und Agentur für Arbeit. Das Integrationsamt darf deren Leistungen nicht ersetzen (§ 185 Abs. 6 SGB IX).
+Das Integrationsamt zahlt erst, wenn niemand sonst zahlen muss. Erst ist der Arbeitgeber dran: Schwerbehinderte Beschäftigte haben Anspruch darauf, dass ihr Arbeitsplatz mit den nötigen technischen Arbeitshilfen ausgestattet wird, soweit das für den Arbeitgeber zumutbar ist (§ 164 Abs. 4 SGB IX). Dann kommen die Rehabilitationsträger wie Rentenversicherung und Agentur für Arbeit. Das Integrationsamt darf deren Leistungen nicht ersetzen (§ 185 Abs. 6 SGB IX).
 
 Für Sie heißt das nicht, dass Sie drei Anträge nacheinander stellen müssen. Wir klären vorab, welcher Weg bei Ihnen am wahrscheinlichsten ist, und schreiben den Kostenvoranschlag darauf zu.
 
@@ -41,4 +41,6 @@ Der Ratgeber der Integrationsämter sagt es ausdrücklich: Stellen Sie den Antra
 
 ## Wem der Stuhl gehört
 
-Eine vom Integrationsamt geförderte Arbeitshilfe geht in Ihr Eigentum über, nicht in das des Arbeitgebers. Wechseln Sie die Stelle, nehmen Sie den Stuhl mit.
+Bekommen Sie die Förderung selbst, wird der Stuhl Ihr Eigentum, nicht das des Arbeitgebers. Wechseln Sie die Stelle, nehmen Sie ihn mit. Geht der Zuschuss an den Arbeitgeber, klärt der Bescheid, wem der Stuhl gehört.
+
+Gefördert wird, soweit Ihnen die Kosten nicht zumutbar sind. Das Integrationsamt prüft deshalb auch, ob ein Eigenanteil zumutbar ist.

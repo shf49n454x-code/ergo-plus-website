@@ -259,16 +259,17 @@
       var titel = '', text = '', zusatz = '', links = [];
       if (z === 'zuhause') {
         titel = 'Meist die Krankenkasse';
-        text = 'Sie zahlt Hilfsmittel für den Alltag zu Hause, wenn Ihr Arzt den Stuhl verordnet.';
+        text = 'Sie zahlt Hilfsmittel für den Alltag zu Hause, in der Regel mit ärztlicher Verordnung.';
         links = [link('/kosten/krankenkasse.html', 'Mehr zur Krankenkasse')];
       } else if (z === 'arbeit' && u === 'ja') {
         titel = 'Die Berufsgenossenschaft oder Unfallkasse';
         text = 'Nach einem Arbeitsunfall oder bei einer Berufskrankheit ist die gesetzliche Unfallversicherung zuständig.';
       } else if (z === 'arbeit' && u === 'nein' && rv && sb) {
         if (rv === 'ja') { titel = 'Wahrscheinlich die Rentenversicherung'; text = 'Sie zahlt Hilfsmittel, die Sie wegen Ihrer Behinderung für Ihren Arbeitsplatz brauchen.'; links.push(link('/kosten/rentenversicherung.html', 'Mehr zur Rentenversicherung')); }
-        else if (rv === 'nein') { titel = 'Wahrscheinlich die Agentur für Arbeit'; text = 'Sie ist zuständig, wenn die Voraussetzungen der Rentenversicherung nicht erfüllt sind.'; links.push(link('/kosten/agentur-fuer-arbeit.html', 'Mehr zur Agentur für Arbeit')); }
+        else if (rv === 'fuenf') { titel = 'Wahrscheinlich trotzdem die Rentenversicherung'; text = 'Auch mit weniger als 15 Jahren zahlt sie, wenn Ihnen ohne die Hilfe eine Erwerbsminderungsrente zustünde. Dafür reichen in der Regel fünf Versicherungsjahre, davon drei mit Pflichtbeiträgen in den letzten fünf Jahren. Lassen Sie das dort prüfen.'; links.push(link('/fragen/weniger-als-15-jahre-versichert.html', 'Weniger als 15 Jahre versichert')); }
+        else if (rv === 'nein') { titel = 'Wahrscheinlich die Agentur für Arbeit'; text = 'Sie ist zuständig, wenn die Voraussetzungen der Rentenversicherung nicht erfüllt sind. Das betrifft vor allem Berufseinsteiger.'; links.push(link('/kosten/agentur-fuer-arbeit.html', 'Mehr zur Agentur für Arbeit')); }
         else { titel = 'Rentenversicherung oder Agentur für Arbeit'; text = 'Stellen Sie den Antrag bei einer der beiden. Ist sie nicht zuständig, muss sie ihn innerhalb von zwei Wochen weiterleiten.'; links.push(link('/fragen/weniger-als-15-jahre-versichert.html', 'Unter 15 Jahre versichert?')); }
-        if (sb === 'ja') { zusatz = 'Weil Sie schwerbehindert oder gleichgestellt sind, muss auch Ihr Arbeitgeber den Arbeitsplatz behinderungsgerecht ausstatten, soweit zumutbar. Bleibt eine Lücke, kann das Integrationsamt einspringen.'; links.push(link('/kosten/integrationsamt.html', 'Mehr zum Integrationsamt')); }
+        if (sb === 'ja') { zusatz = 'Weil Sie schwerbehindert oder gleichgestellt sind, muss auch Ihr Arbeitgeber den Arbeitsplatz behinderungsgerecht ausstatten, soweit zumutbar. Ist kein Rehabilitationsträger zuständig, kann das Integrationsamt einspringen. Zahlt einer, legt das Integrationsamt nichts drauf.'; links.push(link('/kosten/integrationsamt.html', 'Mehr zum Integrationsamt')); }
         else { zusatz = 'Den normalen ergonomischen Stuhl stellt der Arbeitgeber.'; links.push(link('/fragen/gleichstellung-gdb-30.html', 'GdB 30 oder 40? Gleichstellung prüfen')); }
       }
       if (!titel) { aus.innerHTML = ''; letztes = ''; return; }

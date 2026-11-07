@@ -3,7 +3,7 @@ titel: Arbeitsstuhl über die Agentur für Arbeit
 beschreibung: Wann die Agentur für Arbeit einen Arbeitsstuhl bei Behinderung bezahlt, etwa bei weniger als 15 Versicherungsjahren, und wie Sie den Antrag stellen.
 h1: Arbeitsstuhl über die Agentur für Arbeit
 lead: Die Agentur für Arbeit ist Rehabilitationsträger wie die Rentenversicherung. Sie springt vor allem dann ein, wenn die Rentenversicherung nicht zuständig ist.
-kurz: Die Agentur für Arbeit zahlt Hilfsmittel für den Arbeitsplatz als Leistung zur Teilhabe am Arbeitsleben, wenn kein anderer Rehabilitationsträger zuständig ist. Das betrifft oft Menschen, die noch keine 15 Jahre rentenversichert sind, und Berufseinsteiger. Den Antrag stellen Sie bei der Reha-Beratung Ihrer Agentur.
+kurz: Die Agentur für Arbeit zahlt Hilfsmittel für den Arbeitsplatz als Leistung zur Teilhabe am Arbeitsleben, wenn kein anderer Rehabilitationsträger zuständig ist. Das betrifft vor allem Berufseinsteiger und Menschen, die nur wenige Jahre rentenversichert sind. Den Antrag stellen Sie bei der Reha-Beratung Ihrer Agentur.
 typ: kosten
 traeger: Bundesagentur für Arbeit
 stand: 2026-11-07
@@ -12,6 +12,7 @@ quellen:
   - § 11 SGB VI: Voraussetzungen bei der Rentenversicherung | https://www.gesetze-im-internet.de/sgb_6/__11.html
   - § 49 SGB IX: Leistungen zur Teilhabe am Arbeitsleben | https://www.gesetze-im-internet.de/sgb_9_2018/__49.html
   - § 14 SGB IX: Leistender Rehabilitationsträger | https://www.gesetze-im-internet.de/sgb_9_2018/__14.html
+  - § 43 SGB VI: Rente wegen Erwerbsminderung, Voraussetzungen | https://www.gesetze-im-internet.de/sgb_6/__43.html
 weiter:
   - /kosten/rentenversicherung.html | Arbeitsstuhl über die Rentenversicherung
   - /fragen/weniger-als-15-jahre-versichert.html | Weniger als 15 Jahre versichert: was jetzt?
@@ -20,11 +21,11 @@ weiter:
 ---
 ## Wann die Agentur für Arbeit zuständig ist
 
-Die Agentur für Arbeit erbringt Leistungen zur Teilhabe am Arbeitsleben nur, wenn kein anderer Rehabilitationsträger zuständig ist (§ 22 Abs. 2 SGB III). Bei Berufstätigen ist das oft die Rentenversicherung. Die verlangt aber bei Antragstellung in der Regel 15 Jahre Versicherungszeit oder eine Erwerbsminderungsrente (§ 11 SGB VI).
+Die Agentur für Arbeit erbringt Leistungen zur Teilhabe am Arbeitsleben nur, wenn kein anderer Rehabilitationsträger zuständig ist (§ 22 Abs. 2 SGB III). Bei Berufstätigen ist das oft die Rentenversicherung. Die verlangt aber bei Antragstellung 15 Jahre Versicherungszeit, eine Erwerbsminderungsrente oder, dass ohne die Leistung eine solche Rente zu zahlen wäre (§ 11 SGB VI).
 
 Typische Fälle für die Agentur für Arbeit sind deshalb:
 
-- Sie arbeiten noch keine 15 Jahre und erfüllen auch die anderen Voraussetzungen der Rentenversicherung nicht.
+- Sie sind erst wenige Jahre rentenversichert und erfüllen weder die 15 Jahre noch die Voraussetzungen einer Erwerbsminderungsrente (in der Regel fünf Jahre, davon drei mit Pflichtbeiträgen in den letzten fünf).
 - Sie stehen am Anfang Ihres Berufslebens oder in einer Ausbildung.
 - Sie suchen Arbeit oder wechseln in einen neuen Beruf.
 

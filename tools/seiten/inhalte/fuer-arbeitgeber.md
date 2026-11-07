@@ -3,7 +3,7 @@ titel: Arbeitsstuhl für Mitarbeiter mit Behinderung
 beschreibung: Für Arbeitgeber und Schwerbehindertenvertretungen: wie die Versorgung eines Mitarbeiters mit einem angepassten Arbeitsstuhl abläuft und wer die Kosten trägt.
 h1: Für Arbeitgeber und Schwerbehindertenvertretungen
 lead: Ein Mitarbeiter kann wegen einer Erkrankung nicht mehr gut sitzen. Sie wollen helfen und wissen nicht, wer was zahlt. So läuft es mit uns.
-kurz: Den normalen ergonomischen Stuhl stellen Sie als Arbeitgeber. Braucht ein Mitarbeiter wegen einer Behinderung mehr, zahlen in der Regel Rentenversicherung oder Agentur für Arbeit, bei Schwerbehinderung hilft zusätzlich das Integrationsamt. Wir kommen zur Beratung an den Arbeitsplatz, schreiben den Kostenvoranschlag mit Begründung und stellen den Stuhl nach der Genehmigung vor Ort ein.
+kurz: Den normalen ergonomischen Stuhl stellen Sie als Arbeitgeber. Braucht ein Mitarbeiter wegen einer Behinderung mehr, zahlen in der Regel Rentenversicherung oder Agentur für Arbeit, und ist keiner von beiden zuständig, kann bei Schwerbehinderung das Integrationsamt helfen. Wir kommen zur Beratung an den Arbeitsplatz, schreiben den Kostenvoranschlag mit Begründung und stellen den Stuhl nach der Genehmigung vor Ort ein.
 typ: seite
 stand: 2026-11-07
 weiter:
@@ -14,7 +14,7 @@ weiter:
 ---
 ## Was Sie als Arbeitgeber tun müssen
 
-Wenig, aber das Wenige ist wichtig:
+Ihr Teil ist überschaubar:
 
 - **Den Arbeitsplatz zugänglich machen.** Wir beraten dort, wo der Stuhl später steht. Bitte ermöglichen Sie uns einen Termin am Arbeitsplatz.
 - **Die Tätigkeit bestätigen.** Kostenträger wollen wissen, wofür der Stuhl gebraucht wird. Eine kurze Beschreibung der Tätigkeit und der Arbeitszeit am Tisch reicht meist.

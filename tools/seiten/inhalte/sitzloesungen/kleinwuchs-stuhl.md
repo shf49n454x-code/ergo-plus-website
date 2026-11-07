@@ -2,7 +2,7 @@
 titel: Arbeitsstuhl bei Kleinwuchs
 beschreibung: Arbeitsstuhl für kleinwüchsige Menschen mit angepasster Sitztiefe, Sitzhöhe und Fußstütze, damit Sie am normalen Schreibtisch sicher und entspannt sitzen.
 h1: Arbeitsstuhl bei Kleinwuchs
-lead: Normale Büros sind für Menschen um 1,75 Meter gebaut. Ein Stuhl für kleinwüchsige Menschen muss das ausgleichen, ohne dass die Beine in der Luft hängen.
+lead: Normale Büromöbel sind für durchschnittlich große Erwachsene gebaut. Ein Stuhl für kleinwüchsige Menschen muss das ausgleichen, ohne dass die Beine in der Luft hängen.
 kurz: Ein Kleinwuchsstuhl hat eine kürzere Sitztiefe, damit der Rücken die Lehne erreicht, und eine Fußstütze, damit die Füße bei normaler Tischhöhe Halt haben. Sitzhöhe und Fußstütze stellen wir so ein, dass Sie am vorhandenen Schreibtisch arbeiten können. Bezahlt wird er meist als Hilfsmittel für den Arbeitsplatz über Rentenversicherung oder Agentur für Arbeit.
 typ: produkt
 produkt: Arbeitsstuhl bei Kleinwuchs

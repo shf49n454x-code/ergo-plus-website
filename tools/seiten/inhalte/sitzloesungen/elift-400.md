@@ -2,7 +2,7 @@
 titel: ELIFT 400 Aufstehhilfe für den Arbeitsplatz
 beschreibung: Der ELIFT 400 hebt die Sitzfläche motorisch von 46 auf bis zu 86 cm und steht dabei auf acht Bremsfüßen. Für Muskelschwäche und Arbeit an hohen Flächen.
 h1: ELIFT 400
-lead: Ein Arbeitsstuhl, der Sie motorisch aus dem Sitzen fast in den Stand bringt. Gedacht für alle, denen das Aufstehen die größte Hürde ist.
+lead: Der ELIFT 400 hebt Sie per Motor aus dem Sitzen fast in den Stand. Er ist für Sie gedacht, wenn das Aufstehen die größte Hürde ist.
 kurz: Der ELIFT 400 hebt die Sitzfläche per Knopfdruck von 46 bis auf 86 cm, in einer zweiten Ausführung von 50 bis 90 cm. Vorher setzt eine motorische Bremse acht rutschfeste Bremsfüße auf den Boden, der Hub funktioniert nur bei aktivierter Bremse. Das hilft bei Muskelschwäche und beim Arbeiten an hohen Flächen wie Montagebändern.
 typ: produkt
 produkt: ELIFT 400
@@ -34,7 +34,7 @@ Für Menschen, die aus einer normalen Sitzhöhe nicht mehr sicher aufstehen, etw
 
 ## Wie das Aufstehen damit funktioniert
 
-Sie bremsen den Stuhl per Knopfdruck. Die Bremsfüße stehen auch auf glattem Boden fest. Dann fährt die Sitzfläche nach oben und bringt Sie in eine Höhe, aus der das Aufstehen nur noch ein kleiner Schritt ist. Zum Hinsetzen geht es umgekehrt: Sie lehnen sich an die hochgefahrene Sitzfläche und fahren nach unten.
+Sie bremsen den Stuhl per Knopfdruck. Die Bremsfüße haben ein Antirutschprofil. Dann fährt die Sitzfläche nach oben und bringt Sie in eine Höhe, aus der das Aufstehen nur noch ein kleiner Schritt ist. Zum Hinsetzen geht es umgekehrt: Sie lehnen sich an die hochgefahrene Sitzfläche und fahren nach unten.
 
 ## Was wir vor Ort klären
 

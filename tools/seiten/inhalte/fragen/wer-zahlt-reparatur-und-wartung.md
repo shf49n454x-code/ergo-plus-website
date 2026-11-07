@@ -17,7 +17,7 @@ weiter:
 ---
 ## Wer zahlt was
 
-- **Garantie:** In den ersten Jahren nach der Lieferung ist vieles ein Garantiefall. Dann zahlt der Hersteller, und wir kümmern uns darum.
+- **Gewährleistung und Garantie:** In den ersten zwei Jahren nach der Lieferung gilt die gesetzliche Gewährleistung, bei manchen Herstellern zusätzlich eine Garantie. Dann zahlen nicht Sie, und wir kümmern uns darum.
 - **Integrationsamt:** Laut Ratgeber der Integrationsämter werden neben dem Kauf auch Ersatzbeschaffung, Wartung und Instandhaltung sowie die Anpassung an die technische Weiterentwicklung gefördert.
 - **Krankenkasse:** Der Anspruch auf ein Hilfsmittel umfasst auch notwendige Änderungen, Instandsetzung und Ersatzbeschaffung (§ 33 Abs. 1 SGB V).
 - **Rentenversicherung und Agentur für Arbeit:** Sprechen Sie mit dem Träger, der den Stuhl bewilligt hat. Ihr Bescheid nennt die Ansprechpartner.
@@ -26,5 +26,5 @@ weiter:
 
 1. Benutzen Sie den Stuhl nicht weiter, wenn Bremse oder Höhenverstellung nicht sicher funktionieren.
 2. Rufen Sie uns an oder schreiben Sie uns. Ein Foto oder kurzes Video vom Fehler hilft.
-3. Wir klären, ob es ein Garantiefall ist. Wenn nicht, bekommen Sie einen Kostenvoranschlag für den Kostenträger.
+3. Wir klären, ob es ein Fall für Gewährleistung oder Garantie ist. Wenn nicht, bekommen Sie einen Kostenvoranschlag für den Kostenträger.
 4. Kleine Reparaturen erledigen wir oft beim nächsten Termin in Ihrer Region.

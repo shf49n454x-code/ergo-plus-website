@@ -2,7 +2,7 @@
 titel: Schwergewichtsstuhl für den Arbeitsplatz
 beschreibung: Schwergewichtsstuhl von ERGO-PLUS mit Viskoschaum, einstellbarer Wippe und Lordosenstütze für Nutzer mit hohem Körpergewicht, mit MFS kombinierbar.
 h1: Schwergewichtsstuhl
-lead: Ein Bürostuhl für Menschen mit hohem Körpergewicht, der nicht nur hält, sondern auch so sitzt, wie ein guter Arbeitsstuhl sitzen soll.
+lead: Ein Bürostuhl für Menschen mit hohem Körpergewicht. Er trägt bis 225 kg und lässt sich trotzdem so fein einstellen wie ein guter Arbeitsstuhl.
 kurz: Der Schwergewichtsstuhl von ERGO-PLUS ist laut Herstellerangabe für Nutzer bis 225 kg geeignet. Sitz und Lehne sind aus druckentlastendem Viskoschaum, die Wippe wird auf das Körpergewicht eingestellt, und die Lordosenstütze ist individuell verstellbar. Bei Bedarf wird er mit dem MFS-System kombiniert.
 typ: produkt
 produkt: Schwergewichtsstuhl

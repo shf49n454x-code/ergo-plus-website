@@ -2,7 +2,7 @@
 titel: Stuhl anpassen, wenn die Krankheit fortschreitet
 beschreibung: Was passiert, wenn sich eine Erkrankung wie MS, ALS oder Parkinson verändert: nachrüsten, neu einstellen oder neu beantragen.
 h1: Was passiert, wenn sich meine Erkrankung verändert?
-lead: Bei MS, ALS oder Parkinson ist der Stuhl von heute nicht unbedingt der Stuhl in zwei Jahren. Gut geplant muss deshalb nicht alles neu.
+lead: Bei MS, ALS oder Parkinson ist der Stuhl von heute nicht unbedingt der Stuhl in zwei Jahren. Planen wir das von Anfang an ein, muss später nicht gleich ein neuer Stuhl her.
 kurz: Viele Stühle lassen sich nachrüsten, etwa mit Rumpfpelotten, einer Kopfstütze oder einer motorisierten Verstellung. Reicht das nicht, kann ein neuer Stuhl beantragt werden, auch vor Ablauf der üblichen Nutzungsdauer, wenn Sie begründen, warum der alte nicht mehr passt. Wir planen bei fortschreitenden Erkrankungen von Anfang an so, dass der Stuhl mitwachsen kann.
 typ: frage
 kategorie: Nach der Lieferung

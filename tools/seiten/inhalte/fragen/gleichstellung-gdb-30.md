@@ -2,7 +2,7 @@
 titel: GdB 30 oder 40: Hilfe für den Arbeitsstuhl?
 beschreibung: Mit einem Grad der Behinderung von 30 oder 40 können Sie sich schwerbehinderten Menschen gleichstellen lassen und dann Leistungen des Integrationsamts bekommen.
 h1: Ich habe einen GdB von 30 oder 40. Bekomme ich trotzdem Hilfe?
-lead: Schwerbehindert ist man ab einem GdB von 50. Darunter gibt es die Gleichstellung, und die öffnet viele derselben Türen.
+lead: Schwerbehindert ist man ab einem GdB von 50. Darunter gibt es die Gleichstellung. Mit ihr haben Sie fast dieselben Rechte.
 kurz: Mit einem Grad der Behinderung von mindestens 30 können Sie bei der Agentur für Arbeit die Gleichstellung beantragen, wenn Sie ohne sie keinen geeigneten Arbeitsplatz bekommen oder behalten. Gleichgestellte werden bei den Leistungen des Integrationsamts wie schwerbehinderte Menschen behandelt. Unabhängig vom GdB können Rentenversicherung oder Agentur für Arbeit einen Arbeitsstuhl bezahlen.
 typ: frage
 kategorie: Kosten und Antrag

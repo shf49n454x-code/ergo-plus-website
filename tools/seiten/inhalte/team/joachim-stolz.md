@@ -14,7 +14,7 @@ weiter:
 ---
 ## Was er macht
 
-Joachim Stolz hat ERGO-PLUS gegründet, weil komplexe Sitzversorgung mehr braucht als ein Regal voller Stühle. Er fährt selbst zu den Kunden: zur Beratung und Vermessung, zur Anpassung und oft auch zur Übergabe. Ausgeliefert wird manchmal auch von Philipp Klein aus der Werkstatt.
+Joachim Stolz hat ERGO-PLUS gegründet, um Menschen zu versorgen, denen kein Stuhl aus dem Katalog passt. Er fährt selbst zu den Kunden: zur Beratung und Vermessung, zur Anpassung und oft auch zur Übergabe. Ausgeliefert wird manchmal auch von Philipp Klein aus der Werkstatt.
 
 Bei jedem Termin arbeitet er mit dem POSE-Bogen, dem Persönlichen-Office-Sitz-Ergebnisbogen. Darin stehen Körpermaße, Beschwerden und die Sitzsituation am Arbeitsplatz. Aus dem Bogen entsteht der Kostenvoranschlag mit der Begründung für den Kostenträger.
 

@@ -3,7 +3,7 @@ titel: Arthrodesenstuhl mit geteilter Sitzfläche
 beschreibung: Arthrodesenstuhl von ERGO-PLUS: geteilte Sitzfläche, beide Hälften getrennt absenkbar. Für versteifte Hüfte oder Knie und Prothesenträger, bis 200 kg.
 h1: Arthrodesenstuhl
 lead: Wenn sich Hüfte oder Knie nach einer Versteifung nicht mehr beugen lassen, ist eine normale Sitzfläche im Weg. Hier lässt sich jede Hälfte für sich absenken.
-kurz: Der Arthrodesenstuhl von ERGO-PLUS hat eine geteilte Sitzfläche, deren beide Hälften getrennt abgesenkt werden. So kann ein versteiftes Bein abgewinkelt liegen, während das andere normal sitzt. Er ist laut Herstellerangabe bis 200 kg belastbar und mit Lordosenstütze, verlängerter Sitztiefe und Kopfstützen erweiterbar.
+kurz: Der Arthrodesenstuhl von ERGO-PLUS hat eine geteilte Sitzfläche, deren beide Hälften getrennt abgesenkt werden. So kann ein versteiftes Bein abgewinkelt liegen, während das andere normal sitzt. Er ist laut Herstellerangabe bis 200 kg belastbar und mit einstellbarer Lordosenstütze und Kopfstützen erweiterbar.
 typ: produkt
 produkt: Arthrodesenstuhl
 hersteller: ERGO-PLUS Seating Concepts
@@ -25,8 +25,7 @@ Für Menschen mit einer Versteifung (Arthrodese) von Hüfte oder Knie, für Prot
 
 - geteilte Sitzfläche, beide Hälften getrennt absenkbar
 - belastbar bis 200 kg laut Herstellerangabe
-- Lordosenstütze als Option
-- Sitztiefe in mehreren Stufen um bis zu 4 cm verlängerbar, mit einer weiteren Option um bis zu 10 cm
+- Lordosenstütze (Schukra) in Tiefe und Stärke um bis zu 4 cm einstellbar, als Option bis zu 10 cm höhenverstellbar
 - verschiedene Kopfstützen
 
 ## Weitere Arthrodesen-Lösungen
