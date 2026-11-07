@@ -7,6 +7,7 @@ kurz: Der Opera 20 hat seinen Wipppunkt vorn an der Sitzfläche, die Füße blei
 typ: produkt
 produkt: Opera 20 und SMARTMOVE
 hersteller: ERGO-PLUS Seating Concepts
+bild: /assets/img/opera-20-buerostuhl.webp | Opera 20 Bürostuhl mit Lordosenstütze | 329 | 594
 stand: 2026-11-07
 quellen:
   - ERGO-PLUS: Opera 20 | https://ergo-plus-seating.de/?thegem_pf_item=opera-20-die-volle-kontrolle

@@ -7,6 +7,7 @@ kurz: VELA TANGO ist eine Stuhlfamilie des dänischen Herstellers VELA für Mens
 typ: produkt
 produkt: VELA TANGO
 hersteller: VELA
+bild: /assets/img/vela-tango-aktivstuhl.webp | VELA TANGO Aktivstuhl mit Armlehnen und Bremsrollen | 452 | 600
 stand: 2026-11-07
 quellen:
   - VELA: TANGO 300 | https://www.vela.eu/product/vela-tango-300

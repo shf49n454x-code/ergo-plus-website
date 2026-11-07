@@ -695,12 +695,33 @@ body:has(.article-content, .article-wrap, .faq-content, .legal-content) { backgr
 @media (max-width: 559px) { .weg--kurz .weg__s { grid-template-columns: 40px 1fr; gap: 8px 16px; } .weg--kurz .weg__s::before { font-size: 1.75rem; } }
 
 /* ── Tiefe Seiten (Fragen, Produkte, Kostenträger) – gebaut von tools/seiten/tief.py ── */
+.page-head--tief h1 { font-size: clamp(2.25rem, 4.4vw, 3.75rem); max-width: 22ch; line-height: 1.05; }
+.page-head--tief { padding-bottom: clamp(40px, 5vw, 72px); }
+.page-head--tief + .sec { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(48px, 6vw, 80px); }
 .deep { display: grid; gap: clamp(28px, 4vw, 48px); }
 .deep > * { max-width: 760px; min-width: 0; }
+.deep .prose { max-width: none; }
+.deep + * .measure, .page-head--tief ~ .sec--tight .measure { max-width: 760px; }
+.deep__fig { margin: 0; background: #fff; border: 1px solid var(--rule); border-radius: var(--r); padding: 24px; display: grid; place-items: center; }
+.deep__fig img { max-height: 360px; width: auto; object-fit: contain; }
+@media (min-width: 1100px) {
+  .deep--bild { grid-template-columns: minmax(0, 1fr) minmax(0, 340px); column-gap: 72px; align-items: start; }
+  .deep--bild > :not(.deep__fig) { grid-column: 1; }
+  .deep--bild .deep__fig { grid-column: 2; grid-row: 1 / span 4; position: sticky; top: 96px; }
+  .deep--bild .deep__fig img { max-height: 480px; }
+}
 .answer { border-left: 3px solid var(--line-teal); padding: 4px 0 4px 24px; }
 .answer h2 { font-size: 1rem; letter-spacing: 0; color: var(--ink-mute); margin: 0 0 8px; }
 .answer p { font: 500 clamp(1.1875rem, 1.6vw, 1.3125rem)/1.55 var(--f-body); color: var(--ink); margin: 0; }
 .prose > :first-child { margin-top: 0; }
+.prose .table-wrap { margin: 1.5em 0 2em; }
+.prose .table { display: table; margin: 0; }
+@media (max-width: 640px) {
+  .prose .table { display: block; }
+  .prose .table td { border-bottom: 0; padding: 0; }
+  .prose .table tr { padding: 16px 0; }
+  .prose .table td + td { margin-top: 4px; }
+}
 .sources { border-top: 1px solid var(--rule); padding-top: 24px; font-size: .9375rem; color: var(--ink-soft); }
 .sources h2 { font-size: 1.125rem; margin: 0 0 12px; }
 .sources ol { padding-left: 1.2em; margin: 0 0 12px; display: grid; gap: 6px; }
@@ -711,13 +732,32 @@ body:has(.article-content, .article-wrap, .faq-content, .legal-content) { backgr
 .qlist li { border-bottom: 1px solid var(--rule); padding: 14px 0; display: grid; gap: 4px; }
 .qlist a { font: 600 1.0625rem/1.4 var(--f-display); }
 .qlist span { color: var(--ink-soft); font-size: .9375rem; }
-@media (min-width: 960px) { .qlist__groups { grid-template-columns: 1fr 1fr; gap: 48px 64px; } }
-.finder { display: grid; gap: 20px; padding: clamp(20px, 3vw, 32px); border: 1px solid var(--rule); border-radius: var(--r); background: var(--paper); margin: 1.5em 0 2em; }
-.finder fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
-.finder legend { font: 600 1.0625rem/1.4 var(--f-display); color: var(--ink); margin-bottom: 8px; padding: 0; }
-.finder label { display: flex; gap: 12px; align-items: center; min-height: 44px; cursor: pointer; }
+h3.faq-category { font-size: clamp(1.1875rem, 1.6vw, 1.375rem); margin-top: 2em; }
+
+/* Kostenträger-Finder */
+.finder { display: grid; gap: 20px; padding: clamp(20px, 3vw, 32px); border: 1px solid var(--rule); border-radius: var(--r-lg); background: var(--paper); margin: 1.5em 0 2em; }
+.finder fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 4px; }
+.finder fieldset[hidden] { display: none; }
+.finder fieldset + fieldset { border-top: 1px solid var(--rule); padding-top: 20px; }
+.finder legend { font: 700 1.1875rem/1.35 var(--f-display); color: var(--ink); margin-bottom: 8px; padding: 0; }
+.finder label { display: flex; gap: 12px; align-items: center; min-height: 44px; cursor: pointer; padding: 0 12px; margin: 0 -12px; border-radius: var(--r-sm); }
+.finder label:hover { background: var(--surface); }
+.finder label:has(:focus-visible) { outline: 3px solid var(--act); outline-offset: 3px; }
 .finder input[type="radio"] { width: 20px; height: 20px; accent-color: var(--act); margin: 0; flex: none; }
+.finder input[type="radio"]:focus-visible { outline: none; }
 .finder__ergebnis:empty { display: none; }
-.finder__ergebnis p { margin: 0; padding: 16px 20px; background: var(--act-wash); border-radius: var(--r-sm); color: var(--ink); }
+.finder__ergebnis { border-left: 3px solid var(--line-teal); background: var(--act-wash); padding: 20px 24px; border-radius: 0 var(--r-sm) var(--r-sm) 0; }
+.finder__ergebnis:focus { outline: none; }
+.finder__ergebnis h3 { margin: 0 0 6px; font-size: 1.25rem; }
+.finder__ergebnis p { margin: 0; }
+.finder__ergebnis p + p { margin-top: 10px; }
+.finder__links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.finder__links a { font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
 .finder__hinweis { margin: 0; font-size: .9375rem; color: var(--ink-mute); }
 html:not(.js) .finder { display: none; }
+
+/* Produktkarten: Links zur Detailseite und zum Ratgeber */
+.product__links { list-style: none; padding: 0; margin: 12px 0 0; border-top: 1px solid var(--rule-soft); }
+.product__links li + li { border-top: 1px solid var(--rule-soft); }
+.product__links a { display: flex; align-items: center; min-height: 44px; font: 600 1rem/1.3 var(--f-display); text-decoration: none; }
+.product__links a:hover { text-decoration: underline; }

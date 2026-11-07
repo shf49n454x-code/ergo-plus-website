@@ -7,6 +7,7 @@ kurz: Das MFS-Stuhlsystem besteht aus über 80 farbcodierten Bausteinen aus selb
 typ: produkt
 produkt: MFS-Stuhlsystem
 hersteller: ERGO-PLUS Seating Concepts
+bild: /assets/img/mfs-stuhlsystem.webp | MFS-Stuhlsystem mit angepasster Rückenlehne | 326 | 600
 stand: 2026-11-07
 quellen:
   - ERGO-PLUS: MFS-Stuhlsystem | https://ergo-plus-seating.de/?thegem_pf_item=opera-30-die-volle-kontrolle-2

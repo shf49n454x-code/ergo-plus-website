@@ -25,8 +25,8 @@
   <link rel="preload" href="/assets/fonts/noto-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <script>document.documentElement.classList.add("js")</script>
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/assets/css/site.css?v=016b83460d" />
-  <script src="/assets/js/site.js?v=4ca787adaa" defer></script>
+  <link rel="stylesheet" href="/assets/css/site.css?v=10a2b5dbca" />
+  <script src="/assets/js/site.js?v=897574f565" defer></script>
   <!-- /SEITE:KOPF -->
   <script type="application/ld+json">
 {
@@ -103,7 +103,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ergo-plus.de/"}, {"@type": "ListItem", "position": 2, "name": "Häufige Fragen", "item": "https://ergo-plus.de/faq.html"}, {"@type": "ListItem", "position": 3, "name": "Wer zahlt einen Arbeitsstuhl bei Behinderung?", "item": "https://ergo-plus.de/fragen/wer-zahlt-den-arbeitsstuhl.html"}]}</script>
   <!-- /SEITE:KRUMEN -->
 
-  <header class="page-head">
+  <header class="page-head page-head--tief">
     <div class="wrap page-head__grid">
       <div>
         <h1>Wer zahlt einen Arbeitsstuhl bei Behinderung?</h1>
@@ -143,7 +143,7 @@
     <label><input type="radio" name="sb" value="ja" /> Ja</label>
     <label><input type="radio" name="sb" value="nein" /> Nein oder noch nicht</label>
   </fieldset>
-  <div class="finder__ergebnis" aria-live="polite"></div>
+  <div class="finder__ergebnis" aria-live="polite" tabindex="-1"></div>
   <p class="finder__hinweis">Eine erste Einschätzung nach den Regeln unten, keine Rechtsberatung. Im Einzelfall entscheidet der Kostenträger.</p>
 </form>
 
@@ -153,34 +153,28 @@
 <tr>
 <th>Wer</th>
 <th>Wann</th>
-<th>Mehr dazu</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Arbeitgeber</td>
-<td>Ergonomische Grundausstattung jedes Arbeitsplatzes; bei Schwerbehinderung auch technische Arbeitshilfen, soweit zumutbar</td>
 <td><a href="/kosten/arbeitgeber.html">Arbeitgeber</a></td>
+<td data-label="Wann">Ergonomische Grundausstattung jedes Arbeitsplatzes; bei Schwerbehinderung auch technische Arbeitshilfen, soweit zumutbar</td>
 </tr>
 <tr>
-<td>Rentenversicherung</td>
-<td>Stuhl ist wegen der Behinderung zur Berufsausübung nötig, 15 Jahre Versicherungszeit oder Erwerbsminderungsrente</td>
 <td><a href="/kosten/rentenversicherung.html">Rentenversicherung</a></td>
+<td data-label="Wann">Stuhl ist wegen der Behinderung zur Berufsausübung nötig, 15 Jahre Versicherungszeit oder Erwerbsminderungsrente</td>
 </tr>
 <tr>
-<td>Agentur für Arbeit</td>
-<td>Wie oben, wenn kein anderer Rehabilitationsträger zuständig ist</td>
 <td><a href="/kosten/agentur-fuer-arbeit.html">Agentur für Arbeit</a></td>
+<td data-label="Wann">Wie oben, wenn kein anderer Rehabilitationsträger zuständig ist</td>
 </tr>
 <tr>
-<td>Integrationsamt</td>
-<td>Schwerbehinderte oder gleichgestellte Menschen, wenn Arbeitgeber und Rehabilitationsträger nicht zahlen</td>
 <td><a href="/kosten/integrationsamt.html">Integrationsamt</a></td>
+<td data-label="Wann">Schwerbehinderte oder gleichgestellte Menschen, wenn Arbeitgeber und Rehabilitationsträger nicht zahlen</td>
 </tr>
 <tr>
-<td>Krankenkasse</td>
-<td>Stuhl für den Alltag zu Hause, mit ärztlicher Verordnung</td>
 <td><a href="/kosten/krankenkasse.html">Krankenkasse</a></td>
+<td data-label="Wann">Stuhl für den Alltag zu Hause, mit ärztlicher Verordnung</td>
 </tr>
 </tbody>
 </table></div>

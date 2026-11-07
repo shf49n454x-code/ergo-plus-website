@@ -7,6 +7,7 @@ kurz: Der Schwergewichtsstuhl von ERGO-PLUS ist laut Herstellerangabe für Nutze
 typ: produkt
 produkt: Schwergewichtsstuhl
 hersteller: ERGO-PLUS Seating Concepts
+bild: /assets/img/spezialstuhl-schwergewicht.webp | Schwergewichtsstuhl für hohes Körpergewicht | 361 | 585
 stand: 2026-11-07
 quellen:
   - ERGO-PLUS: Schwergewichtsstuhl | https://ergo-plus-seating.de/?thegem_pf_item=schwergewichtsstuhl

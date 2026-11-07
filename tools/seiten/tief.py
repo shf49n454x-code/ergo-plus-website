@@ -25,6 +25,9 @@ Kopfzeilen einer Quelldatei (alle Pflicht, außer markiert):
     quellen:      Liste "Text | https://…" (Pflicht bei frage, produkt, kosten)
     weiter:       Liste "/pfad | Linktext", 3–5 Einträge
     hersteller:   nur bei Produkten (optional)
+    bild:         optional "/assets/img/x.webp | Alt-Text | Breite | Höhe" (Freisteller rechts)
+    teaser:       optional, Satz für die Fragenliste in faq.html (sonst beschreibung)
+    reihenfolge:  optional, Zahl für die Sortierung in der Fragenliste
 """
 import html
 import json
@@ -90,10 +93,29 @@ def esc(s: str) -> str:
     return html.escape(s, quote=True)
 
 
+def schuetzen(h: str) -> str:
+    """Kein Umbruch nach Paragrafzeichen und Abkürzungen (am Handy brach „§“ allein um)."""
+    for a in ("§ ", "Abs. ", "Nr. ", "Satz ", "SGB ", "z. "):
+        h = h.replace(a, a[:-1] + "\u00a0")
+    return h
+
+
+def tabellen_beschriften(h: str) -> str:
+    """Jede Zelle außer der ersten bekommt ihren Spaltenkopf als data-label (Handy-Ansicht)."""
+    def tabelle(m):
+        t = m.group(0)
+        koepfe = [re.sub(r"<[^>]+>", "", x).strip() for x in re.findall(r"<th[^>]*>(.*?)</th>", t, re.S)]
+        def zeile(z):
+            zellen = iter(range(100))
+            return re.sub(r"<td>", lambda _: (lambda i: f'<td data-label="{esc(koepfe[i])}">' if 0 < i < len(koepfe) and koepfe[i] else "<td>")(next(zellen)), z.group(0))
+        return re.sub(r"<tr>.*?</tr>", zeile, t, flags=re.S)
+    return re.sub(r"<table.*?</table>", tabelle, h, flags=re.S)
+
+
 def inline_md(s: str) -> str:
     """Kurzantwort/Lead: nur Fett, Kursiv und Links."""
     h = markdown.markdown(s)
-    return re.sub(r"^<p>|</p>$", "", h.strip())
+    return schuetzen(re.sub(r"^<p>|</p>$", "", h.strip()))
 
 
 def strukturdaten(pfad, k, url, rumpf_text):
@@ -153,6 +175,13 @@ def seite(pfad: str, k: dict, rumpf: str) -> str:
     rumpf_html = markdown.markdown(rumpf, extensions=["tables", "sane_lists"])
     # Tabellen bekommen den Rahmen der Seite
     rumpf_html = rumpf_html.replace("<table>", '<div class="table-wrap"><table class="table">').replace("</table>", "</table></div>")
+    rumpf_html = schuetzen(tabellen_beschriften(rumpf_html))
+    bild_html, deep_klasse = "", "deep"
+    if k.get("bild"):
+        src, alt, b, h = [x.strip() for x in k["bild"].split("|")]
+        bild_html = f"""
+      <figure class="deep__fig"><img src="{esc(src)}" alt="{esc(alt)}" width="{b}" height="{h}" decoding="async" fetchpriority="high" /></figure>"""
+        deep_klasse = "deep deep--bild"
     quellen = paare(k.get("quellen"))
     weiter = paare(k.get("weiter"))
     ld = json.dumps(strukturdaten(pfad, k, url, rumpf), ensure_ascii=False, indent=2)
@@ -177,7 +206,8 @@ def seite(pfad: str, k: dict, rumpf: str) -> str:
         <p>Herstellerangaben, abgerufen am {datum_lang(k["stand"])}. Was davon für Sie passt, klären wir beim Probesitzen.</p>
       </section>"""
     weiter_html = "\n".join(f'      <li><a href="{esc(u)}">{esc(t)}</a></li>' for u, t in weiter)
-    byline = (f'Verantwortlich für den Inhalt: <a href="{AUTOR_URL}"><strong>Joachim Stolz</strong></a>, Geschäftsführer, '
+    byline = (f'Stand: <time datetime="{k["stand"]}">{datum_lang(k["stand"])}</time>' if k["typ"] == "person" else
+              f'Verantwortlich für den Inhalt: <a href="{AUTOR_URL}"><strong>Joachim Stolz</strong></a>, Geschäftsführer, '
               f'über 30 Jahre in der ergotherapeutischen Sitzversorgung. Stand: <time datetime="{k["stand"]}">{datum_lang(k["stand"])}</time>')
     return f"""<!DOCTYPE html>
 <html lang="de">
@@ -210,7 +240,7 @@ def seite(pfad: str, k: dict, rumpf: str) -> str:
 <main id="inhalt">
 <!-- SEITE:KRUMEN --><!-- /SEITE:KRUMEN -->
 
-  <header class="page-head">
+  <header class="page-head page-head--tief">
     <div class="wrap page-head__grid">
       <div>
         <h1>{esc(k['h1'])}</h1>
@@ -221,7 +251,7 @@ def seite(pfad: str, k: dict, rumpf: str) -> str:
   </header>
 
   <section class="sec sec--white">
-    <div class="wrap deep">
+    <div class="wrap {deep_klasse}">{bild_html}
       <aside class="answer" aria-labelledby="kurz-titel">
         <h2 id="kurz-titel">{kurz_titel}</h2>
         <p>{inline_md(k['kurz'])}</p>
@@ -257,8 +287,8 @@ def fragen_liste(alle) -> str:
     teile = []
     for name, eintraege in gruppen.items():
         punkte = "\n".join(
-            f'          <li><a href="/{p}">{esc(k["h1"])}</a><span>{esc(re.sub(r"[*]|\[([^\]]+)\]\([^)]+\)", r"\1", k["kurz"]).split(". ")[0].rstrip(".") + ".")}</span></li>'
-            for p, k in sorted(eintraege, key=lambda e: e[1]["h1"]))
+            f'          <li><a href="/{p}">{esc(k["h1"])}</a><span>{esc(k.get("teaser") or k["beschreibung"])}</span></li>'
+            for p, k in sorted(eintraege, key=lambda e: (int(e[1].get("reihenfolge") or 99), e[1]["h1"])))
         teile.append(f"""        <div class="qlist__group">
           <h3>{esc(name)}</h3>
           <ul class="qlist">

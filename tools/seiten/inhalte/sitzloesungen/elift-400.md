@@ -7,6 +7,7 @@ kurz: Der ELIFT 400 hebt die Sitzfläche per Knopfdruck von 46 bis auf 86 cm, in
 typ: produkt
 produkt: ELIFT 400
 hersteller: ERGO-PLUS Seating Concepts
+bild: /assets/img/elift-400-aufstehstuhl.webp | ELIFT 400 Aufstehhilfe mit motorischem Sitzhub | 363 | 570
 stand: 2026-11-07
 quellen:
   - ERGO-PLUS: ELIFT 400 | https://ergo-plus-seating.de/?thegem_pf_item=elift-400

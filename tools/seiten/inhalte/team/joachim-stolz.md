@@ -27,8 +27,8 @@ Bei jedem Termin arbeitet er mit dem POSE-Bogen, dem Persönlichen-Office-Sitz-E
 
 ## Fachgebiete
 
-Neurologische Erkrankungen wie Multiple Sklerose, ALS und Parkinson, orthopädische Beschwerden wie Skoliose, Arthrodese und Bandscheibenvorfall sowie besondere Anforderungen wie Kleinwuchs, Amputation und Schwergewicht bis 250 kg.
+Neurologische Erkrankungen wie Multiple Sklerose, ALS und Parkinson, orthopädische Beschwerden wie Skoliose, Arthrodese und Bandscheibenvorfall sowie besondere Anforderungen wie Kleinwuchs, Amputation und hohes Körpergewicht.
 
 ## Kontakt
 
-Sie erreichen Joachim Stolz über die Telefonnummer der Firma oder über das [Kontaktformular](/kontakt.html). Das erste Gespräch ist kostenlos.
+Sie erreichen Joachim Stolz unter [06021 12807](tel:+49602112807) oder über das [Kontaktformular](/kontakt.html). Das erste Gespräch ist kostenlos.

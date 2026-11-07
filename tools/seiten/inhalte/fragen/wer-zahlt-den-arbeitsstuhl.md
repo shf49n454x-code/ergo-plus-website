@@ -6,6 +6,7 @@ lead: Fünf Stellen kommen in Frage. Welche zuständig ist, hängt davon ab, wof
 kurz: Den normalen ergonomischen Bürostuhl zahlt der Arbeitgeber. Reicht der wegen Ihrer Behinderung nicht, zahlt meist die Rentenversicherung, bei weniger als 15 Versicherungsjahren oft die Agentur für Arbeit. Das Integrationsamt hilft schwerbehinderten Menschen, wenn beide nicht zahlen; für den Stuhl zu Hause ist die Krankenkasse zuständig.
 typ: frage
 kategorie: Kosten und Antrag
+reihenfolge: 1
 stand: 2026-11-07
 quellen:
   - § 49 SGB IX: Leistungen zur Teilhabe am Arbeitsleben | https://www.gesetze-im-internet.de/sgb_9_2018/__49.html
@@ -43,19 +44,19 @@ weiter:
     <label><input type="radio" name="sb" value="ja" /> Ja</label>
     <label><input type="radio" name="sb" value="nein" /> Nein oder noch nicht</label>
   </fieldset>
-  <div class="finder__ergebnis" aria-live="polite"></div>
+  <div class="finder__ergebnis" aria-live="polite" tabindex="-1"></div>
   <p class="finder__hinweis">Eine erste Einschätzung nach den Regeln unten, keine Rechtsberatung. Im Einzelfall entscheidet der Kostenträger.</p>
 </form>
 
 ## Die Reihenfolge
 
-| Wer | Wann | Mehr dazu |
-| --- | --- | --- |
-| Arbeitgeber | Ergonomische Grundausstattung jedes Arbeitsplatzes; bei Schwerbehinderung auch technische Arbeitshilfen, soweit zumutbar | [Arbeitgeber](/kosten/arbeitgeber.html) |
-| Rentenversicherung | Stuhl ist wegen der Behinderung zur Berufsausübung nötig, 15 Jahre Versicherungszeit oder Erwerbsminderungsrente | [Rentenversicherung](/kosten/rentenversicherung.html) |
-| Agentur für Arbeit | Wie oben, wenn kein anderer Rehabilitationsträger zuständig ist | [Agentur für Arbeit](/kosten/agentur-fuer-arbeit.html) |
-| Integrationsamt | Schwerbehinderte oder gleichgestellte Menschen, wenn Arbeitgeber und Rehabilitationsträger nicht zahlen | [Integrationsamt](/kosten/integrationsamt.html) |
-| Krankenkasse | Stuhl für den Alltag zu Hause, mit ärztlicher Verordnung | [Krankenkasse](/kosten/krankenkasse.html) |
+| Wer | Wann |
+| --- | --- |
+| [Arbeitgeber](/kosten/arbeitgeber.html) | Ergonomische Grundausstattung jedes Arbeitsplatzes; bei Schwerbehinderung auch technische Arbeitshilfen, soweit zumutbar |
+| [Rentenversicherung](/kosten/rentenversicherung.html) | Stuhl ist wegen der Behinderung zur Berufsausübung nötig, 15 Jahre Versicherungszeit oder Erwerbsminderungsrente |
+| [Agentur für Arbeit](/kosten/agentur-fuer-arbeit.html) | Wie oben, wenn kein anderer Rehabilitationsträger zuständig ist |
+| [Integrationsamt](/kosten/integrationsamt.html) | Schwerbehinderte oder gleichgestellte Menschen, wenn Arbeitgeber und Rehabilitationsträger nicht zahlen |
+| [Krankenkasse](/kosten/krankenkasse.html) | Stuhl für den Alltag zu Hause, mit ärztlicher Verordnung |
 
 Nach einem Arbeitsunfall oder bei einer Berufskrankheit ist die Berufsgenossenschaft oder Unfallkasse zuständig.
 
