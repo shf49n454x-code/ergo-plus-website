@@ -58,9 +58,12 @@ const asJson = only('--json');
 const htmlFiles = () => {
   const out = [];
   for (const f of fs.readdirSync(ROOT)) if (f.endsWith('.html')) out.push(f);
-  const blog = path.join(ROOT, 'blog');
-  if (fs.existsSync(blog))
-    for (const f of fs.readdirSync(blog)) if (f.endsWith('.html')) out.push('blog/' + f);
+  // Ordner mit Unterseiten, siehe ORDNER in tools/seiten/bauen.py
+  for (const ordner of ['blog', 'sitzloesungen', 'kosten', 'fragen', 'team']) {
+    const dir = path.join(ROOT, ordner);
+    if (fs.existsSync(dir))
+      for (const f of fs.readdirSync(dir)) if (f.endsWith('.html')) out.push(ordner + '/' + f);
+  }
   return out.sort();
 };
 

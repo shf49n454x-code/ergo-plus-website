@@ -236,4 +236,36 @@
         if (btn) { btn.disabled = false; btn.innerHTML = beschriftung; }
       });
   });
+
+  // ── Kostenträger-Finder (/fragen/wer-zahlt-den-arbeitsstuhl.html) ──
+  // Ohne JavaScript bleibt die Tabelle darunter die Antwort.
+  document.querySelectorAll('[data-finder]').forEach(function (form) {
+    var aus = form.querySelector('.finder__ergebnis');
+    var wert = function (n) { var e = form.querySelector('input[name="' + n + '"]:checked'); return e ? e.value : ''; };
+    var link = function (href, text) { return '<a href="' + href + '">' + text + '</a>'; };
+    function aktualisieren() {
+      form.querySelectorAll('[data-wenn]').forEach(function (fs) {
+        var b = fs.getAttribute('data-wenn').split('=');
+        var sichtbar = wert(b[0]) === b[1] && !(b[0] === 'unfall' && wert('zweck') !== 'arbeit');
+        fs.hidden = !sichtbar;
+        if (!sichtbar) fs.querySelectorAll('input').forEach(function (i) { i.checked = false; });
+      });
+      var z = wert('zweck'), u = wert('unfall'), rv = wert('rv'), sb = wert('sb'), h = '';
+      if (z === 'zuhause') {
+        h = '<strong>Meist die Krankenkasse.</strong> Sie zahlt Hilfsmittel für den Alltag mit ärztlicher Verordnung. ' + link('/kosten/krankenkasse.html', 'Mehr zur Krankenkasse');
+      } else if (z === 'arbeit' && u === 'ja') {
+        h = '<strong>Die Berufsgenossenschaft oder Unfallkasse.</strong> Nach einem Arbeitsunfall oder bei einer Berufskrankheit ist die gesetzliche Unfallversicherung zuständig. Rufen Sie uns an, wir klären den Weg.';
+      } else if (z === 'arbeit' && u === 'nein' && rv && sb) {
+        h = rv === 'ja' ? '<strong>Wahrscheinlich die Rentenversicherung.</strong> ' + link('/kosten/rentenversicherung.html', 'Mehr zur Rentenversicherung')
+          : rv === 'nein' ? '<strong>Wahrscheinlich die Agentur für Arbeit.</strong> ' + link('/kosten/agentur-fuer-arbeit.html', 'Mehr zur Agentur für Arbeit')
+          : '<strong>Rentenversicherung oder Agentur für Arbeit.</strong> Stellen Sie den Antrag bei einer der beiden; ist sie nicht zuständig, leitet sie ihn innerhalb von zwei Wochen weiter. ' + link('/fragen/weniger-als-15-jahre-versichert.html', 'Unter 15 Jahre versichert?');
+        h += sb === 'ja'
+          ? '<br />Weil Sie schwerbehindert oder gleichgestellt sind, muss auch Ihr Arbeitgeber den Arbeitsplatz behinderungsgerecht ausstatten, soweit zumutbar, und das Integrationsamt kann einspringen. ' + link('/kosten/integrationsamt.html', 'Mehr zum Integrationsamt')
+          : '<br />Den normalen ergonomischen Stuhl stellt der Arbeitgeber. ' + link('/fragen/gleichstellung-gdb-30.html', 'GdB 30 oder 40? Gleichstellung prüfen');
+      }
+      aus.innerHTML = h ? '<p>' + h + '</p>' : '';
+    }
+    form.addEventListener('change', aktualisieren);
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+  });
 })();

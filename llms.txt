@@ -24,12 +24,13 @@ ERGO-PLUS versorgt Menschen mit folgenden Diagnosen und Bedürfnissen:
 
 ## Produkte
 
-- **VELA TANGO Serie**: Elektrisch höhenverstellbare Aktivstühle für Haushalt und Arbeit. Unterstützen Mobilität und Selbstständigkeit im Alltag.
-- **VELA BLUES Serie**: Kompakte Aktivstühle für den Einsatz in Küche, Bad und Werkstatt.
-- **MFS-Stuhlsystem**: Modulares Funktions-Stuhlsystem für schwerste Sitzprobleme. Individuell konfigurierbar mit Rumpfpelotten, Kopfstütze, Abduktionskeil und motorisierter Höhenverstellung.
-- **ELIFT 400**: Motorisierte Aufstehhilfe mit 46–86 cm Höhenverstellung, Tragkraft bis 200 kg.
-- **Opera 20 / SMARTMOVE**: Ergonomische Bürostühle mit therapeutischer Anpassung.
-- **Speziallösungen**: Bariatrische Stühle bis 250 kg, Arthrodesenstühle, Sondersitze.
+- **VELA TANGO** (Hersteller VELA, Dänemark): Aktivstühle mit Zentralbremse und manueller oder elektrischer Höhenverstellung, je nach Ausführung bis 300 kg (TANGO 310E). https://ergo-plus.de/sitzloesungen/vela-tango.html
+- **MFS-Stuhlsystem** (ERGO-PLUS): über 80 Bausteine aus Viskoschaum, vor Ort in etwa 60 Minuten zu Rückenlehne und Sitz geformt; für schwere Skoliose, Rundrücken, Schmerz. https://ergo-plus.de/sitzloesungen/mfs-stuhlsystem.html
+- **ELIFT 400** (ERGO-PLUS): motorische Aufstehhilfe, Sitzhöhe 46–86 cm oder 50–90 cm, motorische Bremse mit acht Bremsfüßen. https://ergo-plus.de/sitzloesungen/elift-400.html
+- **Opera 20, SMARTMOVE, MOVEMENTLOCK** (ERGO-PLUS): Therapie-Bürostühle; SMARTMOVE mit Liftmotor bis in die Stehposition. https://ergo-plus.de/sitzloesungen/opera-20-smartmove.html
+- **Schwergewichtsstuhl** (ERGO-PLUS, laut Herstellerangabe bis 225 kg): https://ergo-plus.de/sitzloesungen/schwerlast-stuhl.html
+- **Arthrodesenstuhl** (ERGO-PLUS, geteilte Sitzfläche, bis 200 kg): https://ergo-plus.de/sitzloesungen/arthrodesenstuhl.html
+- **Arbeitsstuhl bei Kleinwuchs**: https://ergo-plus.de/sitzloesungen/kleinwuchs-stuhl.html
 
 ## Versorgungsprozess
 
@@ -45,7 +46,7 @@ Die Kosten werden in den meisten Fällen von einem Kostenträger übernommen:
 - Deutsche Rentenversicherung (DRV)
 - Integrationsamt
 - Berufsgenossenschaft (BG)
-- Arbeitsamt / Agentur für Arbeit
+- Agentur für Arbeit
 - Versorgungsamt
 
 ERGO-PLUS begleitet Kunden durch den gesamten Antragsprozess und arbeitet mit zertifizierten Reha-Partnern zusammen.
@@ -86,3 +87,34 @@ ERGO-PLUS begleitet Kunden durch den gesamten Antragsprozess und arbeitet mit ze
 - [ELIFT 400 Aufstehhilfe und Transfer](https://ergo-plus.de/blog/elift-400-aufstehhilfe-transfer.html)
 - [Impressum](https://ergo-plus.de/impressum.html)
 - [Datenschutz](https://ergo-plus.de/datenschutz.html)
+
+## Wer zahlt: Kostenträger im Detail (mit Gesetzesquellen, Stand 07.11.2026)
+
+- [Arbeitsstuhl über die Agentur für Arbeit](https://ergo-plus.de/kosten/agentur-fuer-arbeit.html)
+- [Was der Arbeitgeber beim Arbeitsstuhl zahlt](https://ergo-plus.de/kosten/arbeitgeber.html)
+- [Arbeitsstuhl über das Integrationsamt](https://ergo-plus.de/kosten/integrationsamt.html)
+- [Therapiestuhl über die Krankenkasse](https://ergo-plus.de/kosten/krankenkasse.html)
+- [Arbeitsstuhl über die Rentenversicherung](https://ergo-plus.de/kosten/rentenversicherung.html)
+
+## Fragen mit eigener Antwortseite (Kurzantwort, Quellen, Stand-Datum)
+
+- [Abgelehnt, weil angeblich der Arbeitgeber zahlen muss. Was jetzt?](https://ergo-plus.de/fragen/antrag-abgelehnt-arbeitgeber-zustaendig.html)
+- [Arbeitsstuhl, Therapiestuhl, Rollstuhl: was ist der Unterschied?](https://ergo-plus.de/fragen/arbeitsstuhl-therapiestuhl-rollstuhl.html)
+- [Wann reicht ein guter Bürostuhl nicht mehr?](https://ergo-plus.de/fragen/ergonomischer-buerostuhl-oder-spezialstuhl.html)
+- [Ich habe einen GdB von 30 oder 40. Bekomme ich trotzdem Hilfe?](https://ergo-plus.de/fragen/gleichstellung-gdb-30.html)
+- [Ich bin selbstständig. Bekomme ich Hilfe für einen Arbeitsstuhl?](https://ergo-plus.de/fragen/selbststaendig-zuschuss-arbeitsstuhl.html)
+- [Was passiert, wenn sich meine Erkrankung verändert?](https://ergo-plus.de/fragen/stuhl-anpassen-wenn-sich-die-krankheit-veraendert.html)
+- [Darf ich den Stuhl kaufen, bevor die Kosten genehmigt sind?](https://ergo-plus.de/fragen/vor-dem-kauf-beantragen.html)
+- [Welche Unterlagen braucht der Antrag für den Stuhl?](https://ergo-plus.de/fragen/welche-unterlagen-fuer-den-antrag.html)
+- [Wem gehört der Stuhl, wenn ich den Arbeitsplatz wechsle?](https://ergo-plus.de/fragen/wem-gehoert-der-stuhl.html)
+- [Ich bin noch keine 15 Jahre versichert. Wer zahlt dann?](https://ergo-plus.de/fragen/weniger-als-15-jahre-versichert.html)
+- [Wer zahlt einen Arbeitsstuhl bei Behinderung?](https://ergo-plus.de/fragen/wer-zahlt-den-arbeitsstuhl.html)
+- [Wer zahlt Reparatur und Wartung am Stuhl?](https://ergo-plus.de/fragen/wer-zahlt-reparatur-und-wartung.html)
+- [Wie lange darf die Entscheidung über den Antrag dauern?](https://ergo-plus.de/fragen/wie-lange-dauert-der-antrag.html)
+
+## Für Zielgruppen und Autor
+
+- [Beratung vor Ort, deutschlandweit](https://ergo-plus.de/beratung-vor-ort.html)
+- [Für Arbeitgeber und Schwerbehindertenvertretungen](https://ergo-plus.de/fuer-arbeitgeber.html)
+- [Für Therapeuten, Ärzte und Reha-Berater](https://ergo-plus.de/fuer-therapeuten.html)
+- [Joachim Stolz, Geschäftsführer und Autor](https://ergo-plus.de/team/joachim-stolz.html)

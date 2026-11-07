@@ -693,3 +693,31 @@ body:has(.article-content, .article-wrap, .faq-content, .legal-content) { backgr
 .artikel p { margin: 6px 0 0; font-size: 1rem; color: var(--ink-soft); }
 .artikel__meta, .lead-artikel .artikel__meta { font-size: .875rem; color: var(--ink-mute); }
 @media (max-width: 559px) { .weg--kurz .weg__s { grid-template-columns: 40px 1fr; gap: 8px 16px; } .weg--kurz .weg__s::before { font-size: 1.75rem; } }
+
+/* ── Tiefe Seiten (Fragen, Produkte, Kostenträger) – gebaut von tools/seiten/tief.py ── */
+.deep { display: grid; gap: clamp(28px, 4vw, 48px); }
+.deep > * { max-width: 760px; min-width: 0; }
+.answer { border-left: 3px solid var(--line-teal); padding: 4px 0 4px 24px; }
+.answer h2 { font-size: 1rem; letter-spacing: 0; color: var(--ink-mute); margin: 0 0 8px; }
+.answer p { font: 500 clamp(1.1875rem, 1.6vw, 1.3125rem)/1.55 var(--f-body); color: var(--ink); margin: 0; }
+.prose > :first-child { margin-top: 0; }
+.sources { border-top: 1px solid var(--rule); padding-top: 24px; font-size: .9375rem; color: var(--ink-soft); }
+.sources h2 { font-size: 1.125rem; margin: 0 0 12px; }
+.sources ol { padding-left: 1.2em; margin: 0 0 12px; display: grid; gap: 6px; }
+.sources p { margin: 0; color: var(--ink-mute); }
+.qlist__groups { display: grid; gap: clamp(32px, 4vw, 48px); }
+.qlist__group h3 { margin: 0 0 8px; }
+.qlist { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+.qlist li { border-bottom: 1px solid var(--rule); padding: 14px 0; display: grid; gap: 4px; }
+.qlist a { font: 600 1.0625rem/1.4 var(--f-display); }
+.qlist span { color: var(--ink-soft); font-size: .9375rem; }
+@media (min-width: 960px) { .qlist__groups { grid-template-columns: 1fr 1fr; gap: 48px 64px; } }
+.finder { display: grid; gap: 20px; padding: clamp(20px, 3vw, 32px); border: 1px solid var(--rule); border-radius: var(--r); background: var(--paper); margin: 1.5em 0 2em; }
+.finder fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
+.finder legend { font: 600 1.0625rem/1.4 var(--f-display); color: var(--ink); margin-bottom: 8px; padding: 0; }
+.finder label { display: flex; gap: 12px; align-items: center; min-height: 44px; cursor: pointer; }
+.finder input[type="radio"] { width: 20px; height: 20px; accent-color: var(--act); margin: 0; flex: none; }
+.finder__ergebnis:empty { display: none; }
+.finder__ergebnis p { margin: 0; padding: 16px 20px; background: var(--act-wash); border-radius: var(--r-sm); color: var(--ink); }
+.finder__hinweis { margin: 0; font-size: .9375rem; color: var(--ink-mute); }
+html:not(.js) .finder { display: none; }
